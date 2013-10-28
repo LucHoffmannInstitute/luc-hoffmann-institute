@@ -1,0 +1,19 @@
+
+/*	General configuration
+		======================================================================== */
+//$max-width: 1200px;
+$max-width: 100%;
+
+// rem mixin is based on $base-font-size
+$base-font-size: 14px;
+
+// global border border-radius
+$border-radius: 2px;
+
+/*	Breakpoints
+		======================================================================== */
+
+$iPhoneLandscape: 321;
+$iPadPortrait: 768;
+//$iPadPortrait: 0;
+$iPadLandscape: 1000;

@@ -1,0 +1,46 @@
+
+/* 	==========================================================================
+	Social bits
+	========================================================================== */
+
+.social {
+	float: right;
+
+	p {
+		@extend %visuallyhidden;
+	}
+	
+	ul {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		text-decoration: none;
+
+		i {
+			display: block;
+			@include rem('padding', 0.5);
+			background: $fill-blue-dk;
+			border-radius: 50%;
+			color: #fff;
+
+			&:hover {
+				background: $fill-blue;
+			}
+
+		} // i
+
+		span {
+			@extend %visuallyhidden;
+		}
+
+	} // a
+
+} // .social

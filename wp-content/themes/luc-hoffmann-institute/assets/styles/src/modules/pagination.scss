@@ -1,0 +1,109 @@
+/*	==========================================================================
+	Pagination
+	========================================================================== */
+
+.pagination {
+
+	ul {
+		@include rem('padding', 1);
+		background: #fff;
+		list-style: none;
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	li .current {
+		background: $fill-blue-dk;
+		color: #fff;
+	}
+
+	a {
+		display: block;
+		@include rem('padding', 1);
+		text-decoration: none;
+		background: $bg-lt;
+		color: $text-md-dk;
+	}
+
+} // .pagination
+
+.next-prev {
+	@extend .container;
+	@extend %clearfix;
+
+	ul {
+		@extend %clearfix;
+		//float: right;
+		margin: 0;
+		padding: 0;
+		//width: 70%;
+		list-style: none;
+	}
+
+	li {
+
+		a.button i {
+			position: relative;
+			transition: all 0.1s ease;
+		}
+
+	} // li
+
+	li.prev {
+		float: left;
+
+		a.button {
+			float: left;
+
+			i {
+				left: -0.25em;
+			}
+
+			&:hover i {
+				left: -0.5em;
+			}
+		} // a.button
+
+	} // li.prev
+
+	li.next {
+		float: right;
+
+		a.button {
+			float: right;
+
+			i {
+				right: -0.25em;
+			}
+
+			&:hover i {
+				right: -0.5em;
+			}
+
+		} // a.button
+
+	} // li.next
+
+	a.button {
+		@include rem('padding', 3, 0);
+		background: none;
+		font-weight: 400;
+		//color: $text !important;
+		color: $text-md-dk;
+		transition: color .1s ease;
+
+		&:hover {
+			//color: #fff;
+			//background: $fill-blue;
+			color: $fill-blue-dk;
+		}
+
+		i {
+		}
+
+	} // a.button
+
+} // .next-prev

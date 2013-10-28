@@ -1,0 +1,67 @@
+
+/*	Footer
+		======================================================================== */
+
+.footer {
+	@extend %antialiased;
+	@extend %sans;
+	@include rem('padding', 2, 0);
+	color: $text-dk;
+	color: rgba(0,0,0,0.75);
+
+	.panda-logo {
+		display: block;
+		text-align: center;
+		@include rem('padding', 1);
+
+		@include min-width ( $iPadPortrait ) {
+			@include rem('margin-right', 1);
+			padding: 0;
+		}
+
+	}
+
+	.panda-logo img {
+		display: inline-block;
+		width: 200px;
+		margin: 0 auto;
+
+		@include min-width ( $iPadPortrait ) {
+			width: 100%;
+		}
+
+	}
+
+	.mava-logo {
+		display: block;
+		@include rem('padding', 0, 2);
+		text-align: center;
+		@include font-size(14);
+		@include line-height(16);
+		text-decoration: none;
+		color: $text;
+
+		i {
+			display: block;
+			@include rem('margin', 0, 0, 0.5);
+			@include font-size(72);
+		}
+
+	} // .mava-logo
+
+	.info {
+		@include rem('margin', 2, 0, 0);
+		@include font-size(12);
+		@include line-height(20);
+		text-transform: uppercase;
+		font-weight: 400;
+		color: $text;
+
+		a {
+			color: $text;
+			text-decoration: none;
+		}
+
+	} // .info
+
+} // .footer

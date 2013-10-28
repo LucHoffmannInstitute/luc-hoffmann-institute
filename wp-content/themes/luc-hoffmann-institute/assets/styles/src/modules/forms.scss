@@ -1,0 +1,60 @@
+
+/*	Forms
+		======================================================================== */
+
+form {
+
+	$field-height: 3em;
+
+	.field-wrap {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 0;
+
+		input,
+		button {
+			display: inline-block;
+			vertical-align: middle;
+			@include font-size(12);
+			border: none;
+			height: $field-height;
+			background: none;
+		}
+
+		input[type="text"] {
+			@include rem('padding', 0.5, 1);
+			width: 85%;
+			background: $bg-dk-lt;
+			color: $text-md;
+
+			@include placeholder {
+				color: $text-md;
+			}
+
+		} // input[type="text"]
+
+		button[type="submit"] {
+			width: 15%;
+			background: $bg-dk-md;
+
+			&:hover {
+				background: $bg-dk-dk;
+			}
+
+			span {
+				@extend %visuallyhidden;
+			}
+
+			i {
+				position: relative;
+				top: 0.1em;
+				vertical-align: middle;
+				@include font-size(18);
+				color: $text-md;
+			}
+
+		} // button[type="submit"]
+
+	} // .field-wrap
+
+} // form

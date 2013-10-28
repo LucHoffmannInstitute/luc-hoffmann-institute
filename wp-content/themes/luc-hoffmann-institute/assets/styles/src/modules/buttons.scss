@@ -1,0 +1,40 @@
+
+/* 	==========================================================================
+	Buttons
+	========================================================================== */
+
+.button {
+	@extend %disable-select;
+	@extend %antialiased;
+	@extend %sans;
+	display: inline-block;
+	margin: 0;
+	@include rem('padding', 1);
+	font-size: 0;
+	line-height: 0;
+	font-weight: 600;
+	text-align: center;
+	vertical-align: middle;
+	background: $bg-md;
+	color: #fff;
+	border: none;
+	text-decoration: none;
+
+	span {
+		display: inline-block;
+		vertical-align: middle;
+		@include font-size(18);
+		@include line-height(18);
+	}
+
+	i {
+		display: inline-block;
+		vertical-align: middle;
+		@include font-size(18);
+	}
+
+	&:hover {
+		background: $bg-dk;
+	}
+
+} // .button

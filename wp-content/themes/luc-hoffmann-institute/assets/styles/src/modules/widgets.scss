@@ -1,0 +1,102 @@
+
+/* 	==========================================================================
+	Widgets
+	========================================================================== */
+
+.widget {
+	@include rem('margin', 2, 0);
+	@include rem('padding', 2);
+	background: #fff;
+
+	.widget-header {
+		
+	}
+
+	.widget-title {
+		margin: 0;
+		@extend %caps;
+		color: $text-md-dk;
+	}
+
+} // .widget
+
+.quote-widget {
+	background: $bg-lt;
+
+	.home & {
+		background: #fff;
+	}
+	
+	blockquote {
+		margin: 0;
+		@include font-size(18);
+	}
+
+	p {
+		position: relative;
+		margin-top: 0;
+	}
+
+	p:first-child:before {
+		position: absolute;
+		right: 100%;
+		content: "\201C";
+	}
+
+	p:last-of-type:after {
+		content: "\201D";
+	}
+
+	cite {
+		display: block;
+		font-style: normal;
+	}
+
+	cite small {
+		display: block;
+	}
+
+} // .quote-widget
+
+.twitter-widget {
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		@include font-size(24);
+		@include line-height(36);
+	}
+
+	a {
+		text-decoration: none;
+		word-wrap: break-word;
+	}
+
+	.follow-link {
+		@extend %caps;
+		display: block;
+		@include rem('margin-top', 1);
+
+		i {
+			vertical-align: middle;
+		}
+
+	} // .follow-link
+
+} // .twitter-widget
+
+.widget_categories,
+.widget_archive {
+	background: $bg-lt;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+} // .widget_categories, .widget_archive

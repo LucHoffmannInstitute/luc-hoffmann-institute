@@ -1,0 +1,101 @@
+
+/*	Type
+		======================================================================== */
+
+%sans {
+	font: {
+		family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		weight: 400; 
+		style: normal;
+	}
+}
+
+%serif {
+	font: {
+		family: 'ff-tisa-web-pro', Georgia, serif;
+		weight: 400;
+		style: normal;
+	}
+}
+
+%caps {
+	@extend %sans;
+	@include font-size(14);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: 500;
+}
+
+body {
+	@extend %serif;
+	@include font-size(18);
+	@include line-height(27);
+	font-weight: 100;
+	color: $text;
+	color: #666;
+}
+
+/*	Links
+		======================================================================== */
+
+a {
+	color: $fill-blue;
+}
+
+a:hover {
+	color: $fill-blue-dk;
+}
+
+/*
+ * Headings
+ */
+
+h1 {
+	@include rem('margin', 1.5, 0); // 24
+	@include font-size(36);
+	@include line-height(36);
+
+	@include min-width ( $iPadPortrait ) {
+		@include rem('line-height', 3); // 48
+		@include rem('font-size', 3); // 48
+	}
+
+} // h1
+
+h2 {
+	@include rem('margin', 1, 0);
+	@include font-size(24);
+	@include line-height(30);
+}
+
+h3 {
+	@include rem('margin', 1, 0);
+	@include font-size(18);
+	@include line-height(24);
+}
+
+h4 {
+	@include rem('margin', 0);
+	@include font-size(16);
+	@include line-height(24);
+}
+
+h5 {
+	@include rem('margin', 0);
+	@include font-size(16);
+	@include line-height(24);
+}
+
+h6 {
+	@include rem('margin', 0);
+	@include font-size(16);
+	@include line-height(24);
+}
+
+/*
+ * Other elements
+ */
+
+p, ul, ol, blockquote {
+	@include rem('margin', 0, 0, 1.5);
+}

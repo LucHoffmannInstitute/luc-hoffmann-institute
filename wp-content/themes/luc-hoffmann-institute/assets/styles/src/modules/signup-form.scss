@@ -1,0 +1,58 @@
+
+/* 	==========================================================================
+	Sign up and search forms
+	========================================================================== */
+
+.signup-form,
+.search-form {
+	@include rem('margin-bottom', 1);
+	font-size: 0;
+
+	.input-wrap {
+		display: table;
+		width: 100% !important;
+	}
+
+	input[type="text"],
+	button[type="submit"] {
+		display: table-cell;
+		@include rem('padding', 1);
+		@include font-size(16);
+	}
+
+	input[type="text"] {
+		@extend %sans;
+		width: 90%;
+		border: none;
+		background: #fff;
+		color: $fill-blue-dk;
+
+		@include placeholder {
+			color: $text-md-dk;
+		}
+
+	} // input[type="text"]
+
+	button[type="submit"] {
+		@extend %antialiased;
+		width: 10%;
+		border: none;
+		@include rem('padding', 1, 0);
+		text-align: center;
+		background: $fill-blue-dk;
+		color: #fff;
+
+		&:hover {
+			background: $fill-blue;
+		}
+
+		i {
+		}
+
+		span {
+			@extend %visuallyhidden;
+		}
+
+	} // button[type="submit"]
+
+} // .signup-form

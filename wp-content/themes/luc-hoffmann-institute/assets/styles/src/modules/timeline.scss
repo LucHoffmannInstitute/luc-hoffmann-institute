@@ -1,0 +1,62 @@
+
+/*	Timelines
+		======================================================================== */
+
+.timeline {
+	position: relative;
+	@include rem('margin', 0, 0, 2);
+	padding: 0;
+	list-style: none;
+
+	&:before {
+		display: block;
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		background: $bg-lt;
+		@include rem('width', 1);
+		border-radius: $border-radius;
+	}
+
+	.event {
+		position: relative;
+		@include rem('padding', 1, 2);
+		max-width: 80%;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:before {
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0.9em;
+			@include rem('left', -0.2);
+			@include rem('width', 1);
+			@include rem('height', 1);
+			background: $fill-blue;
+			border: 0px solid #fff;
+			@include rem('border-width', 0.25);
+		}
+
+		time {
+			@extend %sans;
+			@include font-size(20);
+			font-weight: 600;
+		}
+
+		p {
+			@include font-size(16);
+			margin-top: 0;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+
+	} // .event
+
+} // .timeline
