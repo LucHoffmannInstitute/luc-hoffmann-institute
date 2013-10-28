@@ -50,7 +50,7 @@ jQuery(function () {
 
 		$showMenuButton.on( 'click', function ( event ) {
 			event.preventDefault();
-			$('body').toggleClass('.menu-fixed');
+			//$('body').toggleClass('show-menu');
 		} );
 	};
 

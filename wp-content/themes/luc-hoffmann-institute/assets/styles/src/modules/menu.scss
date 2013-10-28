@@ -4,10 +4,25 @@
 	========================================================================== */
 
 .menu {
-	position: relative;
-	z-index: 100;
 	background: #273747;
-	overflow: hidden;
+
+	@include min-width ( $iPadPortrait ) {
+		display: block;
+		position: relative;
+		z-index: 100;
+		overflow: hidden;
+
+		&:before {
+			display: block;
+			content: "";
+			position: absolute;
+			right: 0;
+			bottom: 100%;
+			left: 0;
+			height: 100px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+		}
+	}
 
 	.menu-fixed & {
 		position: fixed;
@@ -17,57 +32,76 @@
 		left: 0;
 	}
 
-	&:before {
-		display: block;
-		content: "";
-		position: absolute;
-		right: 0;
-		bottom: 100%;
-		left: 0;
-		height: 100px;
-		box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+	.container {
+		padding: 0;
+
+		@include min-width ( $iPadPortrait ) {
+			@include rem('padding', 0, 2);
+		}
 	}
 
 	ul {
-		display: table;
+		@extend %clearfix;
 		margin: 0;
 		padding: 0;
-		width: 100%;
 		list-style: none;
+		text-align: center;
+
+		@include min-width ( $iPadPortrait ) {
+			display: table;
+			width: 100%;
+		}
 
 	} // ul
 
 	li {
-		display: none;
-		vertical-align: middle;
-		border-right: 1px solid rgba(0,0,0,0.25);
+		float: left;
+		display: block;
+		width: 50%;
 
 		@include min-width ( $iPadPortrait ) {
+			float: none;
 			display: table-cell;
+			vertical-align: middle;
+			width: auto;
+			border-right: 1px solid rgba(0,0,0,0.25);
 		}
 
 	} // li
 
 	a {
 		@extend %sans;
-		display: table;
-		vertical-align: middle;
-		width: 100%;
-		height: 80px;
-		@include font-size(16);
-		@include line-height(24);
+		display: block;
+		@include font-size(14);
+		//@include line-height(24);
 		text-decoration: none;
 		font-weight: 600;
 		color: #fff;
+		border: 1px solid darken( $fill-blue-dk, 10% );
+		border-right: none;
+		border-bottom: none;
 
-		@include min-width ( $iPadLandscape ) {
+		@include min-width ( $iPadPortrait ) {
+			display: table;
+			vertical-align: middle;
+			width: 100%;
 			height: 80px;
+			height: 80px;
+			@include font-size(16);
+			@include line-height(24);
+			border: none;
 		}
 
 		span {
-			display: table-cell;
-			vertical-align: middle;
+			display: block;
+			@include rem('padding', 0.5);
 			text-align: center;
+
+			@include min-width ( $iPadPortrait ) {
+				vertical-align: middle;
+				display: table-cell;
+				padding: 0;
+			}
 		}
 
 	} // a
@@ -81,19 +115,20 @@
 	}
 
 	li.logo {
-		display: table-cell;
-		width: 190px;
-		transition: width 0.25s ease;
-		border: none;
+		//display: none;
+		width: 100%;
 
-		@include min-width ( $iPadLandscape ) {
-			border-left: 1px solid $fill-blue-very-dk;
-			border-right: 1px solid $fill-blue-very-dk;
-		}			
+		@include min-width ( $iPadPortrait ) {
+			display: table-cell;
+			width: 190px;
+			transition: width 0.25s ease;
+		}
 
 		@include min-width ( $iPadLandscape ) {
 			width: 190px;
-		}
+			border-left: 1px solid $fill-blue-very-dk;
+			border-right: 1px solid $fill-blue-very-dk;
+		}			
 
 		.home & {
 			width: 0;
