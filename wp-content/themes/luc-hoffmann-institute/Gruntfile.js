@@ -1,7 +1,5 @@
 'use strict';
 
-var rsyncConfig = require('./rsync-config.json');
-
 module.exports = function(grunt) {
 
 	grunt.initConfig({
