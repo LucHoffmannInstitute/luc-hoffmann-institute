@@ -37,15 +37,15 @@
 		margin-top: 0;
 	}
 
-	p:first-child:before {
-		position: absolute;
-		right: 100%;
-		content: "\201C";
-	}
-
-	p:last-of-type:after {
-		content: "\201D";
-	}
+//	p:first-child:before {
+//		position: absolute;
+//		right: 100%;
+//		content: "\201C";
+//	}
+//
+//	p:last-of-type:after {
+//		content: "\201D";
+//	}
 
 	cite {
 		display: block;
