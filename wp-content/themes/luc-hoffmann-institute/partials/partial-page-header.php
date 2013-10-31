@@ -2,10 +2,19 @@
 	$section = array();
 	$banner = array();
 
-	$page_ancestor_id = hoffmann_page_ancestor();
-	$page_ancestor = get_post( $page_ancestor_id );
 
-	$banner_id = get_field( 'image', $page_ancestor_id );
+	// Does this page have a banner assigned?
+	$banner_id = get_field( 'image' );
+	if ( !isset( $banner_id ) || empty( $banner_id ) ) {
+
+		// no banner assigned
+		// check parent
+		$page_ancestor_id = hoffmann_page_ancestor();
+		$page_ancestor = get_post( $page_ancestor_id );
+
+		$banner_id = get_field( 'image', $page_ancestor_id );
+	}
+
 	$banner_post = get_post( $banner_id );
 
 	$image_src = wp_get_attachment_image_src( $banner_id, 'banner' );
