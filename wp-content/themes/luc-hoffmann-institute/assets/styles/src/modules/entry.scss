@@ -132,16 +132,6 @@
 				@include line-height(36);
 			}
 
-			p:first-child:before {
-				position: absolute;
-				right: 100%;
-				content: "\201C";
-			}
-
-			p:last-of-type:after {
-				content: "\201D";
-			}
-
 			cite {
 				@include rem('padding-left', 2);
 				font-style: normal;
