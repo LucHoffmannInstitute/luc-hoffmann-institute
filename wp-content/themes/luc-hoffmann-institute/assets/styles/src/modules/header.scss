@@ -48,10 +48,12 @@ display: none;
 
 	.upper {
 		width: 100%;
+		text-align: center;
 
 		@include min-width ( $iPadPortrait ) {
 			display: table;
 			height: 250px;
+			text-align: left;
 		}
 
 		.logo {
