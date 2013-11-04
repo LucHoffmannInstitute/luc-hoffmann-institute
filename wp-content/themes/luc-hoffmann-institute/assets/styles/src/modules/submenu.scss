@@ -24,13 +24,18 @@
 		display: inline-block;
 		@extend %sans;
 		@include rem('margin', 0.5, 0);
-		//@include line-height(36);
+		@include font-size(16);
+		line-height: 1.25;
 		font-weight: 400;
 		text-decoration: none;
 		color: $fill-blue;
 
 		&:hover {
 			color: $fill-blue-dk;
+		}
+
+		@include min-width ( $iPadPortrait ) {
+			@include font-size(18);
 		}
 
 	} // a

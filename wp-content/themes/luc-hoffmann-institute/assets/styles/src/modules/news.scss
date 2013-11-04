@@ -4,7 +4,10 @@
 	========================================================================== */
 
 .news {
-	@include rem('padding', 2, 0);
+
+	@include min-width ( $iPadPortrait ) {
+		@include rem('padding', 2, 0);
+	}
 
 	.news-item {
 		@include rem('margin', 0, 0, 1);

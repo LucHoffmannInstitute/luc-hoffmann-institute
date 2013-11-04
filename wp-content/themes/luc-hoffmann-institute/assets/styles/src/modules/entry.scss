@@ -18,8 +18,12 @@
 
 	.home &,
 	.search & {
-		@include rem('margin', 2, 2, 2, 0);
+		@include rem('margin', 1, 0);
 		background: #fff;
+
+		@include min-width ( $iPadPortrait ) {
+			@include rem('margin', 2, 2, 2, 0);
+		}
 	}
 
 	.entry-header {
@@ -61,11 +65,15 @@
 
 	.entry-title {
 		@extend %sans;
-		@include font-size(36);
-		@include line-height(48);
+		@include font-size(24);
+		line-height: 1.5;
 		font-weight: 600;
 		letter-spacing: -0.025em;
 		color: $text-dk;
+
+		@include min-width( $iPadPortrait ) {
+			@include font-size(36);
+		}
 
 		.home &,
 		.search & {
@@ -84,9 +92,14 @@
 
 	.entry-subtitle {
 		@extend %sans;
-		@include font-size(24);
+		@include font-size(18);
+		line-height: 1.5;
 		font-weight: 400;
 		color: $text-md-dk;
+
+		@include min-width( $iPadPortrait ) {
+			@include font-size(24);
+		}
 
 		.home &,
 		.search & {
@@ -101,25 +114,40 @@
 			@extend %sans;
 			font-weight: 600;
 			color: $text-dk;
+			line-height: 1.5;
 		}
 
 		h2 {
-			@include font-size(36);
-			@include line-height(48);
+			@include font-size(24);
+
+			@include min-width ( $iPadPortrait ) {
+				@include font-size(36);
+			}
 		}
 
 		h3 {
-			@include font-size(24);
-			@include line-height(30);
+			@include font-size(18);
+			
+			@include min-width ( $iPadPortrait ) {
+				@include font-size(24);
+			}
 		}
 
 		h4 {
-			@include font-size(16);
+			@include font-size(14);
+
+			@include min-width ( $iPadPortrait ) {
+				@include font-size(16);
+			}
 		}
 
 		.lede {
-			@include font-size(24);
-			@include line-height(36);
+			@include font-size(18);
+			line-height: 1.5;
+
+			@include min-width ( $iPadPortrait ) {
+				@include font-size(24);
+			}
 
 		} // .lede
 
