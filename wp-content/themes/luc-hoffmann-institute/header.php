@@ -23,7 +23,7 @@
         <script type="text/javascript" src="//use.typekit.net/qhv6jcb.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-        <script src="<?php echo get_template_directory_uri() ?>/bower_components/modernizr/modernizr.js"></script>
+        <script src="<?php echo get_template_directory_uri() ?>/assets/scripts/src/plugins/modernizr.min.js"></script>
 
         <?php wp_head() ?>
 

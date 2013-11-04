@@ -4,7 +4,11 @@
 	========================================================================== */
 
 .social {
-	float: right;
+	text-align: center;
+
+	@include min-width ( $iPadPortrait ) {
+		text-align: right;
+	}
 
 	p {
 		@extend %visuallyhidden;

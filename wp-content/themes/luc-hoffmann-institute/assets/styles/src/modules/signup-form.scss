@@ -8,6 +8,23 @@
 	@include rem('margin-bottom', 1);
 	font-size: 0;
 
+	.form-title {
+		@extend %caps;
+		margin: 0;
+		font-weight: 600;
+	}
+
+	label {
+		//@extend %sans;
+		margin: 0;
+		@include font-size(14);
+
+		.placeholder & {
+			display: none;
+		}
+
+	} // label
+
 	.input-wrap {
 		display: table;
 		width: 100% !important;
@@ -56,3 +73,22 @@
 	} // button[type="submit"]
 
 } // .signup-form
+
+.search-form {
+	margin: 0;
+
+	input[type="text"],
+	button[type="submit"] {
+		@include rem('padding', 0.5);
+		@include font-size(14);
+	}
+
+	input[type="text"] {
+		width: 80%;
+	}
+
+	button[type="submit"] {
+		width: 20%;
+	}
+
+} // .search-form
