@@ -8,20 +8,20 @@
 	width: 200%;
 
 	.procession-slider {
-    -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    -webkit-touch-callout: none;
-    user-select: none;
+	-webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	-webkit-touch-callout: none;
+	user-select: none;
   }
 
   .procession-slider.procession-animate {
-  	transition: all .3s;
+	transition: all .3s;
   }
 
   .slideshow-slide {
 
-  	.caption {
+	.caption {
 			opacity: 0;
 			position: absolute;
 			z-index: 999999;
