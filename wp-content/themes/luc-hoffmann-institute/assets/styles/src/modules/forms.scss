@@ -26,9 +26,10 @@ form {
 			width: 85%;
 			background: $bg-dk-lt;
 			color: $text-md;
+			outline: 2px solid purple;
 
 			@include placeholder {
-				color: $text-md;
+				color: $text;
 			}
 
 		} // input[type="text"]
