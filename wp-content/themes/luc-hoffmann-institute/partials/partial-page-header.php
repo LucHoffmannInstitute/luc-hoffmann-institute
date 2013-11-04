@@ -2,15 +2,16 @@
 	$section = array();
 	$banner = array();
 
-
 	// Does this page have a banner assigned?
 	$banner_id = get_field( 'image' );
+
+	$page_ancestor_id = hoffmann_page_ancestor();
+	$page_ancestor = get_post( $page_ancestor_id );
+
 	if ( !isset( $banner_id ) || empty( $banner_id ) ) {
 
 		// no banner assigned
 		// check parent
-		$page_ancestor_id = hoffmann_page_ancestor();
-		$page_ancestor = get_post( $page_ancestor_id );
 
 		$banner_id = get_field( 'image', $page_ancestor_id );
 	}
