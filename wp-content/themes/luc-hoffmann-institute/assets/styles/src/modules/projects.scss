@@ -152,8 +152,12 @@
 			display: inline-block;
 			@include rem('bottom', 3);
 			@include rem('left', 2);
-			width: 50%;
+			width: 80%;
 			text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+
+			@include min-width ( $iPadPortrait ) {
+				width: 50%;
+			}
 
 			&.project-header-dark {
 				@include rem('bottom', 2);
@@ -173,10 +177,15 @@
 				@extend %sans;
 				margin: 0;
 				width: auto;
-				@include font-size(24);
-				@include line-height(36);
+				@include font-size(18);
+				@include line-height(24);
 				font-weight: 600;
 				color: #fff;
+
+				@include min-width ( $iPhoneLandscape ) {
+					@include font-size(20);
+					@include line-height(24);
+				}
 
 				@include min-width ( $iPadPortrait ) {
 					//width: 50%;
@@ -192,8 +201,10 @@
 			} // .project-title
 
 			.project-subtitle {
+				display: none;
 
 				@include min-width ( $iPadPortrait ) {
+					display: block;
 					max-width: 75%;
 				}
 
@@ -231,11 +242,16 @@
 			bottom: 0;
 			margin: 0;
 			@include rem('padding', 1, 2);
-			@include font-size(13);
+			@include font-size(11);
 			color: #fff;
 			font-weight: 400;
 			text-shadow: 0px 0px 5px #000;
-		}
+
+			@include min-width ( $iPadPortrait ) {
+				@include font-size(13);
+			}
+
+		} // .photo-credit
 
 		.project-summary {
 			@include rem('padding', 3);
