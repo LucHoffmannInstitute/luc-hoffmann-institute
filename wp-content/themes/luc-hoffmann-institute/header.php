@@ -71,10 +71,6 @@
 
             <?php endif ?>
 
-            <div class="show-menu-button">
-                <a href="#menu"><i class="icon-menu"></i> <span>Show menu</span></a>
-            </div>
-
             <nav id="menu" class="menu" role="navigation">
                 <div class="container">
                     <?php wp_nav_menu( array(

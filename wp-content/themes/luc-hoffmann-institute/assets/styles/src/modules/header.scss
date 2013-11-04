@@ -12,40 +12,6 @@
 		//height: 250px;
 	}
 
-	.show-menu-button {
-display: none;
-		position: absolute;
-		z-index: 999;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		height: 100%;
-
-		@include min-width ( $iPadPortrait ) {
-			display: none;
-		}
-
-		a {
-			display: table;
-			height: 100%;
-			vertical-align: middle;
-			text-decoration: none;
-			color: #fff;
-		}
-
-		i {
-			display: table-cell;
-			@include rem('padding', 1);
-			vertical-align: middle;
-			@include font-size(24);
-		}
-
-		span {
-			@extend %visuallyhidden;
-		}
-
-	} // .show-menu
-
 	.upper {
 		width: 100%;
 		text-align: center;
