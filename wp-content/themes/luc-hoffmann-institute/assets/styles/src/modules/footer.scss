@@ -64,4 +64,8 @@
 
 	} // .info
 
+	.social-and-search {
+		@include rem('margin', 2, 0, 0);
+	}
+
 } // .footer
