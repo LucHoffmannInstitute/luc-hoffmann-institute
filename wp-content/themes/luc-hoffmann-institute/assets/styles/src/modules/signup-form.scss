@@ -74,6 +74,7 @@
 } // .signup-form
 
 .search-form {
+	@include rem('margin-bottom', 1);
 
 	input[type="text"],
 	button[type="submit"] {
