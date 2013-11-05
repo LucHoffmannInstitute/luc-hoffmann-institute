@@ -259,7 +259,7 @@ class Hoffmann_Image_Widget extends WP_Widget {
 			<p>
 				<label for="<?php echo $this->get_field_id( 'image_url' ) ?>"><?php _e( 'Image URL', 'hoffmann' ) ?></label>
 				<input type="text" name="<?php echo $this->get_field_name( 'image_url' ) ?>" id="<?php echo $this->get_field_id( 'image_url' ) ?>" value="<?php echo $image_url ?>" />
-				<p>E.g. http://placehold.it/300x300</p>
+				<p><small>The image URL, including http://. To get the URL for an image in the media library, go to the edit page for that image and copy the File URL. E.g. http://luchoffmanninstitute.org/wp-content/uploads/2013/10/302688.jpg.</small></p>
 			</p>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'text' ) ?>"><?php _e( 'Text', 'hoffmann' ) ?></label>
