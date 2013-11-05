@@ -89,6 +89,37 @@
 
 } // .twitter-widget
 
+.image-widget {
+	@extend %clearfix;
+	padding: 0;
+
+	img {
+		display: block;
+		float: left;
+		width: 50%;
+
+		@include min-width ( $iPadPortrait ) {
+			float: none;
+			width: auto;
+		}
+	}
+
+	.widget-content {
+		@extend %sans;
+		float: left;
+		@include rem('padding', 1, 2, 2);
+		width: 50%;
+		@include font-size(14);
+		line-height: 1.5;
+
+		@include min-width ( $iPadPortrait ) {
+			float: none;
+			width: auto;
+		}
+	}
+
+} // .image-widget
+
 .widget_categories,
 .widget_archive {
 	background: $bg-lt;
