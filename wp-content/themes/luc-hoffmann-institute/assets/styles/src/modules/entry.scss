@@ -200,6 +200,76 @@
 
 		} // table		
 
+		// responsive elements
+		// make sure elements with WP-added height and width attributes are scaled correctly
+		img,
+		img.size-small,
+		img.size-medium,
+		img.size-full,
+		img.size-large,
+		img.wp-post-image
+		img[class*="align"],
+		img[class*="wp-image-"],
+		img[class*="attachment-"],
+		.wp-caption,
+		.twitter-tweet-rendered {
+			max-width: 100% !important;
+			height: auto !important;
+		}
+
+		embed,
+		object,
+		iframe,
+		video {
+			max-width: 100%;
+		}
+
+		// alignment
+		.alignleft {
+			float: left;
+		}
+
+		.alignright {
+			float: right;
+		}
+
+		.aligncenter {
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		// margins
+		img.alignleft,
+		.wp-caption.alignleft {
+			@include rem('margin', 0, 1, 1, 0);
+		}
+
+		img.alignright,
+		.wp-caption.alignright {
+			@include rem('margin', 0, 0, 1, 1);
+		}
+
+		// captions
+		.wp-caption {
+			margin: 0;
+			padding: 0;
+			width: auto !important;
+
+			.wp-caption-text {
+				margin: 0;
+				@include font-size(12);
+				color: $text-lt;
+				text-align: left;
+			}
+
+			img {
+				margin: 0;
+				padding: 0;
+			}
+
+		} // .wp-caption
+
 	} // .entry-content
 
 	.entry-footer {
