@@ -45,6 +45,10 @@ function hoffmann_styles_and_scripts() {
 	// include theme scripts in footer
 	wp_register_script( 'hoffmann-main', get_template_directory_uri() . '/assets/scripts/build/main.min.js', array( 'jquery' ), null, true );
 	wp_enqueue_script( 'hoffmann-main' );
+
+	if ( comments_open() ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 
 /**
@@ -184,7 +188,7 @@ function hoffmann_register_pitches() {
 	$args = array(
 		'labels' => $labels,
 		'menu_position' => null,
-		'supports' => array('title','editor', 'attributes'),
+		'supports' => array('title','editor', 'attributes', 'comments'),
 		'public' => true,
 		'has_archive' => true,
 		'hierarchical' => false,
@@ -271,18 +275,8 @@ function hoffmann_lock_admin_head() {
 		return;
 	}
 
-	?>
-	<style type="text/css">
-	#adminmenuback, #adminmenuwrap {
-		display: none;
-	}
-	.wrap {
-		margin-top: 1.5%;
-	}
-	#wpcontent {
-		margin-left: 2%;
-	}
-	<?php
+	$output = '<style type="text/css">#adminmenuback, #adminmenuwrap {display: none;}.wrap {margin-top: 1.5%;}#wpcontent {margin-left: 2%;}';
+	echo $output;
 }
 
 /**
@@ -732,7 +726,6 @@ function hoffmann_paginate() {
 
 	echo '</ul></nav>' . "\n";
 }
-
 
 
 

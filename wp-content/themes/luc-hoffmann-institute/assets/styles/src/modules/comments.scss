@@ -1,0 +1,115 @@
+
+/*	==========================================================================
+	Comments
+	========================================================================== */
+
+.comments {
+
+}
+
+.comments-title {
+	@extend %sans;
+	@include font-size(24);
+}
+
+.comments-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.comment {
+	@extend %sans;
+	@include font-size(16);
+
+	p {
+		clear: both;
+	}
+
+	.reply a {
+		text-decoration: none;
+	}
+
+	ol {
+		list-style: none;
+	}
+
+	.children {
+		@include rem('padding', 1, 0, 0, 1);
+		list-style: none;
+	}
+}
+
+.comment-body {
+	@include rem('padding', 1);
+	background: #f6f6f6;
+}
+
+.comment .comment {
+	//@include rem('margin', 1, 0, 0, 1);
+}
+
+.comment-author {
+	float: left;
+
+	img {
+		display: inline-block;
+	}
+
+	cite {
+	}
+
+}
+
+.comment-meta {
+	float: right;
+	@extend %caps;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.comment-respond {
+	@extend %sans;
+
+	.comment-reply-title {
+		@include font-size(24);
+	}
+
+	.logged-in-as {
+		@include font-size(16);
+	}
+
+	.comment-form-comment {
+
+		label {
+			display: block;
+		}
+
+		textarea {
+			width: 100%;
+			@include rem('padding', 1);
+			border-color: #ddd;
+		}
+	}
+
+	.form-allowed-tags {
+		@include font-size(14);
+		color: $text-md;
+	}
+
+	.form-submit input {
+		@extend %antialiased;
+		border: none;
+		@include rem('padding', 1, 2);
+		text-align: center;
+		background: $fill-blue-dk;
+		color: #fff;
+
+		&:hover {
+			background: $fill-blue;
+		}
+	}
+
+} // .comment-respond

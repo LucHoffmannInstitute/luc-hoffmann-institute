@@ -25,6 +25,12 @@
 						<?php endwhile ?>
 
 					<?php endif ?>
+
+					<?php if (is_single() && (comments_open() || get_comments_number() != '0')) : ?>
+						
+  						<?php comments_template() ?>
+
+					<?php endif ?>
 	
 				</div><!-- .col.col-8 -->
 
