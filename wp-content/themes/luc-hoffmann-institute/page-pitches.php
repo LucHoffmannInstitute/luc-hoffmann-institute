@@ -3,11 +3,6 @@
  * Template name: Pitches: index
  */
 
-// redirect for non-logged in members
-if ( !is_user_logged_in() ) {
-	wp_redirect( home_url('wp-login.php') );
-} 
-
 get_header();
 
 $pitches = new WP_Query( array(

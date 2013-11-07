@@ -196,14 +196,14 @@ function hoffmann_register_pitches() {
 }
 
 /**
- * Add new role capability to read pitches
+ * Lock down pitches section
  */
-add_filter( 'members_get_capabilities', 'hoffmann_capability_pitches' );
-function hoffmann_capability_pitches( $capabilities ) {
+add_action( 'template_redirect', 'hoffmann_lock_pitches' );
+function hoffmann_lock_pitches() {
 
-	$capabilities[] = 'read_pitches';
-
-	return $capabilities;
+	if ( ( get_post_type() == 'pitch' ) && !is_user_logged_in() ) {
+		wp_redirect( home_url('wp-login.php') );
+	}
 }
 
 /**
