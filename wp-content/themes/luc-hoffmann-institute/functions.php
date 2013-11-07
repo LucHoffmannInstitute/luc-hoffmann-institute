@@ -196,6 +196,17 @@ function hoffmann_register_pitches() {
 }
 
 /**
+ * Add new role capability to read pitches
+ */
+add_filter( 'members_get_capabilities', 'hoffmann_capability_pitches' );
+function hoffmann_capability_pitches( $capabilities ) {
+
+	$capabilities[] = 'read_pitches';
+
+	return $capabilities;
+}
+
+/**
  * Admin settings
  */
 add_action( 'admin_init', 'hoffmann_settings' );
