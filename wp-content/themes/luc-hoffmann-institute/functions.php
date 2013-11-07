@@ -593,7 +593,7 @@ function hoffmann_page_ancestor( $attr = 'ID' ) {
 	}
 
 	// test for blog
-	if ( ( $post->post_type == 'post' || is_archive() ) ) {
+	if ( ( $post->post_type == 'post' || is_page( get_option( 'page_for_posts' ) ) ) ) {
 		$page_for_posts = get_option( 'page_for_posts' );
 
 		if ( $page_for_posts == 0 ) {
@@ -620,6 +620,7 @@ function hoffmann_page_ancestor( $attr = 'ID' ) {
 
 	// test for custom post types
 	$custom_post_types = get_post_types( array( '_builtin' => false ), 'object' );
+
 	if ( !empty( $custom_post_types ) && array_key_exists( $post->post_type, $custom_post_types ) ) {
 
 		// is parent_page slug defined?
@@ -651,11 +652,9 @@ function hoffmann_page_ancestor( $attr = 'ID' ) {
 	}
 }
 
-/*
-|---------------------------------------------------------------------------
-| Pagination
-|---------------------------------------------------------------------------
-*/
+/**
+ * Pagination
+ */
 function hoffmann_paginate() {
 
 	if( is_singular() )
