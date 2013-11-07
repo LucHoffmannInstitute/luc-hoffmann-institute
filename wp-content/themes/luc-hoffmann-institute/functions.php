@@ -726,6 +726,30 @@ function hoffmann_paginate() {
 	echo '</ul></nav>' . "\n";
 }
 
+/**
+ * Change "howdy"
+ */
+add_action( 'admin_bar_menu', 'hoffman_change_howdy', 11 );
+function hoffman_change_howdy( $wp_admin_bar ) {
+	$user_id = get_current_user_id();
+	$current_user = wp_get_current_user();
+	$profile_url = get_edit_profile_url( $user_id );
+
+	if ( $user_id != 0 ) {
+		$avatar = get_avatar( $user_id, 28 );
+		$howdy = sprintf( __( 'Welcome, %1$s' ), $current_user->display_name );
+		$class = empty( $avatar ) ? '' : 'with-avatar';
+
+		$wp_admin_bar->add_menu( array(
+			'id' => 'my-account',
+			'parent' => 'top-secondary',
+			'title' => $howdy . $avatar,
+			'href' => $profile_url,
+			'meta' => array( 'class' => $class )
+		) );
+	}
+}
+
 
 
 
