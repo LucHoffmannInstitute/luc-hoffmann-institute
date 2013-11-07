@@ -6,7 +6,8 @@ $categories = get_the_category_list();
     
     <header class="entry-header">
         <div class="entry-meta">
-            <?php the_category() ?>
+            <!--<?php the_category() ?>-->
+            <p class="entry-byline"><?php echo __('Posted by', 'hoffmann'); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?php echo get_the_author(); ?></a></p>
             <time class="entry-date" datetime="<?php get_the_date( 'c' ) ?>"><?php echo get_the_date( 'd.m.Y' ) ?></time>
         </div>
         <?php if ( is_single() ) : ?>
