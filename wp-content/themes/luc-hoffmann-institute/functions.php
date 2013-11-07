@@ -207,6 +207,59 @@ function hoffmann_lock_pitches() {
 }
 
 /**
+ * No dashboard access for subscribers
+ */
+add_action( 'admin_init', 'hoffmann_lock_dashboard' );
+function hoffmann_lock_dashboard() {
+	global $pagenow;
+
+	if ( current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	// remove 'dashboard' from admin menu
+	remove_menu_page( 'index.php' );
+
+	// disable access to anything but the profile page
+	if ( $pagenow !== 'profile.php' ) {
+		wp_redirect( home_url( 'wp-admin/profile.php' ) );
+	}
+}
+add_action( 'admin_bar_menu', 'hoffmann_lock_admin_bar_menu', 999 );
+function hoffmann_lock_admin_bar_menu( $wp_admin_bar ) {
+
+	if ( current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	$ids = array( 'dashboard' );
+	foreach ( $ids as $id ) {
+		$wp_admin_bar->remove_menu( $id );
+	}
+}
+
+add_action( 'admin_head', 'hoffmann_lock_admin_head' );
+function hoffmann_lock_admin_head() {
+
+	if ( current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	?>
+	<style type="text/css">
+	#adminmenuback, #adminmenuwrap {
+		display: none;
+	}
+	.wrap {
+		margin-top: 1.5%;
+	}
+	#wpcontent {
+		margin-left: 2%;
+	}
+	<?php
+}
+
+/**
  * Admin settings
  */
 add_action( 'admin_init', 'hoffmann_settings' );
