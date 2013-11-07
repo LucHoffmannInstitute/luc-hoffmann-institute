@@ -192,7 +192,23 @@ function hoffmann_register_pitches() {
 	);
 
 	register_post_type( 'pitch', $args );
+}
 
+/**
+ * Add 'pitches' to admin bar
+ */
+add_action( 'admin_bar_menu', 'hoffmann_admin_bar_pitches', 999 );
+function hoffmann_admin_bar_pitches( $wp_admin_bar ) {
+
+	// https://codex.wordpress.org/Function_Reference/add_node
+
+	$args = array(
+		'id' => 'pitches',
+		'title' => 'Pitches',
+		'href' => home_url( 'pitches' )
+	);
+
+	$wp_admin_bar->add_node( $args );
 }
 
 /**
@@ -225,6 +241,10 @@ function hoffmann_lock_dashboard() {
 		wp_redirect( home_url( 'wp-admin/profile.php' ) );
 	}
 }
+
+/**
+ * Remove 'dashboard' from admin bar
+ */
 add_action( 'admin_bar_menu', 'hoffmann_lock_admin_bar_menu', 999 );
 function hoffmann_lock_admin_bar_menu( $wp_admin_bar ) {
 
@@ -238,6 +258,9 @@ function hoffmann_lock_admin_bar_menu( $wp_admin_bar ) {
 	}
 }
 
+/**
+ * Remove wp menu for non-admins
+ */
 add_action( 'admin_head', 'hoffmann_lock_admin_head' );
 function hoffmann_lock_admin_head() {
 
