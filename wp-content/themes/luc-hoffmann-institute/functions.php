@@ -224,7 +224,7 @@ function hoffmann_admin_bar_pitches( $wp_admin_bar ) {
 add_action( 'template_redirect', 'hoffmann_lock_pitches' );
 function hoffmann_lock_pitches() {
 
-	if ( ( ( get_post_type() == 'pitch' ) && !is_user_logged_in() ) || is_page( 'pitches' ) ) {
+	if ( ( get_post_type() == 'pitch' || is_page( 'pitches' ) ) && !is_user_logged_in() ) {
 		wp_redirect( home_url('wp-login.php') );
 	}
 }
