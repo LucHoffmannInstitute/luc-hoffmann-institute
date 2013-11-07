@@ -149,10 +149,49 @@ function hoffmann_register_projects() {
 		'hierarchical' => false,
 		'capability_type' => 'page',
 		'rewrite' => $rewrite,
-		'exclude_from_search' => true
+		'exclude_from_search' => false
 	);
 
 	register_post_type( 'project', $args );
+}
+
+/**
+ * Register internal blog "pitches"
+ */
+add_action( 'init', 'hoffmann_register_pitches' );
+function hoffmann_register_pitches() {
+
+	$labels = array(
+		'name' => __( 'Pitches' ),
+		'singular_name' => __( 'Pitch' ),
+		'add_new' => __( 'Add New Pitch' ),
+		'edit_item' => __( 'Edit Pitch' ),
+		'add_new_item' => __( 'New Pitch' ),
+		'view_item' => __( 'View Pitch' ),
+		'search_items' => __( 'Search Pitches' ),
+		'not_found' => __( 'No Pitches found' ),
+		'not_found_in_trash' => __( 'No Pitches found in Trash' )
+	);
+
+	$rewrite = array(
+		'slug' => 'pitches',
+		'with_front' => false
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'menu_position' => null,
+		'supports' => array('title','editor', 'attributes'),
+		'public' => true,
+		'has_archive' => true,
+		'hierarchical' => false,
+		'capability_type' => 'post',
+		'rewrite' => $rewrite,
+		'exclude_from_search' => true,
+		'show_in_nav_menus' => false
+	);
+
+	register_post_type( 'pitch', $args );
 
 }
 
@@ -182,8 +221,6 @@ function hoffmann_settings() {
 	add_option( 'linked_in' );
 	add_settings_field( 'linked_in', 'LinkedIn URL', 'hoffmann_settings_linked_in', 'general' );
 	register_setting( 'general', 'linked_in', 'hoffmann_settings_twitter_sanitize' );
-
-
 }
 
 /**

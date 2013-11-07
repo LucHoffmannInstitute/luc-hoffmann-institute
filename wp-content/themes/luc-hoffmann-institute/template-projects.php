@@ -28,6 +28,8 @@ $projects = new WP_Query( array(
 
 			<?php endif ?>
 
+			<?php wp_reset_postdata(); ?>
+
 		</section>
 
     </div><!-- .page-content -->
