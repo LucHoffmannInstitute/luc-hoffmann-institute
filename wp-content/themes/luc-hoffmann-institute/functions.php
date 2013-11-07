@@ -92,6 +92,9 @@ function hoffmann_theme_setup() {
 		'main-menu' => 'Main menu'
 	));
 
+	// Editor styles
+	add_editor_style( get_template_directory_uri() . '/assets/styles/build/editor-style.css' );
+
 	// Featured images
 	//if ( function_exists( 'add_theme_support' ) ) {
 	//	add_theme_support('post-thumbnails');
