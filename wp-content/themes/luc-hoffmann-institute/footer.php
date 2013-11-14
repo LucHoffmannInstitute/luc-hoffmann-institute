@@ -17,6 +17,32 @@
                             </div>
                         </form>
 
+                        <div class="cols social-and-search">
+                            
+                            <div class="col col-7">
+                                <?php get_search_form(); ?>            
+                            </div>
+
+                            <div class="col col-5">
+                                <div class="social">
+                                    <ul>
+                                        <?php if ( get_option( 'contact_email' ) ) : ?>
+                                            <li><a href="mailto:<?php echo get_option( 'contact_email' ) ?>?Subject=Luc%20Hoffmann%20Institute"><i class="icon-mail"></i> <span>Contact us</span></a></li>
+                                        <?php endif ?>
+                                        <li><a href="<?php bloginfo( 'rss2_url' ) ?>"><i class="icon-rss"></i> <span>Subscribe via RSS</span></a></li>
+                                        <?php if ( get_option( 'twitter_handle' ) ) : ?>
+                                            <li><a href="https://twitter.com/<?php echo get_option( 'twitter_handle' ) ?>"><i class="icon-twitter"></i> <span>Twitter</span></a></li>
+                                        <?php endif ?>
+                                        <!--<li><a href="#"><i class="icon-facebook"></i> <span>Facebook</span></a></li>-->
+                                        <?php if ( get_option( 'linked_in' ) ) : ?>
+                                            <li><a href="<?php echo get_option( 'linked_in' ) ?>"><i class="icon-linkedin"></i> <span>LinkedIn</span></a></li>
+                                        <?php endif ?>
+                                    </ul>
+                                </div>            
+                            </div>
+                        
+                        </div>
+
                     </div><!-- .col.col-6 -->
 
                     <div class="col col-6 align-left">
@@ -38,32 +64,6 @@
 
                     <div class="col col-6">
                         <p class="info">&copy; 2013 Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
-                    </div>
-
-                    <div class="col col-6 cols social-and-search">
-                            
-                        <div class="col col-7">
-                            <?php get_search_form(); ?>            
-                        </div>
-
-                        <div class="col col-5">
-                            <div class="social">
-                                <ul>
-                                    <?php if ( get_option( 'contact_email' ) ) : ?>
-                                        <li><a href="mailto:<?php echo get_option( 'contact_email' ) ?>?Subject=Luc%20Hoffmann%20Institute"><i class="icon-mail"></i> <span>Contact us</span></a></li>
-                                    <?php endif ?>
-                                    <li><a href="<?php bloginfo( 'rss2_url' ) ?>"><i class="icon-rss"></i> <span>Subscribe via RSS</span></a></li>
-                                    <?php if ( get_option( 'twitter_handle' ) ) : ?>
-                                        <li><a href="https://twitter.com/<?php echo get_option( 'twitter_handle' ) ?>"><i class="icon-twitter"></i> <span>Twitter</span></a></li>
-                                    <?php endif ?>
-                                    <!--<li><a href="#"><i class="icon-facebook"></i> <span>Facebook</span></a></li>-->
-                                    <?php if ( get_option( 'linked_in' ) ) : ?>
-                                        <li><a href="<?php echo get_option( 'linked_in' ) ?>"><i class="icon-linkedin"></i> <span>LinkedIn</span></a></li>
-                                    <?php endif ?>
-                                </ul>
-                            </div>            
-                        </div>
-                    
                     </div>
 
                 </div><!-- .cols -->
