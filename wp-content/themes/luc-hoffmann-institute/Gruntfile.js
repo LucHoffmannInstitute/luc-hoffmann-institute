@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				options: {
-					sourcemap: true
+					//sourcemap: true
 				},
 				files: {
 					'./assets/styles/build/screen.css': [

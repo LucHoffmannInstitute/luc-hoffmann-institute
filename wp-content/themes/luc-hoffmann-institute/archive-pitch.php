@@ -1,6 +1,8 @@
 <?php
 get_header();
 
+$page = get_page_by_title( 'pitches' );
+
 $pitches = new WP_Query( array(
     'post_type' => 'pitch',
     'posts_per_page' => -1,
@@ -24,6 +26,24 @@ $pitches = new WP_Query( array(
 				</div><!-- .col.col-4 -->
 
 				<div class="col col-8">
+
+					<?php if ( isset( $page ) && !empty( $page ) ) : ?>
+
+						<?php if ( isset( $page->post_content ) && !empty( $page->post_content ) && $page->post_content !== '' ) : ?>
+
+							<div class="entry">
+								
+								<div class="entry-content">
+									<?php echo apply_filters( 'the_content', $page->post_content ) ?>
+								</div>
+
+								<hr>
+
+							</div>
+
+						<?php endif ?>
+
+					<?php endif ?>
 						
 					<?php if ( $pitches->have_posts() ) : ?>
 
