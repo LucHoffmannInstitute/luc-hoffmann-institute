@@ -201,7 +201,7 @@ class Hoffmann_Twitter_Widget extends WP_Widget {
 /**
  * Image widget
  */
-register_widget( 'Hoffmann_Image_Widget' );
+//register_widget( 'Hoffmann_Image_Widget' );
 
 class Hoffmann_Image_Widget extends WP_Widget {
 
