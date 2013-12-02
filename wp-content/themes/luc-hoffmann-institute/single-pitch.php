@@ -12,7 +12,7 @@
 
 					<nav class="submenu">
 						<ul>
-							<li class="active"><a href="<?php home_url() ?>/pitches/">Pitches blog</a></li>
+							<li class="active"><a href="<?php home_url() ?>/pitches/">Pitch site</a></li>
 						</ul>
 					</nav>
 
