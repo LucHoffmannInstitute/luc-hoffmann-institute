@@ -10,6 +10,12 @@
 				
 				<div class="col col-4">
 
+					<nav class="submenu">
+						<ul>
+							<li class="active"><a href="<?php home_url() ?>/pitches/">Pitches blog</a></li>
+						</ul>
+					</nav>
+
 					<?php get_sidebar() ?>
 
 				</div><!-- .col.col-4 -->
