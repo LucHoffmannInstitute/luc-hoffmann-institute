@@ -7,7 +7,7 @@ $comments = $comments_number > 0 ? ' | <a href="' . get_comments_link( get_the_I
     
     <header class="entry-header">
         <div class="entry-meta">
-            <p class="entry-byline"><?php echo __('Posted by', 'hoffmann'); ?> <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?php echo get_the_author(); ?></a><?php echo $comments ?></p>
+            <p class="entry-byline"><?php echo __('Posted by', 'hoffmann'); ?> <?php echo get_the_author(); ?><?php echo $comments ?></p>
             <time class="entry-date" datetime="<?php get_the_date( 'c' ) ?>"><?php echo get_the_date( 'd.m.Y' ) ?></time>
         </div>
         <?php if ( is_single() ) : ?>
