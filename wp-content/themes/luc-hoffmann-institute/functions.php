@@ -750,6 +750,15 @@ function hoffman_change_howdy( $wp_admin_bar ) {
 	}
 }
 
+/**
+ * [lede]...[/lede]
+ */
+add_shortcode( 'lede', 'expedart_shortcode_lede' );
+function expedart_shortcode_lede( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	), $atts ) );
+	return '<div class="lede">' . do_shortcode( $content ) . '</div>';
+}
 
 
 
