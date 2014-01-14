@@ -3,8 +3,6 @@
 /**
  * Quote widget
  */
-register_widget( 'Hoffmann_Quote_Widget' );
-
 class Hoffmann_Quote_Widget extends WP_Widget {
 
 	public function __construct() {
@@ -70,12 +68,11 @@ class Hoffmann_Quote_Widget extends WP_Widget {
 		return $instance;
 	}
 }
+register_widget( 'Hoffmann_Quote_Widget' );
 
 /**
  * Twitter widget
  */
-register_widget( 'Hoffmann_Twitter_Widget' );
-
 class Hoffmann_Twitter_Widget extends WP_Widget {
 
 	public function __construct() {
@@ -197,12 +194,11 @@ class Hoffmann_Twitter_Widget extends WP_Widget {
 		return $text;
 	}
 }
+register_widget( 'Hoffmann_Twitter_Widget' );
 
 /**
  * Image widget
  */
-//register_widget( 'Hoffmann_Image_Widget' );
-
 class Hoffmann_Image_Widget extends WP_Widget {
 
 	public function __construct() {
@@ -278,3 +274,4 @@ class Hoffmann_Image_Widget extends WP_Widget {
 		return $instance;
 	}
 }
+//register_widget( 'Hoffmann_Image_Widget' );
