@@ -21,7 +21,7 @@
 			bottom: 100%;
 			left: 0;
 			height: 100px;
-			box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 		}
 	}
 
@@ -65,7 +65,15 @@
 			display: table-cell;
 			vertical-align: middle;
 			width: auto;
-			border-right: 1px solid rgba(0,0,0,0.25);
+			border-right: 1px solid darken( $blue-darker, 3% );
+		}
+
+		&:last-child a {
+			border-right: 1px solid darken( $blue-darker, 3% );
+
+			@include min-width ( $iPadPortrait ) {
+				border-right: none;
+			}
 		}
 
 	} // li
@@ -77,9 +85,9 @@
 		text-decoration: none;
 		font-weight: 600;
 		color: #fff;
-		border: 1px solid rgba(0,0,0,0.25);
+		border: 1px solid darken( $blue-darker, 3% );
+		border-top: none;
 		border-right: none;
-		border-bottom: none;
 
 		@include min-width ( $iPadPortrait ) {
 			display: table;
@@ -128,8 +136,8 @@
 
 		@include min-width ( $iPadLandscape ) {
 			width: 190px;
-			border-left: 1px solid $fill-blue-very-dk;
-			border-right: 1px solid $fill-blue-very-dk;
+			//border-left: 1px solid $blue-darker;
+			//border-right: 1px solid $blue-darker;
 		}			
 
 		.home & {
@@ -142,7 +150,7 @@
 
 			@include min-width ( $iPadLandscape ) {
 				width: 190px;
-				border-left: 1px solid $fill-blue-very-dk;
+				//border-left: 1px solid $fill-blue-very-dk;
 			}
 
 		} // .menu-fixed &
