@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
 		paths: {
 			dev: './',
-			tmp: './tmp/'
+			tmp: './.tmp/'
 		},
 
 		/**

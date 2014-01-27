@@ -15,6 +15,7 @@ Thumbs.db
 node_modules
 bower_components
 *.tweetcache
+.tmp
 
 # wordpress specific
 wp-config.php
