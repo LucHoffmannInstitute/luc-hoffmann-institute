@@ -11,9 +11,15 @@ require.config({
 });
 
 define([
+	'fitVids',
 	'slider'
 ], function () {
 	'use strict';
+
+	/**
+	 * FitVids
+	 */
+	$('.entry').fitVids();
 
 	/**
 	 * Expand bio profiles
