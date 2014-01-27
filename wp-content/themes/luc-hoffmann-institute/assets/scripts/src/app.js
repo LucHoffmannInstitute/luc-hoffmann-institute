@@ -14,4 +14,27 @@ define([
 	'slider'
 ], function () {
 	'use strict';
+
+	/**
+	 * Expand bio profiles
+	 */
+	$.fn.expandProfile = function () {
+		return this.each( function () {
+
+			var $link = $(this).find('.show-profile-content'),
+				$content = $(this).find('.profile-content');
+
+			$link.on( 'click', function ( ev ) {
+				ev.preventDefault();
+				$content.toggleClass('inactive');
+				if ( $content.hasClass('inactive') ) {
+					$link.text('Show details');
+				} else {
+					$link.text('Hide details');
+				}
+			} );
+
+		} );
+	};
+	$('.profile').expandProfile();
 });
