@@ -37,13 +37,11 @@
 		line-height: 1.25em;
 		color: #fff;
 		opacity: 0;
-		background: $fill-blue-dk;
 
 		.no-js & {
 			opacity: 1;
 		}
-
-	} // .handshake-item-message
+	}
 
 	.handshake-item.fadeUpAndIn .handshake-item-message {
 		opacity: 1;
@@ -84,120 +82,7 @@
 
 	} // .handshake-item.fadeUpAndOut .handshake-item-message
 
-//	.handshake-item {
-//		position: absolute;
-//		top: 0;
-//		right: 0;
-//		bottom: 0;
-//		left: 0;
-//		display: table;
-//		width: 100%;
-//		height: 100%;
-//	}
-//
-//	.handshake-item-inner {
-//		display: table-cell;
-//		vertical-align: middle;
-//		@include rem('padding', 4, 0, 4, 4);
-//		width: 100%;
-//		height: 100%;
-//		@include font-size(30);
-//		line-height: 1.25em;
-//		color: #fff;
-//
-//		.cssanimations & {
-//			opacity: 0;
-//		}
-//
-//	}
-//
-//	.handshake-item-message {
-//		margin: 0;
-//	}
-//
-//	.handshake-item.fadeUpAndIn .handshake-item-inner {
-//		animation: {
-//			name: fadeUpAndIn;
-//			duration: 1s;
-//			iteration-count: 1;
-//			direction: normal;
-//			timing-function: ease-in-out;
-//			fill-mode: forwards;
-//			delay: 0s;
-//		}
-//	}
-//
-//	.handshake-item.fadeUpAndOut .handshake-item-inner {
-//		animation: {
-//			name: fadeUpAndOut;
-//			duration: 1s;
-//			iteration-count: 1;
-//			direction: normal;
-//			timing-function: ease-in-out;
-//			fill-mode: forwards;
-//			delay: 0s;
-//		}
-//	}
-
-} // .handshake
-
-//.handshake {
-//	position: relative;
-//	margin: 0;
-//	@include rem('padding', 3, 0, 3, 3);
-//	width: 100%;
-//	height: 250px;
-//border: 1px solid red;
-//	list-style: none;
-//	@include font-size(24);
-//	line-height: 1.25em;
-//	color: #fff;
-//
-//	@include min-width ( $iPadPortrait ) {
-//		display: table-cell;
-//		@include rem('padding', 4, 0, 4, 4);
-//		@include font-size(30);
-//	}
-//
-//	.handshake-item {
-//		position: absolute;
-//		display: none;
-//		transform: translateZ(0);
-//
-//		&.active {
-//			display: block;
-//			animation: {
-//				name: fadeUpAndIn;
-//				duration: 1s;
-//				iteration-count: 1;
-//				direction: normal;
-//				timing-function: ease-in-out;
-//				fill-mode: forwards;
-//				delay: 0s;
-//			}
-//			opacity: 1;
-//
-//		} // &.active
-//
-//		&.fadeOut {
-//			animation: {
-//				name: fadeUpAndOut;
-//				duration: 1s;
-//				iteration-count: 1;
-//				direction: normal;
-//				timing-function: ease-in-out;
-//				fill-mode: forwards;
-//				delay: 0s;
-//			}
-//		}
-//
-//	} // .handshake-item
-//
-//	.cssanimations & .handshake-item.active {
-//		opacity: 0;
-//	}
-//
-//} // .handshake
+} 
 
 @keyframes fadeUpAndIn {
 	0% {

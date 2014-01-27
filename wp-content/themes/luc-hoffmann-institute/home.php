@@ -1,4 +1,7 @@
 <?php 
+/**
+ * Blog index
+ */
 get_header();
 ?>
 
@@ -20,11 +23,15 @@ get_header();
 						
 					<?php if ( have_posts() ) : ?>
 
-						<?php while ( have_posts() ) : the_post() ?>
-	
-							<?php get_template_part( 'templates/entry' ); ?>
+						<div class="Blog-items">
+								
+							<?php while ( have_posts() ) : the_post() ?>
+		
+								<?php get_template_part( 'templates/blog-item-excerpt' ); ?>
 
-						<?php endwhile ?>
+							<?php endwhile ?>
+
+						</div><!-- .Blog-items -->
 
 					<?php endif ?>
 	

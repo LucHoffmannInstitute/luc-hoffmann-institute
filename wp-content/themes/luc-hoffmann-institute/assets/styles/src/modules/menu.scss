@@ -4,7 +4,7 @@
 	========================================================================== */
 
 .menu {
-	background: #273747;
+	background: $blue-darker;
 
 	@include min-width ( $iPadPortrait ) {
 		display: block;
@@ -74,11 +74,10 @@
 		@extend %sans;
 		display: block;
 		@include font-size(14);
-		//@include line-height(24);
 		text-decoration: none;
 		font-weight: 600;
 		color: #fff;
-		border: 1px solid darken( $fill-blue-dk, 10% );
+		border: 1px solid rgba(0,0,0,0.25);
 		border-right: none;
 		border-bottom: none;
 
@@ -114,7 +113,7 @@
 	li.current_page_parent a,
 	li.active a,
 	li a:hover {
-		background: $fill-blue-very-dk;
+		background: $blue-base;
 	}
 
 	li.logo {

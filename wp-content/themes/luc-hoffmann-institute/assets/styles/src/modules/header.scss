@@ -6,7 +6,7 @@
 .header {
 	position: relative;
 	@extend %antialiased;
-	background: $fill-blue-dk;
+	background: $blue-dark;
 
 	@include min-width ( $iPadPortrait ) {
 		//height: 250px;

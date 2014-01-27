@@ -8,7 +8,7 @@
 	.blog & {
 		@include rem('padding', 2, 0);
 		@include rem('padding', 0, 0, 2);
-		border-bottom: 1px solid $border-lt;
+		border-bottom: 1px solid $gray-light;
 
 		&:last-child {
 			border-bottom: none;
@@ -96,7 +96,7 @@
 		@include font-size(18);
 		line-height: 1.5;
 		font-weight: 400;
-		color: $text-md-dk;
+		color: $text-light;
 
 		@include min-width( $iPadPortrait ) {
 			@include font-size(24);
@@ -114,7 +114,7 @@
 		h1, h2, h3, h4, h5, h6 {
 			@extend %sans;
 			font-weight: 600;
-			color: $text-dk;
+			color: $text;
 			line-height: 1.5;
 		}
 
@@ -181,12 +181,12 @@
 
 			thead,
 			tfoot {
-				color: $text-dk;
+				color: $text;
 			}
 
 			tbody {
-				border-top: 1px solid $border-lt;
-				border-bottom: 1px solid $border-lt;
+				border-top: 1px solid $gray-light;
+				border-bottom: 1px solid $gray-light;
 			}
 
 			td,
@@ -260,7 +260,7 @@
 			.wp-caption-text {
 				margin: 0;
 				@include font-size(12);
-				color: $text-lt;
+				color: $text-light;
 				text-align: left;
 			}
 

@@ -24,9 +24,8 @@ form {
 		input[type="text"] {
 			@include rem('padding', 0.5, 1);
 			width: 85%;
-			background: $bg-dk-lt;
-			color: $text-md;
-			outline: 2px solid purple;
+			background: $gray-base;
+			color: $text;
 
 			@include placeholder {
 				color: $text;
@@ -36,10 +35,10 @@ form {
 
 		button[type="submit"] {
 			width: 15%;
-			background: $bg-dk-md;
+			background: $blue-dark;
 
 			&:hover {
-				background: $bg-dk-dk;
+				background: $blue-base;
 			}
 
 			span {
@@ -51,7 +50,7 @@ form {
 				top: 0.1em;
 				vertical-align: middle;
 				@include font-size(18);
-				color: $text-md;
+				color: $text;
 			}
 
 		} // button[type="submit"]

@@ -42,7 +42,7 @@
 
 .comment-body {
 	@include rem('padding', 1);
-	background: #f6f6f6;
+	background: $bg-gray;
 }
 
 .comment .comment {
@@ -90,13 +90,13 @@
 		textarea {
 			width: 100%;
 			@include rem('padding', 1);
-			border-color: #ddd;
+			border-color: $gray-light;
 		}
 	}
 
 	.form-allowed-tags {
 		@include font-size(14);
-		color: $text-md;
+		color: $text-light;
 	}
 
 	.form-submit input {
@@ -104,11 +104,11 @@
 		border: none;
 		@include rem('padding', 1, 2);
 		text-align: center;
-		background: $fill-blue-dk;
+		background: $blue-dark;
 		color: #fff;
 
 		&:hover {
-			background: $fill-blue;
+			background: $blue-base;
 		}
 	}
 

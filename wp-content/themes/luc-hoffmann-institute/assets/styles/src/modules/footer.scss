@@ -6,9 +6,9 @@
 	@extend %antialiased;
 	@extend %sans;
 	@include rem('padding', 2, 0);
-	color: $text-dk;
+	color: $text;
 	color: rgba(0,0,0,0.75);
-	background: #e6e6e6;
+	background: $bg-gray;
 
 	.panda-logo {
 		display: block;

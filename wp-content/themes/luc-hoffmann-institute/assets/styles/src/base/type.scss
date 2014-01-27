@@ -32,18 +32,17 @@ body {
 	@include line-height(27);
 	font-weight: 100;
 	color: $text;
-	color: #666;
 }
 
 /*	Links
 		======================================================================== */
 
 a {
-	color: $fill-blue;
+	color: $blue-light;
 }
 
 a:hover {
-	color: $fill-blue-dk;
+	color: $blue-dark;
 }
 
 /*
