@@ -5,7 +5,7 @@
 	// Does this page have a banner assigned?
 	$banner_id = get_field( 'image' );
 
-	$page_ancestor_id = hoffmann_page_ancestor();
+	$page_ancestor_id = hoffmann_ancestor();
 	$page_ancestor = get_post( $page_ancestor_id );
 
 	if ( !isset( $banner_id ) || empty( $banner_id ) ) {
