@@ -65,6 +65,16 @@ module.exports = function(grunt) {
 		},
 
 		/**
+		 * Copying/moving/renaming files
+		 */
+		copy: {
+			royalslider: {
+				src: '<%= paths.dev %>assets/vendor/royalslider/royalslider.css',
+				dest: '<%= paths.dev %>assets/vendor/royalslider/royalslider.scss'
+			}
+		},
+
+		/**
 		 * SASS
 		 * preprocess assets/styles/src/*.scss into tmp
 		 */
@@ -177,6 +187,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -195,6 +206,7 @@ module.exports = function(grunt) {
 		'jshint',
 		'requirejs',
 		'modernizr',
+		'copy',
 		'sass',
 		'autoprefixer',
 		'cssmin',
