@@ -1218,6 +1218,7 @@ body {
 .menu li.current-menu-item a,
 .menu li.current-menu-parent a,
 .menu li.current-menu-ancestor a,
+.menu li.current-page-ancestor a,
 .menu li.active a,
 .menu li a:hover {
   background: #1f2b38;

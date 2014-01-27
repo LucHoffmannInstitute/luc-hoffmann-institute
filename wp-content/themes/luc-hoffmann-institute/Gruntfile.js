@@ -113,7 +113,7 @@ module.exports = function(grunt) {
 			dist: {
 				expand: true,
 				cwd: '<%= paths.tmp %>',
-				src: ['.*.css'],
+				src: ['*.css'],
 				dest: '<%= paths.dev %>assets/styles/build',
 				ext: '.css'
 			}
