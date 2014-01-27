@@ -8,7 +8,7 @@
 				
 				<div class="col col-4">
 						
-					<?php get_template_part( 'partials/partial', 'submenu' ) ?>
+					<?php get_template_part( 'templates/submenu' ) ?>
 
 					<?php get_sidebar() ?>
 
@@ -38,6 +38,6 @@
 
     </div><!-- .page-content -->
 
-    <?php get_template_part( 'partials/partial', 'page-footer' ) ?>
+    <?php get_template_part( 'templates/page-footer' ) ?>
 
 <?php get_footer() ?>

@@ -8,7 +8,7 @@
 				
 				<div class="col col-4">
 						
-					<?php get_template_part( 'partials/partial', 'submenu' ) ?>
+					<?php get_template_part( 'templates/submenu' ) ?>
 
 					<?php get_sidebar() ?>
 
@@ -20,7 +20,7 @@
 
 						<?php while ( have_posts() ) : the_post() ?>
 	
-							<?php get_template_part( 'partials/partial', 'entry-search' ); ?>
+							<?php get_template_part( 'templates/entry-search' ); ?>
 
 						<?php endwhile ?>
 
@@ -34,6 +34,6 @@
 
     </div><!-- .page-content -->
 
-    <?php get_template_part( 'partials/partial', 'page-footer' ) ?>
+    <?php get_template_part( 'templates/page-footer' ) ?>
 
 <?php get_footer() ?>

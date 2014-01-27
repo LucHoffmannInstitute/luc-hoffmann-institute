@@ -1,6 +1,6 @@
 <?php get_header() ?>
 
-    <?php get_template_part( 'partials/partial', 'page-header' ) ?>
+    <?php get_template_part( 'templates/page-header' ) ?>
 
     <div class="page-content">
     		
@@ -20,7 +20,7 @@
 
 						<?php while ( have_posts() ) : the_post() ?>
 	
-							<?php get_template_part( 'partials/partial', 'entry' ); ?>
+							<?php get_template_part( 'templates/entry' ); ?>
 
 						<?php endwhile ?>
 
@@ -40,6 +40,6 @@
 
 	</footer><!-- .page-footer -->
 
-    <?php get_template_part( 'partials/partial', 'page-footer' ) ?>
+    <?php get_template_part( 'templates/page-footer' ) ?>
 
 <?php get_footer() ?>

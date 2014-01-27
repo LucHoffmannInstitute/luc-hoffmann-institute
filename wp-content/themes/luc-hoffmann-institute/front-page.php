@@ -36,7 +36,7 @@ $blog_posts = new WP_Query( array(
 
                 <?php while ( $projects->have_posts() ) : $projects->the_post() ?>
 
-                    <?php get_template_part( 'partials/partial', 'project' ) ?>
+                    <?php get_template_part( 'templates/project' ) ?>
 
                 <?php endwhile ?>
 
@@ -58,7 +58,7 @@ $blog_posts = new WP_Query( array(
 
                     <?php while ( $blog_posts->have_posts() ) : $blog_posts->the_post() ?>
                         
-                        <?php get_template_part( 'partials/partial', 'entry-home-page' ) ?>
+                        <?php get_template_part( 'templates/entry-home-page' ) ?>
 
                     <?php endwhile ?>
 

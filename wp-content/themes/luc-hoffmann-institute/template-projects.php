@@ -12,7 +12,7 @@ $projects = new WP_Query( array(
 ) );
 ?>
 
-	<?php get_template_part( 'partials/partial', 'page-header' ) ?>
+	<?php get_template_part( 'templates/page-header' ) ?>
 
     <div class="page-content">
 
@@ -22,7 +22,7 @@ $projects = new WP_Query( array(
 
 				<?php while ( $projects->have_posts() ) : $projects->the_post() ?>
 
-					<?php get_template_part( 'partials/partial', 'project' ); ?>
+					<?php get_template_part( 'templates/project' ); ?>
 
 				<?php endwhile ?>
 
@@ -34,6 +34,6 @@ $projects = new WP_Query( array(
 
     </div><!-- .page-content -->
 
-    <?php get_template_part( 'partials/partial', 'page-footer' ) ?>
+    <?php get_template_part( 'templates/page-footer' ) ?>
 
 <?php get_footer() ?>

@@ -11,7 +11,7 @@ $pitches = new WP_Query( array(
 ) );
 ?>
 
-    <?php get_template_part( 'partials/partial', 'page-header' ) ?>
+    <?php get_template_part( 'templates/page-header' ) ?>
 
     <div class="page-content">
 
@@ -55,7 +55,7 @@ $pitches = new WP_Query( array(
 
 						<?php while ( $pitches->have_posts() ) : $pitches->the_post() ?>
 	
-							<?php get_template_part( 'partials/partial', 'pitch' ); ?>
+							<?php get_template_part( 'templates/pitch' ); ?>
 
 						<?php endwhile ?>
 
@@ -71,6 +71,6 @@ $pitches = new WP_Query( array(
 
     </div><!-- .page-content -->
 
-    <?php get_template_part( 'partials/partial', 'page-footer' ) ?>
+    <?php get_template_part( 'templates/page-footer' ) ?>
 
 <?php get_footer() ?>
