@@ -2783,6 +2783,70 @@ define('slider',[
 	// auto init
 	$('.projects-slider').slider();
 });
+/**
+ * Handshake animations
+ */
+define('handshake',[
+], function () {
+	
+
+	var Handshake = function ( element, options ) {
+		this.$el = element;
+		this.init( options );
+	};
+
+	Handshake.prototype = {
+	};
+
+	Handshake.prototype.settings = {
+		itemSelector: '.handshake-item',
+		animateActiveClass: 'fadeUpAndIn',
+		animateInactiveClass: 'fadeUpAndOut',
+		delay: 4000
+	};
+
+	Handshake.prototype.init = function ( options ) {
+		var _this = this;
+
+		this.options = $.extend( true, {}, this.settings, options, this.$el.data('slider') );
+
+		// get items
+		this.$items = $( this.options.itemSelector );
+
+		// run intervals
+		setInterval( function () {
+			_this.animateHandshake();
+		}, this.options.delay );
+	};
+
+	/**
+	 * Run animations
+	 */
+	Handshake.prototype.animateHandshake = function () {
+		var $activeItem = this.$items.filter( '.' + this.options.animateActiveClass );
+		var $nextItem = $activeItem.next();
+
+		$nextItem = $nextItem.length ? $nextItem : this.$items.first();
+
+		$activeItem.removeClass( this.options.animateActiveClass );
+		$activeItem.addClass( this.options.animateInactiveClass );
+
+		$nextItem.removeClass( this.options.animateInactiveClass );
+		$nextItem.addClass( this.options.animateActiveClass );
+	};
+
+	/**
+	 * jQuery plugin
+	 */
+	$.fn.handshake = function ( options ) {
+		return this.each( function () {
+			new Handshake( $(this), options );
+		} );
+	};
+
+	// auto init
+	$('.handshake').handshake();
+});
 require.config({
 	paths: {
 		getStyleProperty: 'bower_components/get-style-property/get-style-property',
@@ -2791,13 +2855,15 @@ require.config({
 		skrollr: 'bower_components/skrollr/src/skrollr',
 		fitVids: 'bower_components/fitvids/jquery.fitvids',
 		royalSlider: 'assets/vendor/royalslider/dev/jquery.royalslider',
-		slider: 'assets/scripts/src/modules/slider'
+		slider: 'assets/scripts/src/modules/slider',
+		handshake: 'assets/scripts/src/modules/handshake'
 	}
 });
 
 define('assets/scripts/src/app.js',[
 	'fitVids',
-	'slider'
+	'slider',
+	'handshake'
 ], function () {
 	
 

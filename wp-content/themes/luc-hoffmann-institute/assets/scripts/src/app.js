@@ -6,13 +6,15 @@ require.config({
 		skrollr: 'bower_components/skrollr/src/skrollr',
 		fitVids: 'bower_components/fitvids/jquery.fitvids',
 		royalSlider: 'assets/vendor/royalslider/dev/jquery.royalslider',
-		slider: 'assets/scripts/src/modules/slider'
+		slider: 'assets/scripts/src/modules/slider',
+		handshake: 'assets/scripts/src/modules/handshake'
 	}
 });
 
 define([
 	'fitVids',
-	'slider'
+	'slider',
+	'handshake'
 ], function () {
 	'use strict';
 
