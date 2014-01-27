@@ -1,4 +1,9 @@
-<?php get_header() ?>
+<?php 
+/**
+ * 404 template
+ */
+get_header();
+?>
 
     <div class="page-content">
     		
