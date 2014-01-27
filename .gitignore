@@ -16,6 +16,7 @@ node_modules
 bower_components
 *.tweetcache
 .tmp
+npm-debug.log
 
 # wordpress specific
 wp-config.php
