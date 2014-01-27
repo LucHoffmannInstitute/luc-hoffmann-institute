@@ -578,6 +578,22 @@ function hoffmann_profile_list( $atts ) {
 }
 
 /**
+ * Prevent "news" from being highlighted for custom post types
+ */
+function custom_fix_blog_tab_on_cpt($classes,$item,$args) {
+    if(!is_singular('post') && !is_category() && !is_tag()) {
+        $blog_page_id = intval(get_option('page_for_posts'));
+        if($blog_page_id != 0) {
+            if($item->object_id == $blog_page_id) {
+				unset($classes[array_search('current_page_parent',$classes)]);
+			}
+        }
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class','custom_fix_blog_tab_on_cpt',10,3);
+
+/**
  * Get page ancestor
  */
 function hoffmann_page_ancestor( $attr = 'ID' ) {
