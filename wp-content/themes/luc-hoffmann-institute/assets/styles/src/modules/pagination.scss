@@ -16,7 +16,7 @@
 	}
 
 	li .current {
-		background: $fill-blue-dk;
+		background: $blue-dark;
 		color: #fff;
 	}
 
@@ -24,8 +24,13 @@
 		display: block;
 		@include rem('padding', 1);
 		text-decoration: none;
-		background: $bg-lt;
-		color: $text-md-dk;
+		background: $bg-gray;
+		color: $text-light;
+	}
+
+	a:hover {
+		background: $blue-base;
+		color: #fff;
 	}
 
 } // .pagination
@@ -92,13 +97,13 @@
 		background: none;
 		font-weight: 400;
 		//color: $text !important;
-		color: $text-md-dk;
+		color: $text-light;
 		transition: color .1s ease;
 
 		&:hover {
 			//color: #fff;
 			//background: $fill-blue;
-			color: $fill-blue-dk;
+			color: $blue-base;
 		}
 
 		i {

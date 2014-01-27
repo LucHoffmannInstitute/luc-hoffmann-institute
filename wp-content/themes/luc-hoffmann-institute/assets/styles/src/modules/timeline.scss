@@ -15,7 +15,7 @@
 		top: 0;
 		bottom: 0;
 		left: 0;
-		background: $bg-lt;
+		background: $bg-gray;
 		@include rem('width', 1);
 		border-radius: $border-radius;
 	}
@@ -37,13 +37,14 @@
 			@include rem('left', -0.2);
 			@include rem('width', 1);
 			@include rem('height', 1);
-			background: $fill-blue;
+			background: $blue-light;
 			border: 0px solid #fff;
 			@include rem('border-width', 0.25);
 		}
 
 		time {
 			@extend %sans;
+			display: block;
 			@include font-size(20);
 			font-weight: 600;
 		}

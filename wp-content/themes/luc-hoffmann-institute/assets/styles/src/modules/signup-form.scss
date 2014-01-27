@@ -41,7 +41,7 @@
 		width: 90%;
 		border: none;
 		background: #fff;
-		color: $fill-blue-dk;
+		color: $text-light;
 
 		@include placeholder {
 			color: $text;
@@ -55,11 +55,11 @@
 		border: none;
 		@include rem('padding', 1, 0);
 		text-align: center;
-		background: $fill-blue-dk;
+		background: $blue-darker;
 		color: #fff;
 
 		&:hover {
-			background: $fill-blue;
+			background: $blue-base;
 		}
 
 		i {

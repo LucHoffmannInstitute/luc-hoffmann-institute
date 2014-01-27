@@ -27,6 +27,7 @@ $gray-light: #bcc1c2;
 
 // Light gray background
 $bg-gray: #e6e6e6;
+$bg-gray-light: #fdfdfd;
 
 // Base text color
 $text: #444;
@@ -34,45 +35,3 @@ $text-light: $gray-base;
 
 // Blue family alternates
 $blue-darker: darken( $blue-dark, 4% );
-
-
-/*	Old colors (deprecating)
-	========================================================================== */
-$fill-blue: #2980b9;
-$fill-green: #27ae60;
-$fill-red: #c0392b;
-$fill-orange: #f39c12;
-$fill-blue-dk: #2c3e50; 
-//$fill-blue-very-dk: darken( $fill-blue-dk, 15% );
-$fill-blue-very-dk: #1F2B38;
-
-$border-lt: #ddd;
-
-$text-dk: #333;
-$text-md-dk: #999;
-$text-md: #bbb;
-$text-lt: #eee;
-
-$bg-dk: #222;
-$bg-dk-dk: darken( $bg-dk, 5% );
-$bg-dk-md: lighten( $bg-dk, 5% );
-$bg-dk-lt: lighten( $bg-dk, 10% );
-$bg-md: lighten( $bg-dk, 45% );
-$bg-lt: #eee;
-$bg-lt-lt: lighten( $bg-lt, 6% );
-$bg-lt-dk: darken( $bg-lt, 20% );
-
-$bg-blue: #2C3E50;
-$bg-green: #91B655;
-$bg-red: #E76F55;
-
-$line: #ccc;
-$line-dk: lighten( $bg-dk, 6% );
-
-$highlight: rgb(156, 205, 0);
-$highlight-green: #00702F;
-$highlight-green-dk: #00702F;
-$highlight-blue: #018BC9;
-$highlight-blue-dk: darken( $highlight-blue, 15% );
-
-$highlight-blue: $fill-blue;

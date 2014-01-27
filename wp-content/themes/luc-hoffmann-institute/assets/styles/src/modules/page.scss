@@ -34,7 +34,7 @@
 		font-weight: 400;
 		color: #fff;
 		text-shadow: 0px 0px 10px #000;
-		text-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+		text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 
 		@include min-width ( $iPadPortrait ) {
 			@include font-size(64);
@@ -66,7 +66,7 @@
 .page-content {
 	@extend %clearfix;
 	@include rem('padding', 3, 0);
-	background: $bg-lt-lt;
+	background: $bg-gray-light;
 
 	.widget {
 		@include rem('margin', 2, 2, 2, 0);
@@ -76,6 +76,6 @@
 } // .page-content
 
 .page-footer {
-	background: $bg-lt-lt;
+	background: $bg-gray;
 
 } // .page-footer

@@ -31,12 +31,12 @@
 		i {
 			display: block;
 			@include rem('padding', 0.5);
-			background: $fill-blue-dk;
+			background: $blue-darker;
 			border-radius: 50%;
 			color: #fff;
 
 			&:hover {
-				background: $fill-blue;
+				background: $blue-base;
 			}
 
 		} // i

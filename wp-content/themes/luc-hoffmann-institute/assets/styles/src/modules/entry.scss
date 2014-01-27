@@ -37,11 +37,11 @@
 		@extend %caps;
 		display: table;
 		width: 100%;
-		color: $text-md;
+		color: $text-light;
 
 		a {
 			text-decoration: none;
-			color: $text-md;
+			color: $text-light;
 		}
 	}
 
@@ -61,7 +61,7 @@
 	.entry-date {
 		display: table-cell;
 		text-align: right;
-		color: $text-md;
+		color: $text-light;
 	}
 
 	.entry-title {
@@ -70,7 +70,7 @@
 		line-height: 1.5;
 		font-weight: 600;
 		letter-spacing: -0.025em;
-		color: $text-dk;
+		color: $text;
 
 		@include min-width( $iPadPortrait ) {
 			@include font-size(36);
