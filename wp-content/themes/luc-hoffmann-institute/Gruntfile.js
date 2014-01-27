@@ -4,142 +4,201 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
+		paths: {
+			dev: './',
+			tmp: './tmp/'
+		},
+
+		/**
+		 * JSHint
+		 */
 		jshint: {
 			options: {
-				jshintrc: '.jshintrc',
-				ignores: ['./assets/scripts/src/plugins/*.js']
+				jshintrc: '.jshintrc'
 			},
 			all: [
 				'Gruntfile.js',
-				'./assets/scripts/src/{,*/}*.js'
+				'<%= paths.dev %>assets/scripts/src/**/*.js'
 			]
 		},
 
+		/**
+		 * RequireJS
+		 */
+		requirejs: {
+			compile: {
+				options: {
+					baseUrl: '<%= paths.dev %>',
+					mainConfigFile: '<%= paths.dev %>assets/scripts/src/app.js',
+					deps: ['assets/scripts/src/app.js'],
+					insertRequire: ['assets/scripts/src/app.js'],
+					name: 'bower_components/almond/almond',
+					out: '<%= paths.dev %>assets/scripts/build/main.js',
+					optimize: 'none'
+				}
+			}
+		},
+
+		/**
+		 * Uglify
+		 */
 		uglify: {
 			dist: {
 				options: {
-					sourceMap: './assets/scripts/build/main.js.map',
+					sourceMap: '<%= paths.dev %>assets/scripts/build/main.js.map',
 					sourceMapRoot: '../',
 					sourceMappingURL: '../build/main.js.map',
 					sourceMapPrefix: '3'
 				},
 				files: {
-					'./assets/scripts/build/main.min.js': [
-						'./bower_components/get-style-property/get-style-property.js',
-						'./bower_components/jquery-smartresize/jquery.debouncedresize.js',
-						'./bower_components/fittext/fittext.js',
-						'./bower_components/skrollr/src/skrollr.js',
-						'./bower_components/fitvids/jquery.fitvids.js',
-						'./assets/scripts/src/plugins/royalslider/jquery.royalslider.js',
-						'./assets/scripts/src/main.js',
+					'<%= paths.dev %>assets/scripts/build/main.js': [
+						'<%= paths.dev %>bower_components/get-style-property/get-style-property.js',
+						'<%= paths.dev %>bower_components/jquery-smartresize/jquery.debouncedresize.js',
+						'<%= paths.dev %>bower_components/fittext/fittext.js',
+						'<%= paths.dev %>bower_components/skrollr/src/skrollr.js',
+						'<%= paths.dev %>bower_components/fitvids/jquery.fitvids.js',
+						'<%= paths.dev %>assets/vendor/royalslider/jquery.royalslider.js',
+						'<%= paths.dev %>assets/scripts/src/main.js',
 					]
 				}
 			}
 		},
 
+		/**
+		 * SASS
+		 * preprocess assets/styles/src/*.scss into tmp
+		 */
 		sass: {
 			dist: {
-				options: {
-					//sourcemap: true
-				},
-				files: {
-					'./assets/styles/build/screen.css': [
-						'./assets/styles/src/screen.scss'
-					]
-				}
+				files: [
+					{
+						expand: true,
+						flatten: true,
+						cwd: '<%= paths.dev %>assets/styles/src',
+						src: ['*.scss'],
+						dest: '<%= paths.tmp %>',
+						ext: '.css'
+					}
+				]
 			}
 		},
 
+		/**
+		 * Autoprefixer
+		 * process tmp/*.css in place
+		 */
 		autoprefixer: {
 			dist: {
 				options: {
 					browsers: ['last 2 versions']
 				},
-				files: {
-					'./assets/styles/build/screen.css': [
-						'./assets/styles/build/screen.css'
-					]
-				}
+				files: [
+					{
+						expand: true,
+						flatten: true,
+						cwd: '<%= paths.tmp %>',
+						src: ['*.css'],
+						dest: '<%= paths.tmp %>',
+						ext: '.css'
+					}
+				]
 			}
 		},
 
+		/**
+		 * CSSMIN
+		 * process tmp/*.css into assets/styles/build/
+		 */
 		cssmin: {
 			dist: {
-				options: {
-					//banner: '/*  */'
-				},
-				files: {
-					'./assets/styles/build/screen.css': './assets/styles/build/screen.css'
-				}
+				expand: true,
+				cwd: '<%= paths.tmp %>',
+				src: ['.*.css'],
+				dest: '<%= paths.dev %>assets/styles/build',
+				ext: '.css'
 			}
 		},
 
-		watch: {
-			scss: {
-				files: ['./assets/styles/src/**/*.scss'],
-				tasks: [ 'sass', 'autoprefixer', 'cssmin' ]
-			},
-			css: {
-				files: ['./assets/styles/build/**/*.css'],
-				options: {
-					livereload: true
-				}
-			},
-			scripts: {
-				files: ['./assets/scripts/src/**/*.js'],
-				tasks: [ 'jshint', 'uglify' ],
-				options: {
-					livereload: true
-				}
-			},
-			files: {
-				files: [
-					'./**/*.html',
-					'./**/*.php'
-				],
-				tasks: [],
-				options: {
-					livereload: true
-				}
-			}
+		/**
+		 * Modernizr
+		 * check styles and scripts for modernizr tests
+		 */
+		modernizr: {
+			devFile: '<%= paths.dev %>bower_components/modernizr/modernizr.js',
+			outputFile: '<%= paths.dev %>assets/scripts/build/modernizr.js',
+			uglify: true,
+			files: [
+				'<%= paths.dev %>assets/styles/src/**/*.scss',
+				'<%= paths.dev %>assets/scripts/**/*.js'
+			]
 		},
 
+		/**
+		 * Image minification
+		 */
 		imagemin: {
 			dynamic: {
-				options: {
+				files: [
+					{
+						expand: true,
+						cwd: '<%= paths.dev %>assets/img/src',
+						src: ['**/*.{png,gif,jpg,jpeg}'],
+						dest: '<%= paths.dev %>assets/img/build/'
+					}
+				]
+			}
+		},
 
-				},
-				files: [{
-					expand: true,
-					cwd: './assets/img/src/',
-					src: ['**/*.{png,jpg,gif}'],
-					dest: './assets/img/build/'
-				}]
+		/**
+		 * Watch files for changes
+		 */
+		watch: {
+			js: {
+				files: ['Gruntfile.js', '<%= paths.dev %>assets/scripts/src/**/*.js'],
+				tasks: ['jshint', 'requirejs']
+			},
+			sass: {
+				files: ['<%= paths.dev %>assets/styles/src/**/*.scss'],
+				tasks: ['sass', 'autoprefixer', 'cssmin']
+			},
+			livereload: {
+				files: [
+					'<%= paths.dev %>**/*.php',
+					'<%= paths.dev %>assets/scripts/build/*.js',
+					'<%= paths.dev %>assets/styles/build/*.css',
+					'<%= paths.dev %>assets/img/*.{png,gif,jpg,jpeg}',
+				],
+				options: {
+					livereload: true
+				}
 			}
 		}
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-modernizr');
 
-
-	grunt.registerTask('server', [
+	grunt.registerTask('dev', [
 		'default',
 		'watch'
 	]);
 
 	grunt.registerTask('default', [
 		'jshint',
-		'uglify',
+		'requirejs',
+		'modernizr',
 		'sass',
 		'autoprefixer',
-		'cssmin'
+		'cssmin',
+		'imagemin'
 	]);
 
 };

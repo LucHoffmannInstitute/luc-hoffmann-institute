@@ -11,6 +11,8 @@
     "grunt-contrib-sass": "~0.4.1",
     "grunt-rsync": "~0.2.0",
     "grunt-contrib-cssmin": "~0.6.1",
-    "grunt-contrib-imagemin": "~0.3.0"
+    "grunt-contrib-imagemin": "~0.3.0",
+    "grunt-modernizr": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.1"
   }
 }

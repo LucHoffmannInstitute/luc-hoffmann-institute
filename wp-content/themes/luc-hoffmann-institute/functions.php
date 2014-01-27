@@ -35,15 +35,11 @@ function hoffmann_styles_and_scripts() {
 
 	// include jQuery
 	wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', get_template_directory_uri() . '/bower_components/jquery/jquery.min.js', array(), '2.0.3', false );
+	wp_register_script( 'jquery', get_template_directory_uri() . '/bower_components/jquery/jquery.min.js', array(), '1.11.0', false );
 	wp_enqueue_script( 'jquery' );
 
-	// include jQuery migrate plugin
-	wp_register_script( 'jquery-migrate', get_template_directory_uri() . '/bower_components/jquery/jquery-migrate.min.js', array( 'jquery' ), '1.1.1', false );
-	//wp_enqueue_script( 'jquery-migrate' );
-
 	// include theme scripts in footer
-	wp_register_script( 'hoffmann-main', get_template_directory_uri() . '/assets/scripts/build/main.min.js', array( 'jquery' ), null, true );
+	wp_register_script( 'hoffmann-main', get_template_directory_uri() . '/assets/scripts/build/main.js', array( 'jquery' ), null, true );
 	wp_enqueue_script( 'hoffmann-main' );
 
 	if ( comments_open() ) {
