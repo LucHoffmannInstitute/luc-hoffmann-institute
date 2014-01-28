@@ -31,77 +31,12 @@ $base-line-height: 1.65;
 }
 
 html {
-	@include serif;
-	color: $text;
 	font-size: percentage( $base-font-size / 16 );
 	line-height: $base-line-height;
 }
 
 body {
+	@include serif;
 	@include font-size(18);
-}
-
-/*	Links
-		======================================================================== */
-
-a {
-	color: $blue-light;
-}
-
-a:hover {
-	color: $blue-dark;
-}
-
-/*
- * Headings
- */
-
-h1 {
-	@include rem('margin', 1.5, 0); // 24
-	@include font-size(36);
-	@include line-height(36);
-
-	@include min-width ( $iPadPortrait ) {
-		@include rem('line-height', 3); // 48
-		@include rem('font-size', 3); // 48
-	}
-
-} // h1
-
-h2 {
-	@include rem('margin', 1, 0);
-	@include font-size(24);
-	@include line-height(30);
-}
-
-h3 {
-	@include rem('margin', 1, 0);
-	@include font-size(18);
-	@include line-height(24);
-}
-
-h4 {
-	@include rem('margin', 0);
-	@include font-size(16);
-	@include line-height(24);
-}
-
-h5 {
-	@include rem('margin', 0);
-	@include font-size(16);
-	@include line-height(24);
-}
-
-h6 {
-	@include rem('margin', 0);
-	@include font-size(16);
-	@include line-height(24);
-}
-
-/*
- * Other elements
- */
-
-p, ul, ol, blockquote {
-	@include rem('margin', 0, 0, 1.5);
+	color: $text;
 }
