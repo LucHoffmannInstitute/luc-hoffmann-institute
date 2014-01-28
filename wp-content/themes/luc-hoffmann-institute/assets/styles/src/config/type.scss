@@ -1,6 +1,10 @@
+/*	==========================================================================
+	Type settings
+	========================================================================== */
 
-/*	Type
-		======================================================================== */
+// font size and line height
+$base-font-size: 16;
+$base-line-height: 1.65;
 
 @mixin sans {
 	font: {
@@ -26,12 +30,15 @@
 	font-weight: 500;
 }
 
-body {
+html {
 	@include serif;
-	@include font-size(18);
-	@include line-height(27);
-	font-weight: 100;
 	color: $text;
+	font-size: percentage( $base-font-size / 16 );
+	line-height: $base-line-height;
+}
+
+body {
+	@include font-size(18);
 }
 
 /*	Links
