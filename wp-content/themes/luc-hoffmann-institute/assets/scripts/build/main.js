@@ -2828,6 +2828,11 @@ define('handshake',[
 
 		this.$menuItems.on( 'mouseenter', function () {
 			var message = $(this).data( _this.options.messageDataAttribute );
+
+			if ( message === undefined ) {
+				return;
+			}
+
 			_this.addMessage( message );
 		} );
 	};
