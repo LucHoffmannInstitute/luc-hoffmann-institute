@@ -13,7 +13,7 @@
                             <label for="EMAIL">Enter your email address</label>
                             <div class="input-wrap">
                                 <input type="text" value="" name="EMAIL" placeholder="Enter your email address" />
-                                <button type="submit"><i class="Icon icon-arrow-right"></i> <span>Subscribe</span></button>
+                                <button type="submit"><i class="icon-arrow-right"></i> <span>Subscribe</span></button>
                             </div>
                         </form>
 
@@ -27,15 +27,15 @@
                                 <div class="social">
                                     <ul>
                                         <?php if ( get_option( 'contact_email' ) ) : ?>
-                                            <li><a href="mailto:<?php echo get_option( 'contact_email' ) ?>?Subject=Luc%20Hoffmann%20Institute"><i class="Icon icon-mail"></i> <span>Contact us</span></a></li>
+                                            <li><a href="mailto:<?php echo get_option( 'contact_email' ) ?>?Subject=Luc%20Hoffmann%20Institute"><i class="icon-mail"></i> <span>Contact us</span></a></li>
                                         <?php endif ?>
-                                        <li><a href="<?php bloginfo( 'rss2_url' ) ?>"><i class="Icon icon-rss"></i> <span>Subscribe via RSS</span></a></li>
+                                        <li><a href="<?php bloginfo( 'rss2_url' ) ?>"><i class="icon-rss"></i> <span>Subscribe via RSS</span></a></li>
                                         <?php if ( get_option( 'twitter_handle' ) ) : ?>
-                                            <li><a href="https://twitter.com/<?php echo get_option( 'twitter_handle' ) ?>"><i class="Icon icon-twitter"></i> <span>Twitter</span></a></li>
+                                            <li><a href="https://twitter.com/<?php echo get_option( 'twitter_handle' ) ?>"><i class="icon-twitter"></i> <span>Twitter</span></a></li>
                                         <?php endif ?>
-                                        <!--<li><a href="#"><i class="Icon icon-facebook"></i> <span>Facebook</span></a></li>-->
+                                        <!--<li><a href="#"><i class="icon-facebook"></i> <span>Facebook</span></a></li>-->
                                         <?php if ( get_option( 'linked_in' ) ) : ?>
-                                            <li><a href="<?php echo get_option( 'linked_in' ) ?>"><i class="Icon icon-linkedin"></i> <span>LinkedIn</span></a></li>
+                                            <li><a href="<?php echo get_option( 'linked_in' ) ?>"><i class="icon-linkedin"></i> <span>LinkedIn</span></a></li>
                                         <?php endif ?>
                                     </ul>
                                 </div>            
@@ -51,7 +51,7 @@
                             <a class="panda-logo" href="http://panda.org/"><img src="<?php echo get_template_directory_uri() ?>/assets/img/panda-logo.svg" alt=""></a>
                         </div>
                         <div class="col col-6">
-                            <a class="mava-logo" href="http://en.mava-foundation.org/"><i class="Icon icon-mava"></i>
+                            <a class="mava-logo" href="http://en.mava-foundation.org/"><i class="icon-mava"></i>
                                 The Luc Hoffmann Institute is supported by a generous gift from the MAVA Foundation
                             </a>
                         </div>

@@ -29,9 +29,9 @@
 		text-decoration: none;
 
 		i {
-			//display: block;
-			//@include rem('padding', 0.5);
-			//background: $blue-darker;
+			display: block;
+			@include rem('padding', 0.5);
+			background: $blue-darker;
 			border-radius: 50%;
 			color: #fff;
 
