@@ -3,8 +3,8 @@
 		======================================================================== */
 
 .footer {
-	@extend %antialiased;
-	@extend %sans;
+	@extend .antialiased;
+	@include sans;
 	@include rem('padding', 2, 0);
 	color: $text;
 	color: rgba(0,0,0,0.75);

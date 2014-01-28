@@ -68,6 +68,32 @@ module.exports = function(grunt) {
 		 * Copying/moving/renaming files
 		 */
 		copy: {
+			grunticon: {
+				files: [
+					// copy grunticon css files
+					{
+						src: '<%= paths.dev %>assets/vendor/grunticon/icons.data.png.css',
+						dest: '<%= paths.dev %>assets/styles/build/icons.data.png.css'
+					},
+					{
+						src: '<%= paths.dev %>assets/vendor/grunticon/icons.data.svg.css',
+						dest: '<%= paths.dev %>assets/styles/build/icons.data.svg.css'
+					},
+					{
+						src: '<%= paths.dev %>assets/vendor/grunticon/icons.fallback.css',
+						dest: '<%= paths.dev %>assets/styles/build/icons.fallback.css'
+					},
+
+					// copy fallback pngs
+					{
+						expand: true,
+						flatten: true,
+						cwd: '<%= paths.dev %>assets/vendor/grunticon/png',
+						src: ['*.png'],
+						dest: '<%= paths.dev %>assets/styles/build/png/'
+					}
+				]
+			},
 			royalslider: {
 				src: '<%= paths.dev %>assets/vendor/royalslider/royalslider.css',
 				dest: '<%= paths.dev %>assets/vendor/royalslider/royalslider.scss'

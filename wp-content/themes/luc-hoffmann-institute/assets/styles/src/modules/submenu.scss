@@ -28,7 +28,7 @@
 	a {
 		position: relative;
 		display: inline-block;
-		@extend %sans;
+		@include sans;
 		@include rem('margin', 0.5, 0);
 		@include font-size(16);
 		line-height: 1.25;

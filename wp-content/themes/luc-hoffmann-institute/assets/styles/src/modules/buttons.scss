@@ -4,9 +4,9 @@
 	========================================================================== */
 
 .button {
-	@extend %disable-select;
-	@extend %antialiased;
-	@extend %sans;
+	@extend .disable-select;
+	@extend .antialiased;
+	@include sans;
 	display: inline-block;
 	margin: 0;
 	@include rem('padding', 1);

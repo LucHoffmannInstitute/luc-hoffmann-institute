@@ -36,12 +36,12 @@ body {
 }
 
 .cols {
-	@extend %clearfix;
+	@extend .clearfix;
 
 	$cols: 12;
 
 	.col {
-		@extend %clearfix;
+		@extend .clearfix;
 		float: left;
 
 		&.clear-cols {

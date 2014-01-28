@@ -37,10 +37,10 @@
 
 .next-prev {
 	@extend .container;
-	@extend %clearfix;
+	@extend .clearfix;
 
 	ul {
-		@extend %clearfix;
+		@extend .clearfix;
 		//float: right;
 		margin: 0;
 		padding: 0;

@@ -14,7 +14,7 @@
 
 	.widget-title {
 		margin: 0;
-		@extend %caps;
+		@include caps;
 		color: $text;
 	}
 
@@ -77,7 +77,7 @@
 	}
 
 	.follow-link {
-		@extend %caps;
+		@include caps;
 		display: block;
 		@include rem('margin-top', 1);
 
@@ -90,7 +90,7 @@
 } // .twitter-widget
 
 .image-widget {
-	@extend %clearfix;
+	@extend .clearfix;
 	padding: 0;
 
 	img {
@@ -105,7 +105,7 @@
 	}
 
 	.widget-content {
-		@extend %sans;
+		@include sans;
 		float: left;
 		@include rem('padding', 1, 2, 2);
 		width: 50%;

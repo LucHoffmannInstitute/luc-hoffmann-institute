@@ -2,7 +2,7 @@
 /*	Type
 		======================================================================== */
 
-%sans {
+@mixin sans {
 	font: {
 		family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		weight: 400; 
@@ -10,7 +10,7 @@
 	}
 }
 
-%serif {
+@mixin serif {
 	font: {
 		family: 'ff-tisa-web-pro', Georgia, serif;
 		weight: 400;
@@ -18,8 +18,8 @@
 	}
 }
 
-%caps {
-	@extend %sans;
+@mixin caps {
+	@include sans;
 	@include font-size(14);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
@@ -27,7 +27,7 @@
 }
 
 body {
-	@extend %serif;
+	@include serif;
 	@include font-size(18);
 	@include line-height(27);
 	font-weight: 100;

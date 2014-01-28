@@ -42,7 +42,7 @@
   } // .slideshow-slide
 
 	.slideshow-arrow {
-		@extend %disable-select;
+		@extend .disable-select;
 		position: absolute;
 		top: 50%;
 		right: 50%;

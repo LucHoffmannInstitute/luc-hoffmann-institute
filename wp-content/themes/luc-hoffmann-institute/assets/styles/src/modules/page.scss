@@ -25,8 +25,8 @@
 	}
 
 	h1 {
-		@extend %antialiased;
-		@extend %sans;
+		@extend .antialiased;
+		@include sans;
 		margin: 0;
 		@include rem('padding-bottom', 1);
 		@include font-size(48);
@@ -44,8 +44,8 @@
 	} // h1
 
 	.photo-credit {
-		@extend %antialiased;
-		@extend %sans;
+		@extend .antialiased;
+		@include sans;
 		position: absolute;
 		right: 0;
 		bottom: 0;
@@ -64,7 +64,7 @@
 } // .page-header
 
 .page-content {
-	@extend %clearfix;
+	@extend .clearfix;
 	@include rem('padding', 3, 0);
 	background: $bg-gray-light;
 

@@ -1,25 +1,28 @@
+/*	==========================================================================
+	Import stylesheets in load order
+	========================================================================== */
 
-/*	Utilities
-		======================================================================== */
-@import 'utilities/normalize.scss';
-@import 'utilities/config.scss';
-@import 'utilities/mixins.scss';
-@import 'utilities/extensions.scss';
-@import 'utilities/defaults.scss';
+/*	Utilities: normalization, defaults, mixins
+	========================================================================== */
+@import '../../../bower_components/elcontraption-utility-normalize/normalize.scss';
+@import '../../../bower_components/elcontraption-utility-defaults/defaults.scss';
+@import '../../../bower_components/elcontraption-utility-mixins/mixins.scss';
 
-/*	Plugins
-		======================================================================== */
+/*	Config: type, colors, breakpoints
+	========================================================================== */
+@import 'config/breakpoints.scss';
+@import 'config/colors.scss';
+@import 'config/type.scss';
+@import 'config/variables.scss';
+@import 'config/icons.scss';
+
+/*	Plugins, external components
+	========================================================================== */
 @import '../../vendor/royalslider/royalslider.scss';
-
-/*	Base styles
-		======================================================================== */
-@import 'base/colors.scss';
-@import 'base/type.scss';
-@import 'base/icomoon.scss';
-@import 'base/layout.scss';
+@import '../../../bower_components/elcontraption-utility-cols/cols.scss';
 
 /*	Modules
-		======================================================================== */
+	========================================================================== */
 //@import 'modules/forms.scss';
 @import 'modules/menu.scss';
 @import 'modules/comments.scss';
@@ -42,3 +45,7 @@
 @import 'modules/page-projects.scss';
 @import 'modules/pagination.scss';
 @import 'modules/blog-items.scss';
+
+/*	Layouts
+	========================================================================== */
+@import 'layouts/global.scss';

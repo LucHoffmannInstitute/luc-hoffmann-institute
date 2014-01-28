@@ -8,13 +8,13 @@
 	font-size: 0;
 
 	.form-title {
-		@extend %caps;
+		@include caps;
 		margin: 0;
 		font-weight: 600;
 	}
 
 	label {
-		//@extend %sans;
+		//@include sans;
 		margin: 0;
 		@include font-size(14);
 
@@ -37,7 +37,7 @@
 	}
 
 	input[type="text"] {
-		@extend %sans;
+		@include sans;
 		width: 90%;
 		border: none;
 		background: #fff;
@@ -50,7 +50,7 @@
 	} // input[type="text"]
 
 	button[type="submit"] {
-		@extend %antialiased;
+		@extend .antialiased;
 		width: 10%;
 		border: none;
 		@include rem('padding', 1, 0);
@@ -66,7 +66,7 @@
 		}
 
 		span {
-			@extend %visuallyhidden;
+			@extend .visuallyhidden;
 		}
 
 	} // button[type="submit"]

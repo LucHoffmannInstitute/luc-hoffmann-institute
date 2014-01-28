@@ -42,7 +42,7 @@
 	}
 
 	ul {
-		@extend %clearfix;
+		@extend .clearfix;
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -79,7 +79,7 @@
 	} // li
 
 	a {
-		@extend %sans;
+		@include sans;
 		display: block;
 		@include font-size(14);
 		text-decoration: none;
@@ -203,7 +203,7 @@
 		} // .icon-hoffmann
 
 		span {
-			@extend %visuallyhidden;
+			@extend .visuallyhidden;
 		}
 
 	} // li.logo

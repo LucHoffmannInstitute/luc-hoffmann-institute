@@ -43,7 +43,7 @@
 		}
 
 		time {
-			@extend %sans;
+			@include sans;
 			display: block;
 			@include font-size(20);
 			font-weight: 600;

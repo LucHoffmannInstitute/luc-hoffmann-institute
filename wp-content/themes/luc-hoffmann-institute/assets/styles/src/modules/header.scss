@@ -5,7 +5,7 @@
 
 .header {
 	position: relative;
-	@extend %antialiased;
+	@extend .antialiased;
 	background: $blue-dark;
 
 	@include min-width ( $iPadPortrait ) {
@@ -37,7 +37,7 @@
 			}
 
 			span {
-				@extend %visuallyhidden;
+				@extend .visuallyhidden;
 			}
 
 			i {

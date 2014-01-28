@@ -42,7 +42,7 @@ form {
 			}
 
 			span {
-				@extend %visuallyhidden;
+				@extend .visuallyhidden;
 			}
 
 			i {

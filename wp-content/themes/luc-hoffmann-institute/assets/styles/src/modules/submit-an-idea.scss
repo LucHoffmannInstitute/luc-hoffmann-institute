@@ -12,7 +12,7 @@
 
 		h2 {
 			margin: 0;
-			@extend %caps;
+			@include caps;
 			color: $text-light;
 		}
 

@@ -14,7 +14,11 @@
     "fitvids": "~1.0.3",
     "selectivizr": "~1.0.2",
     "respond": "~1.3.0",
-    "almond": "~0.2.9"
+    "almond": "~0.2.9",
+    "elcontraption-utility-defaults": "git@github.com:elcontraption/utility-defaults.git#~0.1.1",
+    "elcontraption-utility-normalize": "git@github.com:elcontraption/utility-normalize.git#~2.1.3",
+    "elcontraption-utility-mixins": "git@github.com:elcontraption/utility-mixins.git#~0.1.2",
+    "elcontraption-utility-cols": "git@github.com:elcontraption/utility-cols.git#~0.1.3"
   },
   "devDependencies": {}
 }

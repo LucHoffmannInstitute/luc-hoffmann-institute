@@ -8,7 +8,7 @@
 }
 
 .comments-title {
-	@extend %sans;
+	@include sans;
 	@include font-size(24);
 }
 
@@ -19,7 +19,7 @@
 }
 
 .comment {
-	@extend %sans;
+	@include sans;
 	@include font-size(16);
 
 	p {
@@ -63,7 +63,7 @@
 
 .comment-meta {
 	float: right;
-	@extend %caps;
+	@include caps;
 
 	a {
 		text-decoration: none;
@@ -71,7 +71,7 @@
 }
 
 .comment-respond {
-	@extend %sans;
+	@include sans;
 
 	.comment-reply-title {
 		@include font-size(24);
@@ -100,7 +100,7 @@
 	}
 
 	.form-submit input {
-		@extend %antialiased;
+		@extend .antialiased;
 		border: none;
 		@include rem('padding', 1, 2);
 		text-align: center;

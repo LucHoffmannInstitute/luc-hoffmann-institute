@@ -7,11 +7,11 @@
 .project-developers {
 
 	p {
-		@extend %caps;
+		@include caps;
 	}
 
 	ul {
-		@extend %sans;
+		@include sans;
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -80,7 +80,7 @@
 			}
 
 			span {
-				@extend %visuallyhidden;
+				@extend .visuallyhidden;
 			}
 
 		} // a
@@ -123,7 +123,7 @@
 		}
 
 		.projects-link {
-			@extend %caps;
+			@include caps;
 			display: none;
 			position: absolute;
 			top: 0;
@@ -145,8 +145,8 @@
 		} // .projects-link
 
 		.project-header {
-			@extend %clearfix;
-			@extend %antialiased;
+			@extend .clearfix;
+			@extend .antialiased;
 			position: absolute;
 			z-index: 100;
 			display: inline-block;
@@ -168,13 +168,13 @@
 
 			.project-supertitle,
 			.project-link {
-				@extend %caps;
+				@include caps;
 				margin: 0;
 				color: #fff;
 			}
 
 			.project-title {
-				@extend %sans;
+				@include sans;
 				margin: 0;
 				width: auto;
 				@include font-size(18);
@@ -217,7 +217,7 @@
 				}
 
 				.project-link {
-					@extend %caps;
+					@include caps;
 					@include rem('padding-top', 0.5);
 					color: #fff;
 					text-decoration: none;
@@ -234,8 +234,8 @@
 		} // .project-header
 
 		.photo-credit {
-			@extend %antialiased;
-			@extend %sans;
+			@extend .antialiased;
+			@include sans;
 			position: absolute;
 			z-index: 200;
 			right: 0;
