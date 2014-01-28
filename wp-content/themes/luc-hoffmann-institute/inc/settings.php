@@ -5,11 +5,6 @@
 add_action( 'admin_init', 'hoffmann_settings' );
 function hoffmann_settings() {
 
-	// handshake statements
-	add_option( 'handshake' );
-	add_settings_field( 'handshake', 'Handshake statements', 'hoffmann_settings_handshake', 'general' );
-	register_setting( 'general', 'handshake', 'hoffmann_settings_handshake_sanitize' );
-
 	// twitter
 	add_option( 'twitter_handle' );
 	add_settings_field( 'twitter_handle', 'Twitter handle', 'hoffmann_settings_twitter', 'general' );
