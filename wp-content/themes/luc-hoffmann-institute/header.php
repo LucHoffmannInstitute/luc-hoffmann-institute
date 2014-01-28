@@ -45,25 +45,15 @@
                             <a href="<?php bloginfo('url') ?>"><i class="icon-hoffmann"></i><span>Luc Hoffmann Institute</span></a>
                         </h1>
     
-                        <?php $handshake = get_option( 'handshake' ); ?>
-
-                        <?php if ( isset( $handshake ) && !empty( $handshake ) ) : $handshake_items = explode( "\n", $handshake ); ?>
-    
-                            <div class="handshake">
-
-                                <?php foreach ( $handshake_items as $key => $value ) : ?>
-
-                                    <div class="handshake-item<?php if ( $key == 0 ) echo ' fadeUpAndIn' ?>">
-                                        <div class="handshake-item-inner">
-                                            <p class="handshake-item-message"><?php echo $value ?></p>
-                                        </div>
-                                    </div>
-
-                                <?php endforeach ?>
-
+                        <div class="Handshake">
+                            <div class="Handshake-inner">
+                                <p class="Handshake-message">
+                                    <span class="Handshake-message-inner">
+                                        <?php bloginfo('description') ?>
+                                    </span>
+                                </p>
                             </div>
-
-                        <?php endif ?>
+                        </div>
 
                     </div><!-- .upper -->
 
@@ -80,7 +70,8 @@
                         'container' => false,
                         'items_wrap' => '<ul id="%1$s" class="%2$s"><li class="logo"><a href="' . get_bloginfo('url') . '"><i class="icon-hoffmann"></i><span>Luc Hoffmann Institute</span></a></li>%3$s</ul>',
                         'link_before' => '<span>',
-                        'link_after' => '</span>'
+                        'link_after' => '</span>',
+                        'walker' => new Menu_With_Description()
                     ) ) ?>
                 </div>
             </nav>

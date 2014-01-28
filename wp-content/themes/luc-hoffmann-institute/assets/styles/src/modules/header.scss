@@ -9,7 +9,7 @@
 	background: $blue-dark;
 
 	@include min-width ( $iPadPortrait ) {
-		//height: 250px;
+
 	}
 
 	.show-menu {
@@ -22,7 +22,7 @@
 
 		@include min-width ( $iPadPortrait ) {
 			display: table;
-			height: 250px;
+			height: 150px;
 			text-align: left;
 		}
 
@@ -51,8 +51,8 @@
 				}
 
 				@include min-width ( $iPadPortrait ) {
-					width: 300px;
-					height: 100px;
+					width: 250px;
+					height: 83px;
 				}
 
 			} // i

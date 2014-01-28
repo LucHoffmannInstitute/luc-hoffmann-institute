@@ -28,25 +28,6 @@ function hoffmann_settings() {
 }
 
 /**
- * Admin settings: handshake statements
- */
-function hoffmann_settings_handshake() {
-	$value = get_option( 'handshake' );
-
-	?>
-		<p>Animated handshake statement appearing at the top of the home page. Enter one sentance per line.</p>
-		<textarea name="handshake" id="handshake" cols="30" rows="10" style="width: 100%;"><?php echo $value ?></textarea>
-	<?php
-}
-
-/**
- * Admin settings: sanitize handshake statement
- */
-function hoffmann_settings_handshake_sanitize( $input ) {
-	return strip_tags( stripslashes( $input ) );
-}
-
-/**
  * Admin settings: contact email
  */
 function hoffmann_settings_contact_email() {

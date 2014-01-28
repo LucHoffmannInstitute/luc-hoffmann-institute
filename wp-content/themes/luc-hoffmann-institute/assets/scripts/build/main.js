@@ -2799,10 +2799,13 @@ define('handshake',[
 	};
 
 	Handshake.prototype.settings = {
-		itemSelector: '.handshake-item',
-		animateActiveClass: 'fadeUpAndIn',
-		animateInactiveClass: 'fadeUpAndOut',
-		delay: 4000
+		handshakeMessageSelector: '.Handshake-message',
+		handshakeInnerClass: 'Handshake-message-inner',
+		handshakeItemActiveClass: 'Handshake--active',
+		menuItemSelector: '.menu a',
+		messageDataAttribute: 'description',
+		animateInClass: 'Handshake--animate-in',
+		animateOutClass: 'Handshake--animate-out'
 	};
 
 	Handshake.prototype.init = function ( options ) {
@@ -2810,29 +2813,32 @@ define('handshake',[
 
 		this.options = $.extend( true, {}, this.settings, options, this.$el.data('slider') );
 
-		// get items
-		this.$items = $( this.options.itemSelector );
+		this.$handshakeMessage = $( this.options.handshakeMessageSelector );
+		this.$menuItems = $( this.options.menuItemSelector );
 
-		// run intervals
-		setInterval( function () {
-			_this.animateHandshake();
-		}, this.options.delay );
+		// handle interactions
+		this.interactions();
 	};
 
 	/**
-	 * Run animations
+	 * Handle interactions
 	 */
-	Handshake.prototype.animateHandshake = function () {
-		var $activeItem = this.$items.filter( '.' + this.options.animateActiveClass );
-		var $nextItem = $activeItem.next();
+	Handshake.prototype.interactions = function () {
+		var _this = this;
 
-		$nextItem = $nextItem.length ? $nextItem : this.$items.first();
+		this.$menuItems.on( 'mouseenter', function () {
+			var message = $(this).data( _this.options.messageDataAttribute );
+			_this.addMessage( message );
+		} );
+	};
 
-		$activeItem.removeClass( this.options.animateActiveClass );
-		$activeItem.addClass( this.options.animateInactiveClass );
-
-		$nextItem.removeClass( this.options.animateInactiveClass );
-		$nextItem.addClass( this.options.animateActiveClass );
+	/**
+	 * Add handshake message
+	 */
+	Handshake.prototype.addMessage = function ( msg ) {
+		var _this = this;
+		var $msg = '<span class="' + this.options.handshakeInnerClass + '">' + msg + '</span>';
+		this.$handshakeMessage.html( $msg );
 	};
 
 	/**
@@ -2845,7 +2851,7 @@ define('handshake',[
 	};
 
 	// auto init
-	$('.handshake').handshake();
+	$('.Handshake').handshake();
 });
 require.config({
 	paths: {
