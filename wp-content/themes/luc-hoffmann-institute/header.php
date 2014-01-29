@@ -44,16 +44,8 @@
                         <h1 class="logo">
                             <a href="<?php bloginfo('url') ?>"><i class="icon-hoffmann"></i><span>Luc Hoffmann Institute</span></a>
                         </h1>
-    
-                        <div class="Handshake">
-                            <div class="Handshake-inner">
-                                <p class="Handshake-message">
-                                    <span class="Handshake-message-inner">
-                                        <?php bloginfo('description') ?>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
+
+                        <?php get_template_part( 'templates/handshake' ) ?>
 
                     </div><!-- .upper -->
 

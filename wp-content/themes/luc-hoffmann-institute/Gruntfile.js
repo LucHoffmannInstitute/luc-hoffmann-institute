@@ -187,7 +187,7 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				files: ['<%= paths.dev %>assets/styles/src/**/*.scss'],
-				tasks: ['sass', 'autoprefixer', 'cssmin']
+				tasks: ['modernizr', 'sass', 'autoprefixer', 'cssmin']
 			},
 			livereload: {
 				files: [

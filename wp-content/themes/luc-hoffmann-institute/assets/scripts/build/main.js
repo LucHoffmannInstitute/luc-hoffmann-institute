@@ -2795,55 +2795,136 @@ define('handshake',[
 		this.init( options );
 	};
 
-	Handshake.prototype = {
-	};
-
+	/**
+	 * Settings
+	 */
 	Handshake.prototype.settings = {
-		handshakeMessageSelector: '.Handshake-message',
-		handshakeInnerClass: 'Handshake-message-inner',
-		handshakeItemActiveClass: 'Handshake--active',
-		menuItemSelector: '.menu a',
-		messageDataAttribute: 'description',
-		animateInClass: 'Handshake--animate-in',
-		animateOutClass: 'Handshake--animate-out'
+		animateElSelector: '.Handshake-inner',
+		msgSelector: '.Handshake-message',
+		menuItemsSelector: '.menu a',
+		menuDataAttribute: 'description',
+		animateInClass: 'Handshake-inner--animate-in',
+		animateOutClass: 'Handshake-inner--animate-out'
 	};
 
+	/**
+	 * Intialization
+	 */
 	Handshake.prototype.init = function ( options ) {
-		var _this = this;
-
 		this.options = $.extend( true, {}, this.settings, options, this.$el.data('slider') );
 
-		this.$handshakeMessage = $( this.options.handshakeMessageSelector );
-		this.$menuItems = $( this.options.menuItemSelector );
+		this.$animateEl = $( this.options.animateElSelector );
+		this.$menuItems = $( this.options.menuItemsSelector );
+		this.$currentMsg = $();
+		this.currentIndex = null;
 
-		// handle interactions
+		// add all messages to handshake container
+		this.addMessages();
+
+		// handle menu interactions
 		this.interactions();
 	};
 
 	/**
-	 * Handle interactions
+	 * Add all messages to handshake container
+	 */
+	Handshake.prototype.addMessages = function () {
+		var _this = this,
+			firstIndex;
+
+		$.each( this.$menuItems, function ( index ) {
+			var msg = $(this).data( _this.options.menuDataAttribute ),
+				$msg;
+
+			if ( msg === undefined ) {
+				return;
+			}
+
+			// set first index
+			if ( firstIndex === undefined ) {
+				firstIndex = index;
+			}
+
+			// clone first message and add message text
+			$msg = _this.$animateEl.clone();
+			$msg.find( _this.options.msgSelector ).text( msg );
+
+			// keep track of menu item association
+			$msg.data('menu-item', index);
+			$(this).data('menu-item', index);
+
+			// append message to message container
+			_this.$el.append( $msg );
+
+		} );
+
+		// activate first item
+		this.activate( firstIndex );
+	};
+
+	/**
+	 * Handle menu interactions
 	 */
 	Handshake.prototype.interactions = function () {
 		var _this = this;
 
 		this.$menuItems.on( 'mouseenter', function () {
-			var message = $(this).data( _this.options.messageDataAttribute );
-
-			if ( message === undefined ) {
-				return;
-			}
-
-			_this.addMessage( message );
+			var index = $(this).data('menu-item');
+			_this.activate( index );
 		} );
 	};
 
 	/**
-	 * Add handshake message
+	 * Activate message
 	 */
-	Handshake.prototype.addMessage = function ( msg ) {
+	Handshake.prototype.activate = function ( index ) {
+		var _this = this,
+			$currentMsg,
+			$newMsg;
+
+		if ( index === this.currentIndex ) {
+			return;
+		}
+
+		$newMsg = this.$el.find( this.options.animateElSelector ).filter( function () {
+			if ( $(this).data( 'menu-item' ) === index ) { return true; }
+		} );
+
+		// animate out current message
+		this.$currentMsg.removeClass( this.options.animateInClass );
+		this.$currentMsg.addClass( this.options.animateOutClass );
+
+		// animate in new item
+		$newMsg.removeClass( this.options.animateOutClass );
+		$newMsg.addClass( this.options.animateInClass );
+
+		this.$currentMsg = $newMsg;
+		this.currentIndex = index;
+	};
+
+	/**
+	 * Update handshake message
+	 */
+	Handshake.prototype.updateMsg = function ( msg ) {
 		var _this = this;
-		var $msg = '<span class="' + this.options.handshakeInnerClass + '">' + msg + '</span>';
-		this.$handshakeMessage.html( $msg );
+
+		// clone first message into $msg object
+		var	$msg = this.$animateEl.clone();
+
+		// insert new msg into $msg object
+		$msg.find( this.options.msgSelector ).text( msg );
+
+		// deactivate current message
+		this.$el.find( this.options.animateElSelector ).removeClass( this.options.animateOutClass );
+
+		// 
+
+		$msg.prependTo( this.$el );
+		$msg.addClass( this.options.animateInClass );
+
+
+
+
 	};
 
 	/**

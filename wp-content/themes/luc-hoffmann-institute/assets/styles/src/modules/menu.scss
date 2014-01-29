@@ -79,6 +79,7 @@
 	} // li
 
 	a {
+		position: relative;
 		@include sans;
 		display: block;
 		@include font-size(14);
@@ -119,7 +120,19 @@
 	li.current_page_parent a,
 	li.active a,
 	li a:hover {
-		background: $blue-dark;
+		//background: $blue-dark;
+		//background: $green-base;
+		
+		&:after {
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			height: 4px;
+			background: $green-light;
+		}
 	}
 
 	li.logo {

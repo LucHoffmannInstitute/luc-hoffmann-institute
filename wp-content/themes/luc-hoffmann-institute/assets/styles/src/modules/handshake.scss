@@ -7,168 +7,114 @@
 	display: none;
 
 	@include min-width ( $bp-2 ) {
+		position: relative;
 		display: table-cell;
-		vertical-align: middle;
 		width: 100%;
-		height: 100%;
+
+		&:after {
+			position: absolute;
+			top: 30%;
+			bottom: 30%;
+			right: 75%;
+			display: block;
+			content: "";
+			@include rem('width', 1);
+			border-left: 1px solid $gray-light;
+		}
+
 	}
 }
 
+// this is the item we'll animate in and out
+// since it's absolutely positioned
 .Handshake-inner {
-	display: block;
-	padding-left: 25%;
+	position: absolute;
+	top: 0;
+	right: 10%;
+	bottom: 0;
+	left: 25%;
+	
+	.js.csstransitions & {
+		opacity: 0;
+	}
+}
+
+.Handshake-inner.Handshake-inner--animate-in {
+
+	.csstransitions & {
+		opacity: 1;
+		animation: {
+			name: animateIn;
+			duration: 0.5s;
+			iteration-count: 1;
+			direction: normal;
+			timing-function: ease-in-out;
+			fill-mode: forwards;
+			delay: 0s;
+		}
+	}
+
+}
+
+.Handshake-inner.Handshake-inner--animate-out {
+
+	.csstransitions & {
+		opacity: 0;
+		animation: {
+			name: animateOut;
+			duration: 0.5s;
+			iteration-count: 1;
+			direction: normal;
+			timing-function: ease-in-out;
+			fill-mode: forwards;
+			delay: 0s;
+		}
+	}
+
+}
+
+.Handshake-content {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.Handshake-content-inner {
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .Handshake-message {
+	display: block;
 	@include sans;
-	@include rem('padding-left', 1);
 	text-transform: uppercase;
 	color: #fff;
-	border-left: 1px solid #fff;
-}
-
-.Handshake-message-inner {
-	display: block;
-	//opacity: 0;
-}
-
-.Handshake-message-inner.Handshake--anmate-in {
-
-	.cssanimations & {
-		//opacity: 1;
-	}
-}
-
-.Handshake-message-inner.Handshake--anmate-out {
-
-	.cssanimations & {
-		//opacity: 1;
-	}
-}
-
-.Handshake-message.Handshake--animate-in {
-
-//	.cssanimations & {
-//		opacity: 0;
-//		animation: {
-//			name: animateIn;
-//			duration: 1s;
-//			iteration-count: 1;
-//			direction: normal;
-//			timing-function: ease-in-out;
-//			fill-mode: forwards;
-//			delay: 0s;
-//		}
-//
-//	} // .cssanimations &
 }
 
 @keyframes animateIn {
 	0% {
-		transform: translateX(100px);
+		transform: translateX(-0.5rem);
 		opacity: 0;
 	}
 	50% {
-		opacity: 0;
+		opacity: 1;
 	}
 	100% {
-		transform: translateX(0px);
+		transform: translateX(0rem);
 		opacity: 1;
 	}
 }
 
 @keyframes animateOut {
 	0% {
-		transform: translateY(0px);
+	//	transform: translateX(0px);
 		opacity: 1;
 	}
 	50% {
 		opacity: 0;
 	}
 	100% {
-		transform: translateY(-100px);
+	//	transform: translateX(50px);
 		opacity: 0;
 	}
 }
-
-//.handshake {
-//	display: none;
-//
-//	@include min-width ( $iPadPortrait ) {
-//		display: table-cell;
-//		width: 100%;
-//		height: 100%;
-//	}
-//
-//	.handshake-item {
-//		position: relative;
-//		width: 100%;
-//	}
-//
-//	.handshake-item-inner {
-//		position: absolute;
-//		top: 0;
-//		right: 0;
-//		bottom: 0;
-//		left: 0;
-//		display: table;
-//		@include rem('padding', 0, 4);
-//		width: 100%;
-//		height: 250px;
-//	}
-//
-//	.handshake-item-message {
-//		display: table-cell;
-//		margin: 0;
-//		vertical-align: middle;
-//		@include font-size(30);
-//		line-height: 1.25em;
-//		color: #fff;
-//		opacity: 0;
-//
-//		.no-js & {
-//			opacity: 1;
-//		}
-//	}
-//
-//	.handshake-item.fadeUpAndIn .handshake-item-message {
-//		opacity: 1;
-//
-//		.cssanimations & {
-//			display: table-cell;
-//			opacity: 0;
-//			animation: {
-//				name: fadeUpAndIn;
-//				duration: 1s;
-//				iteration-count: 1;
-//				direction: normal;
-//				timing-function: ease-in-out;
-//				fill-mode: forwards;
-//				delay: 0s;
-//			}
-//
-//		} // .cssanimations &
-//
-//	} // .handshake-item.fadeUpAndIn .handshake-item-message
-//
-//	.handshake-item.fadeUpAndOut .handshake-item-message {
-//		display: none;
-//		opacity: 0;
-//
-//		.cssanimations & {
-//			display: table-cell;
-//			animation: {
-//				name: fadeUpAndOut;
-//				duration: 1s;
-//				iteration-count: 1;
-//				direction: normal;
-//				timing-function: ease-in-out;
-//				fill-mode: forwards;
-//				delay: 0s;
-//			}
-//		} // .cssanimations &
-//
-//	} // .handshake-item.fadeUpAndOut .handshake-item-message
-//
-//} 
-//
