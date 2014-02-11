@@ -63,7 +63,7 @@
                 <div class="cols">
 
                     <div class="col col-6">
-                        <p class="info">&copy; 2013 Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
+                        <p class="info">&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
                     </div>
 
                 </div><!-- .cols -->

@@ -18,7 +18,7 @@ $banner = array(
 
 		<a href="<?php the_permalink() ?>" class="Projects-list-item-header">
 
-			<div class="Projects-list-item-image" style="background-image: url(http://placehold.it/400x400&amp;text=&nbsp;)"></div>
+			<div class="Projects-list-item-image" style="background-image: url(<?php echo $banner['url'] ?>)"></div>
 
 			<div class="Projects-list-item-title-container">
 

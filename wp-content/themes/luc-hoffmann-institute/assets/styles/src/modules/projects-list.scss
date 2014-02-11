@@ -25,9 +25,14 @@
 .Projects-list-item-header {
 	display: table;
 	width: 100%;
-	background: #eee;
+	background: $gray-base;
 	text-decoration: none;
-	color: $text;
+	color: #fff;
+
+	&:hover {
+		background: $blue-base;
+		color: #fff;
+	}
 }
 
 .Projects-list-item-image {
