@@ -36,7 +36,7 @@
 
         <header class="header">
 
-            <?php if ( is_front_page() ) : ?>
+            <?php // if ( is_front_page() ) : ?>
 
                 <div class="container">
 
@@ -51,7 +51,7 @@
 
                 </div><!-- .container -->
 
-            <?php endif ?>
+            <?php // endif ?>
 
             <nav id="menu" class="menu" role="navigation">
                 <div class="container">

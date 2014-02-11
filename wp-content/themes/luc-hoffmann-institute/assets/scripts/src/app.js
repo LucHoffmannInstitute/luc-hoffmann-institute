@@ -7,14 +7,16 @@ require.config({
 		fitVids: 'bower_components/fitvids/jquery.fitvids',
 		royalSlider: 'assets/vendor/royalslider/dev/jquery.royalslider',
 		slider: 'assets/scripts/src/modules/slider',
-		handshake: 'assets/scripts/src/modules/handshake'
+		handshake: 'assets/scripts/src/modules/handshake',
+		projectlist: 'assets/scripts/src/modules/projectlist'
 	}
 });
 
 define([
 	'fitVids',
 	'slider',
-	'handshake'
+	'handshake',
+	'projectlist'
 ], function () {
 	'use strict';
 

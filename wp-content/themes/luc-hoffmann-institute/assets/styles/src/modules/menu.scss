@@ -136,10 +136,12 @@
 	}
 
 	li.logo {
+display: none;
 		width: 100%;
 
 		@include min-width ( $iPadPortrait ) {
 			display: table-cell;
+display: none;
 			width: 190px;
 			transition: width 0.25s ease;
 		}
