@@ -25,7 +25,7 @@
 		'credit' => $banner_post->post_excerpt
 	);
 ?>
-<header class="page-header">
+<header class="page-header" style="background-image: url(<?php echo $banner['url'] ?>);">
 
 	<div class="page-header-inner">
 

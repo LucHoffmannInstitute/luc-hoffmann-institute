@@ -25,7 +25,7 @@
 .Projects-list-item-header {
 	display: table;
 	width: 100%;
-	background: $gray-base;
+	background: $blue-darker;
 	text-decoration: none;
 	color: #fff;
 
@@ -59,9 +59,11 @@
 }
 
 .Projects-list-item-content {
+display: none;
 	@include rem('padding', 1);
 	@include sans;
 	@include font-size(14);
+	background: #eee;
 
 	p:first-child {
 		margin-top: 0;
