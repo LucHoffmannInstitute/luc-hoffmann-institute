@@ -17,53 +17,75 @@
 
 .Projects-list-item-inner {
 	display: block;
-	background: #fff;
 	text-decoration: none;
 	color: $text;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	border-radius: 2px;
 }
 
 .Projects-list-item-header {
 	display: table;
 	width: 100%;
-	background: $blue-darker;
+	min-height: 200px;
 	text-decoration: none;
 	color: #fff;
-
-	&:hover {
-		background: $blue-base;
-		color: #fff;
-	}
-}
-
-.Projects-list-item-image {
-	display: table-cell;
-	padding-bottom: percentage(1/3);
-	width: percentage(1/3);
+	border-radius: 2px 2px 0 0;
 	background: {
 		repeat: no-repeat;
 		position: center;
 		size: cover;
 	}
+
+	&:hover {
+		color: #fff !important;
+	}
 }
+
+//.Projects-list-item-image {
+//	display: table-cell;
+//	padding-bottom: percentage(1/3);
+//	width: percentage(1/3);
+//	background: {
+//		repeat: no-repeat;
+//		position: center;
+//		size: cover;
+//	}
+//}
 
 .Projects-list-item-title-container {
 	display: table-cell;
 	vertical-align: bottom;
 	@include rem('padding', 1);
+	text-shadow: 0px 0px 10px rgba(0,0,0,1);
+}
+
+.Projects-list-item-supertitle {
+	margin: 0;
+	@include caps;
 }
 
 .Projects-list-item-title {
 	margin: 0;
+	max-width: 80%;
 	@include sans;
-	@include font-size(18);
+	@include font-size(24);
+	line-height: 1.3;
+}
+
+.Projects-list-item-subheader {
+	@include rem('padding', 0.5, 1);
+	@include sans;
+	@include font-size(14);
+	//color: #fff;
+	background: #ddd;
 }
 
 .Projects-list-item-content {
-display: none;
 	@include rem('padding', 1);
 	@include sans;
 	@include font-size(14);
-	background: #eee;
+	background: #fff;
+	border-radius: 0 0 2px 2px;
 
 	p:first-child {
 		margin-top: 0;

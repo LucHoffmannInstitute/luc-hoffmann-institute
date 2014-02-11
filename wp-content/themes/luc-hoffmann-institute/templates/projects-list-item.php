@@ -16,6 +16,43 @@ $banner = array(
 	
 	<div class="Projects-list-item-inner">
 
+		<a href="<?php the_permalink() ?>" class="Projects-list-item-header" style="background-image: url(<?php echo $banner['url'] ?>)">
+
+			<div class="Projects-list-item-title-container">
+
+				<p class="Projects-list-item-supertitle"><?php the_field('supertitle') ?></p>
+
+				<h2 class="Projects-list-item-title"><?php the_title() ?></h2>
+
+			</div>
+			
+		</a>
+
+		<div class="Projects-list-item-subheader">
+			Project lead: John Q. Doe
+		</div>
+
+		<div class="Projects-list-item-content">
+			
+			<div class="Projects-list-item-content-side">
+				
+			</div>
+
+			<div class="Projects-list-item-content-main">
+				<?php the_excerpt() ?>
+			</div>
+
+		</div>
+
+	</div>
+
+</article>
+
+<!--
+<article class="Projects-list-item" <?php the_ID() ?>>
+	
+	<div class="Projects-list-item-inner">
+
 		<a href="<?php the_permalink() ?>" class="Projects-list-item-header">
 
 			<div class="Projects-list-item-image" style="background-image: url(<?php echo $banner['url'] ?>)"></div>
@@ -37,3 +74,4 @@ $banner = array(
 	</div>
 
 </article>
+-->

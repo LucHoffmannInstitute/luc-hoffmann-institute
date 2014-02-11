@@ -60,7 +60,7 @@
                         'depth' => 1,
                         'menu_id' => false,
                         'container' => false,
-                        'items_wrap' => '<ul id="%1$s" class="%2$s"><li class="logo"><a href="' . get_bloginfo('url') . '"><i class="icon-hoffmann"></i><span>Luc Hoffmann Institute</span></a></li>%3$s</ul>',
+                        //'items_wrap' => '<ul id="%1$s" class="%2$s"><li class="logo"><a href="' . get_bloginfo('url') . '"><i class="icon-hoffmann"></i><span>Luc Hoffmann Institute</span></a></li>%3$s</ul>',
                         'link_before' => '<span>',
                         'link_after' => '</span>',
                         'walker' => new Menu_With_Description()

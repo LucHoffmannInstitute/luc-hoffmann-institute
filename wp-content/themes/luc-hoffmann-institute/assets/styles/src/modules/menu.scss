@@ -50,6 +50,7 @@
 
 		@include min-width ( $iPadPortrait ) {
 			display: table;
+			table-layout: fixed;
 			width: 100%;
 		}
 
@@ -64,8 +65,12 @@
 			float: none;
 			display: table-cell;
 			vertical-align: middle;
-			width: auto;
+			//width: auto;
 			border-right: 1px solid darken( $blue-darker, 3% );
+
+			&:first-child {
+				border-left: 1px solid darken( $blue-darker, 3% );
+			}
 		}
 
 		&:last-child a {

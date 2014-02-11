@@ -213,10 +213,10 @@ function hoffmann_remove_dashboard_widgets() {
 /**
  * Clean up the_excerpt()
  */
-add_filter('excerpt_length', 'hoffmann_excerpt_length');
-function hoffmann_excerpt_length($length) {
-	return POST_EXCERPT_LENGTH;
-}
+//add_filter('excerpt_length', 'hoffmann_excerpt_length');
+//function hoffmann_excerpt_length($length) {
+//	return POST_EXCERPT_LENGTH;
+//}
 
 add_filter('excerpt_more', 'hoffmann_excerpt_more');
 function hoffmann_excerpt_more($more) {
