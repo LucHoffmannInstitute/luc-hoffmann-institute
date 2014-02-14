@@ -177,6 +177,8 @@
 		} // .pullquote
 
 		.related-posts {
+			@include rem('margin', 2, 0);
+			@include rem('padding', 2);
 			@include sans;
 			@include font-size(16);
 			background: #eee;
@@ -184,7 +186,6 @@
 			@include min-width ( $bp-2 ) {
 				float: right;
 				@include rem('margin', 1, 0, 1, 2);
-				@include rem('padding', 2);
 				max-width: 50%;
 			}
 
