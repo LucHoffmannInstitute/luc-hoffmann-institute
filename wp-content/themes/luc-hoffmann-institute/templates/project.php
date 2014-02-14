@@ -21,8 +21,6 @@ $banner = array(
 		<div class="Project-title">
 			<?php the_title() ?>
 
-			<p><?php the_time(get_option('date_format')) ?></p>
-
 			<p>Dr. John Q. Doe</p>
 		</div>
 

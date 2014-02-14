@@ -1,0 +1,6 @@
+{
+	"staging": {
+		"dest": "~/domains/hoffmann.elcontraption.com/html/wp-content/themes/luc-hoffmann-institute",
+		"host": "elcontraption.com@elcontraption.com"
+	}
+}
