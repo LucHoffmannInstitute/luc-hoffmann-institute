@@ -41,7 +41,31 @@ add_shortcode( 'related_posts', 'expedart_shortcode_related_posts' );
 function expedart_shortcode_related_posts( $atts ) {
 	extract( shortcode_atts( array(
 	), $atts ) );
-	return '[related posts go here.]';
+
+	global $post;
+
+	$related = get_posts( array(
+	    'post_type' => 'post',
+	    'posts_per_page' => 5,
+	    'orderby' => 'post_date',
+	    'order' => 'DESC'
+	) );
+
+	if ( !isset($related) || empty($related) ) {
+		return;
+	}
+
+	$output = '<div class="related-posts">';
+	$output .= '<h2 class="related-posts-title">Related posts</h2>';
+	$output .= '<ul>';
+
+	foreach ( $related as $related_post ) {
+		$output .= '<li><a href="' . get_permalink($related_post->ID) . '">' . $related_post->post_title . '</a></li>';
+	}
+
+	$output .= '</ul></div>';
+
+	return $output;
 }
 
 /**

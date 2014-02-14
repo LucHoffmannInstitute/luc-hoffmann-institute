@@ -109,6 +109,7 @@
 	}
 
 	.entry-content {
+		@extend .clearfix;
 		@extend .antialiased;
 
 		h1, h2, h3, h4, h5, h6 {
@@ -161,8 +162,8 @@
 			border-left: 5px solid $gold-light;
 
 			@include min-width ( $bp-2 ) {
-				@include rem('margin', 1, 0, 1, 2);
 				float: right;
+				@include rem('margin', 1, 0, 1, 2);
 				@include rem('padding-left', 2);
 				max-width: 50%;
 			}
@@ -174,6 +175,40 @@
 			}
 
 		} // .pullquote
+
+		.related-posts {
+			@include sans;
+			@include font-size(16);
+			background: #eee;
+
+			@include min-width ( $bp-2 ) {
+				float: right;
+				@include rem('margin', 1, 0, 1, 2);
+				@include rem('padding', 2);
+				max-width: 50%;
+			}
+
+			.related-posts-title {
+				@include rem('margin', 0, 0, 1);
+				@include font-size(20);
+				font-weight: 600;
+			}
+
+			ul {
+				margin: 0;
+				@include rem('padding', 0, 1);
+			}
+
+			li {
+
+			}
+
+			a {
+				text-decoration: none;
+				//color: $text;
+			}
+
+		} // .related-posts
 
 		table {
 			@include sans;
