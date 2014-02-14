@@ -34,7 +34,7 @@ $banner = array(
 		</div>
 
 		<div class="Project-footer">
-
+			&nbsp;
 		</div>
 
 	</div>
