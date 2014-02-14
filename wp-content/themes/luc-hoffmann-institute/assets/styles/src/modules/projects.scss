@@ -106,8 +106,16 @@
 }
 
 .Project-content {
+	display: none;
 	@include rem('padding', 1);
 	background: #fff;
+
+	@include min-width ( $bp-1 ) {
+		display: block;
+	}
+
+	@include min-width ( $bp-2 ) {
+	}
 
 	.Project--single & {
 		@include rem('padding', 1, 2);

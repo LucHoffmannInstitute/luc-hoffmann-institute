@@ -153,9 +153,9 @@
 		} // .lede
 
 		// pull quotes
-		blockquote {
+		.pullquote {
 			@include rem('margin', 2);
-			@include rem('padding-left', 2);
+			@include rem('padding', 0, 2);
 			@include sans;
 			@include font-size(20);
 			border-left: 5px solid $gold-light;
@@ -167,24 +167,13 @@
 				max-width: 50%;
 			}
 
-			p {
-				position: relative;
-			}
-
-			p:first-child {
-				margin-top: 0;
-			}
-
-			p:last-child {
-				margin-bottom: 0;
-			}
-
-			cite,
-			address {
+			.cite {
+				display: block;
+				@include rem('margin', 1, 0, 0);
 				@include font-size(16);
 			}
 
-		} // blockquote
+		} // .pullquote
 
 		table {
 			@include sans;

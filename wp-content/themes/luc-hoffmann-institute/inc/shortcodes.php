@@ -7,7 +7,41 @@ add_shortcode( 'lede', 'expedart_shortcode_lede' );
 function expedart_shortcode_lede( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 	), $atts ) );
-	return '<div class="lede">' . do_shortcode( $content ) . '</div>';
+	return '<div class="lede">' . do_shortcode($content) . '</div>';
+}
+
+/**
+ * [pull]
+ *
+ * Pullquotes
+ */
+add_shortcode( 'pull', 'expedart_shortcode_pull' );
+function expedart_shortcode_pull( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	), $atts ) );
+	return '<blockquote class="pullquote">' . do_shortcode($content) . '</blockquote>';
+}
+
+/**
+ * [cite]
+ *
+ * Citation inside pullquote
+ */
+add_shortcode( 'cite', 'expedart_shortcode_cite' );
+function expedart_shortcode_cite( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	), $atts ) );
+	return '<cite class="cite">' . do_shortcode($content) . '</cite>';
+}
+
+/**
+ * [related_posts]
+ */
+add_shortcode( 'related_posts', 'expedart_shortcode_related_posts' );
+function expedart_shortcode_related_posts( $atts ) {
+	extract( shortcode_atts( array(
+	), $atts ) );
+	return '[related posts go here.]';
 }
 
 /**
