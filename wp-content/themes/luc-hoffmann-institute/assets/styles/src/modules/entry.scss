@@ -154,12 +154,18 @@
 
 		// pull quotes
 		blockquote {
-			float: right;
+			@include rem('margin', 2);
 			@include rem('padding-left', 2);
-			max-width: 50%;
 			@include sans;
-			@include font-size(24);
+			@include font-size(20);
 			border-left: 5px solid $gold-light;
+
+			@include min-width ( $bp-2 ) {
+				@include rem('margin', 1, 0, 1, 2);
+				float: right;
+				@include rem('padding-left', 2);
+				max-width: 50%;
+			}
 
 			p {
 				position: relative;
