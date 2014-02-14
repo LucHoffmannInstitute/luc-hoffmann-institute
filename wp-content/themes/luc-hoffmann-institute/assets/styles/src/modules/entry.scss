@@ -155,13 +155,14 @@
 		// pull quotes
 		blockquote {
 			float: right;
-			@include rem('padding-left', 1);
+			@include rem('padding-left', 2);
 			max-width: 50%;
+			@include sans;
+			@include font-size(20);
 			border-left: 5px solid $gold-light;
 
 			p {
 				position: relative;
-				@include font-size(24);
 			}
 
 			p:first-child {
@@ -174,7 +175,7 @@
 
 			cite,
 			address {
-
+				@include font-size(16);
 			}
 
 		} // blockquote
