@@ -55,27 +55,37 @@
 	}
 }
 
-.Project-title-container {
-	display: table-cell;
-	vertical-align: bottom;
-	@include rem('padding', 1);
-	text-shadow: 0px 0px 10px rgba(0,0,0,1);
+.Project-title-area {
+	@extend .antialiased;
+	margin: 0;
+	@include rem('padding', 0.5, 1);
+	background: $gray-dark;
+	color: #fff;
+	border-bottom: 5px solid $gold-light;
+
+	.Project--single & {
+		@include rem('padding', 1, 2);
+	}
 }
 
 .Project-title {
 	margin: 0;
-	@include rem('padding', 0.5, 1);
 	@include sans;
 	@include font-size(24);
 	line-height: 1.2;
-	background: $gray-dark;
-	color: #fff;
-	@extend .antialiased;
-	border-bottom: 5px solid $gold-light;
 
-	p {
-		margin-bottom: 0;
-		@include font-size(14);
+	.Project--single & {
+		@include font-size(36);
+	}
+}
+
+.Project-author {
+	margin-bottom: 0;
+	@include sans;
+	@include font-size(14);
+
+	.Project--single & {
+		@include font-size(18);
 	}
 }
 
@@ -94,11 +104,17 @@
 
 .Project-content {
 	@include rem('padding', 1);
+	background: #fff;
+
+	.Project--single & {
+		@include rem('padding', 1, 2);
+	}
+}
+
+.Project-excerpt {
 	@include sans;
 	@include font-size(14);
 	line-height: 1.5;
-	background: #fff;
-
 
 	p:first-child {
 		margin-top: 0;

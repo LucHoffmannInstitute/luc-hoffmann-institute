@@ -12,7 +12,7 @@ $banner = array(
 );
 ?>
 
-<article class="Project" <?php the_ID() ?>>
+<article class="Project Project--single" <?php the_ID() ?>>
 	
 	<div class="Project-inner">
 
@@ -20,15 +20,15 @@ $banner = array(
 
 		<div class="Project-title-area">
 
-			<h2 class="Project-title"><?php the_title() ?></h2>
+			<h1 class="Project-title"><?php the_title() ?></h1>
 
 			<p class="Project-author">Dr. John Q. Doe</p>
 		</div>
 
-		<div class="Project-content">
+		<div class="Project-content entry">
 
-			<div class="Project-excerpt">
-				<?php the_excerpt() ?>
+			<div class="entry-content">
+				<?php the_content() ?>
 			</div>
 
 		</div>
