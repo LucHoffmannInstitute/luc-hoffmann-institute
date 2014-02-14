@@ -20,8 +20,11 @@
 	@include rem('padding', 1);
 
 	.Projects--list & {
-		float: left;
-		width: 50%;
+
+		@include min-width ( $bp-2 ) {
+			float: left;
+			width: 50%;
+		}
 	}
 }
 
