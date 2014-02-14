@@ -2,6 +2,8 @@
 
 module.exports = function(grunt) {
 
+	require('load-grunt-tasks')(grunt);
+
 	grunt.initConfig({
 
 		paths: {
@@ -28,13 +30,12 @@ module.exports = function(grunt) {
 		requirejs: {
 			compile: {
 				options: {
-					baseUrl: '<%= paths.dev %>',
-					mainConfigFile: '<%= paths.dev %>assets/scripts/src/app.js',
-					deps: ['assets/scripts/src/app.js'],
-					insertRequire: ['assets/scripts/src/app.js'],
-					name: 'bower_components/almond/almond',
-					out: '<%= paths.dev %>assets/scripts/build/main.js',
-					optimize: 'none'
+					baseUrl: 'bower_components',
+					mainConfigFile: 'assets/scripts/src/app.js',
+					deps: ['../assets/scripts/src/app.js'],
+					insertRequire: ['../assets/scripts/src/app.js'],
+					name: 'almond/almond',
+					out: '<%= paths.dev %>assets/scripts/build/main.js'
 				}
 			}
 		},
@@ -203,17 +204,6 @@ module.exports = function(grunt) {
 		}
 
 	});
-
-	grunt.loadNpmTasks('grunt-autoprefixer');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-modernizr');
 
 	grunt.registerTask('dev', [
 		'default',

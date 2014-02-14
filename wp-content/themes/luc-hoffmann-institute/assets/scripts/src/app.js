@@ -1,22 +1,23 @@
 require.config({
 	paths: {
-		getStyleProperty: 'bower_components/get-style-property/get-style-property',
-		smartResize: 'bower_components/jquery-smartresize/jquery.debouncedresize',
-		fitText: 'bower_components/fittext/fittext',
-		skrollr: 'bower_components/skrollr/src/skrollr',
-		fitVids: 'bower_components/fitvids/jquery.fitvids',
-		royalSlider: 'assets/vendor/royalslider/dev/jquery.royalslider',
-		slider: 'assets/scripts/src/modules/slider',
-		handshake: 'assets/scripts/src/modules/handshake',
-		projectlist: 'assets/scripts/src/modules/projectlist'
+		getStyleProperty: '../bower_components/get-style-property/get-style-property',
+		smartResize: '../bower_components/jquery-smartresize/jquery.debouncedresize',
+		fitText: '../bower_components/fittext/fittext',
+		skrollr: '../bower_components/skrollr/src/skrollr',
+		fitVids: '../bower_components/fitvids/jquery.fitvids',
+		masonry: '../bower_components/masonry/masonry',
+		royalSlider: '../assets/vendor/royalslider/dev/jquery.royalslider',
+		slider: '../assets/scripts/src/modules/slider',
+		handshake: '../assets/scripts/src/modules/handshake',
+		projects: '../assets/scripts/src/modules/projects'
 	}
 });
 
 define([
 	'fitVids',
 	'slider',
-	'handshake',
-	'projectlist'
+	'projects',
+	'handshake'
 ], function () {
 	'use strict';
 

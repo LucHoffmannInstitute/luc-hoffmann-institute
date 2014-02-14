@@ -32,7 +32,7 @@
 @import 'modules/submenu.scss';
 @import 'modules/social.scss';
 @import 'modules/handshake.scss';
-@import 'modules/projects.scss';
+@import 'modules/features.scss';
 @import 'modules/widgets.scss';
 @import 'modules/entry.scss';
 @import 'modules/timeline.scss';
@@ -46,8 +46,9 @@
 @import 'modules/page-projects.scss';
 @import 'modules/pagination.scss';
 @import 'modules/blog-items.scss';
-@import 'modules/projects-list.scss';
-@import 'modules/projects-single.scss';
+@import 'modules/projects.scss';
+//@import 'modules/projects-list.scss';
+//@import 'modules/projects-single.scss';
 
 /*	Layouts
 	========================================================================== */

@@ -10,19 +10,20 @@ $projects = new WP_Query( array(
     'orderby' => 'menu_order',
     'order' => 'DESC'
 ) );
+
 ?>
 
     <div class="page-content">
 
-		<section class="Projects-list">
-
+    	<section class="Projects">
+    		
 			<div class="container">
-								
+				
 				<?php if ( $projects->have_posts() ) : ?>
 
 					<?php while ( $projects->have_posts() ) : $projects->the_post() ?>
 
-						<?php get_template_part( 'templates/projects-list-item' ); ?>
+	       				<?php get_template_part( 'templates/projects-item' ); ?>
 
 					<?php endwhile ?>
 
@@ -30,9 +31,9 @@ $projects = new WP_Query( array(
 
 				<?php wp_reset_postdata(); ?>
 
-			</div><!-- .container -->
+			</div>
 
-		</section>
+    	</section>
 
     </div><!-- .page-content -->
 
