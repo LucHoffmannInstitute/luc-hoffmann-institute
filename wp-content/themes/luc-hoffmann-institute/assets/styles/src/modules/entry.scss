@@ -152,24 +152,30 @@
 
 		} // .lede
 
+		// pull quotes
 		blockquote {
+			float: right;
+			@include rem('padding-left', 1);
+			max-width: 50%;
+			border-left: 5px solid $gold-light;
 
 			p {
 				position: relative;
-				margin-top: 0;
 				@include font-size(24);
-				@include line-height(36);
 			}
 
-			cite {
-				@include rem('padding-left', 2);
-				font-style: normal;
+			p:first-child {
+				margin-top: 0;
+			}
 
-				&:before {
-					content: "\2013";
-				}
+			p:last-child {
+				margin-bottom: 0;
+			}
 
-			} // cite
+			cite,
+			address {
+
+			}
 
 		} // blockquote
 

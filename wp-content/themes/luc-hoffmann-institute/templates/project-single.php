@@ -34,8 +34,6 @@ $banner = array(
 		</div>
 
 		<div class="Project-footer">
-			
-			<a href="<?php the_permalink() ?>">View project <i class="icon-arrow-right"></i></a>
 
 		</div>
 
