@@ -6,30 +6,32 @@
 	@extend .clearfix;
 	@include rem('padding', 1, 0);
 	background: $blue-dark;
+
+	@include min-width ( $bp-2 ) {
+	}
 }
 
 .Projects--list {
-	
 }
 
 .Projects--single {
-
 }
 
-.Project {
-	@include rem('padding', 1);
+.Project--list {
+	@include rem('padding', 0, 0, 1);
 
-	.Projects--list & {
-
-		@include min-width ( $bp-2 ) {
-			float: left;
-			width: 50%;
-		}
+	@include min-width ( $bp-2 ) {
+		float: left;
+		@include rem('padding', 1);
+		width: 50%;
 	}
 }
 
 .Project--single {
 
+	@include min-width ( $bp-2 ) {
+		@include rem('padding', 1);
+	}
 }
 
 .Project-inner {
@@ -118,6 +120,7 @@
 	}
 
 	.Project--single & {
+		display: block;
 		@include rem('padding', 1, 2);
 	}
 }
