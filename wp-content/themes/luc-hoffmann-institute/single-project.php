@@ -5,25 +5,15 @@
 get_header();
 ?>
 
-	<div id="Single-project-ajax-container" class="Single-project page-content">
-		
+	<section class="Projects Projects--single">
+	
 		<div class="container">
 
 			<?php if ( have_posts() ) : ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<div class="Single-project-inner">		
-				
-						<header class="Single-project-header">
-							<h1 class="Single-project-title"><?php the_title(); ?></h1>
-						</header>
-
-						<div class="Single-project-content">
-							<?php the_content() ?>
-						</div>
-
-					</div><!-- .Single-project-inner -->
+					<?php get_template_part( 'templates/project' ); ?>
 
 				<?php endwhile; ?>
 
@@ -31,7 +21,7 @@ get_header();
 
 		</div><!-- .container -->
 
-	</div><!-- .Single-project.page-content -->
+	</section><!-- .Projects.Projects--single -->
 
     <?php get_template_part( 'templates/page-footer' ); ?>
 

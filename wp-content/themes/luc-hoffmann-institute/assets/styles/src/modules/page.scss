@@ -66,7 +66,7 @@
 .page-content {
 	@extend .clearfix;
 	@include rem('padding', 3, 0);
-	background: $bg-gray-light;
+	background: #fff;
 
 	.widget {
 		@include rem('margin', 2, 2, 2, 0);

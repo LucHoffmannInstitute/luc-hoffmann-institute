@@ -1,6 +1,5 @@
 /*	==========================================================================
 	Projects
-	The projects index page
 	========================================================================== */
 
 .Projects {
@@ -9,16 +8,25 @@
 	background: $blue-dark;
 }
 
-.Projects-masonry-container {
-	margin: 0 auto;
-	max-width: 1100px;
+.Projects--list {
+	
+}
+
+.Projects--single {
+
 }
 
 .Project {
-	float: left;
-	clear: right;
 	@include rem('padding', 1);
-	width: 50%;
+
+	.Projects--list & {
+		float: left;
+		width: 50%;
+	}
+}
+
+.Project--single {
+
 }
 
 .Project-inner {

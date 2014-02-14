@@ -1,34 +1,49 @@
-<?php 
-	$image_src = wp_get_attachment_image_src( get_field('image'), 'banner' );
-	$image_caption = get_post( get_field( 'image' ) );
+<?php  
 
-	$project_image = array(
-		'url' => $image_src[0],
-		'caption' => $image_caption->post_excerpt
-	);
+$banner_id = get_field( 'image', $post->ID );
+
+$banner_post = get_post( $banner_id );
+
+$image_src = wp_get_attachment_image_src( $banner_id, 'banner' );
+
+$banner = array(
+	'url' => $image_src[0],
+	'credit' => $banner_post->post_excerpt
+);
 ?>
 
-<article class="project" id="<?php the_ID() ?>">
-
-    <div class="container">
-        <a class="projects-link" href="<?php get_bloginfo('url') ?>/projects/"><i class="icon-arrow-left"></i>All projects</a>
-    </div>
-
-	<div class="project-thumb" style="background-image: url(<?php echo $project_image['url'] ?>);"></div>
-
-    <div class="container">
-
-        <header class="project-header">
-            <p class="project-supertitle"><?php the_field('supertitle') ?></p>
-            <h1 class="project-title"><?php the_field('title') ?></h1>
-            <div class="project-subtitle">
-                <p><?php the_field('subtitle') ?></p>
-                <a class="project-link" href="<?php the_permalink() ?>"><?php the_field('link_text') ?> <i class="icon-arrow-right"></i></a>
-            </div>
-        </header>
+<article class="Project" <?php the_ID() ?>>
 	
-		<p class="photo-credit"><?php echo $project_image['caption'] ?></p>
+	<div class="Project-inner">
 
-    </div>
+		<a class="Project-header" href="<?php the_permalink() ?>" style="background-image: url(<?php echo $banner['url'] ?>)"></a>
+
+		<div class="Project-title">
+			<?php the_title() ?>
+
+			<p><?php the_time(get_option('date_format')) ?></p>
+
+			<p>Dr. John Q. Doe</p>
+		</div>
+
+		<div class="Project-content">
+			
+			<div class="Project-content-side">
+				
+			</div>
+
+			<div class="Project-content-main">
+				<?php the_excerpt() ?>
+			</div>
+
+		</div>
+
+		<div class="Project-footer">
+			
+			<a href="<?php the_permalink() ?>">View project <i class="icon-arrow-right"></i></a>
+
+		</div>
+
+	</div>
 
 </article>

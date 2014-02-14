@@ -36,7 +36,7 @@ $blog_posts = new WP_Query( array(
 
                 <?php while ( $projects->have_posts() ) : $projects->the_post() ?>
 
-                    <?php get_template_part( 'templates/project' ) ?>
+                    <?php get_template_part( 'templates/project-feature' ) ?>
 
                 <?php endwhile ?>
 

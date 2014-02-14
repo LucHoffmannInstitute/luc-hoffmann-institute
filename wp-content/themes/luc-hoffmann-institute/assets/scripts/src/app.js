@@ -16,7 +16,7 @@ require.config({
 define([
 	'fitVids',
 	'slider',
-	'projects',
+	//'projects',
 	'handshake'
 ], function () {
 	'use strict';
