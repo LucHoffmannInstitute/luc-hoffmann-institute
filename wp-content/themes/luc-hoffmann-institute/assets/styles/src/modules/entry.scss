@@ -172,6 +172,7 @@
 				display: block;
 				@include rem('margin', 1, 0, 0);
 				@include font-size(16);
+				font-style: normal;
 			}
 
 		} // .pullquote

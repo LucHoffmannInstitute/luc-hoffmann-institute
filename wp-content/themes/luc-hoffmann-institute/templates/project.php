@@ -12,7 +12,7 @@ $banner = array(
 );
 ?>
 
-<article class="Project Project--list" <?php the_ID() ?>>
+<article class="Project Project--list size-1of2" <?php the_ID() ?>>
 	
 	<div class="Project-inner">
 

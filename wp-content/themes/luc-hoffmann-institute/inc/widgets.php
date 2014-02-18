@@ -67,6 +67,59 @@ function hoffmann_sidebars_init() {
 }
 
 /**
+ * Stay Connected widget
+ */
+class Hoffmann_Stay_Connected_Widget extends WP_Widget {
+
+	public function __construct() {
+
+		$widget_ops = array(
+			'classname' => 'Widget Widget--stay-connected',
+			'description' => 'Stay Connected widget'
+		);
+
+		parent::__construct(
+			'stay_connected',
+			__( 'Stay Connected', 'hoffmann' ),
+			$widget_ops
+		);
+
+	}
+
+	public function widget( $args, $instance ) {
+		extract( $args );
+
+		$title = $instance['title'];
+
+		?>
+			<?php echo $before_widget ?>
+				<?php echo $before_title ?><?php echo $title ?><?php echo $after_title ?>
+			<?php echo $after_widget ?>
+		<?php
+	}
+
+	public function form( $instance ) {
+
+		$title = $instance['title'] ? $instance['title'] : 'Stay Connected';
+		?>
+			<p>
+				<label for="<?php echo $this->get_field_id( 'title' ) ?>"><?php _e( 'Title', 'hoffmann' ) ?></label>
+				<input type="text" name="<?php echo $this->get_field_name( 'title' ) ?>" id="<?php echo $this->get_field_id( 'title' ) ?>" value="<?php echo $title ?>" />
+			</p>
+		<?php
+
+	}
+
+	public function update( $new_instance, $old_instance ) {
+
+		$instance = $old_instance;
+		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+		return $instance;
+	}
+}
+register_widget( 'Hoffmann_Stay_Connected_Widget' );
+
+/**
  * Quote widget
  */
 class Hoffmann_Quote_Widget extends WP_Widget {

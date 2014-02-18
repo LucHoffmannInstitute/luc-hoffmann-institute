@@ -54,17 +54,21 @@ $blog_posts = new WP_Query( array(
 
             <div class="col col-8">
 
-                <?php if ( $blog_posts->have_posts() ) : ?>
+                <div class="Blog-items">
 
-                    <?php while ( $blog_posts->have_posts() ) : $blog_posts->the_post() ?>
-                        
-                        <?php get_template_part( 'templates/entry-home-page' ) ?>
+                    <?php if ( $blog_posts->have_posts() ) : ?>
 
-                    <?php endwhile ?>
+                        <?php while ( $blog_posts->have_posts() ) : $blog_posts->the_post() ?>
+                            
+                            <?php get_template_part( 'templates/blog-item-excerpt' ) ?>
 
-                <?php endif ?>
+                        <?php endwhile ?>
 
-                <?php wp_reset_postdata() ?>
+                    <?php endif ?>
+
+                    <?php wp_reset_postdata() ?>
+
+                </div>
 
             </div><!-- .col.col-8 -->
 

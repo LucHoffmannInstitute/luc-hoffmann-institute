@@ -15,7 +15,7 @@ $projects = new WP_Query( array(
 
 	<section class="Projects Projects--list">
 		
-		<div class="container">
+		<div class="container" data-columns>
 			
 			<?php if ( $projects->have_posts() ) : ?>
 

@@ -4,7 +4,7 @@
 	========================================================================== */
 
 .widget {
-	@include rem('margin', 2, 0);
+	@include rem('margin', 2);
 	@include rem('padding', 2);
 	background: #fff;
 

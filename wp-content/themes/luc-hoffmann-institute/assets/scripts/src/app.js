@@ -5,7 +5,6 @@ require.config({
 		fitText: '../bower_components/fittext/fittext',
 		skrollr: '../bower_components/skrollr/src/skrollr',
 		fitVids: '../bower_components/fitvids/jquery.fitvids',
-		masonry: '../bower_components/masonry/masonry',
 		royalSlider: '../assets/vendor/royalslider/dev/jquery.royalslider',
 		slider: '../assets/scripts/src/modules/slider',
 		handshake: '../assets/scripts/src/modules/handshake',

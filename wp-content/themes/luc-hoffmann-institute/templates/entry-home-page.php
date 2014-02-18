@@ -3,12 +3,14 @@ $categories = get_the_category_list();
 ?>
 
 <article class="entry">
-    
+
+    <!--
     <?php if ( the_field('video_lede') ) : ?>
         <div class="entry-video-lede">
             <?php echo the_field('video_lede') ?>
         </div>
     <?php endif ?>
+    -->
 
     <header class="entry-header">
         <div class="entry-meta">
