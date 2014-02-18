@@ -6,6 +6,6 @@ a {
 	color: $blue-light;
 
 	&:hover {
-		color: $blue-dark;
+		color: $blue-dark !important;
 	}
 }

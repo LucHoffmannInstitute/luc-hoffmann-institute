@@ -50,6 +50,7 @@
 
 			&:hover {
 				background: $blue-light;
+				color: #fff !important;
 			}
 		}
 	}
@@ -246,6 +247,10 @@
 	@include rem('padding', 1);
 	background: #fff;
 
+	.Project--list & {
+		border-radius: 0 0 2px 2px;
+	}
+
 	@include min-width ( $bp-1 ) {
 		display: block;
 	}
@@ -277,19 +282,63 @@
 	}
 }
 
-.Project-footer {
+//.Project-footer {
+//	border-radius: 0 0 2px 2px;
+//	background: $gray-light;
+//
+//	a {
+//		display: block;
+//		@include rem('padding', 0.5, 1);
+//		@include caps;
+//		@include font-size(12);
+//		text-decoration: none;
+//		color: $text;
+//	}
+//
+//	a:hover {
+//	}
+//}
+
+.Project-footer-nav {
+	@include rem('padding', 1);
 	border-radius: 0 0 2px 2px;
-	background: $gray-light;
+	background: $bg-gray;
+
+	ul {
+		@extend .clearfix;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		float: left;
+
+		&:last-child {
+			float: right;
+		}
+	}
 
 	a {
-		display: block;
-		@include rem('padding', 0.5, 1);
-		@include caps;
-		@include font-size(12);
+		display: table;
+		@include sans;
+		@include font-size(18);
 		text-decoration: none;
 		color: $text;
+
+		&:hover {
+		}
 	}
 
-	a:hover {
+	i {
+		display: table-cell;
+		@include rem('padding', 0.5);
+		@include font-size(14);
 	}
+
+	span {
+		display: table-cell;
+		@include rem('padding', 0.5);	
+	}
+
 }

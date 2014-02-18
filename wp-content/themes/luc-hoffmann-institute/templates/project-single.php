@@ -34,7 +34,14 @@ $banner = array(
 		</div>
 
 		<div class="Project-footer">
-			&nbsp;
+			
+			<nav class="Project-footer-nav">
+				<ul>
+					<li><a href="#"><i class="icon-arrow-left"></i> <span>Title of Previous Project</span></a></li>
+					<li><a href="#"><span>Title of Next Project</span> <i class="icon-arrow-right"></i></a></li>
+				</ul>
+			</nav>
+
 		</div>
 
 	</div>
