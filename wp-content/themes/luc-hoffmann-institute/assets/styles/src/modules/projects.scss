@@ -15,6 +15,37 @@
 	
 }
 
+.Projects-menu {
+	@extend .antialiased;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+	}
+
+	li {
+		@extend .antialiased;
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+		@include rem('padding', 1);
+		@include sans;
+		@include font-size(18);
+		text-decoration: none;
+		color: #fff;
+		background: rgba(0,0,0,0.25);
+		border-radius: 2px;
+	}
+
+	i {
+	}
+
+}
+
 .Projects-home-link {
 	display: block;
 	@include font-size(24);

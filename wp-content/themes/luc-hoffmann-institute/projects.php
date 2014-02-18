@@ -19,7 +19,13 @@ $projects = new WP_Query( array(
 
 			<header class="Projects-header">
 
-				<!--All Projects | Project categories | Search projects-->
+				<nav class="Projects-menu">
+					<ul>
+						<li>
+							<a href="#"><i class="icon-arrow-down"></i> All categories</a>
+						</li>
+					</ul>
+				</nav>
 
 			</header>
 			
