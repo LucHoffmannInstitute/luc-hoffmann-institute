@@ -6,6 +6,7 @@
 	@extend .clearfix;
 	@include rem('padding', 1, 0);
 	background: $blue-dark;
+	//background: $bg-gray;
 
 	@include min-width ( $bp-2 ) {
 	}
@@ -17,17 +18,23 @@
 
 .Projects-menu {
 	@extend .antialiased;
+	text-align: center;
 
 	ul {
+		display: inline-block;
 		margin: 0;
-		padding: 0;
+		@include rem('padding', 1);
 		list-style: none;
-		text-align: center;
+		background: $blue-darker;
+		border-radius: 2px;
 	}
 
 	li {
 		@extend .antialiased;
 		display: inline-block;
+	}
+
+	.Projects-menu-select {
 	}
 
 	a {
@@ -37,8 +44,16 @@
 		@include font-size(18);
 		text-decoration: none;
 		color: #fff;
-		background: rgba(0,0,0,0.25);
+		background: $blue-base;
 		border-radius: 2px;
+
+		&:hover {
+			background: $blue-light;
+		}
+
+		span {
+			@extend .visuallyhidden;
+		}
 	}
 
 	i {

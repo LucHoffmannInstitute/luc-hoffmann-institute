@@ -880,6 +880,30 @@
 			},
 			"setIdx": 0,
 			"iconIdx": 149
+		},
+		{
+			"icon": {
+				"paths": [
+					"M512 0l-235.52 373.76h470.989l-235.469-373.76zM512.051 1024l235.469-373.76-471.040-0.051 235.571 373.811z"
+				],
+				"tags": [
+					"menu",
+					"arrows",
+					"up-down",
+					"dropdown"
+				],
+				"grid": 20
+			},
+			"properties": {
+				"id": 221,
+				"order": 39,
+				"prevSize": 20,
+				"code": 58918,
+				"name": "menu",
+				"ligatures": ""
+			},
+			"setIdx": 0,
+			"iconIdx": 221
 		}
 	],
 	"height": 1024,

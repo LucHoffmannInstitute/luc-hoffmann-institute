@@ -11,8 +11,8 @@ function hoffmann_sidebars_init() {
 		require( $file );
 	}
 
-	$before_widget	= '<section id="%1$s" class="widget %2$s">';
-	$before_title 	= '<header class="widget-header"><h2 class="widget-title">';
+	$before_widget	= '<section id="%1$s" class="Widget %2$s">';
+	$before_title 	= '<header class="Widget-header"><h2 class="Widget-title">';
 	$after_title	= '</h2></header>';
 	$after_widget	= '</section>';
 
@@ -94,6 +94,13 @@ class Hoffmann_Stay_Connected_Widget extends WP_Widget {
 		?>
 			<?php echo $before_widget ?>
 				<?php echo $before_title ?><?php echo $title ?><?php echo $after_title ?>
+
+				<form action="http://wwfint.us7.list-manage2.com/subscribe/post?u=9027d13aee5d8d2ac7bab6eb4&amp;id=ec0233486c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <label for="EMAIL">Enter your email address</label>
+                    <input type="text" value="" name="EMAIL" placeholder="Enter your email address" />
+                    <button type="submit"><i class="icon-arrow-right"></i> <span>Subscribe</span></button>
+                </form>
+
 			<?php echo $after_widget ?>
 		<?php
 	}

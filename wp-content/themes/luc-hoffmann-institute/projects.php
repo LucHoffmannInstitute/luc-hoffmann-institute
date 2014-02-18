@@ -21,9 +21,9 @@ $projects = new WP_Query( array(
 
 				<nav class="Projects-menu">
 					<ul>
-						<li>
-							<a href="#"><i class="icon-arrow-down"></i> All categories</a>
-						</li>
+						<li class="Projects-menu-select"><a href="#">All Projects <i class="icon-menu"></i></a></li>
+						<li class="Projects-menu-select"><a href="#">All Themes <i class="icon-menu"></i></a></li>
+						<li><a href="#"><i class="icon-search"></i> <span>Search</span></a></li>
 					</ul>
 				</nav>
 

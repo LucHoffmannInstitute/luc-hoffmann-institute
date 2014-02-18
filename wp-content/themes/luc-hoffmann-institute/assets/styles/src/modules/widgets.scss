@@ -3,6 +3,24 @@
 	Widgets
 	========================================================================== */
 
+.Widget {
+	@include rem('margin', 2);
+	@include rem('padding', 2);
+	background: #fff;
+	background: $blue-dark;
+	color: #fff;
+}
+
+.Widget-header {
+
+}
+
+.Widget-title {
+	margin: 0;
+	@include caps;
+	color: $gray-light;
+}
+
 .widget {
 	@include rem('margin', 2);
 	@include rem('padding', 2);
