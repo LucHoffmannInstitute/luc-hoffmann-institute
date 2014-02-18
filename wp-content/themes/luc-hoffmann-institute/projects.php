@@ -21,23 +21,33 @@ $projects = new WP_Query( array(
 
 				<nav class="Projects-menu">
 					<ul>
-						<li class="Projects-menu-select"><a href="#">All Projects <i class="icon-menu"></i></a></li>
-						<li class="Projects-menu-select"><a href="#">All Themes <i class="icon-menu"></i></a></li>
-						<li><a href="#"><i class="icon-search"></i> <span>Search</span></a></li>
+						<li class="Projects-menu-select">
+							<a href="#"><span>All Projects</span> <i class="icon-menu"></i></a>
+						</li>
+						<li class="Projects-menu-select">
+							<a href="#"><span>All Themes</span> <i class="icon-menu"></i></a>
+						</li>
+						<li class="Projects-menu-search">
+							<a href="#"><i class="icon-search"></i> <span>Search</span></a>
+						</li>
 					</ul>
 				</nav>
 
 			</header>
+
+			<div data-columns>
 			
-			<?php if ( $projects->have_posts() ) : ?>
+				<?php if ( $projects->have_posts() ) : ?>
 
-				<?php while ( $projects->have_posts() ) : $projects->the_post() ?>
+					<?php while ( $projects->have_posts() ) : $projects->the_post() ?>
 
-       				<?php get_template_part( 'templates/project' ); ?>
+	       				<?php get_template_part( 'templates/project' ); ?>
 
-				<?php endwhile ?>
+					<?php endwhile ?>
 
-			<?php endif ?>
+				<?php endif ?>
+
+			</div>
 
 			<?php wp_reset_postdata(); ?>
 

@@ -5,6 +5,7 @@ require.config({
 		fitText: '../bower_components/fittext/fittext',
 		skrollr: '../bower_components/skrollr/src/skrollr',
 		fitVids: '../bower_components/fitvids/jquery.fitvids',
+		//salvattore: '../bower_components/salvattore/dist/salvattore',
 		royalSlider: '../assets/vendor/royalslider/dev/jquery.royalslider',
 		slider: '../assets/scripts/src/modules/slider',
 		handshake: '../assets/scripts/src/modules/handshake',
@@ -16,6 +17,7 @@ define([
 	'fitVids',
 	'slider',
 	//'projects',
+	//'salvattore',
 	'handshake'
 ], function () {
 	'use strict';
