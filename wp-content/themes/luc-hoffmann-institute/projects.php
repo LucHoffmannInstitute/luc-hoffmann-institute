@@ -15,7 +15,13 @@ $projects = new WP_Query( array(
 
 	<section class="Projects Projects--list">
 		
-		<div class="container" data-columns>
+		<div class="container">
+
+			<header class="Projects-header">
+
+				<!--All Projects | Project categories | Search projects-->
+
+			</header>
 			
 			<?php if ( $projects->have_posts() ) : ?>
 

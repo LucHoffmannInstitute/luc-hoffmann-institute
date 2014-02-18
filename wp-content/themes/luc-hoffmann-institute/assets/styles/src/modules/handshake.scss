@@ -15,11 +15,12 @@
 			position: absolute;
 			top: 30%;
 			bottom: 30%;
-			right: 75%;
+			left: 0%;
 			display: block;
 			content: "";
 			@include rem('width', 1);
-			border-left: 1px solid $gray-light;
+			border-left: 2px solid $gray-light;
+			border-left-color: rgba(255,255,255,0.25);
 		}
 
 	}
@@ -32,7 +33,7 @@
 	top: 0;
 	right: 10%;
 	bottom: 0;
-	left: 25%;
+	@include rem('left', 1);
 	
 	.js.csstransitions & {
 		opacity: 0;

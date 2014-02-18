@@ -11,6 +11,27 @@
 	}
 }
 
+.Projects-header {
+	
+}
+
+.Projects-home-link {
+	display: block;
+	@include font-size(24);
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	color: rgba(255,255,255,0.5);
+
+	&:hover {
+		color: #fff;
+	}
+
+	span {
+		@extend .visuallyhidden;
+	}
+}
+
 .Projects--list {
 }
 

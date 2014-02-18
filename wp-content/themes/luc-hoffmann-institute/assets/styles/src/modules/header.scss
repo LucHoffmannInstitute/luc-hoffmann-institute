@@ -33,6 +33,7 @@
 			@include min-width ( $iPadPortrait ) {
 				padding: 0;
 				display: table-cell;
+				width: 40%;
 				vertical-align: middle;
 			}
 
