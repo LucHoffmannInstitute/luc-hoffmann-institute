@@ -159,6 +159,10 @@
 		float: left;
 		@include rem('padding', 1);
 		width: 50%;
+
+		.Projects--list-3 & {
+			width: 33.3333%;
+		}
 	}
 }
 

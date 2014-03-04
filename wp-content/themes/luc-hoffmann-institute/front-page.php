@@ -1,85 +1,135 @@
 <?php 
-get_header(); 
-
-$projects = new WP_Query( array(
-    'post_type' => 'project',
-    'posts_per_page' => -1,
-    'orderby' => 'menu_order',
-    'order' => 'ASC',
-    'meta_query' => array(
-        array(
-            'key' => 'feature',
-            'value' => '1',
-            'compare' => '=='
-        )
-    )
-) );
-
-$blog_posts = new WP_Query( array(
-    'post_type' => 'post',
-    'posts_per_page' => 3
-) );
+get_header();
 ?>
 
-    <section class="projects">
-
-        <nav class="projects-arrows">
-            <ul>
-                <li class="prev"><a href="#"><i class="icon-arrow-left"></i><span>Back</span></a></li>
-                <li class="next"><a href="#"><i class="icon-arrow-right"></i><span>Next</span></a></li>
-            </ul>
-        </nav>
-
-        <?php if ( $projects->have_posts() ) : ?>
+<section class="Cards">
         
-            <div class="projects-slider rsDefault">
+    <div class="container">
 
-                <?php while ( $projects->have_posts() ) : $projects->the_post() ?>
+        <div class="Cards-content u-cols">
+        
+            <article class="Card u-col u-col-4of12">
+                
+                <a class="Card-inner" href="#">
 
-                    <?php get_template_part( 'templates/project-feature' ) ?>
+                    <div class="Card-image"></div>
+                    
+                    <header class="Card-header">
+                        
+                        <h2 class="Card-title">Place Based Conservation Effectiveness</h2>
 
-                <?php endwhile ?>
+                    </header>
+
+                    <div class="Card-content Card-excerpt">
+                        <p>Research and synthesis evaluating the present and future effectiveness of placed-based conservation systems. Current projects: MPA, DYCE</p>
+                    </div>
+
+                </a>
+
+            </article>
+
+            <article class="Card u-col u-col-4of12">
+                
+                <a class="Card-inner" href="#">
+
+                    <div class="Card-image"></div>
+                    
+                    <header class="Card-header">
+                        
+                        <h2 class="Card-title">Natural Capital and Ecosystem Services</h2>
+
+                    </header>
+
+                    <div class="Card-content Card-excerpt">
+                        <p>Research and synthesis focused on the value of natural capital, and the quantification and linkage of ecosystem services. Current projects: LIVES</p>
+                    </div>
+
+                </a>
+
+            </article>
+
+            <article class="Card u-col u-col-4of12">
+                
+                <a class="Card-inner" href="#">
+
+                    <div class="Card-image"></div>
+                    
+                    <header class="Card-header">
+                        
+                        <h2 class="Card-title">Sustainable Production and Consumption</h2>
+
+                    </header>
+
+                    <div class="Card-content Card-excerpt">
+                        <p>Research and synthesis evaluating the feasibility and impact of various methods designed to reduce the human footprint on the planet. Current projects: Certification, China Review</p>
+                    </div>
+
+                </a>
+
+            </article>
+
+        </div><!-- .Cards-content -->
+
+    </div><!-- .container -->
+
+</section><!-- .Cards -->
+
+<!--
+    <section class="Buckets">
+
+        <header class="Buckets-header">
+
+            <div class="container">
+            
+                <h2 class="Buckets-title">Our Work</h2>
 
             </div>
 
-        <?php endif ?>
+        </header>
 
-        <?php wp_reset_postdata() ?>
+        <div class="Buckets-content">
+        
+            <div class="Bucket">
+                
+                <div class="Bucket-inner">
+                    
+                    <h3 class="Bucket-title">Place Based Conservation Effectiveness</h3>
 
-    </section><!-- .projects -->
-
-    <div class="container">
-
-        <div class="cols">
-
-            <div class="col col-8">
-
-                <div class="Blog-items">
-
-                    <?php if ( $blog_posts->have_posts() ) : ?>
-
-                        <?php while ( $blog_posts->have_posts() ) : $blog_posts->the_post() ?>
-                            
-                            <?php get_template_part( 'templates/blog-item-excerpt' ) ?>
-
-                        <?php endwhile ?>
-
-                    <?php endif ?>
-
-                    <?php wp_reset_postdata() ?>
+                    <p>Research and synthesis evaluating the present and future effectiveness of placed-based conservation systems.</p>
+                    <p>Current projects: MPA, DYCE</p>
 
                 </div>
 
-            </div><!-- .col.col-8 -->
+            </div>
 
-            <div class="col col-4">
-
-                <?php get_sidebar( 'home' ) ?>
+            <div class="Bucket">
                 
-            </div><!-- .col.col-4 -->
+                <div class="Bucket-inner">
+                    
+                    <h3 class="Bucket-title">Natural Capital and Ecosystem Services</h3>
+                    <p>Research and synthesis focused on the value of natural capital, and the quantification and linkage of ecosystem services.</p>
+                    <p>Current projects: LIVES</p>
 
-        </div><!-- .cols -->
+                </div>
 
-    </div><!-- .container -->
+            </div>
+
+            <div class="Bucket">
+                
+                <div class="Bucket-inner">
+                    
+                    <h3 class="Bucket-title">Sustainable Production and Consumption</h3>
+                    <p>Research and synthesis evaluating the feasibility and impact of various methods designed to reduce the human footprint on the planet.</p>
+                    <p>Current projects: Certification, China Review</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+-->
 
 <?php get_footer() ?>

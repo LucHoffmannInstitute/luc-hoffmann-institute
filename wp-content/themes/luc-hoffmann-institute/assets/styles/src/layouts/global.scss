@@ -36,6 +36,15 @@ body {
 	float: right !important;
 }
 
+.u-col {
+	
+	@include max-width ( $bp-2 - 1 ) {
+		float: none !important;
+		width: auto !important;
+	}
+
+}
+
 .cols {
 	@extend .clearfix;
 

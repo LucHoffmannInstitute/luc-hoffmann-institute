@@ -1,0 +1,66 @@
+/*	==========================================================================
+	Cards
+	========================================================================== */
+
+.Cards {
+	background: $blue-dark;
+}
+
+.Cards-header {
+
+}
+
+.Cards-content {
+	@extend .clearfix;
+	@include rem('padding', 1, 0);
+}
+
+.Card {
+	@include rem('padding', 1);
+	
+	@include min-width ( $bp-2 ) {
+	}
+}
+
+.Card-inner {
+	display: block;
+	text-decoration: none;
+	color: $text;
+	background: #fff;
+	border-radius: 2px;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.Card-image {
+	min-height: 200px;
+	background: {
+		color: #ddd;
+		repeat: no-repeat;
+		position: center;
+		size: cover;
+	}
+}
+
+.Card-header {
+	@extend .antialiased;
+	@include rem('padding', 0.5, 1);
+	background: $gray-dark;
+	color: #fff;
+}
+
+.Card-title {
+	margin: 0;
+	@include sans;
+	@include font-size(18);
+	line-height: 1.2;
+}
+
+.Card-content {
+	@extend .antialiased;
+	@include rem('padding', 0.5, 1);
+	background: $gray-dark;
+	color: #fff;
+	@include sans;
+	@include font-size(16);
+}
