@@ -4,6 +4,7 @@
 
 body {
 	background: $bg-gray;
+	background: $blue-darker;
 	//background: #fff;
 }
 
@@ -16,7 +17,8 @@ body {
 	color: #fff;
 }
 
-.container {
+.container,
+.u-container {
 	position: relative;
 	margin: 0 auto;
 	@include rem('padding', 0, 1);
@@ -26,7 +28,15 @@ body {
 		@include rem('padding', 0, 2);
 	}
 
-} // .container
+}
+
+.u-container--wide {
+//	max-width: 1400px;
+
+	@include min-width ( $bp-2 ) {
+//		@include rem('padding', 0, 1);	
+	}
+}
 
 .align-left {
 	float: left !important;

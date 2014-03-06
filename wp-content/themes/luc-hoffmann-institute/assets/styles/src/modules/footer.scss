@@ -3,6 +3,7 @@
 		======================================================================== */
 
 .footer {
+display: none;
 	@extend .antialiased;
 	@include sans;
 	@include rem('padding', 2, 0);

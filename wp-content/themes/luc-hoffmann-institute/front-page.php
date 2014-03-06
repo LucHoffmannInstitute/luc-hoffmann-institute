@@ -1,135 +1,157 @@
 <?php 
 get_header();
+
+$blog_posts = new WP_Query( array(
+    'post_type' => 'post',
+    'posts_per_page' => 3
+) );
 ?>
 
-<section class="Cards">
+    <section class="Cards">
+
+        <div class="Cards-content u-cols" style="background-image: url(<?php echo get_bloginfo('url') ?>/wp-content/uploads/2013/10/HI_230600.jpg);">
+
+            <div class="u-container">
         
-    <div class="container">
-
-        <div class="Cards-content u-cols">
-        
-            <article class="Card u-col u-col-4of12">
-                
-                <a class="Card-inner" href="#">
-
-                    <div class="Card-image"></div>
+                <article class="Card u-col u-col-4of12">
                     
-                    <header class="Card-header">
+                    <div class="Card-inner">
+
+                        <div class="Card-image" style="background-image: url(<?php echo get_bloginfo('url') ?>/wp-content/uploads/2013/10/HI_230600.jpg);"></div>
                         
-                        <h2 class="Card-title">Place Based Conservation Effectiveness</h2>
+                        <header class="Card-header">
+                            
+                            <h2 class="Card-title">Place Based Conservation Effectiveness</h2>
 
-                    </header>
+                        </header>
 
-                    <div class="Card-content Card-excerpt">
-                        <p>Research and synthesis evaluating the present and future effectiveness of placed-based conservation systems. Current projects: MPA, DYCE</p>
+                        <div class="Card-content Card-excerpt">
+                            <p><!--Research and synthesis-->Evaluating the present and future effectiveness of placed-based conservation systems.</p>
+                            <p><small>Current projects: MPA, DYCE</small></p>
+                        </div>
+
+                        <div class="Card-footer">
+                            <a href="#" class="Button">Learn more</a>
+                        </div>
+
                     </div>
 
-                </a>
+                </article>
 
-            </article>
-
-            <article class="Card u-col u-col-4of12">
-                
-                <a class="Card-inner" href="#">
-
-                    <div class="Card-image"></div>
+                <article class="Card u-col u-col-4of12">
                     
-                    <header class="Card-header">
+                    <div class="Card-inner">
+
+                        <div class="Card-image" style="background-image: url(<?php echo get_bloginfo('url') ?>/wp-content/uploads/2013/10/259587.jpg);"></div>
                         
-                        <h2 class="Card-title">Natural Capital and Ecosystem Services</h2>
+                        <header class="Card-header">
+                            
+                            <h2 class="Card-title">Natural Capital and Ecosystem Services</h2>
 
-                    </header>
+                        </header>
 
-                    <div class="Card-content Card-excerpt">
-                        <p>Research and synthesis focused on the value of natural capital, and the quantification and linkage of ecosystem services. Current projects: LIVES</p>
+                        <div class="Card-content Card-excerpt">
+                            <p><!--Research and synthesis-->Focused on the value of natural capital, and the quantification and linkage of ecosystem services.</p>
+                            <p><small>Current projects: LIVES</small></p>
+                        </div>
+
+                        <div class="Card-footer">
+                            <a href="#" class="Button">Learn more</a>
+                        </div>
+
                     </div>
 
-                </a>
+                </article>
 
-            </article>
-
-            <article class="Card u-col u-col-4of12">
-                
-                <a class="Card-inner" href="#">
-
-                    <div class="Card-image"></div>
+                <article class="Card u-col u-col-4of12">
                     
-                    <header class="Card-header">
+                    <div class="Card-inner">
+
+                        <div class="Card-image" style="background-image: url(<?php echo get_bloginfo('url') ?>/wp-content/uploads/2013/10/50492.jpg);"></div>
                         
-                        <h2 class="Card-title">Sustainable Production and Consumption</h2>
+                        <header class="Card-header">
+                            
+                            <h2 class="Card-title">Sustainable Production and Consumption</h2>
 
-                    </header>
+                        </header>
 
-                    <div class="Card-content Card-excerpt">
-                        <p>Research and synthesis evaluating the feasibility and impact of various methods designed to reduce the human footprint on the planet. Current projects: Certification, China Review</p>
+                        <div class="Card-content Card-excerpt">
+                            <p><!--Research and synthesis-->Evaluating the feasibility and impact of methods to reduce the human footprint on the planet.</p>
+                            <p><small>Current projects: Certification, China Review</small></p>
+                        </div>
+
+                        <div class="Card-footer">
+                            <a href="#" class="Button">Learn more</a>
+                        </div>
+
                     </div>
 
-                </a>
+                </article>
 
-            </article>
+            </div><!-- .u-container -->
 
         </div><!-- .Cards-content -->
 
-    </div><!-- .container -->
+    </section><!-- .Cards -->
 
-</section><!-- .Cards -->
+    <div class="u-container">
 
-<!--
-    <section class="Buckets">
+        <div class="u-cols">
 
-        <header class="Buckets-header">
-
-            <div class="container">
-            
-                <h2 class="Buckets-title">Our Work</h2>
-
-            </div>
-
-        </header>
-
-        <div class="Buckets-content">
-        
-            <div class="Bucket">
+            <div class="u-col u-col-4of12">
                 
-                <div class="Bucket-inner">
+                <section class="Widget Widget--Stay-Connected">
                     
-                    <h3 class="Bucket-title">Place Based Conservation Effectiveness</h3>
+                    <header class="Widget-header">
+                        <h2 class="Widget-title">Stay Connected</h2>
+                    </header>
 
-                    <p>Research and synthesis evaluating the present and future effectiveness of placed-based conservation systems.</p>
-                    <p>Current projects: MPA, DYCE</p>
+                    <div class="Widget-content">
+                        
+                        
 
-                </div>
+                    </div>
 
-            </div>
+                </section>
 
-            <div class="Bucket">
+            </div><!-- .u-col -->
+
+            <div class="u-col u-col-8of12">
+
+                <?php if ( $blog_posts->have_posts() ) : ?>
                 
-                <div class="Bucket-inner">
-                    
-                    <h3 class="Bucket-title">Natural Capital and Ecosystem Services</h3>
-                    <p>Research and synthesis focused on the value of natural capital, and the quantification and linkage of ecosystem services.</p>
-                    <p>Current projects: LIVES</p>
+                    <section class="Widget Widget--Feed">
 
-                </div>
+                        <div class="Feed">
 
-            </div>
+                            <?php while ( $blog_posts->have_posts() ) : $blog_posts->the_post() ?>
 
-            <div class="Bucket">
-                
-                <div class="Bucket-inner">
-                    
-                    <h3 class="Bucket-title">Sustainable Production and Consumption</h3>
-                    <p>Research and synthesis evaluating the feasibility and impact of various methods designed to reduce the human footprint on the planet.</p>
-                    <p>Current projects: Certification, China Review</p>
+                                <?php $image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ?>
+                            
+                                <article class="Feed-item Media-object">
+                                    
+                                    <div class="Feed-item-image" style="background-image: url(<?php echo $image_url ?>);"></div>
 
-                </div>
+                                    <header class="Feed-item-header">
+                                        <h3 class="Feed-item-title"><?php the_title() ?></h3>
+                                    </header>
 
-            </div>
+                                </article>
 
-        </div>
+                            <?php endwhile ?>
 
-    </section>
+                        </div><!-- .Feed -->
 
--->
+                    </section>
+
+                    <?php wp_reset_postdata() ?>
+
+                <?php endif ?>
+
+            </div><!-- .u-col -->
+
+        </div><!-- .u-cols -->
+
+    </div><!-- .u-container -->
 
 <?php get_footer() ?>
