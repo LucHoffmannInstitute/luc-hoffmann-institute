@@ -9,7 +9,7 @@
 }
 
 .Widget-header {
-
+	@include rem('margin-bottom', 1);
 }
 
 .Widget-title {

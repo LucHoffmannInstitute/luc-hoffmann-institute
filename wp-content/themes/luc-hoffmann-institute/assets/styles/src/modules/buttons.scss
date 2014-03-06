@@ -3,6 +3,23 @@
 	Buttons
 	========================================================================== */
 
+.Button {
+	@extend .disable-select;
+	//@extend .antialiased;
+	display: inline-block;
+	margin: 0;
+	@include rem('padding', 0.5);
+	@include caps;
+	background: $blue-dark;
+	color: #fff;
+	border-radius: 2px;
+
+	&:hover {
+		background: $blue-light;
+		color: #fff !important;
+	}
+}
+
 .button {
 	@extend .disable-select;
 	@extend .antialiased;

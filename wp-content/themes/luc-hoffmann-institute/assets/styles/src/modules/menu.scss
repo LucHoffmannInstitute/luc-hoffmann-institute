@@ -6,7 +6,7 @@
 .menu {
 	background: $blue-darker;
 
-	@include min-width ( $iPadPortrait ) {
+	@include min-width ( $bp-2 ) {
 		display: block;
 		position: relative;
 		z-index: 100;
@@ -36,7 +36,7 @@
 	.container {
 		padding: 0;
 
-		@include min-width ( $iPadPortrait ) {
+		@include min-width ( $bp-2 ) {
 			@include rem('padding', 0, 2);
 		}
 	}
@@ -48,7 +48,7 @@
 		list-style: none;
 		text-align: center;
 
-		@include min-width ( $iPadPortrait ) {
+		@include min-width ( $bp-2 ) {
 			display: table;
 			table-layout: fixed;
 			width: 100%;
@@ -61,7 +61,7 @@
 		display: block;
 		width: 50%;
 
-		@include min-width ( $iPadPortrait ) {
+		@include min-width ( $bp-2 ) {
 			float: none;
 			display: table-cell;
 			vertical-align: middle;
@@ -76,7 +76,7 @@
 		&:last-child a {
 			border-right: 1px solid darken( $blue-darker, 3% );
 
-			@include min-width ( $iPadPortrait ) {
+			@include min-width ( $bp-2 ) {
 				border-right: none;
 			}
 		}
@@ -89,13 +89,13 @@
 		display: block;
 		@include font-size(14);
 		text-decoration: none;
-		font-weight: 600;
+		//font-weight: 600;
 		color: #fff;
 		border: 1px solid darken( $blue-darker, 3% );
 		border-top: none;
 		border-right: none;
 
-		@include min-width ( $iPadPortrait ) {
+		@include min-width ( $bp-2 ) {
 			display: table;
 			vertical-align: middle;
 			width: 100%;
@@ -109,7 +109,7 @@
 			@include rem('padding', 0.5);
 			text-align: center;
 
-			@include min-width ( $iPadPortrait ) {
+			@include min-width ( $bp-2 ) {
 				vertical-align: middle;
 				display: table-cell;
 				padding: 0;
@@ -145,14 +145,14 @@
 display: none;
 		width: 100%;
 
-		@include min-width ( $iPadPortrait ) {
+		@include min-width ( $bp-2 ) {
 			display: table-cell;
 display: none;
 			width: 190px;
 			transition: width 0.25s ease;
 		}
 
-		@include min-width ( $iPadLandscape ) {
+		@include min-width ( $bp-3 ) {
 			width: 190px;
 			//border-left: 1px solid $blue-darker;
 			//border-right: 1px solid $blue-darker;
@@ -166,7 +166,7 @@ display: none;
 		.menu-fixed & {
 			width: 190px;
 
-			@include min-width ( $iPadLandscape ) {
+			@include min-width ( $bp-3 ) {
 				width: 190px;
 				//border-left: 1px solid $fill-blue-very-dk;
 			}
@@ -212,7 +212,7 @@ display: none;
 			.menu-fixed & {
 				width: 140px;
 
-				@include min-width ( $iPadLandscape ) {
+				@include min-width ( $bp-3 ) {
 					width: 140px;
 				}
 

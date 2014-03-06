@@ -1,0 +1,62 @@
+/*	==========================================================================
+	Stay connected widget
+	========================================================================== */
+
+.Widget--Stay-Connected {
+
+	form {
+		@include sans();
+		@include font-size(16);
+		color: $text-light;
+
+		label {
+			@extend .visuallyhidden;
+		}
+
+		input[type="text"] {
+			display: block;
+			width: 100%;
+			@include rem('margin-bottom', 1);
+			@include rem('padding', 0.5);
+			@include font-size(16);
+			border: none;
+			background: #ddd;
+
+			@include placeholder {
+				color: $text-light;
+			}
+		}
+
+		button[type="submit"] {
+			border: none;
+		}
+
+	}
+
+	ul {
+		@include rem('margin', 2, 0);
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		@include sans;
+		@include font-size(18);
+	}
+
+	a {
+		text-decoration: none;
+		color: $text-light;
+
+		&:hover {
+			color: $blue-light !important;
+		}
+
+		i {
+			@include rem('margin-right', 0.5);
+		}
+	}
+
+	
+
+}
