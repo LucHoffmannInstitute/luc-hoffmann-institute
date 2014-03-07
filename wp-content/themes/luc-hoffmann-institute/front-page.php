@@ -13,7 +13,7 @@ $blog_posts = new WP_Query( array(
 
             <div class="u-container">
         
-                <article class="Card u-col u-col-4of12">
+                <article class="Card u-col u-col-4of12" id="card-1">
                     
                     <div class="Card-inner">
 
@@ -38,7 +38,7 @@ $blog_posts = new WP_Query( array(
 
                 </article>
 
-                <article class="Card u-col u-col-4of12">
+                <article class="Card u-col u-col-4of12" id="card-2">
                     
                     <div class="Card-inner">
 
@@ -63,7 +63,7 @@ $blog_posts = new WP_Query( array(
 
                 </article>
 
-                <article class="Card u-col u-col-4of12">
+                <article class="Card u-col u-col-4of12" id="card-3">
                     
                     <div class="Card-inner">
 
