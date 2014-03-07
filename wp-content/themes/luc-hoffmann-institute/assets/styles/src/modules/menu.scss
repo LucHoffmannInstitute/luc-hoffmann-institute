@@ -25,22 +25,6 @@
 		}
 	}
 
-	.menu-fixed & {
-		position: fixed;
-		z-index: 999;
-		top: 0;
-		right: 0;
-		left: 0;
-	}
-
-	.container {
-		padding: 0;
-
-		@include min-width ( $bp-2 ) {
-			@include rem('padding', 0, 2);
-		}
-	}
-
 	ul {
 		@extend .clearfix;
 		margin: 0;
@@ -104,6 +88,16 @@
 			border: none;
 		}
 
+		&:after {
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			height: 4px;
+		}
+
 		span {
 			display: block;
 			@include rem('padding', 0.5);
@@ -125,18 +119,9 @@
 	li.current_page_parent a,
 	li.active a,
 	li a:hover {
-		//background: $blue-dark;
-		//background: $blue-base;
 		color: #fff !important;
-		
+
 		&:after {
-			display: block;
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			left: 0;
-			height: 4px;
 			background: $green-light;
 		}
 	}
