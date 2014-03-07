@@ -13,8 +13,8 @@
 
 		&:after {
 			position: absolute;
-			top: 35%;
-			bottom: 35%;
+			top: 30%;
+			bottom: 30%;
 			left: 0%;
 			display: block;
 			content: "";
@@ -35,7 +35,7 @@
 	@include rem('left', 1);
 
 	@include min-width ( $bp-3 ) {
-		right: 20%;
+		right: 30%;
 	}
 	
 	.js.csstransitions & {

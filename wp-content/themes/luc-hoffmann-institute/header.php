@@ -38,23 +38,41 @@
 
             <?php // if ( is_front_page() ) : ?>
 
-                <div class="container">
+                <div class="u-container">
 
                     <div class="upper">
                         <h1 class="logo">
                             <a href="<?php bloginfo('url') ?>"><i class="icon-hoffmann"></i><span>Luc Hoffmann Institute</span></a>
                         </h1>
 
-                        <?php get_template_part( 'templates/handshake' ) ?>
+                        <div class="Handshake">
+
+                            <div class="Handshake-inner">
+
+                                <div class="Handshake-content">
+
+                                    <div class="Handshake-content-inner">
+
+                                        <span class="Handshake-message">
+                                            <?php bloginfo('description') ?>
+                                        </span>
+                                    
+                                    </div>
+                                
+                                </div>
+                            
+                            </div>
+
+                        </div><!-- .Handshake -->
 
                     </div><!-- .upper -->
 
-                </div><!-- .container -->
+                </div><!-- .u-container -->
 
             <?php // endif ?>
 
             <nav id="menu" class="menu" role="navigation">
-                <div class="container">
+                <div class="u-container">
                     <?php wp_nav_menu( array(
                         'theme_location' => 'main-menu',
                         'depth' => 1,
