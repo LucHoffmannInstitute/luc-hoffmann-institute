@@ -1,15 +1,17 @@
-<?php 
+<?php
 get_header();
 
 $blog_posts = new WP_Query( array(
     'post_type' => 'post',
     'posts_per_page' => 3
 ) );
+
+$banner = new Banner();
 ?>
 
     <section class="Cards">
 
-        <div class="Cards-content u-cols" style="background-image: url(<?php echo get_bloginfo('url') ?>/wp-content/uploads/2013/10/HI_230600.jpg);">
+        <div class="Cards-content u-cols" style="background-image: url(<?php echo $banner->url() ?>);">
 
             <div class="u-container">
         
@@ -124,6 +126,7 @@ $blog_posts = new WP_Query( array(
                                         <div class="Feed-item-image" style="background-image: url(<?php echo $image_url ?>);"></div>
 
                                         <header class="Feed-item-header">
+                                            <time class="Feed-item-date" datetime="<?php get_the_date( 'c' ) ?>"><?php echo get_the_date( 'd.m.Y' ) ?></time>
                                             <h3 class="Feed-item-title"><?php the_title() ?></h3>
                                         </header>
 

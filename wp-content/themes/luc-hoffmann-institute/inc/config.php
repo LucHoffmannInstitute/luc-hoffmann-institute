@@ -22,10 +22,10 @@ function hoffmann_theme_setup() {
 	// Editor styles
 	add_editor_style( get_template_directory_uri() . '/assets/styles/build/editor-style.css' );
 
-	// Featured images
-	if ( function_exists( 'add_theme_support' ) ) {
-		add_theme_support('post-thumbnails');
-	}
+//	// Featured images
+//	if ( function_exists( 'add_theme_support' ) ) {
+//		add_theme_support('post-thumbnails');
+//	}
 
 	// Set media sizes
 	// thumbnail: 200x200 square crop

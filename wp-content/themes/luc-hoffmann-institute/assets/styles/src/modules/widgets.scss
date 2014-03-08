@@ -4,8 +4,13 @@
 	========================================================================== */
 
 .Widget {
-	@include rem('margin-bottom', 2);
-	@include rem('padding', 1);
+	@include rem('margin-bottom', 1);
+	@include rem('padding', 1, 0);
+
+	@include min-width ( $bp-2 ) {
+		@include rem('margin-bottom', 2);
+		@include rem('padding', 1);
+	}
 }
 
 .Widget-header {

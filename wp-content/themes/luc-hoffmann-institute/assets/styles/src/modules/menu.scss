@@ -45,20 +45,21 @@
 		display: block;
 		width: 50%;
 
+		$menu-item-border:  2px solid darken($blue-darker, 3%);
+
 		@include min-width ( $bp-2 ) {
 			float: none;
 			display: table-cell;
 			vertical-align: middle;
-			//width: auto;
-			border-right: 1px solid darken( $blue-darker, 3% );
+			border-right: $menu-item-border;
 
 			&:first-child {
-				border-left: 1px solid darken( $blue-darker, 3% );
+				border-left: $menu-item-border;
 			}
 		}
 
 		&:last-child a {
-			border-right: 1px solid darken( $blue-darker, 3% );
+			border-right: $menu-item-border;
 
 			@include min-width ( $bp-2 ) {
 				border-right: none;

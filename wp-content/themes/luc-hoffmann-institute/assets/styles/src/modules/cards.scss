@@ -8,17 +8,33 @@
 }
 
 .Cards-content {
-	@include rem('padding', 1);
+	@include rem('padding', 0.5, 0);
 	min-height: 420px;
 	background: {
 		repeat: no-repeat;
 		position: center;
 		size: cover;
 	}
+
+	@include min-width( $bp-2 ) {
+		@include rem('padding', 0.5);
+	}
+
+	@include min-width( $bp-3 ) {
+		@include rem('padding', 1);
+	}
 }
 
 .Card {
-	@include rem('padding', 1);
+	@include rem('padding', 0.5, 0);
+
+	@include min-width( $bp-2 ) {
+		@include rem('padding', 0.5);
+	}
+
+	@include min-width( $bp-3 ) {
+		@include rem('padding', 1);
+	}
 }
 
 .Card-inner {
@@ -46,17 +62,25 @@
 	//@extend .antialiased;
 	margin: 0;
 	@include sans;
-	@include font-size(30);
+	@include font-size(24);
 	line-height: 1.25;
 	color: #fff;
+
+	@include min-width( $bp-3 ) {
+		@include font-size(30);
+	}
 }
 
 .Card-content {
 	@extend .antialiased;
-	@include rem('padding', 2);
+	@include rem('padding', 0, 2, 2);
 	@include sans;
 	@include font-size(16);
 	color: #fff;
+
+	@include min-width( $bp-2 ) {
+		@include rem('padding-top', 1);
+	}
 
 	p:first-of-type {
 		margin-top: 0;
