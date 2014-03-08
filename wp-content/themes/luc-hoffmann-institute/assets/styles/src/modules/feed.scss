@@ -16,9 +16,10 @@
 .Feed-item-inner {
 	display: block;
 	text-decoration: none;
+	color: #fff;
 
 	&:hover {
-		background: $blue-dark;
+		color: $blue-light !important;
 	}
 }
 
@@ -36,7 +37,7 @@
 .Feed-item-header {
 	@extend .antialiased;
 	display: table-cell;
-	vertical-align: middle;
+	vertical-align: top;
 	@include rem('padding', 0, 1);
 }
 
@@ -44,12 +45,10 @@
 	margin: 0;
 	@include sans;
 	@include font-size(18);
-	color: #fff;
 }
 
 .Feed-item-date {
 	margin: 0;
 	@include caps;
-	color: #fff;
 	color: rgba(255,255,255,0.5);
 }
