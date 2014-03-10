@@ -23,15 +23,15 @@ get_header();
 						
 					<?php if ( have_posts() ) : ?>
 
-						<div class="Blog-items">
-								
-							<?php while ( have_posts() ) : the_post() ?>
-		
-								<?php get_template_part( 'templates/blog-item-excerpt' ); ?>
+						<section class="Feed">
 
-							<?php endwhile ?>
+                            <?php while ( have_posts() ) : the_post() ?>
 
-						</div><!-- .Blog-items -->
+								<?php get_template_part( 'templates/feed-item' ); ?>
+
+                            <?php endwhile ?>
+
+	                    </section>
 
 					<?php endif ?>
 	

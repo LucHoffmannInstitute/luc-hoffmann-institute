@@ -20,7 +20,10 @@
 .Widget-title {
 	margin: 0;
 	@include caps;
-	color: #fff;
+
+	body.home & {
+		color: #fff;
+	}
 }
 
 .Widget-content {

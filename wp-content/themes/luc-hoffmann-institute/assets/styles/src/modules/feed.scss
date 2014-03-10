@@ -9,14 +9,16 @@
 	display: table;
 	@include rem('margin-bottom', 1);
 	width: 100%;
-	//background: #fff;
-	//background: rgba(255,255,255,0.1);
 }
 
 .Feed-item-inner {
 	display: block;
 	text-decoration: none;
-	color: #fff;
+	color: $text;
+
+	body.home & {
+		color: #fff;
+	}
 
 	&:hover {
 		color: $blue-light !important;
@@ -50,5 +52,8 @@
 .Feed-item-date {
 	margin: 0;
 	@include caps;
-	color: rgba(255,255,255,0.5);
+
+	body.home & {
+		color: rgba(255,255,255,0.5);
+	}
 }

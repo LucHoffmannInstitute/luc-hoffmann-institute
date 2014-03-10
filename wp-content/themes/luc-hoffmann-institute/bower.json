@@ -5,22 +5,14 @@
   "dependencies": {
     "jquery": "~1.11.0",
     "modernizr": "~2.6.2",
-    "imagesloaded": "~3.0.4",
     "storm-twitter": "https://github.com/stormuk/storm-twitter.git",
-    "jquery.scrollTo": "~1.4.6",
-    "jquery.localScroll": "~1.2.9",
-    "fittext": "*",
-    "skrollr": "~0.6.12",
     "fitvids": "~1.1.0",
     "selectivizr": "~1.0.2",
     "respond": "~1.3.0",
-    "almond": "~0.2.9",
-    "elcontraption-utility-defaults": "git@github.com:elcontraption/utility-defaults.git#~0.1.1",
-    "elcontraption-utility-normalize": "git@github.com:elcontraption/utility-normalize.git#~2.1.3",
-    "elcontraption-utility-mixins": "git@github.com:elcontraption/utility-mixins.git#~0.1.2",
-    "masonry": "~3.1.4",
-    "salvattore": "~1.0.4",
-    "elcontraption-utility-cols": "elcontraption/utility-cols#~0.1.4"
+    "utility-defaults": "elcontraption/utility-defaults#~0.1.3",
+    "utility-mixins": "elcontraption/utility-mixins#~0.1.4",
+    "utility-cols": "elcontraption/utility-cols#~0.1.6",
+    "fitvids": "~1.1.0"
   },
   "devDependencies": {}
 }

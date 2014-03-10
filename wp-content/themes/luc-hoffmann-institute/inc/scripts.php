@@ -11,8 +11,8 @@ function hoffmann_styles_and_scripts() {
 		return false;
 	}
 
-	wp_register_style( 'screen', get_template_directory_uri() . '/assets/styles/build/screen.css' );
-	wp_enqueue_style( 'screen' );
+	wp_register_style( 'main', get_template_directory_uri() . '/assets/styles/build/main.css' );
+	wp_enqueue_style( 'main' );
 
 	// include jQuery
 	wp_deregister_script( 'jquery' );
@@ -20,8 +20,8 @@ function hoffmann_styles_and_scripts() {
 	wp_enqueue_script( 'jquery' );
 
 	// include theme scripts in footer
-	wp_register_script( 'hoffmann-main', get_template_directory_uri() . '/assets/scripts/build/main.js', array( 'jquery' ), null, true );
-	wp_enqueue_script( 'hoffmann-main' );
+	wp_register_script( 'main', get_template_directory_uri() . '/assets/scripts/build/main.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'main' );
 
 	if ( comments_open() ) {
 		wp_enqueue_script( 'comment-reply' );
