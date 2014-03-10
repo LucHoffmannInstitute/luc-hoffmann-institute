@@ -18,8 +18,6 @@ $banner = new Banner();
                 <article class="Card u-col u-col-4of12" id="card-1">
                     
                     <div class="Card-inner">
-
-                        <div class="Card-image" style="background-image: url(<?php echo get_bloginfo('url') ?>/wp-content/uploads/2013/10/HI_230600.jpg);"></div>
                         
                         <header class="Card-header">
                             
@@ -43,8 +41,6 @@ $banner = new Banner();
                 <article class="Card u-col u-col-4of12" id="card-2">
                     
                     <div class="Card-inner">
-
-                        <div class="Card-image" style="background-image: url(<?php echo get_bloginfo('url') ?>/wp-content/uploads/2013/10/259587.jpg);"></div>
                         
                         <header class="Card-header">
                             
@@ -68,8 +64,6 @@ $banner = new Banner();
                 <article class="Card u-col u-col-4of12" id="card-3">
                     
                     <div class="Card-inner">
-
-                        <div class="Card-image" style="background-image: url(<?php echo get_bloginfo('url') ?>/wp-content/uploads/2013/10/50492.jpg);"></div>
                         
                         <header class="Card-header">
                             
