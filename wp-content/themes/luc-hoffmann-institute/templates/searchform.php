@@ -1,6 +1,4 @@
-<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-  <div class="input-wrap">
+<form class="Form" role="search" method="get" action="<?php echo home_url( '/' ); ?>">
     <input type="text" value="<?php echo get_search_query() ?>" name="s" id="s" placeholder="Search this site" />
-    <button type="submit"><i class="icon-search"></i><span>Search</span></button>
-  </div>
+    <button class="Button Button--action" type="submit">Search</button>
 </form>

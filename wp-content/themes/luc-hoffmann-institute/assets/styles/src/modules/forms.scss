@@ -2,59 +2,31 @@
 /*	Forms
 		======================================================================== */
 
-form {
+.Form {
+	@include sans();
+	@include font-size(16);
+	color: $text-light;
 
-	$field-height: 3em;
+	label {
+		@extend .visuallyhidden;
+	}
 
-	.field-wrap {
-		display: inline-block;
-		vertical-align: middle;
-		font-size: 0;
+	input[type="text"] {
+		display: block;
+		width: 100%;
+		@include rem('margin-bottom', 1);
+		@include rem('padding', 0.5);
+		@include font-size(16);
+		border: none;
+		background: #ddd;
 
-		input,
-		button {
-			display: inline-block;
-			vertical-align: middle;
-			@include font-size(12);
-			border: none;
-			height: $field-height;
-			background: none;
+		@include placeholder {
+			color: $text-light;
 		}
+	}
 
-		input[type="text"] {
-			@include rem('padding', 0.5, 1);
-			width: 85%;
-			background: $gray-base;
-			color: $text;
+	button[type="submit"] {
+		border: none;
+	}
 
-			@include placeholder {
-				color: $text;
-			}
-
-		} // input[type="text"]
-
-		button[type="submit"] {
-			width: 15%;
-			background: $blue-dark;
-
-			&:hover {
-				background: $blue-base;
-			}
-
-			span {
-				@extend .visuallyhidden;
-			}
-
-			i {
-				position: relative;
-				top: 0.1em;
-				vertical-align: middle;
-				@include font-size(18);
-				color: $text;
-			}
-
-		} // button[type="submit"]
-
-	} // .field-wrap
-
-} // form
+}

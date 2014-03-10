@@ -134,7 +134,7 @@ $banner = new Banner();
 
                         <footer class="Widget-footer">
                             
-                            <a class="read-more" href="<?php echo get_bloginfo('url') ?>/blog/">All news</a>
+                            <a class="Button" href="<?php echo get_bloginfo('url') ?>/blog/">More news</a>
 
                         </footer>
 
@@ -156,11 +156,11 @@ $banner = new Banner();
 
                     <div class="Widget-content">
                         
-                        <form action="http://wwfint.us7.list-manage2.com/subscribe/post?u=9027d13aee5d8d2ac7bab6eb4&amp;id=ec0233486c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <form class="Form validate" action="http://wwfint.us7.list-manage2.com/subscribe/post?u=9027d13aee5d8d2ac7bab6eb4&amp;id=ec0233486c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
                             <p>Subscribe to our newsletter</p>
                             <label for="EMAIL">Enter your email address</label>
                             <input type="text" value="" name="EMAIL" placeholder="Enter your email address" />
-                            <button class="Button" type="submit"><span>Subscribe</span></button>
+                            <button class="Button Button--action" type="submit">Submit</button>
                         </form>
 
                         <ul>

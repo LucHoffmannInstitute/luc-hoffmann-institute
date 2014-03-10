@@ -5,19 +5,25 @@
 
 .Button {
 	@extend .disable-select;
-	//@extend .antialiased;
 	display: inline-block;
 	margin: 0;
-	@include rem('padding', 0.5);
-	@include caps;
-	background: $blue-dark;
+	@include rem('padding', 0.5, 1);
+	//@include caps;
+	@include sans;
+	@include font-size(16);
+	background: $gray-darker;
 	color: #fff;
 	border-radius: 2px;
+	text-decoration: none;
 
 	&:hover {
 		background: $blue-light;
 		color: #fff !important;
 	}
+}
+
+.Button--action {
+	background: $blue-dark;
 }
 
 .button {
