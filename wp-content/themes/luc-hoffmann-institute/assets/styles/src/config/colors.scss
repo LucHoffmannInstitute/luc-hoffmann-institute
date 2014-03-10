@@ -29,6 +29,8 @@ $gray-light: #bcc1c2;
 $bg-gray: #e6e6e6;
 $bg-gray-light: #fdfdfd;
 
+$gray-darker: darken( $gray-dark, 3% );
+
 // Base text color
 $text: #444;
 $text-light: $gray-base;

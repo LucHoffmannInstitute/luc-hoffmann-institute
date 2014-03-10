@@ -26,7 +26,7 @@ $banner = new Banner();
                         </header>
 
                         <div class="Card-content Card-excerpt">
-                            <p><!--Research and synthesis-->Evaluating the present and future effectiveness of placed-based conservation systems.</p>
+                            <p>Evaluating the present and future effectiveness of placed-based conservation systems.</p>
                             <p><small>Current projects: <a href="#">MPA</a> <a href="#">DYCE</a></small></p>
                         </div>
 
@@ -49,7 +49,7 @@ $banner = new Banner();
                         </header>
 
                         <div class="Card-content Card-excerpt">
-                            <p><!--Research and synthesis-->Focused on the value of natural capital, and the quantification and linkage of ecosystem services.</p>
+                            <p>Focused on the value of natural capital, and the quantification and linkage of ecosystem services.</p>
                             <p><small>Current projects: <a href="#">LIVES</a></small></p>
                         </div>
 
@@ -72,7 +72,7 @@ $banner = new Banner();
                         </header>
 
                         <div class="Card-content">
-                            <p><!--Research and synthesis-->Evaluating the feasibility and impact of methods to reduce the human footprint on the planet.</p>
+                            <p>Evaluating the feasibility and impact of methods to reduce the human footprint on the planet.</p>
 
                             
 
@@ -130,7 +130,13 @@ $banner = new Banner();
 
                             <?php endwhile ?>
 
-                        </div><!-- .Feed -->
+                        </div><!-- .Widget-content.Feed -->
+
+                        <footer class="Widget-footer">
+                            
+                            <a class="read-more" href="<?php echo get_bloginfo('url') ?>/blog/">All news</a>
+
+                        </footer>
 
                     </section>
 

@@ -3,9 +3,12 @@
 		======================================================================== */
 
 .footer {
-	@extend .antialiased;
 	@include sans;
-	@include rem('padding', 2, 0);
+		background: $gray-darker;
+
+	@include min-width ( $bp-2 ) {
+		@include rem('padding', 2, 0);
+	}
 
 	.Footer-logos {
 
@@ -48,18 +51,25 @@
 		@include font-size(12);
 		@include line-height(20);
 		text-transform: uppercase;
-		font-weight: 400;
-		color: $text;
+		color: $text-light;
 
 		a {
-			color: $text;
+			color: $text-light;
 			text-decoration: none;
+		}
+
+		a:hover {
+			color: $blue-light !important;
 		}
 
 	} // .info
 
-	.social-and-search {
-		@include rem('margin', 1, 0, 0);
+	form input[type="text"] {
+		background: #ddd;
+
+		@include placeholder {
+			color: $text-light;
+		}
 	}
 
 } // .footer

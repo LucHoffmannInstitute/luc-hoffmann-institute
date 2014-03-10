@@ -10,21 +10,25 @@
 
                         <ul>
                             
-                            <li class="">
+                            <li>
                                 <a class="panda-logo" href="http://panda.org/"></a>
                             </li>
 
-                            <li class="">
-                                <a class="mava-logo" href="#"></a>
+                            <li>
+                                <a class="mava-logo" href="http://en.mava-foundation.org/"></a>
                             </li>
 
                         </ul>
 
                     </div><!-- .u-col -->
 
-                    <div class="u-col u-col-4of12">
+                    <div class="u-col u-col-4of12 align-right">
 
-                        
+                        <div class="Widget Widget--search">
+                            <?php get_search_form(); ?>
+
+                            <p class="info">&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
+                        </div>
 
                     </div><!-- .u-col -->
 
