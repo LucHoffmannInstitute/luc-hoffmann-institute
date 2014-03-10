@@ -7,7 +7,6 @@
 @import '../../vendor/normalize.scss';
 @import '../../../bower_components/utility-defaults/defaults.scss';
 @import '../../../bower_components/utility-mixins/mixins.scss';
-@import '../../../bower_components/utility-cols/cols.scss';
 @import '../../vendor/icomoon/style.scss';
 
 /*	Config: type, colors, breakpoints
@@ -17,6 +16,8 @@
 @import 'config/type.scss';
 @import 'config/links.scss';
 @import 'config/variables.scss';
+
+@import '../../../bower_components/utility-cols/cols.scss';
 
 /*	Modules
 	========================================================================== */
