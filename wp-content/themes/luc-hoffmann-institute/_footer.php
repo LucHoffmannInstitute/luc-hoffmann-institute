@@ -2,46 +2,43 @@
 
         <footer class="footer" role="contentinfo">
 
-            <div class="container">
+           <div class="u-container">
+               
+                <div class="u-cols">
+                    
+                    <div class="u-col u-col-8of12">
 
-                <div class="cols">
+                        <div class="Footer-logos">
 
-                    <div class="col col-6 align-right">
+                            <ul>
+                                
+                                <li>
+                                    <a class="panda-logo" href="http://panda.org/"></a>
+                                </li>
 
-                        <div class="cols social-and-search">
-                            
-                            <div class="col col-7">
-                                <?php get_search_form(); ?>            
-                            </div>
-                        
+                                <li>
+                                    <a class="mava-logo" href="http://en.mava-foundation.org/"></a>
+                                </li>
+
+                            </ul>
+
                         </div>
 
-                    </div><!-- .col.col-6 -->
+                    </div><!-- .u-col -->
 
-                    <div class="col col-6 align-left">
+                    <div class="u-col u-col-4of12 align-right">
 
-                        <div class="col col-6">
-                            <a class="panda-logo" href="http://panda.org/"><img src="<?php echo get_template_directory_uri() ?>/assets/img/panda-logo.svg" alt=""></a>
-                        </div>
-                        <div class="col col-6">
-                            <a class="mava-logo" href="http://en.mava-foundation.org/"><i class="icon-mava"></i>
-                                The Luc Hoffmann Institute is supported by a generous gift from the MAVA Foundation
-                            </a>
+                        <div class="Widget Widget--search">
+                            <?php get_search_form(); ?>
+
+                            <p class="info">&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
                         </div>
 
-                    </div><!-- .col.col-6 -->
+                    </div><!-- .u-col -->
 
-                </div><!-- .cols -->
+                </div><!-- .u-cols -->
 
-                <div class="cols">
-
-                    <div class="col col-6">
-                        <p class="info">&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
-                    </div>
-
-                </div><!-- .cols -->
-            
-            </div><!-- .container -->
+           </div><!-- .u-container -->
 
         </footer><!-- .footer -->
 

@@ -4,7 +4,7 @@
 
 .footer {
 	@include sans;
-		background: $gray-darker;
+	background: $gray-darker;
 
 	@include min-width ( $bp-2 ) {
 		@include rem('padding', 2, 0);

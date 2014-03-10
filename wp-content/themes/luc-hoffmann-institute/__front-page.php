@@ -94,6 +94,11 @@ $banner = new Banner();
     <div class="u-container">
 
         <div class="u-cols">
+            <div class="u-col u-col-6of12">1</div>
+            <div class="u-col u-col-6of12">2</div>
+        </div>
+
+        <div class="u-cols">
 
             <div class="u-col u-col-8of12">
 

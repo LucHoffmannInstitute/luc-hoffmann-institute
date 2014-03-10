@@ -30,20 +30,15 @@ body {
 
 }
 
-.u-container--wide {
-//	max-width: 1400px;
+//.align-left {
+//	float: left !important;
+//}
+//
+//.align-right {
+//	float: right !important;
+//}
 
-	@include min-width ( $bp-2 ) {
-//		@include rem('padding', 0, 1);	
-	}
-}
-
-.align-left {
-	float: left !important;
-}
-
-.align-right {
-	float: right !important;
+.u-cols {
 }
 
 .u-col {
@@ -54,38 +49,3 @@ body {
 	}
 
 }
-
-.cols {
-	@extend .clearfix;
-
-	$cols: 12;
-
-	.col {
-		@extend .clearfix;
-		float: left;
-
-		&.clear-cols {
-			clear: left;
-		}
-
-		@include max-width ( $iPadPortrait ) {
-			float: none !important;
-			width: auto !important;
-		}
-
-		&.col-1 { width: percentage( 1/$cols ); }
-		&.col-2 { width: percentage( 2/$cols ); }
-		&.col-3 { width: percentage( 3/$cols ); }
-		&.col-4 { width: percentage( 4/$cols ); }
-		&.col-5 { width: percentage( 5/$cols ); }
-		&.col-6 { width: percentage( 6/$cols ); }
-		&.col-7 { width: percentage( 7/$cols ); }
-		&.col-8 { width: percentage( 8/$cols ); }
-		&.col-9 { width: percentage( 9/$cols ); }
-		&.col-10 { width: percentage( 10/$cols ); }
-		&.col-11 { width: percentage( 11/$cols ); }
-		&.col-12 { width: percentage( 12/$cols ); }
-
-	} // .col
-
-} // .cols
