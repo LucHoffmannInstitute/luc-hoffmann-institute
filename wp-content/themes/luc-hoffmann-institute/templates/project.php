@@ -1,6 +1,6 @@
 <?php  
 
-$banner_id = get_field( 'image', $post->ID );
+$banner_id = get_field( 'image' );
 
 $banner_post = get_post( $banner_id );
 
@@ -22,7 +22,7 @@ $banner = array(
 
 			<h2 class="Project-title"><?php the_title() ?></h2>
 
-			<p class="Project-author"><?php echo get_field('author', $post->ID) ?></p>
+			<p class="Project-author"><?php echo get_field('author') ?></p>
 		</div>
 
 		<div class="Project-content">

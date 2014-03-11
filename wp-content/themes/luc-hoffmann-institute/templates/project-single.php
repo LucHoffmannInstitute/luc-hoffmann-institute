@@ -26,7 +26,7 @@ $banner = array(
 			
 				<div class="u-col u-col-4of12">
 
-					<p class="Project-author">Dr. John Q. Doe</p>
+					<p class="Project-author"><?php echo get_field('author') ?></p>
 
 				</div>
 
