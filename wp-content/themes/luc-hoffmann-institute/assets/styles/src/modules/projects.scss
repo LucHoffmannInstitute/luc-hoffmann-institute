@@ -311,10 +311,10 @@
 
 	li {
 		float: left;
+	}
 
-		&:last-child {
-			float: right;
-		}
+	li.next {
+		float: right;
 	}
 
 	a {

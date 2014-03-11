@@ -59,11 +59,14 @@ $next_post = get_adjacent_post(null,null,false);
 		</div>
 
 		<div class="Project-footer">
-			
 			<nav class="Project-footer-nav">
 				<ul>
-					<li><a href="<?php echo get_permalink($previous_post->ID) ?>"><i class="icon-arrow-left"></i> <span><?php echo $previous_post->post_title ?></span></a></li>
-					<li><a href="<?php echo get_permalink($next_post->ID) ?>"><span><?php echo $next_post->post_title ?></span> <i class="icon-arrow-right"></i></a></li>
+					<?php if ( $previous_post ) : ?>
+						<li class="prev"><a href="<?php echo get_permalink($previous_post->ID) ?>"><i class="icon-arrow-left"></i> <span><?php echo $previous_post->post_title ?></span></a></li>
+					<?php endif ?>
+					<?php if ( $next_post ) : ?>
+						<li class="next"><a href="<?php echo get_permalink($next_post->ID) ?>"><span><?php echo $next_post->post_title ?></span> <i class="icon-arrow-right"></i></a></li>
+					<?php endif ?>
 				</ul>
 			</nav>
 
