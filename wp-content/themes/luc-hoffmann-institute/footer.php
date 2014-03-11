@@ -1,4 +1,3 @@
-<?php global $banner ?>
         </section><!-- .main -->
 
         <footer class="footer" role="contentinfo">
@@ -30,10 +29,6 @@
 
                             <div class="info">
                                 <p>&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
-
-                                <?php if ($banner) : ?>
-                                    Banner: <?php echo $banner->caption() ?>
-                                <?php endif ?>
                             </div>
                         </div>
 

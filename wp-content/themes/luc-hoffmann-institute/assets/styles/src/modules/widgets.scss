@@ -29,3 +29,13 @@
 .Widget-content {
 
 }
+
+.Widget--caption {
+
+	.Widget-content p {
+		@include sans;
+		@include font-size(13);
+		color: $text-light;
+	}
+
+}

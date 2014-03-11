@@ -164,6 +164,18 @@ $banner = new Banner();
 
                 </section>
 
+                <?php if ($banner) : ?>
+
+                    <section class="Widget Widget--caption">
+                        
+                        <div class="Widget-content">
+                            <p>Banner: <?php echo $banner->caption() ?></p>
+                        </div>
+
+                    </section>
+
+                <?php endif ?>
+
             </div><!-- .u-col -->
 
         </div><!-- .u-cols -->

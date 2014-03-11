@@ -5,7 +5,7 @@
 .Widget--Stay-Connected {
 
 	ul {
-		@include rem('margin', 2, 0);
+		@include rem('margin', 2, 0, 0);
 		padding: 0;
 		list-style: none;
 	}
