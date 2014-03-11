@@ -1,38 +1,42 @@
 <?php get_header() ?>
 
-    <div class="page-content">
+    <div class="Page">
     		
-		<div class="container">
+		<div class="u-container">
 			
-			<div class="cols">
+			<div class="u-cols">
 				
-				<div class="col col-4">
+				<div class="u-col u-col-4of12">
 						
 					<?php get_template_part( 'templates/submenu' ) ?>
 
 					<?php get_sidebar() ?>
 
-				</div><!-- .col.col-4 -->
+				</div><!-- .u-col -->
 
-				<div class="col col-8">
+				<div class="u-col u-col-8of12">
+
+					<div class="Page-content">
 						
-					<?php if ( have_posts() ) : ?>
+						<?php if ( have_posts() ) : ?>
 
-						<?php while ( have_posts() ) : the_post() ?>
-	
-							<?php get_template_part( 'templates/entry-search' ); ?>
+							<?php while ( have_posts() ) : the_post() ?>
+		
+								<?php get_template_part( 'templates/entry-search' ); ?>
 
-						<?php endwhile ?>
+							<?php endwhile ?>
 
-					<?php endif ?>
+						<?php endif ?>
 
-				</div><!-- .col.col-8 -->
+					</div>
 
-			</div><!-- .cols -->
+				</div><!-- .u-col -->
 
-		</div><!-- .container -->
+			</div><!-- .u-cols -->
 
-    </div><!-- .page-content -->
+		</div><!-- .u-container -->
+
+    </div><!-- .Page -->
 
     <?php get_template_part( 'templates/page-footer' ) ?>
 
