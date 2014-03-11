@@ -50,6 +50,10 @@ gulp.task('setup', function () {
 	// copy fonts to styles/build/
 	gulp.src('./assets/vendor/icomoon/fonts/*')
 		.pipe(gulp.dest('./assets/styles/build/fonts'));
+
+	// copy over jquery.min.js
+	gulp.src('./bower_components/jquery/dist/jquery.min.js')
+		.pipe(gulp.dest('./assets/vendor'));
 });
 
 gulp.task('watch', function () {
