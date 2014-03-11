@@ -87,6 +87,18 @@ $banner = new Banner();
 
             </div><!-- .u-container -->
 
+            <?php if ($banner) : ?>
+
+                <div class="u-container">
+                        
+                    <div class="Cards-caption">
+                        <p><?php echo $banner->caption() ?></p>
+                    </div>
+
+                </div>
+
+            <?php endif ?>
+
         </div><!-- .Cards-content -->
 
     </section><!-- .Cards -->
@@ -163,18 +175,6 @@ $banner = new Banner();
                     </div><!-- .Widget-content -->
 
                 </section>
-
-                <?php if ($banner) : ?>
-
-                    <section class="Widget Widget--caption">
-                        
-                        <div class="Widget-content">
-                            <p>Banner: <?php echo $banner->caption() ?></p>
-                        </div>
-
-                    </section>
-
-                <?php endif ?>
 
             </div><!-- .u-col -->
 
