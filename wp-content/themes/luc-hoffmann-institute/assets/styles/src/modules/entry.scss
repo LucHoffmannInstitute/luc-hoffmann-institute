@@ -73,7 +73,7 @@
 		color: $text;
 
 		@include min-width( $iPadPortrait ) {
-			@include font-size(36);
+			@include font-size(30);
 		}
 
 		.home &,
@@ -132,7 +132,7 @@
 			@include font-size(24);
 
 			@include min-width ( $iPadPortrait ) {
-				@include font-size(36);
+				@include font-size(30);
 			}
 		}
 

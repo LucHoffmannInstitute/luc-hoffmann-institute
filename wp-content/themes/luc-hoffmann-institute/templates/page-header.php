@@ -9,7 +9,7 @@ if ( ! $banner->hasImages())
 	$banner = new Banner(array('id' => $page_ancestor_id));
 }
 ?>
-<header class="Page-header" style="background-image: url(<?php echo $banner->url() ?>);">
+<header class="Page-header Page-header--banner" style="background-image: url(<?php echo $banner->url() ?>);">
 
 	<div class="Page-header-inner">
 

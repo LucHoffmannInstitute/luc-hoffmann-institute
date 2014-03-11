@@ -4,17 +4,15 @@
 	========================================================================== */
 
 .Widget {
-	@include rem('margin-bottom', 1);
+	@include rem('margin', 1, 0);
 	@include rem('padding', 1, 0);
 
 	@include min-width ( $bp-2 ) {
-		@include rem('margin-bottom', 2);
-		@include rem('padding', 1);
 	}
 }
 
 .Widget-header {
-	@include rem('margin-bottom', 1);
+	//@include rem('margin-bottom', 1);
 }
 
 .Widget-title {
@@ -41,13 +39,16 @@
 }
 
 .Widget--quote {
-	padding: 0;
 	@include sans;
 	color: $text-light;
 
 	blockquote {
 		margin: 0;
 		padding: 0;
+
+		p:first-child {
+			margin: 0;
+		}
 	}
 
 	cite {

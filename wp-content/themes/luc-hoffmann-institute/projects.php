@@ -15,28 +15,25 @@ $projects = new WP_Query( array(
 
 	<section class="Projects Projects--list">
 		
-		<div class="container">
+		<div class="u-container">
 
-			<!--
 			<header class="Projects-header">
 
-				<nav class="Projects-menu">
+				<nav class="Filter-menu Filter-menu--dark">
 					<ul>
-						<li class="Projects-menu-select">
+						<li class="Filter-menu-select">
 							<a href="#"><span>All Projects</span> <i class="icon-menu"></i></a>
 						</li>
-						<li class="Projects-menu-select">
+						<li class="Filter-menu-select">
 							<a href="#"><span>All Themes</span> <i class="icon-menu"></i></a>
 						</li>
-						<li class="Projects-menu-search">
+						<li class="Filter-menu-search">
 							<a href="#"><i class="icon-search"></i> <span>Search</span></a>
 						</li>
 					</ul>
 				</nav>
 
 			</header>
-
-			-->
 
 			<div>
 			

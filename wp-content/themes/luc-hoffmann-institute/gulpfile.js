@@ -23,9 +23,9 @@ gulp.task('scripts', function () {
 
 gulp.task('styles', function () {
 	return gulp.src('./assets/styles/src/*.scss')
-		.pipe(sass())
+		.pipe(sass({sourcemap: true}))
 		.pipe(plugins.autoprefixer('last 2 versions', 'ie 8', 'ie 7'))
-		.pipe(plugins.minifyCss())
+		//.pipe(plugins.minifyCss())
 		.pipe(gulp.dest('./assets/styles/build'));
 });
 

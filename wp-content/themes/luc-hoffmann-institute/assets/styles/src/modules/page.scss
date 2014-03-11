@@ -5,15 +5,18 @@
 
 .Page {
 	@extend .clearfix;
-	@include rem('padding', 2, 0);
+	//@include rem('padding', 2, 0);
 	background: #fff;
 
 	@include min-width ( $bp-2 ) {
-		@include rem('padding', 3, 0);
+	//	@include rem('padding', 3, 0);
 	}
 }
 
 .Page-header {
+}
+
+.Page-header--banner {
 	position: relative;
 	display: table;
 	margin: 0 auto;
@@ -28,7 +31,6 @@
 	@include min-width ( $iPadPortrait ) {
 		height: 420px;
 	}
-
 }
 
 .Page-header-inner {
@@ -72,9 +74,5 @@
 }
 
 .Page-content {
-	@include rem('padding', 0, 2);
-
-	@include min-width ( $bp-2 ) {
-		@include rem('padding', 0, 2);
-	}
+	@include rem('padding', 2);
 }

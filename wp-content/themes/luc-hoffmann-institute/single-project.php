@@ -7,7 +7,7 @@ get_header();
 
 	<section class="Projects Projects--single">
 	
-		<div class="container">
+		<div class="u-container">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -19,7 +19,7 @@ get_header();
 
 			<?php endif; ?>
 
-		</div><!-- .container -->
+		</div><!-- .u-container -->
 
 	</section><!-- .Projects -->
 

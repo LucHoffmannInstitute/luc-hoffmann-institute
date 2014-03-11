@@ -3,16 +3,7 @@
 		Submenu
 		========================================================================== */
 
-.submenu {
-	@include rem('margin', 0, 0, 1);
-	@include rem('padding', 0, 0, 1);
-
-
-	@include min-width ( $bp-2 ) {
-		@include rem('margin', 0, 2, 4, 0);
-		padding: 0;
-		border: none;
-	}
+.Widget--submenu {
 
 	ul {
 		margin: 0;
@@ -20,28 +11,20 @@
 		list-style: none;
 	}
 
-	li {
-
-	}
-
 	a {
 		position: relative;
 		display: inline-block;
-		@include sans;
 		@include rem('margin', 0.5, 0);
+		@include sans;
 		@include font-size(16);
 		line-height: 1.25;
 		font-weight: 400;
 		text-decoration: none;
 
-		&:hover {
-		}
-
 		@include min-width ( $iPadPortrait ) {
 			@include font-size(18);
 		}
-
-	} // a
+	}
 
 	li.active a,
 	li.current-menu-item a,
@@ -52,4 +35,4 @@
 		border-left: 4px solid $blue-light;
 	}
 
-} // .submenu
+}

@@ -8,6 +8,24 @@ get_header();
     <div class="Page">
     		
 		<div class="u-container">
+
+			<header class="Page-header">
+
+				<nav class="Filter-menu">
+					<ul>
+						<li class="Filter-menu-select">
+							<a href="#"><span>All Themes</span> <i class="icon-menu"></i></a>
+						</li>
+						<li class="Filter-menu-select">
+							<a href="#"><span>All Dates</span> <i class="icon-menu"></i></a>
+						</li>
+						<li class="Filter-menu-search">
+							<a href="#"><i class="icon-search"></i> <span>Search</span></a>
+						</li>
+					</ul>
+				</nav>
+
+			</header>
 			
 			<div class="u-cols">
 				
