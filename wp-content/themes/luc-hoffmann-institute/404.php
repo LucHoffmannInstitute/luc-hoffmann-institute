@@ -5,43 +5,47 @@
 get_header();
 ?>
 
-    <div class="page-content">
+    <div class="Page">
     		
-		<div class="container">
+		<div class="u-container">
 			
-			<div class="cols">
+			<div class="u-cols">
 				
-				<div class="col col-4">
+				<div class="u-col u-col-4of12">
 						
 					<?php get_template_part( 'templates/submenu' ) ?>
 
 					<?php get_sidebar() ?>
 
-				</div><!-- .col.col-4 -->
+				</div><!-- .u-col -->
 
-				<div class="col col-8">
+				<div class="u-col u-col-8of12">
 
-					<div class="entry">
-	
-						<div class="entry-content">
+					<div class="Page-content">
 
-							<h1>Not found</h1>
+						<div class="entry">
+		
+							<div class="entry-content">
 
-							<p>The page you requested could not be found.</p>
-							
-							<?php get_search_form(); ?>
+								<h1>Not found</h1>
 
-						</div><!-- .entry-content -->
+								<p>The page you requested could not be found.</p>
+								
+								<?php get_search_form(); ?>
 
-					</div><!-- .entry -->
+							</div><!-- .entry-content -->
 
-				</div><!-- .col.col-8 -->
+						</div><!-- .entry -->
 
-			</div><!-- .cols -->
+					</div>
+
+				</div><!-- .u-col -->
+
+			</div><!-- .u-cols -->
 
 		</div><!-- .container -->
 
-    </div><!-- .page-content -->
+    </div><!-- .Page -->
 
     <?php get_template_part( 'templates/page-footer' ) ?>
 

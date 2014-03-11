@@ -2,13 +2,13 @@
 
     <?php get_template_part( 'templates/page-header' ) ?>
 
-    <div class="page-content">
+    <div class="Page">
     		
-		<div class="container">
+		<div class="u-container">
 			
-			<div class="cols">
+			<div class="u-cols">
 				
-				<div class="col col-4">
+				<div class="u-col u-col-4of12">
 
 					<nav class="submenu">
 						<ul>
@@ -18,33 +18,37 @@
 
 					<?php get_sidebar() ?>
 
-				</div><!-- .col.col-4 -->
+				</div><!-- .u-col -->
 
-				<div class="col col-8">
+				<div class="u-col u-col-8of12">
+
+					<div class="Page-content">
 						
-					<?php if ( have_posts() ) : ?>
+						<?php if ( have_posts() ) : ?>
 
-						<?php while ( have_posts() ) : the_post() ?>
+							<?php while ( have_posts() ) : the_post() ?>
+		
+								<?php get_template_part( 'templates/pitch' ); ?>
+
+							<?php endwhile ?>
+
+						<?php endif ?>
+
+						<?php if (is_single() && (comments_open() || get_comments_number() != '0')) : ?>
+							
+	  						<?php comments_template() ?>
+
+						<?php endif ?>
+
+					</div>
 	
-							<?php get_template_part( 'templates/pitch' ); ?>
+				</div><!-- .u-col -->
 
-						<?php endwhile ?>
+			</div><!-- .u-cols -->
 
-					<?php endif ?>
+		</div><!-- .u-container -->
 
-					<?php if (is_single() && (comments_open() || get_comments_number() != '0')) : ?>
-						
-  						<?php comments_template() ?>
-
-					<?php endif ?>
-	
-				</div><!-- .col.col-8 -->
-
-			</div><!-- .cols -->
-
-		</div><!-- .container -->
-
-    </div><!-- .page-content -->
+    </div><!-- .Page -->
 
     <footer class="page-footer">
 
