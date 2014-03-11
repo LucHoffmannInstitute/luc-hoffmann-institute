@@ -13,4 +13,5 @@ require_once locate_template('/inc/widgets.php');
 require_once locate_template('/inc/comments.php');
 require_once locate_template('/inc/settings.php');
 require_once locate_template('/inc/post-types.php');
+//require_once locate_template('/inc/wrapper.php');
 require_once locate_template('/inc/banner.php');

@@ -9,17 +9,17 @@ get_header();
 
     <div class="page-content">
     		
-		<div class="container">
+		<div class="u-container">
 			
-			<div class="cols">
+			<div class="u-cols">
 				
-				<div class="col col-4">
+				<div class="u-col u-col-4of12">
 
 					<?php get_sidebar() ?>
 
-				</div><!-- .col.col-4 -->
+				</div><!-- .u-col -->
 
-				<div class="col col-8">
+				<div class="u-col u-col-8of12">
 						
 					<?php if ( have_posts() ) : ?>
 
@@ -35,11 +35,11 @@ get_header();
 
 					<?php endif ?>
 	
-				</div><!-- .col.col-8 -->
+				</div><!-- .u-col -->
 
-			</div><!-- .cols -->
+			</div><!-- .u-cols -->
 
-		</div><!-- .container -->
+		</div><!-- .u-container -->
 
     </div><!-- .page-content -->
 

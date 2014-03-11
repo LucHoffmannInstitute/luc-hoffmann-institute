@@ -88,4 +88,4 @@
 
         </header>
 
-        <section class="main" role="main">
+        <section class="Main" role="main">
