@@ -1,4 +1,12 @@
-<?php $image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ?>
+<?php 
+$image_id = get_field('image');
+if ( $image_id )
+{
+	$image_url = wp_get_attachment_url( $image_id );
+} else {
+	$image_url = get_template_directory_uri() . '/assets/img/build/apple-touch-icon-144x144-precomposed.png';
+}
+?>
                                 
 <article class="Feed-item">
     
