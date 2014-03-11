@@ -13,13 +13,13 @@ $pitches = new WP_Query( array(
 
     <?php get_template_part( 'templates/page-header' ) ?>
 
-    <div class="page-content">
+    <div class="Page">
 
-		<div class="container">
+		<div class="u-container">
 			
-			<div class="cols">
+			<div class="u-cols">
 				
-				<div class="col col-4">
+				<div class="u-col u-col-4of12">
 
 					<nav class="submenu">
 						<ul>
@@ -29,47 +29,51 @@ $pitches = new WP_Query( array(
 
 					<?php get_sidebar() ?>
 
-				</div><!-- .col.col-4 -->
+				</div><!-- .u-col -->
 
-				<div class="col col-8">
+				<div class="u-col u-col-8of12">
 
-					<?php if ( isset( $page ) && !empty( $page ) ) : ?>
+					<div class="Page-content">
 
-						<?php if ( isset( $page->post_content ) && !empty( $page->post_content ) && $page->post_content !== '' ) : ?>
+						<?php if ( isset( $page ) && !empty( $page ) ) : ?>
 
-							<div class="entry">
-								
-								<div class="entry-content">
-									<?php echo apply_filters( 'the_content', $page->post_content ) ?>
+							<?php if ( isset( $page->post_content ) && !empty( $page->post_content ) && $page->post_content !== '' ) : ?>
+
+								<div class="entry">
+									
+									<div class="entry-content">
+										<?php echo apply_filters( 'the_content', $page->post_content ) ?>
+									</div>
+
+									<hr>
+
 								</div>
 
-								<hr>
+							<?php endif ?>
 
-							</div>
+						<?php endif ?>
+							
+						<?php if ( $pitches->have_posts() ) : ?>
+
+							<?php while ( $pitches->have_posts() ) : $pitches->the_post() ?>
+		
+								<?php get_template_part( 'templates/pitch' ); ?>
+
+							<?php endwhile ?>
 
 						<?php endif ?>
 
-					<?php endif ?>
-						
-					<?php if ( $pitches->have_posts() ) : ?>
+						<?php wp_reset_postdata(); ?>
 
-						<?php while ( $pitches->have_posts() ) : $pitches->the_post() ?>
-	
-							<?php get_template_part( 'templates/pitch' ); ?>
+					</div>
 
-						<?php endwhile ?>
+				</div><!-- .u-col -->
 
-					<?php endif ?>
-
-					<?php wp_reset_postdata(); ?>
-
-				</div><!-- .col.col-8 -->
-
-			</div><!-- .cols -->
+			</div><!-- .u-cols -->
 
 		</div><!-- .container -->
 
-    </div><!-- .page-content -->
+    </div><!-- .Page -->
 
     <?php get_template_part( 'templates/page-footer' ) ?>
 
