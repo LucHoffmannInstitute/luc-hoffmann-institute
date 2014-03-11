@@ -10,6 +10,9 @@ $banner = array(
 	'url' => $image_src[0],
 	'credit' => $banner_post->post_excerpt
 );
+
+$previous_post = get_adjacent_post(null,null,true);
+$next_post = get_adjacent_post(null,null,false);
 ?>
 
 <article class="Project Project--single" <?php the_ID() ?>>
@@ -59,8 +62,8 @@ $banner = array(
 			
 			<nav class="Project-footer-nav">
 				<ul>
-					<li><a href="#"><i class="icon-arrow-left"></i> <span>Title of Previous Project</span></a></li>
-					<li><a href="#"><span>Title of Next Project</span> <i class="icon-arrow-right"></i></a></li>
+					<li><a href="<?php echo get_permalink($previous_post->ID) ?>"><i class="icon-arrow-left"></i> <span><?php echo $previous_post->post_title ?></span></a></li>
+					<li><a href="<?php echo get_permalink($next_post->ID) ?>"><span><?php echo $next_post->post_title ?></span> <i class="icon-arrow-right"></i></a></li>
 				</ul>
 			</nav>
 

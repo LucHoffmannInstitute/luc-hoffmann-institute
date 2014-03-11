@@ -108,21 +108,6 @@
 
 	}
 
-//	a {
-//		display: block;
-//		@include rem('padding', 1);
-//		@include sans;
-//		@include font-size(18);
-//		text-decoration: none;
-//		color: #fff;
-//		background: $blue-base;
-//		border-radius: 2px;
-//
-//		&:hover {
-//			background: $blue-light;
-//		}
-//	}
-
 	i {
 	}
 
@@ -335,7 +320,7 @@
 	a {
 		display: table;
 		@include sans;
-		@include font-size(18);
+		@include font-size(16);
 		text-decoration: none;
 		color: $text;
 
