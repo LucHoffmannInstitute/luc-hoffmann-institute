@@ -1,3 +1,4 @@
+<?php global $banner ?>
         </section><!-- .main -->
 
         <footer class="footer" role="contentinfo">
@@ -27,7 +28,13 @@
                         <div class="Widget Widget--search">
                             <?php get_search_form(); ?>
 
-                            <p class="info">&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
+                            <div class="info">
+                                <p>&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
+
+                                <?php if ($banner) : ?>
+                                    Banner: <?php echo $banner->caption() ?>
+                                <?php endif ?>
+                            </div>
                         </div>
 
                     </div><!-- .u-col -->
@@ -37,7 +44,6 @@
            </div><!-- .u-container -->
 
         </footer><!-- .footer -->
-
 
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>

@@ -35,7 +35,7 @@ $projects = new WP_Query( array(
 
 			</header>
 
-			<div data-columns>
+			<div>
 			
 				<?php if ( $projects->have_posts() ) : ?>
 

@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var sass = require('gulp-ruby-sass');
 
 // load plugins
 var plugins = require('gulp-load-plugins')({ 
@@ -22,7 +23,7 @@ gulp.task('scripts', function () {
 
 gulp.task('styles', function () {
 	return gulp.src('./assets/styles/src/*.scss')
-		.pipe(plugins.sass())
+		.pipe(sass())
 		.pipe(plugins.autoprefixer('last 2 versions', 'ie 8', 'ie 7'))
 		.pipe(plugins.minifyCss())
 		.pipe(gulp.dest('./assets/styles/build'));
