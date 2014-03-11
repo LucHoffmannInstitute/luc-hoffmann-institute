@@ -2,8 +2,6 @@
 get_header();
 ?>
 
-    <?php get_template_part( 'templates/page-header' ) ?>
-
     <div class="Page">
     		
 		<div class="u-container">
