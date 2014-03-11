@@ -17,6 +17,7 @@ class Banner {
 		), $opts);
 
 		$this->images = $this->getImages();
+		$this->current = $this->getCurrent();
 	}
 
 	/**
@@ -37,9 +38,7 @@ class Banner {
 	 */
 	public function url()
 	{
-		$image = $this->getBanner();
-
-		return $image['url'];
+		return $this->current['url'];
 	}
 
 	/**
@@ -47,15 +46,13 @@ class Banner {
 	 */
 	public function caption()
 	{
-		$image = $this->getBanner();
-
-		return $image['caption'];
+		return $this->current['caption'];
 	}
 
 	/**
 	 * Get appropriate image object for banner
 	 */
-	protected function getBanner()
+	protected function getCurrent()
 	{
 		if ($this->options['shuffle'] == true)
 		{
