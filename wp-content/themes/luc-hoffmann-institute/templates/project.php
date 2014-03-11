@@ -22,7 +22,7 @@ $banner = array(
 
 			<h2 class="Project-title"><?php the_title() ?></h2>
 
-			<p class="Project-author">Dr. John Q. Doe</p>
+			<p class="Project-author"><?php echo get_field('author', $post->ID) ?></p>
 		</div>
 
 		<div class="Project-content">

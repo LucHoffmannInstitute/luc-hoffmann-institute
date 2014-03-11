@@ -17,6 +17,7 @@ $projects = new WP_Query( array(
 		
 		<div class="container">
 
+			<!--
 			<header class="Projects-header">
 
 				<nav class="Projects-menu">
@@ -34,6 +35,8 @@ $projects = new WP_Query( array(
 				</nav>
 
 			</header>
+
+			-->
 
 			<div>
 			
