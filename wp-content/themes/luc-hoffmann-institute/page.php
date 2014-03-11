@@ -2,7 +2,7 @@
 
     <?php get_template_part( 'templates/page-header' ) ?>
 
-    <div class="page-content">
+    <div class="Page">
     		
 		<div class="u-container">
 			
@@ -17,16 +17,20 @@
 				</div><!-- .u-col -->
 
 				<div class="u-col u-col-8of12">
+
+					<div class="Page-content">
 						
-					<?php if ( have_posts() ) : ?>
+						<?php if ( have_posts() ) : ?>
 
-						<?php while ( have_posts() ) : the_post() ?>
-	
-							<?php get_template_part( 'templates/entry-page' ); ?>
+							<?php while ( have_posts() ) : the_post() ?>
+		
+								<?php get_template_part( 'templates/entry-page' ); ?>
 
-						<?php endwhile ?>
+							<?php endwhile ?>
 
-					<?php endif ?>
+						<?php endif ?>
+
+					</div><!-- .Page-content -->
 
 				</div><!-- .u-col -->
 
@@ -34,8 +38,6 @@
 
 		</div><!-- .u-container -->
 
-    </div><!-- .page-content -->
-
-    <?php get_template_part( 'templates/page-footer' ) ?>
+    </div><!-- .Page -->
 
 <?php get_footer() ?>

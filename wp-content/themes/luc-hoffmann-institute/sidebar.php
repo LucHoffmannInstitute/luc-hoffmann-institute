@@ -14,4 +14,10 @@ if (
 	$sidebar = $post->post_title;
 }
 
-if (!function_exists('dynamic_sidebar') || !dynamic_sidebar( $sidebar )): endif;
+?>
+
+<div class="Sidebar">
+
+	<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar( $sidebar )): endif; ?>
+
+</div>

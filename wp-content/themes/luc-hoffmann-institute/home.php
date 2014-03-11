@@ -7,7 +7,7 @@ get_header();
 
     <?php get_template_part( 'templates/page-header' ) ?>
 
-    <div class="page-content">
+    <div class="Page">
     		
 		<div class="u-container">
 			
@@ -20,20 +20,24 @@ get_header();
 				</div><!-- .u-col -->
 
 				<div class="u-col u-col-8of12">
+
+					<div class="Page-content">
 						
-					<?php if ( have_posts() ) : ?>
+						<?php if ( have_posts() ) : ?>
 
-						<section class="Feed">
+							<section class="Feed">
 
-                            <?php while ( have_posts() ) : the_post() ?>
+	                            <?php while ( have_posts() ) : the_post() ?>
 
-								<?php get_template_part( 'templates/feed-item' ); ?>
+									<?php get_template_part( 'templates/entry' ); ?>
 
-                            <?php endwhile ?>
+	                            <?php endwhile ?>
 
-	                    </section>
+		                    </section>
 
-					<?php endif ?>
+						<?php endif ?>
+
+					</div><!-- .Page-content -->
 	
 				</div><!-- .u-col -->
 
@@ -41,13 +45,13 @@ get_header();
 
 		</div><!-- .u-container -->
 
-    </div><!-- .page-content -->
+    </div><!-- .Page -->
 
-    <footer class="page-footer">
+    <footer class="Page-footer">
 
 		<?php hoffmann_paginate() ?>
 
-	</footer><!-- .page-footer -->
+	</footer>
 
     <?php get_template_part( 'templates/page-footer' ) ?>
 

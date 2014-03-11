@@ -134,7 +134,7 @@ class Hoffmann_Quote_Widget extends WP_Widget {
 	public function __construct() {
 
 		$widget_ops = array(
-			'classname' => 'quote-widget',
+			'classname' => 'Widget--quote',
 			'description' => 'Add a quote and citation'
 		);
 

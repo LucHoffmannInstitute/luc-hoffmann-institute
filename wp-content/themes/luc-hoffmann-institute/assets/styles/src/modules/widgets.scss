@@ -39,3 +39,23 @@
 	}
 
 }
+
+.Widget--quote {
+	padding: 0;
+	@include sans;
+	color: $text-light;
+
+	blockquote {
+		margin: 0;
+		padding: 0;
+	}
+
+	cite {
+		font-style: normal;
+
+		small {
+			display: block;
+		}
+	}
+
+}

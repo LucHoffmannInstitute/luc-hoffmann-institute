@@ -9,15 +9,15 @@ if ( ! $banner->hasImages())
 	$banner = new Banner(array('id' => $page_ancestor_id));
 }
 ?>
-<header class="page-header" style="background-image: url(<?php echo $banner->url() ?>);">
+<header class="Page-header" style="background-image: url(<?php echo $banner->url() ?>);">
 
-	<div class="page-header-inner">
+	<div class="Page-header-inner">
 
-		<div class="container">
+		<div class="u-container">
 
-			<h1><?php echo $page_ancestor->post_title ?></h1>
+			<h1 class="Page-title"><?php echo $page_ancestor->post_title ?></h1>
 
-			<p class="photo-credit"><?php echo $banner->caption() ?></p>
+			<p class="Page-header-caption"><?php echo $banner->caption() ?></p>
 
 		</div>
 

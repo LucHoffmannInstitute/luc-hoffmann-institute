@@ -6,11 +6,10 @@
 .submenu {
 	@include rem('margin', 0, 0, 1);
 	@include rem('padding', 0, 0, 1);
-	border-bottom: 1px solid $bg-gray;
 
 
-	@include min-width ( $iPadPortrait ) {
-		@include rem('margin', 0, 2, 0, 0);
+	@include min-width ( $bp-2 ) {
+		@include rem('margin', 0, 2, 4, 0);
 		padding: 0;
 		border: none;
 	}

@@ -4,43 +4,47 @@ get_header();
 
     <?php get_template_part( 'templates/page-header' ) ?>
 
-    <div class="page-content">
+    <div class="Page">
     		
-		<div class="container">
+		<div class="u-container">
 			
-			<div class="cols">
+			<div class="u-cols">
 				
-				<div class="col col-4">
+				<div class="u-col u-col-4of12">
 
 					<?php get_sidebar() ?>
 
-				</div><!-- .col.col-4 -->
+				</div>
 
-				<div class="col col-8">
+				<div class="u-col u-col-8of12">
+
+					<div class="Page-content">
 						
-					<?php if ( have_posts() ) : ?>
+						<?php if ( have_posts() ) : ?>
 
-						<?php while ( have_posts() ) : the_post() ?>
+							<?php while ( have_posts() ) : the_post() ?>
+		
+								<?php get_template_part( 'templates/entry' ); ?>
+
+							<?php endwhile ?>
+
+						<?php endif ?>
+
+						</div><!-- .Page-content -->
 	
-							<?php get_template_part( 'templates/entry' ); ?>
+				</div><!-- .u-col -->
 
-						<?php endwhile ?>
+			</div><!-- .u-cols -->
 
-					<?php endif ?>
-	
-				</div><!-- .col.col-8 -->
+		</div><!-- .u-container -->
 
-			</div><!-- .cols -->
+    </div><!-- .Page -->
 
-		</div><!-- .container -->
-
-    </div><!-- .page-content -->
-
-    <footer class="page-footer">
+    <footer class="Page-footer">
 
 		<?php hoffmann_paginate() ?>
 
-	</footer><!-- .page-footer -->
+	</footer>
 
     <?php get_template_part( 'templates/page-footer' ) ?>
 
