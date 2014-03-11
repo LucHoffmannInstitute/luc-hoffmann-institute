@@ -1,5 +1,5 @@
 'use strict';
 
-var example = require('./modules/example');
+var handshake = require('./modules/handshake');
 
-example.init();
+handshake.init();
