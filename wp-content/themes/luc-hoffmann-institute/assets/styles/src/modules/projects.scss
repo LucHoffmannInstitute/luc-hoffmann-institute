@@ -180,7 +180,7 @@
 	border-radius: 2px;
 }
 
-.Project-header {
+.Project-image {
 	display: table;
 	width: 100%;
 	min-height: 200px;
@@ -198,7 +198,7 @@
 	}
 }
 
-.Project-title-area {
+.Project-header {
 	@extend .antialiased;
 	margin: 0;
 	@include rem('padding', 0.5, 1);
@@ -218,18 +218,45 @@
 	line-height: 1.2;
 
 	.Project--single & {
+		@include rem('margin', 0, 0, 1);
 		@include font-size(36);
 	}
 }
 
 .Project-author {
-	margin-bottom: 0;
+	margin: 0;
 	@include sans;
 	@include font-size(14);
 
 	.Project--single & {
 		@include font-size(18);
 	}
+}
+
+.Project-menu {
+	text-align: right;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+		@include rem('margin-left', 1);
+	}
+
+	a {
+		@include caps;
+		text-decoration: none;
+		color: #fff;
+
+		&:hover {
+			color: $blue-light !important;
+		}
+	}
+
 }
 
 .Project-subheader {
@@ -284,23 +311,6 @@
 		display: none;
 	}
 }
-
-//.Project-footer {
-//	border-radius: 0 0 2px 2px;
-//	background: $gray-light;
-//
-//	a {
-//		display: block;
-//		@include rem('padding', 0.5, 1);
-//		@include caps;
-//		@include font-size(12);
-//		text-decoration: none;
-//		color: $text;
-//	}
-//
-//	a:hover {
-//	}
-//}
 
 .Project-footer-nav {
 	@include rem('padding', 1);

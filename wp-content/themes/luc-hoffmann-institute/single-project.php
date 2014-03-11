@@ -21,7 +21,7 @@ get_header();
 
 		</div><!-- .container -->
 
-	</section><!-- .Projects.Projects--single -->
+	</section><!-- .Projects -->
 
     <?php get_template_part( 'templates/page-footer' ); ?>
 

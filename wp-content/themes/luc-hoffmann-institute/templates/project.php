@@ -16,9 +16,9 @@ $banner = array(
 	
 	<div class="Project-inner">
 
-		<a class="Project-header" href="<?php the_permalink() ?>" style="background-image: url(<?php echo $banner['url'] ?>)"></a>
+		<a class="Project-image" href="<?php the_permalink() ?>" style="background-image: url(<?php echo $banner['url'] ?>)"></a>
 
-		<div class="Project-title-area">
+		<div class="Project-header">
 
 			<h2 class="Project-title"><?php the_title() ?></h2>
 

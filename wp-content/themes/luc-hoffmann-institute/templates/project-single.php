@@ -16,14 +16,36 @@ $banner = array(
 	
 	<div class="Project-inner">
 
-		<div class="Project-header" style="background-image: url(<?php echo $banner['url'] ?>)"></div>
+		<div class="Project-image" style="background-image: url(<?php echo $banner['url'] ?>)"></div>
 
-		<div class="Project-title-area">
+		<div class="Project-header">
 
 			<h1 class="Project-title"><?php the_title() ?></h1>
 
-			<p class="Project-author">Dr. John Q. Doe</p>
-		</div>
+			<div class="u-cols">
+			
+				<div class="u-col u-col-4of12">
+
+					<p class="Project-author">Dr. John Q. Doe</p>
+
+				</div>
+
+				<div class="u-col u-col-8of12">
+
+					<nav class="Project-menu">
+						<ul>
+							<li><a href="#">Sub-page 1</a></li>
+							<li><a href="#">Sub-page 2</a></li>
+							<li><a href="#">Sub-page 3</a></li>
+							<li><a href="#">Sub-page 4</a></li>
+						</ul>
+					</nav>
+
+				</div>
+
+			</div><!-- .u-cols -->
+
+		</div><!-- .Project-header -->
 
 		<div class="Project-content entry">
 
