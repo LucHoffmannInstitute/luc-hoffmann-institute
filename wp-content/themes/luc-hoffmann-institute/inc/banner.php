@@ -54,6 +54,11 @@ class Banner {
 	 */
 	protected function getCurrent()
 	{
+		if (empty($this->images))
+		{
+			return false;
+		}
+
 		if ($this->options['shuffle'] == true)
 		{
 			shuffle($this->images);
