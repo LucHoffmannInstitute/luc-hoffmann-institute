@@ -26,7 +26,7 @@ function hoffmann_register_projects() {
 	$args = array(
 		'labels' => $labels,
 		'menu_position' => null,
-		'supports' => array('title','editor','page-attributes'),
+		'supports' => array('title','editor','page-attributes', 'excerpt'),
 		'public' => true,
 		'has_archive' => false,
 		'hierarchical' => false,

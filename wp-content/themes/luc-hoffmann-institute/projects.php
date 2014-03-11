@@ -13,8 +13,6 @@ $projects = new WP_Query( array(
 
 ?>
 
-TEST TEST TEST
-
 	<section class="Projects Projects--list">
 		
 		<div class="container">
