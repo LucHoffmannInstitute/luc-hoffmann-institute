@@ -50,11 +50,9 @@ $next_post = get_adjacent_post(null,null,false);
 
 		</div><!-- .Project-header -->
 
-		<div class="Project-content entry">
-
-			<div class="entry-content">
-				<?php the_content() ?>
-			</div>
+		<div class="Project-content Entry">
+			
+			<?php the_content() ?>
 
 		</div>
 

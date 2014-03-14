@@ -22,16 +22,16 @@
 	}
 
 	a {
+		@extend .Button;
 		display: block;
-		@include rem('padding', 1);
 		text-decoration: none;
 		background: $bg-gray;
 		color: $text-light;
 	}
 
 	a:hover {
-		background: $blue-base;
-		color: #fff;
+		background: $blue-light;
+		color: #fff !important;
 	}
 
 } // .pagination

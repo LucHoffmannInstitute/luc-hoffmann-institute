@@ -220,7 +220,7 @@ function hoffmann_remove_dashboard_widgets() {
 
 add_filter('excerpt_more', 'hoffmann_excerpt_more');
 function hoffmann_excerpt_more($more) {
-	return '&hellip; <span class="read-more"><a class="Button" href="' . get_permalink() . '">' . __('Read more', 'hoffmann') . ' &raquo;</a></span>';
+	return '&hellip; <span class="read-more"><a class="Button Button--action" href="' . get_permalink() . '">' . __('Read more', 'hoffmann') . ' &raquo;</a></span>';
 }
 
 /**

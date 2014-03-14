@@ -6,7 +6,6 @@
 	@extend .clearfix;
 	@include rem('padding', 1, 0);
 	background: $blue-dark;
-	//background: $bg-gray;
 
 	@include min-width ( $bp-2 ) {
 	}
@@ -148,8 +147,6 @@
 
 .Project-subheader {
 	@include rem('padding', 0.5, 1);
-	//@include sans;
-	//@include font-size(14);
 	background: #ddd;
 	@include sans;
 	@include font-size(24);
