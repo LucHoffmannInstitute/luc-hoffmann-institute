@@ -94,6 +94,16 @@
 	margin: 0;
 	@include sans;
 	@include font-size(18);
+
+	.Feed-item--excerpt & {
+		@include font-size(30);
+		line-height: 1.25;
+	}
+
+	a {
+		text-decoration: none;
+		color: $text;
+	}
 }
 
 .Feed-item-date {
@@ -102,5 +112,16 @@
 
 	body.home & {
 		color: rgba(255,255,255,0.5);
+	}
+}
+
+.Feed-item-content {
+
+	.read-more {
+		@include sans;
+
+		a {
+			text-decoration: none;
+		}
 	}
 }

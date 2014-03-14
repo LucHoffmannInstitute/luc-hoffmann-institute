@@ -50,21 +50,7 @@ if ( ! $banner->hasImages())
 
 	                            <?php while ( have_posts() ) : the_post() ?>
 
-									<article class="Feed-item Feed-item--excerpt">
-										
-										<header class="Feed-item-header">
-
-											<time class="Feed-item-date" datetime="<?php get_the_date( 'c' ) ?>"><?php echo get_the_date( 'd.m.Y' ) ?></time>
-											
-											<h2 class="Feed-item-title"><?php the_title() ?></h2>
-
-										</header>
-
-										<div class="Feed-item-content entry">
-								        	<?php the_excerpt() ?>
-								        </div>
-
-									</article>
+									<?php get_template_part( 'templates/article-excerpt' ) ?>
 
 	                            <?php endwhile ?>
 

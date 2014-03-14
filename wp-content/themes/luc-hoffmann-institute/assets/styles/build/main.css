@@ -453,15 +453,15 @@ img {
 /*  Old clearfix
     The micro method
     ======================================================================== */
-.clearfix, .menu ul, .entry .entry-content, .footer .Footer-logos ul, .Page, .next-prev, .next-prev ul, .Blog-item, .Blog-item-meta, .Projects, .Project-footer-nav ul, .Filter-menu ul, .container,
+.clearfix, .menu ul, .entry .entry-content, .Article-meta, .footer .Footer-logos ul, .Page, .next-prev, .next-prev ul, .Blog-item, .Blog-item-meta, .Projects, .Project-footer-nav ul, .Filter-menu ul, .container,
 .u-container {
   zoom: 1; }
-  .clearfix:before, .menu ul:before, .entry .entry-content:before, .footer .Footer-logos ul:before, .Page:before, .next-prev:before, .next-prev ul:before, .Blog-item:before, .Blog-item-meta:before, .Projects:before, .Project-footer-nav ul:before, .Filter-menu ul:before, .container:before,
-  .u-container:before, .clearfix:after, .menu ul:after, .entry .entry-content:after, .footer .Footer-logos ul:after, .Page:after, .next-prev:after, .next-prev ul:after, .Blog-item:after, .Blog-item-meta:after, .Projects:after, .Project-footer-nav ul:after, .Filter-menu ul:after, .container:after,
+  .clearfix:before, .menu ul:before, .entry .entry-content:before, .Article-meta:before, .footer .Footer-logos ul:before, .Page:before, .next-prev:before, .next-prev ul:before, .Blog-item:before, .Blog-item-meta:before, .Projects:before, .Project-footer-nav ul:before, .Filter-menu ul:before, .container:before,
+  .u-container:before, .clearfix:after, .menu ul:after, .entry .entry-content:after, .Article-meta:after, .footer .Footer-logos ul:after, .Page:after, .next-prev:after, .next-prev ul:after, .Blog-item:after, .Blog-item-meta:after, .Projects:after, .Project-footer-nav ul:after, .Filter-menu ul:after, .container:after,
   .u-container:after {
     content: " ";
     display: table; }
-  .clearfix:after, .menu ul:after, .entry .entry-content:after, .footer .Footer-logos ul:after, .Page:after, .next-prev:after, .next-prev ul:after, .Blog-item:after, .Blog-item-meta:after, .Projects:after, .Project-footer-nav ul:after, .Filter-menu ul:after, .container:after,
+  .clearfix:after, .menu ul:after, .entry .entry-content:after, .Article-meta:after, .footer .Footer-logos ul:after, .Page:after, .next-prev:after, .next-prev ul:after, .Blog-item:after, .Blog-item-meta:after, .Projects:after, .Project-footer-nav ul:after, .Filter-menu ul:after, .container:after,
   .u-container:after {
     clear: both; }
 
@@ -1035,7 +1035,7 @@ a {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1;
-  background: #181a16;
+  background: #bcc1c2;
   color: #fff;
   border-radius: 2px;
   text-decoration: none; }
@@ -1267,15 +1267,15 @@ a {
     font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.25;
     font-weight: 400;
     text-decoration: none; }
     @media (min-width: 768px) {
       .Submenu a {
-        font-size: 20px;
-        font-size: 1.25rem; } }
+        font-size: 18px;
+        font-size: 1.125rem; } }
   .Submenu li.active a,
   .Submenu li.current-menu-item a,
   .Submenu li.current-menu-parent a,
@@ -1386,12 +1386,15 @@ a {
 .entry .entry-content h6:first-child {
   margin-top: 0; }
 .entry .entry-content h1, .entry .entry-content h2, .entry .entry-content h3, .entry .entry-content h4, .entry .entry-content h5, .entry .entry-content h6 {
+  margin-bottom: 0;
   font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-weight: 600;
   color: #444444;
   line-height: 1.5; }
+.entry .entry-content p {
+  margin-top: 0; }
 .entry .entry-content h2 {
   font-size: 24px;
   font-size: 1.5rem; }
@@ -1537,6 +1540,61 @@ img[class*="align"],
   .entry .entry-content .wp-caption img {
     margin: 0;
     padding: 0; }
+
+/*	==========================================================================
+	Article
+	========================================================================== */
+.Article--excerpt {
+  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ddd; }
+  .Article--excerpt:last-child {
+    padding-bottom: 0;
+    border-bottom: 0; }
+
+.Article-meta {
+  font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 400; }
+  .Article-meta .Article-date {
+    float: left; }
+  .Article-meta .post-categories {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .Article-meta .post-categories a {
+      text-decoration: none;
+      color: #6d7373; }
+
+.Article-date {
+  color: #6d7373; }
+
+.Article-title {
+  font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 1.25;
+  font-weight: 600; }
+  .Article-title a {
+    text-decoration: none;
+    color: #444444; }
+
+.Article-content .read-more {
+  display: block;
+  margin-top: 16px;
+  margin-top: 1rem; }
+.Article-content p:last-child {
+  margin-bottom: 0; }
 
 /*	Timelines
 		======================================================================== */
@@ -2445,6 +2503,13 @@ img[class*="align"],
   font-style: normal;
   font-size: 18px;
   font-size: 1.125rem; }
+  .Feed-item--excerpt .Feed-item-title {
+    font-size: 30px;
+    font-size: 1.875rem;
+    line-height: 1.25; }
+  .Feed-item-title a {
+    text-decoration: none;
+    color: #444444; }
 
 .Feed-item-date {
   margin: 0;
@@ -2458,6 +2523,13 @@ img[class*="align"],
   font-weight: 400; }
   body.home .Feed-item-date {
     color: rgba(255, 255, 255, 0.5); }
+
+.Feed-item-content .read-more {
+  font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal; }
+  .Feed-item-content .read-more a {
+    text-decoration: none; }
 
 /*	==========================================================================
 	Stay connected widget

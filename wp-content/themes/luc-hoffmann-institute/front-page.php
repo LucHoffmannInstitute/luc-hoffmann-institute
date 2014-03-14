@@ -121,7 +121,7 @@ $banner = new Banner();
 
                             <?php while ( $blog_posts->have_posts() ) : $blog_posts->the_post() ?>
 
-                                <?php get_template_part( 'templates/feed-item' ); ?>
+                                <?php get_template_part( 'templates/feed-item-blurb' ); ?>
 
                             <?php endwhile ?>
 
