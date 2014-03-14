@@ -33,6 +33,8 @@
 	}
 
 	h3 {
+		@include rem('padding-left', 1);
+		border-left: 4px solid $blue-light;
 		@include font-size(18);
 
 		@include min-width ( $bp-2 ) {
