@@ -4,7 +4,7 @@
  */
 ?>
 
-<article class="Article" id="article-<?php the_ID() ?>">
+<article class="Article Article--excerpt" id="article-<?php the_ID() ?>">
 										
 	<header class="Article-header">
 
