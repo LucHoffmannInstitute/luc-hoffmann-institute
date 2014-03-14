@@ -2399,8 +2399,8 @@ img[class*="align"],
 	========================================================================== */
 .Feed-item {
   display: table;
-  margin-bottom: 16px;
-  margin-bottom: 1rem;
+  margin: 16px 0;
+  margin: 1rem 0;
   width: 100%; }
 
 /**
