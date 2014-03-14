@@ -8,7 +8,7 @@ if ( $image_id )
 }
 ?>
                                 
-<article class="Feed-item">
+<article class="Feed-item Feed-item--blurb">
     
     <a class="Feed-item-inner" href="<?php the_permalink() ?>">
 

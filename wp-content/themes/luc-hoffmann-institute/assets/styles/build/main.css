@@ -375,7 +375,7 @@ img {
 /*  Antialiased type
     ======================================================================== */
 .antialiased, .comment-respond .form-submit input, .entry .entry-content, .header, .Page-title, .Page-header-caption, .signup-form button[type="submit"],
-.search-form button[type="submit"], .Project-header, .Project-subheader, .Cards-caption, .Card-content, .Feed-item-header, .Filter-menu li {
+.search-form button[type="submit"], .Project-header, .Project-subheader, .Cards-caption, .Card-content, .Feed-item--blurb .Feed-item-header, .Filter-menu li {
   -webkit-font-smoothing: antialiased; }
 
 /* ==========================================================================
@@ -1047,39 +1047,6 @@ a {
   background: #004164; }
 
 /* 	==========================================================================
-		Submenu
-		========================================================================== */
-.Widget--submenu ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-.Widget--submenu a {
-  position: relative;
-  display: inline-block;
-  margin: 8px 0;
-  margin: 0.5rem 0;
-  font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.25;
-  font-weight: 400;
-  text-decoration: none; }
-  @media (min-width: 768px) {
-    .Widget--submenu a {
-      font-size: 18px;
-      font-size: 1.125rem; } }
-.Widget--submenu li.active a,
-.Widget--submenu li.current-menu-item a,
-.Widget--submenu li.current-menu-parent a,
-.Widget--submenu li.current-menu-ancestor a,
-.Widget--submenu li.current-page-ancestor > a {
-  padding-left: 16px;
-  padding-left: 1rem;
-  border-left: 4px solid #007ebf; }
-
-/* 	==========================================================================
 	Social bits
 	========================================================================== */
 .social {
@@ -1280,6 +1247,43 @@ a {
     font-style: normal; }
     .Widget--quote cite small {
       display: block; }
+
+/* 	==========================================================================
+	Submenu
+	========================================================================== */
+.Submenu {
+  margin: 32px 0 64px;
+  margin: 2rem 0 4rem; }
+  .Submenu ul {
+    padding: 0;
+    list-style: none; }
+  .Submenu a {
+    position: relative;
+    display: block;
+    margin: 8px 0;
+    margin: 0.5rem 0;
+    padding: 8px;
+    padding: 0.5rem;
+    font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: 400;
+    text-decoration: none; }
+    @media (min-width: 768px) {
+      .Submenu a {
+        font-size: 20px;
+        font-size: 1.25rem; } }
+  .Submenu li.active a,
+  .Submenu li.current-menu-item a,
+  .Submenu li.current-menu-parent a,
+  .Submenu li.current-menu-ancestor a,
+  .Submenu li.current-page-ancestor > a {
+    padding-left: 16px;
+    padding-left: 1rem;
+    border-left: 4px solid #007ebf; }
 
 /* 	==========================================================================
 	Entries
@@ -1802,15 +1806,19 @@ img[class*="align"],
 .Page {
   background: #fff; }
 
-.Page-header--banner {
+.Page-header {
   position: relative;
   display: table;
   margin: 0 auto;
   width: 100%;
-  height: 370px;
+  height: 100px;
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: cover; }
+  background-size: cover;
+  background-color: #6d7373; }
+
+.Page-header--banner {
+  height: 370px; }
   @media (min-width: 768px) {
     .Page-header--banner {
       height: 420px; } }
@@ -1836,10 +1844,10 @@ img[class*="align"],
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); }
   @media (min-width: 768px) {
     .Page-title {
-      font-size: 64px;
-      font-size: 4rem;
-      line-height: 72px;
-      line-height: 4.5rem; } }
+      font-size: 56px;
+      font-size: 3.5rem;
+      line-height: 64px;
+      line-height: 4rem; } }
 
 .Page-header-caption {
   font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -2395,6 +2403,15 @@ img[class*="align"],
   margin-bottom: 1rem;
   width: 100%; }
 
+/**
+ * For excerpts
+ */
+/**
+ * For blurbs: smaller than excerpts
+ */
+/**
+ * For blurbs: link wrapper for entire blurb
+ */
 .Feed-item-inner {
   display: block;
   text-decoration: none;
@@ -2404,6 +2421,9 @@ img[class*="align"],
   .Feed-item-inner:hover {
     color: #007ebf !important; }
 
+/**
+ * For blurbs: thumbnail image
+ */
 .Feed-item-image {
   display: table-cell;
   width: 100px;
@@ -2412,7 +2432,7 @@ img[class*="align"],
   background-position: center;
   background-size: cover; }
 
-.Feed-item-header {
+.Feed-item--blurb .Feed-item-header {
   display: table-cell;
   vertical-align: top;
   padding: 0 16px;

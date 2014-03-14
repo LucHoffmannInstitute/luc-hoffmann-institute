@@ -1,20 +1,48 @@
 
 /* 	==========================================================================
-		Submenu
-		========================================================================== */
+	Submenu
+	========================================================================== */
 
-.Widget--submenu {
+//.Submenu {
+//	@extend .antialiased;
+//	background: $blue-darker;
+//
+//	ul {
+//		@extend .clearfix;
+//		margin: 0;
+//		padding: 0;
+//		list-style: none;
+//	}
+//
+//	li {
+//		float: left;
+//		width: percentage(1/5);
+//		border-left: 2px solid darken( $blue-darker, 3% );
+//	}
+//
+//	a {
+//		display: block;
+//		@include sans;
+//		text-decoration: none;
+//		color: #fff;
+//	}
+//
+//}
+
+
+.Submenu {
+	@include rem('margin', 2, 0, 4);
 
 	ul {
-		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
 
 	a {
 		position: relative;
-		display: inline-block;
+		display: block;
 		@include rem('margin', 0.5, 0);
+		@include rem('padding', 0.5);
 		@include sans;
 		@include font-size(16);
 		line-height: 1.25;
@@ -22,7 +50,7 @@
 		text-decoration: none;
 
 		@include min-width ( $iPadPortrait ) {
-			@include font-size(18);
+			@include font-size(20);
 		}
 	}
 
@@ -33,6 +61,8 @@
 	li.current-page-ancestor > a {
 		@include rem('padding-left', 1);
 		border-left: 4px solid $blue-light;
+		//background: $blue-dark;
+		//color: #fff !important;
 	}
 
 }

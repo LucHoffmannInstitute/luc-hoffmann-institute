@@ -1,4 +1,4 @@
-<nav class="Widget Widget--submenu">
+<nav class="Submenu">
 	<?php wp_nav_menu( array(
 		'theme_location' => 'main-menu',
 		'menu_id' => false,

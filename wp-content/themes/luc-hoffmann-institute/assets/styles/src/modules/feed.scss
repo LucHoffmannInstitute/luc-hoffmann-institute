@@ -2,8 +2,32 @@
 	Feed
 	========================================================================== */
 
-.Feed {
-}
+//.Feed {
+//}
+//
+//.Feed-item {
+//	@include rem('margin-bottom', 2);
+//}
+//
+//.Feed-item-header {
+//
+//}
+//
+//.Feed-item-title {
+//	margin: 0;
+//	@include sans;
+//	@include font-size(24);
+//}
+//
+//.Feed-item-date {
+//	margin: 0;
+//	@include caps;
+//	color: $text-light;
+//}
+//
+//.Feed-item-content {
+//	@extend .antialiased;
+//}
 
 .Feed-item {
 	display: table;
@@ -11,6 +35,23 @@
 	width: 100%;
 }
 
+/**
+ * For excerpts
+ */
+.Feed-item--excerpt {
+
+}
+
+/**
+ * For blurbs: smaller than excerpts
+ */
+.Feed-item--blurb {
+
+}
+
+/**
+ * For blurbs: link wrapper for entire blurb
+ */
 .Feed-item-inner {
 	display: block;
 	text-decoration: none;
@@ -25,6 +66,9 @@
 	}
 }
 
+/**
+ * For blurbs: thumbnail image
+ */
 .Feed-item-image {
 	display: table-cell;
 	width: 100px;
@@ -37,10 +81,13 @@
 }
 
 .Feed-item-header {
-	@extend .antialiased;
-	display: table-cell;
-	vertical-align: top;
-	@include rem('padding', 0, 1);
+
+	.Feed-item--blurb & {
+		@extend .antialiased;
+		display: table-cell;
+		vertical-align: top;
+		@include rem('padding', 0, 1);
+	}
 }
 
 .Feed-item-title {
