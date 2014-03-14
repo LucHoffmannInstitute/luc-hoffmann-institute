@@ -55,6 +55,25 @@
 		}
 	}
 
+	blockquote {
+		@include rem('margin', 2, 0);
+		@include rem('padding', 0, 2);
+		@include sans;
+		@include font-size(20);
+		border-left: 4px solid $gold-light;
+
+		@include min-width ( $bp-2 ) {
+		}
+
+		cite {
+			display: block;
+			@include rem('margin', 1, 0, 0);
+			@include font-size(16);
+			font-style: normal;
+			font-weight: 600;
+		}
+	}
+
 	.pullquote {
 		@include rem('margin', 2);
 		@include rem('padding', 0, 2);
