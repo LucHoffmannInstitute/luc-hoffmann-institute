@@ -23,7 +23,7 @@
 		color: $blue-light;
 
 		@include min-width ( $bp-2 ) {
-			@include font-size(18);
+			@include font-size(20);
 		}
 
 		&:hover {
