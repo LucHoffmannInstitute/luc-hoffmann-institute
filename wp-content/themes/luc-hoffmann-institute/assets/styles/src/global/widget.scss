@@ -1,0 +1,30 @@
+/*	==========================================================================
+	Widget
+	========================================================================== */
+
+.Widget {
+	@include rem('margin', 1, 0);
+	@include rem('padding', 1, 0);
+}
+
+.Widget-header {
+
+}
+
+.Widget-title {
+	margin: 0;
+	@include caps;
+}
+
+.Widget-content {
+	@include rem('padding', 1, 0);
+	@extend .antialiased;
+
+	p:first-child {
+		margin-top: 0;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}

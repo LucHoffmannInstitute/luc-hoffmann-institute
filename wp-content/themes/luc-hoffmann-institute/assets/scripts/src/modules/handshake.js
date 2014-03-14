@@ -9,7 +9,7 @@ Handshake.prototype.settings = {
 	elSelector: '.Handshake',
 	animateElSelector: '.Handshake-inner',
 	msgSelector: '.Handshake-message',
-	menuItemsSelector: '.menu a',
+	menuItemsSelector: '.Menu a',
 	menuDataAttribute: 'description',
 	animateInClass: 'Handshake-inner--animate-in',
 	animateOutClass: 'Handshake-inner--animate-out'

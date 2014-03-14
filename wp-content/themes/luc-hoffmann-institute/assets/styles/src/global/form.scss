@@ -1,0 +1,37 @@
+/*	==========================================================================
+	Form
+	========================================================================== */
+
+.Form {
+	@include sans;
+}
+
+.Form-content {
+	
+}
+
+.Form-label {
+
+}
+
+.Form-input {
+	display: block;
+	@include sans;
+	@include rem('margin-bottom', 0.5);
+	@include rem('padding', 0.5);
+	@include font-size(16);
+	border: none;
+	background: $gray-light;
+}
+
+.Form-input--text {
+	width: 100%;
+
+	@include placeholder {
+		color: $text-light;
+	}
+}
+
+.Form-input--submit {
+	
+}

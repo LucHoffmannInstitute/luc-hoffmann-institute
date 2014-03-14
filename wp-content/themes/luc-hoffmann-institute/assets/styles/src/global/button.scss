@@ -1,0 +1,26 @@
+/*	==========================================================================
+	Button
+	========================================================================== */
+
+.Button {
+	@extend .disable-select;
+	display: inline-block;
+	margin: 0;
+	@include rem('padding', 0.5, 1);
+	@include sans;
+	@include font-size(16);
+	line-height: 1;
+	background: $gray-light;
+	color: #fff;
+	border-radius: 2px;
+	text-decoration: none;
+
+	&:hover {
+		background: $blue-light;
+		color: #fff !important;
+	}
+}
+
+.Button--action {
+	background: $blue-dark;
+}

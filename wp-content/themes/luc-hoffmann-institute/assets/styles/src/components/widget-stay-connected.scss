@@ -1,0 +1,45 @@
+/*	==========================================================================
+	Stay connected widget
+
+	Appears on the home page
+	========================================================================== */
+
+.Widget--stay-connected {
+	@include rem('margin-left', 1);
+
+	.Widget-title {
+		color: #fff;
+	}
+
+	.Widget-content {
+		@extend .antialiased;
+		color: $text-light;
+	}
+
+	.Form-label {
+		@extend .visuallyhidden;
+	}
+
+	ul {
+		@include rem('margin', 2, 0, 0);
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		@include caps;
+	}
+
+	a {
+		text-decoration: none;
+		color: $text-light;
+
+		&:hover {
+			color: $blue-light !important;
+		}
+
+		i {
+			@include rem('margin-right', 0.5);
+		}
+	}
+}

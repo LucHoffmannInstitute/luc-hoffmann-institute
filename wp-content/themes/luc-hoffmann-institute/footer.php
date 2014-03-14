@@ -1,46 +1,46 @@
-        </section><!-- .main -->
+		</section><!-- .Main -->
 
-        <footer class="footer" role="contentinfo">
+		<footer class="Footer" role="contentinfo">
+			
+			<div class="u-container">
+				
+				<div class="u-cols">
+					
+					<div class="Footer-logos u-col u-col-6of12">
 
-           <div class="u-container">
-               
-                <div class="u-cols">
-                    
-                    <div class="Footer-logos u-col u-col-6of12">
+		                <ul>
+		                    
+		                    <li>
+		                        <a class="panda-logo" href="http://panda.org/"></a>
+		                    </li>
 
-                        <ul>
-                            
-                            <li>
-                                <a class="panda-logo" href="http://panda.org/"></a>
-                            </li>
+		                    <li>
+		                        <a class="mava-logo" href="http://en.mava-foundation.org/"></a>
+		                    </li>
 
-                            <li>
-                                <a class="mava-logo" href="http://en.mava-foundation.org/"></a>
-                            </li>
+		                </ul>
 
-                        </ul>
+		            </div><!-- .u-col -->
 
-                    </div><!-- .u-col -->
+		            <div class="u-col u-col-4of12 align-right">
 
-                    <div class="u-col u-col-4of12 align-right">
+		                <div class="Widget Widget--search">
+		                    <?php get_search_form(); ?>
 
-                        <div class="Widget Widget--search">
-                            <?php get_search_form(); ?>
+		                    <div class="info">
+		                        <p>&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
+		                    </div>
+		                </div>
 
-                            <div class="info">
-                                <p>&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
-                            </div>
-                        </div>
+		            </div><!-- .u-col -->
 
-                    </div><!-- .u-col -->
+				</div><!-- .u-cols -->
 
-                </div><!-- .u-cols -->
+			</div><!-- .u-container -->
 
-           </div><!-- .u-container -->
+		</footer>
 
-        </footer><!-- .footer -->
-
-        <!--[if lt IE 9]>
+		<!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 

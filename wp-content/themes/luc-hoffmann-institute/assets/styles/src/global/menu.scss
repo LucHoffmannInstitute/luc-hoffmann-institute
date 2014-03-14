@@ -1,0 +1,124 @@
+/*	==========================================================================
+	Menu
+	========================================================================== */
+
+.Menu {
+	background: $blue-darker;
+
+	@include min-width ( $bp-2 ) {
+		position: relative;
+		z-index: 100;
+		display: block;
+		overflow: hidden;
+
+		&:before {
+			display: block;
+			content: "";
+			position: absolute;
+			z-index: 9999;
+			right: 0;
+			bottom: 100%;
+			left: 0;
+			height: 100px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+		}
+	}
+
+	ul {
+		@extend .clearfix;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+
+		@include min-width ( $bp-2 ) {
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+		}
+	}
+
+	li {
+		float: left;
+		display: block;
+		width: 50%;
+
+		$menu-item-border:  2px solid darken($blue-darker, 3%);
+
+		@include min-width ( $bp-2 ) {
+			float: none;
+			display: table-cell;
+			vertical-align: middle;
+			border-right: $menu-item-border;
+
+			&:first-child {
+				border-left: $menu-item-border;
+			}
+		}
+
+		&:last-child a {
+			border-right: $menu-item-border;
+
+			@include min-width ( $bp-2 ) {
+				border-right: none;
+			}
+		}
+	}
+
+	a {
+		position: relative;
+		@include sans;
+		display: block;
+		@include font-size(14);
+		text-decoration: none;
+		color: #fff;
+		border: 1px solid darken( $blue-darker, 3% );
+		border-top: none;
+		border-right: none;
+
+		@include min-width ( $bp-2 ) {
+			display: table;
+			vertical-align: middle;
+			width: 100%;
+			height: 70px;
+			@include font-size(18);
+			border: none;
+		}
+
+		&:after {
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			height: 4px;
+		}
+
+		span {
+			display: block;
+			@include rem('padding', 0.5);
+			text-align: center;
+
+			@include min-width ( $bp-2 ) {
+				vertical-align: middle;
+				display: table-cell;
+				padding: 0;
+			}
+		}
+	}
+
+	li.current-menu-item a,
+	li.current-menu-parent a,
+	li.current-menu-ancestor a,
+	li.current-page-ancestor a,
+	li.current_page_parent a,
+	li.active a,
+	li a:hover {
+		color: #fff !important;
+
+		&:after {
+			background: $green-light;
+		}
+	}
+}

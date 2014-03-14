@@ -3,9 +3,9 @@
 	========================================================================== */
 
 a {
-	color: $blue-dark;
+	color: $blue-light;
 
 	&:hover {
-		color: $blue-light !important;
+		color: $blue-dark !important;
 	}
 }

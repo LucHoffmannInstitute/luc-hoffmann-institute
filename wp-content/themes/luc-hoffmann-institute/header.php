@@ -3,89 +3,53 @@
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="<?php bloginfo('name'); ?>">
+    <meta name="description" content="<?php echo get_option('meta_description'); ?>">
+
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/assets/img/build/favicon.ico">  
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon.png">
+
+    <script type="text/javascript" src="//use.typekit.net/qhv6jcb.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <script src="<?php echo get_template_directory_uri() ?>/assets/vendor/modernizr.js"></script>
+
+    <?php wp_head() ?>
+
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/bower_components/selectivizr/selectivizr.js"></script>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/bower_components/respond/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body <?php body_class() ?>>
+
+    <header class="Header" role="banner">
         
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="title" content="<?php bloginfo('name'); ?>">
-        <meta name="description" content="<?php echo get_option('meta_description'); ?>">
+        <div class="u-container">
 
-        <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/assets/img/build/favicon.ico">  
+            <div class="Header-inner">
+            
+                <div class="Header-logo"><a href="<?php bloginfo('url') ?>"><i class="icon-hoffmann"></i><span>Luc Hoffmann Institute</span></a></div>
 
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-144x144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-114x114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-72x72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-57x57-precomposed.png">
-        <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon.png">
+                <?php get_template_part('templates/handshake') ?>
 
-        <script type="text/javascript" src="//use.typekit.net/qhv6jcb.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+            </div>
 
-        <script src="<?php echo get_template_directory_uri() ?>/assets/vendor/modernizr.js"></script>
+        </div>
 
-        <?php wp_head() ?>
+    </header>
 
-        <!--[if lt IE 9]>
-            <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/bower_components/selectivizr/selectivizr.js"></script>
-            <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/bower_components/respond/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body <?php body_class() ?>>
+    <?php get_template_part('templates/menu') ?>
 
-        <header class="header">
-
-            <?php // if ( is_front_page() ) : ?>
-
-                <div class="u-container">
-
-                    <div class="upper">
-                        <h1 class="logo">
-                            <a href="<?php bloginfo('url') ?>"><i class="icon-hoffmann"></i><span>Luc Hoffmann Institute</span></a>
-                        </h1>
-
-                        <div class="Handshake">
-
-                            <div class="Handshake-inner">
-
-                                <div class="Handshake-content">
-
-                                    <div class="Handshake-content-inner">
-
-                                        <span class="Handshake-message">
-                                            <?php bloginfo('description') ?>
-                                        </span>
-                                    
-                                    </div>
-                                
-                                </div>
-                            
-                            </div>
-
-                        </div><!-- .Handshake -->
-
-                    </div><!-- .upper -->
-
-                </div><!-- .u-container -->
-
-            <?php // endif ?>
-
-            <nav id="menu" class="menu" role="navigation">
-                <div class="u-container">
-                    <?php wp_nav_menu( array(
-                        'theme_location' => 'main-menu',
-                        'depth' => 1,
-                        'menu_id' => false,
-                        'container' => false,
-                        //'items_wrap' => '<ul id="%1$s" class="%2$s"><li class="logo"><a href="' . get_bloginfo('url') . '"><i class="icon-hoffmann"></i><span>Luc Hoffmann Institute</span></a></li>%3$s</ul>',
-                        'link_before' => '<span>',
-                        'link_after' => '</span>',
-                        'walker' => new Menu_With_Description()
-                    ) ) ?>
-                </div>
-            </nav>
-
-        </header>
-
-        <section class="Main" role="main">
+    <section class="Main" role="main">

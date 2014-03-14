@@ -1,0 +1,19 @@
+/*	==========================================================================
+	Latest news widget
+
+	Appears on the home page
+	========================================================================== */
+
+.Widget--latest-news {
+	@include rem('margin-right', 1);
+	
+	.Widget-title {
+		color: #fff;
+	}
+
+	.Widget-content {
+		@extend .antialiased;
+		color: #fff;
+	}
+
+}

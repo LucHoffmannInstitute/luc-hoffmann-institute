@@ -1,0 +1,45 @@
+/*	==========================================================================
+	Layout
+	========================================================================== */
+
+body {
+	background: $gray-dark;
+}
+
+.browsehappy {
+	position: fixed;
+	z-index: 99999;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: red;
+	color: #fff;
+}
+
+.u-container {
+	@extend .clearfix;
+	position: relative;
+	margin: 0 auto;
+	@include rem('padding', 0, 1);
+	max-width: 1100px;
+
+	@include min-width ( $bp-2 ) {
+		@include rem('padding', 0, 2);
+	}
+}
+
+.u-pull-left {
+	float: left !important;
+}
+
+.u-pull-right {
+	float: right !important;
+}
+
+.u-col {
+
+	@include max-width ( $bp-2 - 1 ) {
+		float: none !important;
+		width: auto !important;
+	}
+}

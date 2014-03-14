@@ -5,3 +5,10 @@
 $bp-1: 321;
 $bp-2: 768;
 $bp-3: 1000;
+
+// Deprecating apple-specific bp names
+$iPhoneLandscape: $bp-1;
+$iPadPortrait: $bp-2;
+$iPadLandscape: $bp-3;
+
+$max-width: 100%;

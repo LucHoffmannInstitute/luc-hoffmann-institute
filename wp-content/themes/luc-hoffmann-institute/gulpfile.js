@@ -8,35 +8,7 @@ var plugins = require('gulp-load-plugins')({
 	camelize: true 
 });
 
-gulp.task('jshint', function () {
-	return gulp.src(['./assets/scripts/src/**/*.js'])
-		.pipe(plugins.jshint('.jshintrc'))
-		.pipe(plugins.jshint.reporter('default'));
-});
-
-gulp.task('scripts', function () {
-	return gulp.src('./assets/scripts/src/main.js')
-		.pipe(plugins.browserify())
-		.pipe(plugins.uglify())
-		.pipe(gulp.dest('./assets/scripts/build'));
-});
-
-gulp.task('styles', function () {
-	return gulp.src('./assets/styles/src/*.scss')
-		.pipe(sass({sourcemap: true}))
-		.pipe(plugins.autoprefixer('last 2 versions', 'ie 8', 'ie 7'))
-		//.pipe(plugins.minifyCss())
-		.pipe(gulp.dest('./assets/styles/build'));
-});
-
-gulp.task('modernizr', function () {
-	return gulp.src(['./assets/scripts/build/**/*.js','./assets/styles/build/**/*.css'])
-		.pipe(plugins.modernizr())
-		.pipe(plugins.uglify())
-		.pipe(gulp.dest('./assets/vendor'));
-});
-
-gulp.task('setup', function () {
+gulp.task('setup', function ( cb ) {
 	// make sass version of normalize.css
 	gulp.src('./bower_components/normalize-css/normalize.css')
 		.pipe(plugins.rename('normalize.scss'))
@@ -53,6 +25,36 @@ gulp.task('setup', function () {
 
 	// copy over jquery.min.js
 	gulp.src('./bower_components/jquery/dist/jquery.min.js')
+		.pipe(gulp.dest('./assets/vendor'));
+
+	cb();
+});
+
+gulp.task('jshint', function () {
+	return gulp.src(['./assets/scripts/src/**/*.js'])
+		.pipe(plugins.jshint('.jshintrc'))
+		.pipe(plugins.jshint.reporter('default'));
+});
+
+gulp.task('scripts', function () {
+	return gulp.src('./assets/scripts/src/main.js')
+		.pipe(plugins.browserify())
+		.pipe(plugins.uglify())
+		.pipe(gulp.dest('./assets/scripts/build'));
+});
+
+gulp.task('styles', ['setup'], function () {
+	return gulp.src('./assets/styles/src/*.scss')
+		.pipe(sass({sourcemap: true}))
+		.pipe(plugins.autoprefixer('last 2 versions', 'ie 8', 'ie 7'))
+		.pipe(plugins.minifyCss())
+		.pipe(gulp.dest('./assets/styles/build'));
+});
+
+gulp.task('modernizr', function () {
+	return gulp.src(['./assets/scripts/build/**/*.js','./assets/styles/build/**/*.css'])
+		.pipe(plugins.modernizr())
+		.pipe(plugins.uglify())
 		.pipe(gulp.dest('./assets/vendor'));
 });
 
@@ -72,6 +74,6 @@ gulp.task('watch', function () {
 		});
 });
 
-gulp.task('default', ['jshint', 'scripts', 'styles', 'modernizr']);
+gulp.task('default', ['setup', 'jshint', 'scripts', 'styles', 'modernizr']);
 
 gulp.task('dev', ['default', 'watch']);
