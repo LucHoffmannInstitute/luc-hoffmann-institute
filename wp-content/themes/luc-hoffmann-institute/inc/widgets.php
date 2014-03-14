@@ -16,8 +16,6 @@ function hoffmann_sidebars_init() {
 	$after_title	= '</h2></header>';
 	$after_widget	= '</section>';
 
-	$additional_sidebars = array( 'Home' );
-
 	// add project post types as additional sidebars
 	$projects = get_posts( array(
 		'post_type' => 'project'
