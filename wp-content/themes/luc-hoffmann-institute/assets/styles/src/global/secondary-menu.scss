@@ -1,0 +1,45 @@
+/*	==========================================================================
+	Secondary menu
+	========================================================================== */
+
+.Secondary-menu {
+	@include rem('margin', 2, 0, 4);
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		position: relative;
+		display: block;
+		@include rem('margin', 0.5, 0);
+		@include rem('padding', 0.5);
+		@include sans;
+		@include font-size(14);
+		line-height: 1.25;
+		font-weight: 400;
+		text-decoration: none;
+		color: $blue-light;
+
+		@include min-width ( $bp-2 ) {
+			@include font-size(18);
+		}
+
+		&:hover {
+			color: $blue-dark !important;
+		}
+	}
+
+	li.active a,
+	li.current-menu-item a,
+	li.current-menu-parent a,
+	li.current-menu-ancestor a,
+	li.current-page-ancestor > a {
+		@include rem('padding-left', 1);
+		border-left: 4px solid $blue-light;
+		//background: $blue-dark;
+		//color: #fff !important;
+	}
+
+}

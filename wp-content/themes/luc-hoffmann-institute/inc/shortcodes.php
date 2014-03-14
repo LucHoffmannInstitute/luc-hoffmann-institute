@@ -3,8 +3,8 @@
 /**
  * [lede]...[/lede]
  */
-add_shortcode( 'lede', 'expedart_shortcode_lede' );
-function expedart_shortcode_lede( $atts, $content = null ) {
+add_shortcode( 'lede', 'hoffmann_shortcode_lede' );
+function hoffmann_shortcode_lede( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 	), $atts ) );
 	return '<div class="lede">' . do_shortcode($content) . '</div>';
@@ -15,8 +15,8 @@ function expedart_shortcode_lede( $atts, $content = null ) {
  *
  * Pullquotes
  */
-add_shortcode( 'pull', 'expedart_shortcode_pull' );
-function expedart_shortcode_pull( $atts, $content = null ) {
+add_shortcode( 'pull', 'hoffmann_shortcode_pull' );
+function hoffmann_shortcode_pull( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 	), $atts ) );
 	return '<blockquote class="pullquote">' . do_shortcode($content) . '</blockquote>';
@@ -27,8 +27,8 @@ function expedart_shortcode_pull( $atts, $content = null ) {
  *
  * Citation inside pullquote
  */
-add_shortcode( 'cite', 'expedart_shortcode_cite' );
-function expedart_shortcode_cite( $atts, $content = null ) {
+add_shortcode( 'cite', 'hoffmann_shortcode_cite' );
+function hoffmann_shortcode_cite( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 	), $atts ) );
 	return '<cite class="cite">' . do_shortcode($content) . '</cite>';
@@ -37,8 +37,8 @@ function expedart_shortcode_cite( $atts, $content = null ) {
 /**
  * [related_posts]
  */
-add_shortcode( 'related_posts', 'expedart_shortcode_related_posts' );
-function expedart_shortcode_related_posts( $atts ) {
+add_shortcode( 'related_posts', 'hoffmann_shortcode_related_posts' );
+function hoffmann_shortcode_related_posts( $atts ) {
 	extract( shortcode_atts( array(
 	), $atts ) );
 
@@ -85,33 +85,33 @@ function hoffmann_profile_list( $atts ) {
 		return;
 	}
 
-	$output = '<section class="profile-list">';
+	$output = '<section class="Profile-list">';
 
 	while ( has_sub_field( 'profile' ) ) {
 
 		$image_src = wp_get_attachment_image_src( get_sub_field('image'), 'thumbnail' );
 		$image_url = $image_src[0];
 
-		$output .= '<article class="profile" id="' . sanitize_title( get_sub_field( 'name' ) ) . '">';
-		$output .= '<header class="profile-header">';
-		$output .= '<div class="profile-image">';
+		$output .= '<article class="Profile" id="' . sanitize_title( get_sub_field( 'name' ) ) . '">';
+		$output .= '<header class="Profile-header">';
+		$output .= '<div class="Profile-image">';
 		$output .= '<img src="' . $image_url . '" alt="Alison Richard" />';
 		$output .= '</div>';
-		$output .= '<div class="profile-title">';
-		$output .= '<h2>' . get_sub_field( 'name' ) . '</h2>';
+		$output .= '<div class="Profile-title">';
+		$output .= '<h2 class="Profile-name">' . get_sub_field( 'name' ) . '</h2>';
 		if ( get_sub_field( 'lhi_title' ) ) {
-			$output .= '<h3>' . get_sub_field( 'lhi_title' ) . '</h3>';
+			$output .= '<h3 class="Profile-professional-title">' . get_sub_field( 'lhi_title' ) . '</h3>';
 		}
 		if ( get_sub_field( 'professional_title' ) ) {
 			$output .= apply_filters( 'the_content', get_sub_field( 'professional_title' ) );
 		}
 		if ( get_sub_field( 'text' ) ) {
-			$output .= '<a href="#" class="show-profile-content">Show details</a>';
+			$output .= '<a href="#" class="Profile-reveal js-profile-reveal">Show details</a>';
 		}
 		$output .= '</div>';
 		$output .= '</header>';
 		if ( get_sub_field( 'text' ) ) {
-			$output .= '<div class="profile-content inactive">';
+			$output .= '<div class="Profile-content inactive">';
 			$output .= apply_filters( 'the_content', get_sub_field( 'text' ) );
 			$output .= '</div>';
 		}

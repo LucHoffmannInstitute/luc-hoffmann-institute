@@ -1,0 +1,35 @@
+/*	==========================================================================
+	Footer
+	========================================================================== */
+
+.Footer {
+	@include sans;
+	background: $gray-darker;
+
+	@include min-width ( $bp-2 ) {
+		@include rem('padding', 2, 0);
+	}
+}
+
+.Footer-content {
+	@include rem('margin', 0, 1, 1);
+	@include font-size(12);
+	line-height: 1;
+	text-transform: uppercase;
+	color: $text-light;
+
+	p {
+		margin: 0;
+	}
+
+	a {
+		color: $text-light;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: $blue-light !important;
+	}
+
+}
+

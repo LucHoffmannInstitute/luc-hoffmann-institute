@@ -22,15 +22,15 @@
 
 		            </div><!-- .u-col -->
 
-		            <div class="u-col u-col-4of12 align-right">
+		            <div class="u-col u-col-4of12 u-pull-right">
 
 		                <div class="Widget Widget--search">
 		                    <?php get_search_form(); ?>
-
-		                    <div class="info">
-		                        <p>&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
-		                    </div>
 		                </div>
+
+		                <div class="Footer-content">
+	                        <p>&copy; <?php echo date('Y') ?> Luc Hoffmann Institute | <a href="<?php bloginfo('url') ?>/credits/">Credits</a></p>
+	                    </div>
 
 		            </div><!-- .u-col -->
 

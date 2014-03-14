@@ -3,9 +3,9 @@
 var Profiles = function () {};
 
 Profiles.prototype = {
-	$el: $('.profile'),
-	linkSelector: '.show-profile-content',
-	contentSelector: '.profile-content',
+	$el: $('.Profile'),
+	linkSelector: '.js-profile-reveal',
+	contentSelector: '.Profile-content',
 	inactiveClass: 'inactive',
 	showDetailsText: 'Show details',
 	hideDetailsText: 'Hide details'

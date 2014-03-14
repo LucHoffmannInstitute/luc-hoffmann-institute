@@ -17,7 +17,7 @@
 .Form-input {
 	display: block;
 	@include sans;
-	@include rem('margin-bottom', 0.5);
+	@include rem('margin-bottom', 1);
 	@include rem('padding', 0.5);
 	@include font-size(16);
 	border: none;
@@ -34,4 +34,30 @@
 
 .Form-input--submit {
 	
+}
+
+.Form-input-wrap {
+	display: table;
+	width: 100%;
+
+	.Form-input--text,
+	.Form-input--submit {
+		display: table-cell;
+		@include rem('padding', 0.5);
+		height: 100%;
+		@include font-size(16);
+	}
+
+	.Form-input--text {
+		width: 80%;
+	}
+
+	.Form-input--submit {
+		width: 20%;
+		border-radius: 0 2px 2px 0;
+
+		span {
+			@extend .visuallyhidden;
+		}
+	}
 }

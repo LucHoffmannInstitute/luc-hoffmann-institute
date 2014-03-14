@@ -1,18 +1,22 @@
 <?php  
 /**
- * The default template
+ * The default page template
  */
 
 get_header();
 ?>
 
 <section class="Page">
+
+	<?php get_template_part( 'templates/page-header' ) ?>
 	
 	<div class="u-container">
 		
 		<div class="u-cols">
 			
 			<div class="u-col u-col-4of12">
+
+				<?php get_template_part('templates/menu-secondary') ?>
 
 				<?php get_sidebar() ?>
 
@@ -26,7 +30,11 @@ get_header();
 
 						<?php while ( have_posts() ) : the_post() ?>
 	
-							<?php get_template_part( 'templates/article' ); ?>
+							<div class="Entry">
+								
+								<?php the_content() ?>
+
+							</div>
 
 						<?php endwhile ?>
 

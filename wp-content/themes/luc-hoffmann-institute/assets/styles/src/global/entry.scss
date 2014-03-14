@@ -1,0 +1,172 @@
+/*	==========================================================================
+	Entry
+
+	Contains user-created content
+	========================================================================== */
+
+.Entry {
+	@extend .antialiased;
+	
+	h1:first-child,
+	h2:first-child,
+	h3:first-child,
+	h4:first-child,
+	h5:first-child,
+	h6:first-child,
+	p:first-child {
+		margin-top: 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		@include sans;
+		line-height: 1.25;
+		font-weight: 600;
+	}
+
+	h1, h2 {
+		@include font-size(24);
+
+		@include min-width ( $bp-2 ) {
+			@include font-size(30);
+		}
+	}
+
+	h3 {
+		@include font-size(18);
+
+		@include min-width ( $bp-2 ) {
+			@include font-size(24);
+		}
+	}
+
+	h3 {
+		@include font-size(14);
+
+		@include min-width ( $bp-2 ) {
+			@include font-size(16);
+		}
+	}
+
+	.lede {
+		@include font-size(18);
+		
+		@include min-width ( $bp-2 ) {
+			@include font-size(24);
+		}
+	}
+
+	.pullquote {
+		@include rem('margin', 2);
+		@include rem('padding', 0, 2);
+		@include sans;
+		@include font-size(20);
+		border-left: 5px solid $gold-light;
+
+		@include min-width ( $bp-2 ) {
+			float: right;
+			@include rem('margin', 1, 0, 1, 2);
+			@include rem('padding-left', 2);
+			max-width: 50%;
+		}
+
+		.cite {
+			display: block;
+			@include rem('margin', 1, 0, 0);
+			@include font-size(16);
+			font-style: normal;
+		}
+
+	}
+
+	table {
+		@include sans;
+		@include font-size(16);
+		@include line-height(20);
+		text-align: left;
+
+		thead,
+		tfoot {
+			color: $text;
+		}
+
+		tbody {
+			border-top: 1px solid $gray-light;
+			border-bottom: 1px solid $gray-light;
+		}
+
+		td,
+		th {
+			@include rem('padding', 0.5, 0.5);
+		}
+
+		@include max-width ( $bp-3 - 1 ) {
+			// responsive table stuff here
+			// http://css-tricks.com/examples/ResponsiveTables/responsive.php
+		}
+
+	}
+
+	// responsive elements
+	// make sure elements with WP-added height and width attributes are scaled correctly
+	img,
+	img.size-small,
+	img.size-medium,
+	img.size-full,
+	img.size-large,
+	img.wp-post-image
+	img[class*="align"],
+	img[class*="wp-image-"],
+	img[class*="attachment-"],
+	.wp-caption,
+	.twitter-tweet-rendered {
+		max-width: 100% !important;
+		height: auto !important;
+	}
+
+	// alignment
+	.alignleft {
+		float: left;
+	}
+
+	.alignright {
+		float: right;
+	}
+
+	.aligncenter {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	// margins
+	img.alignleft,
+	.wp-caption.alignleft {
+		@include rem('margin', 0, 1, 1, 0);
+	}
+
+	img.alignright,
+	.wp-caption.alignright {
+		@include rem('margin', 0, 0, 1, 1);
+	}
+
+	// captions
+	.wp-caption {
+		margin: 0;
+		padding: 0;
+		width: auto !important;
+
+		.wp-caption-text {
+			margin: 0;
+			@include font-size(12);
+			color: $text-light;
+			text-align: left;
+		}
+
+		img {
+			margin: 0;
+			padding: 0;
+		}
+
+	}
+
+}

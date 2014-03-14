@@ -29,6 +29,10 @@
 @import 'global/form.scss';
 @import 'global/article.scss';
 @import 'global/button.scss';
+@import 'global/footer.scss';
+@import 'global/page.scss';
+@import 'global/secondary-menu.scss';
+@import 'global/entry.scss';
 
 /*	==========================================================================
 	Components
@@ -46,5 +50,20 @@
 // latest news widget
 @import 'components/widget-latest-news.scss';
 
+// footer logos
+@import 'components/footer-logos.scss';
+
+// search widget
+@import 'components/widget-search.scss';
+
 // mini articles
 @import 'components/article-mini.scss';
+
+// projects
+@import 'components/projects.scss';
+
+// filter menu for projects
+@import 'components/filter-menu.scss';
+
+// profile lists (for bios)
+@import 'components/profile-list.scss';

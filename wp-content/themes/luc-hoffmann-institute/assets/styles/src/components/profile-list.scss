@@ -1,0 +1,76 @@
+/*	==========================================================================
+	Profile-list
+	========================================================================== */
+
+.Profile-list {
+
+}
+
+.Profile {
+	@include rem('margin', 2, 0);
+	@include rem('padding', 2, 0, 0);
+	border-top: 1px solid $bg-gray;
+}
+
+.Profile-header {
+
+}
+
+.Profile-image {
+	display: inline-block;
+	vertical-align: middle;
+	width: 25%;
+
+	img {
+		max-width: 100%;
+		border-radius: 50%;
+	}
+}
+
+.Profile-title {
+	display: inline-block;
+	vertical-align: middle;
+	@include rem('padding', 1);
+	width: 70%;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+.Profile-name {
+	margin: 0;
+	@include font-size(24);
+	@include line-height(36);
+}
+
+.Profile-professional-title {
+	margin: 0;
+	@include font-size(18);
+}
+
+.Profile-reveal {
+	@include sans;
+	display: none;
+	@include rem('margin-top', 0.5);
+	@include font-size(16);
+	text-decoration: none;
+
+	.js & {
+		display: block;
+	}
+}
+
+.Profile-content {
+	margin-left: 25%;
+	@include rem('padding-left', 1);
+	@include sans;
+	@include font-size(16);
+
+	&.inactive {
+		height: 0;
+		@extend .visuallyhidden;
+	}
+}

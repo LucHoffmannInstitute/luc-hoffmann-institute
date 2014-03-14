@@ -5,7 +5,7 @@
 	========================================================================== */
 
 .Widget--stay-connected {
-	@include rem('margin-left', 1);
+	@include rem('margin', 1);
 
 	.Widget-title {
 		color: #fff;
