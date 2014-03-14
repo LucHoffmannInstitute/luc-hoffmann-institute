@@ -10,4 +10,4 @@ profiles.init();
 /**
  * FitVids: responsive video embeds
  */
-$('.entry').fitVids();
+$('.Entry').fitVids();

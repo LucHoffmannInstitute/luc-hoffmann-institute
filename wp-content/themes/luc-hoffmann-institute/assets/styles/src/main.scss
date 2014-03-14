@@ -33,6 +33,8 @@
 @import 'global/page.scss';
 @import 'global/secondary-menu.scss';
 @import 'global/entry.scss';
+@import 'global/comments.scss';
+@import 'global/pagination.scss';
 
 /*	==========================================================================
 	Components
@@ -67,3 +69,6 @@
 
 // profile lists (for bios)
 @import 'components/profile-list.scss';
+
+// timeline
+@import 'components/timeline.scss';
