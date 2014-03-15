@@ -7,7 +7,7 @@
 
 	blockquote {
 		margin: 0;
-		padding: 0;
+		@include rem('padding-right', 2);
 		@include sans;
 		@include font-size(20);
 		color: $text-light;
