@@ -13,13 +13,20 @@
 }
 
 .Profile-header {
+	text-align: center;
 
+	@include min-width ( $bp-2 ) {
+		text-align: left;
+	}
 }
 
 .Profile-image {
-	display: inline-block;
-	vertical-align: middle;
-	width: 25%;
+
+	@include min-width ( $bp-2 ) {
+		display: inline-block;
+		vertical-align: middle;
+		width: 25%;
+	}
 
 	img {
 		max-width: 100%;
@@ -28,10 +35,13 @@
 }
 
 .Profile-title {
-	display: inline-block;
-	vertical-align: middle;
 	@include rem('padding', 1);
-	width: 70%;
+
+	@include min-width ( $bp-2 ) {
+		display: inline-block;
+		vertical-align: middle;
+		width: 70%;
+	}
 
 	ul {
 		margin: 0;
@@ -64,10 +74,13 @@
 }
 
 .Profile-content {
-	margin-left: 25%;
-	@include rem('padding-left', 1);
 	@include sans;
 	@include font-size(16);
+
+	@include min-width ( $bp-2 ) {
+		margin-left: 25%;
+		@include rem('padding-left', 1);
+	}
 
 	&.inactive {
 		height: 0;
