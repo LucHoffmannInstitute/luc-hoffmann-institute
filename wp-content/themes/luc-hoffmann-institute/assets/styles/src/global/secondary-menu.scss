@@ -3,7 +3,11 @@
 	========================================================================== */
 
 .Secondary-menu {
-	@include rem('margin', 2, 0, 4);
+	@include rem('margin', 1, 0, 2);
+
+	@include min-width ( $bp-2 ) {
+		@include rem('margin', 2, 0, 4);
+	}
 
 	ul {
 		padding: 0;
@@ -14,9 +18,9 @@
 		position: relative;
 		display: block;
 		@include rem('margin', 0.5, 0);
-		@include rem('padding', 0.5);
+		@include rem('padding', 0.5, 0);
 		@include sans;
-		@include font-size(16);
+		@include font-size(18);
 		line-height: 1.25;
 		font-weight: 400;
 		text-decoration: none;

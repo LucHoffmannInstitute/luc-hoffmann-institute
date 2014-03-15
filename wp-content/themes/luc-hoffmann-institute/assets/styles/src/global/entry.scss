@@ -22,6 +22,10 @@
 		@include sans;
 		line-height: 1.25;
 		font-weight: 600;
+
+		a {
+			text-decoration: none;
+		}
 	}
 
 	h1, h2 {

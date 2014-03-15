@@ -69,5 +69,8 @@
 }
 
 .Page-content {
-	@include rem('padding', 2);
+
+	@include min-width ( $bp-2 ) {
+		@include rem('padding', 2);
+	}
 }
