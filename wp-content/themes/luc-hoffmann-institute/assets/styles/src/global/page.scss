@@ -21,10 +21,10 @@
 }
 
 .Page-header--banner {
-	height: 370px;
+	height: 220px;
 
 	@include min-width ( $bp-2 ) {
-		height: 420px;
+		height: 220px;
 	}
 }
 
