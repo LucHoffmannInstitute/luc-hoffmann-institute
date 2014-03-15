@@ -100,7 +100,7 @@ function hoffmann_profile_list( $atts ) {
 		$output .= '<div class="Profile-title">';
 		$output .= '<h2 class="Profile-name">' . get_sub_field( 'name' ) . '</h2>';
 		if ( get_sub_field( 'lhi_title' ) ) {
-			$output .= '<h3 class="Profile-professional-title">' . get_sub_field( 'lhi_title' ) . '</h3>';
+			$output .= '<p class="Profile-professional-title">' . get_sub_field( 'lhi_title' ) . '</p>';
 		}
 		if ( get_sub_field( 'professional_title' ) ) {
 			$output .= apply_filters( 'the_content', get_sub_field( 'professional_title' ) );
