@@ -26,7 +26,7 @@ function hoffmann_ancestor( $attr = 'ID' ) {
 	}
 
 	// test for blog (need to fix this for custom post types: HOFFMANN)
-	if ( ( $post->post_type == 'post' || is_archive() ) ) {
+	if ( ( $post->post_type == 'post' ) ) {
 		$page_for_posts = get_option( 'page_for_posts' );
 
 		if ( $page_for_posts == 0 ) {

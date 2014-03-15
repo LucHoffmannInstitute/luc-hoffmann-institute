@@ -1,21 +1,20 @@
 <?php
 
-/**
- * Prevent "news" from being highlighted for custom post types
- */
-function custom_fix_blog_tab_on_cpt($classes,$item,$args = null) {
 
-    if(!is_singular('post') && !is_category() && !is_tag()) {
-        $blog_page_id = intval(get_option('page_for_posts'));
-        if($blog_page_id != 0) {
-            if($item->object_id == $blog_page_id) {
-				unset($classes[array_search('current_page_parent',$classes)]);
-			}
-        }
-    }
-    return $classes;
+function hoffmann_fix_nav_highlighting( $classes, $item )
+{
+	 $ancestor_id =	 hoffmann_ancestor( 'ID' );
+
+	 if ( $item->object_id == $ancestor_id ) {
+	 	array_push( $classes, 'current-menu-item' );
+	 } else {
+		 unset( $classes[4] );
+	 }
+
+	 return $classes;
 }
-add_filter('nav_menu_css_class','custom_fix_blog_tab_on_cpt',10,3);
+add_filter('nav_menu_css_class', 'hoffmann_fix_nav_highlighting', 10, 2);
+
 
 /**
  * Main menu walker to add descriptions as data-description

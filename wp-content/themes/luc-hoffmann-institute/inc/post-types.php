@@ -9,13 +9,13 @@ function hoffmann_register_projects() {
 	$labels = array(
 		'name' => __( 'Projects' ),
 		'singular_name' => __( 'Project' ),
-		'add_new' => __( 'Add New Project' ),
-		'edit_item' => __( 'Edit Project' ),
-		'add_new_item' => __( 'New Project' ),
-		'view_item' => __( 'View Project' ),
-		'search_items' => __( 'Search Projects' ),
-		'not_found' => __( 'No Projects found' ),
-		'not_found_in_trash' => __( 'No Projects found in Trash' )
+		'add_new' => __( 'Add New Project Page' ),
+		'edit_item' => __( 'Edit Project Page' ),
+		'add_new_item' => __( 'New Project Page' ),
+		'view_item' => __( 'View Project Page' ),
+		'search_items' => __( 'Search Project Pages' ),
+		'not_found' => __( 'No Project Pages found' ),
+		'not_found_in_trash' => __( 'No Project Pages found in Trash' )
 	);
 
 	$rewrite = array(
@@ -28,8 +28,8 @@ function hoffmann_register_projects() {
 		'menu_position' => null,
 		'supports' => array('title','editor','page-attributes', 'excerpt'),
 		'public' => true,
-		'has_archive' => false,
-		'hierarchical' => false,
+		'has_archive' => true,
+		'hierarchical' => true,
 		'capability_type' => 'page',
 		'rewrite' => $rewrite,
 		'exclude_from_search' => false

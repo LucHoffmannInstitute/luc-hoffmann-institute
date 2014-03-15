@@ -1,25 +1,37 @@
-<?php  
+<?php
 
-$banner_id = get_field( 'image', $post->ID );
+$page_ancestor_id = hoffmann_ancestor();
+$page_ancestor = get_post( $page_ancestor_id );
 
-$banner_post = get_post( $banner_id );
+// is 'hierarchical' true?
+$parent_projects = get_ancestors( $post->ID, $post->post_type );
 
-$image_src = wp_get_attachment_image_src( $banner_id, 'banner' );
+$parent_project_id = array_pop( $parent_projects );
 
-$banner = array(
-	'url' => $image_src[0],
-	'credit' => $banner_post->post_excerpt
-);
+$banner = new Banner();
+
+if ( ! $banner->hasImages())
+{
+	$banner = new Banner(array('id' => $parent_project_id));
+}
 
 $previous_post = get_adjacent_post(null,null,true);
 $next_post = get_adjacent_post(null,null,false);
+
+$subpages = new WP_Query( array(
+    'post_type' => 'project',
+    'posts_per_page' => -1,
+    'post_parent' => $post->ID,
+    'orderby' => 'menu_order',
+    'order' => 'DESC'
+) );
 ?>
 
 <article class="Project Project--single" <?php the_ID() ?>>
 	
 	<div class="Project-inner">
 
-		<div class="Project-image" style="background-image: url(<?php echo $banner['url'] ?>)"></div>
+		<div class="Project-image" style="background-image: url(<?php echo $banner->url() ?>)"></div>
 
 		<div class="Project-header">
 
@@ -35,14 +47,21 @@ $next_post = get_adjacent_post(null,null,false);
 
 				<div class="u-col u-col-8of12">
 
-					<nav class="Project-menu">
-						<ul>
-							<li><a href="#">Sub-page 1</a></li>
-							<li><a href="#">Sub-page 2</a></li>
-							<li><a href="#">Sub-page 3</a></li>
-							<li><a href="#">Sub-page 4</a></li>
-						</ul>
-					</nav>
+					<?php if ( $subpages->have_posts() ) : ?>
+
+						<nav class="Project-menu">
+							<ul>
+
+								<?php while ( $subpages->have_posts() ) : $subpages->the_post() ?>
+
+									<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+
+								<?php endwhile ?>
+
+							</ul>
+						</nav>
+
+					<?php endif ?>
 
 				</div>
 

@@ -1,22 +1,15 @@
 <?php  
-
-$banner_id = get_field( 'image' );
-
-$banner_post = get_post( $banner_id );
-
-$image_src = wp_get_attachment_image_src( $banner_id, 'banner' );
-
-$banner = array(
-	'url' => $image_src[0],
-	'credit' => $banner_post->post_excerpt
-);
+/**
+ * Single project
+ */
+$banner = new Banner();
 ?>
 
 <article class="Project Project--list">
 	
 	<div class="Project-inner">
 
-		<a class="Project-image" href="<?php the_permalink() ?>" style="background-image: url(<?php echo $banner['url'] ?>)"></a>
+		<a class="Project-image" href="<?php the_permalink() ?>" style="background-image: url(<?php echo $banner->url() ?>)"></a>
 
 		<div class="Project-header">
 

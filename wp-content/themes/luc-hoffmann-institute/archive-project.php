@@ -1,12 +1,13 @@
 <?php 
 /**
- * Template name: Projects: index
+ * The project archive
  */
 get_header();
 
 $projects = new WP_Query( array(
     'post_type' => 'project',
     'posts_per_page' => -1,
+    'post_parent' => 0,
     'orderby' => 'menu_order',
     'order' => 'DESC'
 ) );
