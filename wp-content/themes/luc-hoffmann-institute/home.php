@@ -7,8 +7,6 @@ get_header();
 ?>
 
 <section class="Page">
-
-	<?php get_template_part('templates/page-header') ?>
 	
 	<div class="u-container">
 		
