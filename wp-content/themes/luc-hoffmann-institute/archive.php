@@ -1,6 +1,6 @@
 <?php  
 /**
- * The single post template
+ * The default template
  */
 
 get_header();
@@ -31,12 +31,6 @@ get_header();
 							<?php get_template_part( 'templates/article' ); ?>
 
 						<?php endwhile ?>
-
-					<?php endif ?>
-
-					<?php if (is_single() && (comments_open() || get_comments_number() != '0')) : ?>
-							
-  						<?php comments_template() ?>
 
 					<?php endif ?>
 
