@@ -86,7 +86,7 @@
 
 .Project-header {
 	margin: 0;
-	@include rem('padding', 0.5, 1, 0);
+	@include rem('padding', 0.5, 1);
 	background: $gray-dark;
 	color: #fff;
 	border-bottom: 5px solid $gold-light;
