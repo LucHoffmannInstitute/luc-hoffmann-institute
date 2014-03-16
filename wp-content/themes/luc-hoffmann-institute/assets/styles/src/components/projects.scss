@@ -92,7 +92,11 @@
 	border-bottom: 5px solid $gold-light;
 
 	.Project--single & {
-		@include rem('padding', 1, 2, 0);
+		@include rem('padding', 1, 2);
+
+		@include min-width ( $bp-2 ) {
+			padding-bottom: 0;
+		}
 	}
 }
 
@@ -120,9 +124,14 @@
 }
 
 .Project-menu {
+	display: none;
 	position: relative;
 	@include rem('margin', 1, 0);
-	margin-bottom: -5px;
+
+	@include min-width ( $bp-2 ) {
+		display: block;
+		margin-bottom: -5px;
+	}
 
 	ul {
 		margin: 0;
@@ -141,16 +150,12 @@
 		text-decoration: none;
 		color: #fff;
 		border-radius: 2px 2px 0 0;
-		//background: $gray-dark;
 	}
 
 	li.Tabs-menu-item--active a,
 	li a:hover {
-		//color: #fff !important;
-		//color: $gold-dark !important;
 		color: $text !important;
 		background: #fff;
-		//background: $gold-light;
 	}
 
 }
@@ -207,7 +212,23 @@
 }
 
 .Project-tab {
-	
+	@include rem('margin-top', 2);
+	@include rem('padding-bottom', 1);
+	border-bottom: 1px solid #ddd;
+
+	@include min-width ( $bp-2 ) {
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	&:last-of-type {
+		border: none;
+	}
 }
 
 .Project-footer {

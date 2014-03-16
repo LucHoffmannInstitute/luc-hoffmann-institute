@@ -20,7 +20,10 @@
 .Tab {
 
 	.js & {
-		display: none;
+
+		@include min-width ( $bp-2 ) {
+			display: none;
+		}
 	}
 }
 
