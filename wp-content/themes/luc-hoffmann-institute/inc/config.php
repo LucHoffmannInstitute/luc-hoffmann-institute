@@ -46,3 +46,19 @@ function hoffmann_theme_setup() {
 	update_option( 'large_size_w', 794 );
 	update_option( 'large_size_h', 794 );
 }
+
+/**
+ * Add 'current' class to archive list links
+ */
+function theme_get_archives_link ( $link_html ) {
+    global $wp;
+    static $current_url;
+    if ( empty( $current_url ) ) {
+        $current_url = add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
+    }
+    if ( stristr( $link_html, $current_url ) !== false ) {
+        $link_html = preg_replace( '/(<[^\s>]+)/', '\1 class="current"', $link_html, 1 );
+    }
+    return $link_html;
+}
+add_filter('get_archives_link', 'theme_get_archives_link');

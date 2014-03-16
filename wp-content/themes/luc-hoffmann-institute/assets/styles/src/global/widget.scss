@@ -59,7 +59,8 @@
 		}
 	}
 
-	li.current-cat a {
+	li.current-cat a,
+	li.current a {
 		@include rem('padding-left', 1);
 		border-left: 4px solid $blue-light;
 	}
