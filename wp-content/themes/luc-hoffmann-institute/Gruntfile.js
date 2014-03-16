@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 					host: rsyncConfig.staging.host,
 					exclude: ['.git*', '.sass-cache', '.tmp', '.htaccess', 'rsync-config.json', 'node_modules'],
 					recursive: true,
-					syncDest: false
+					syncDest: true
 				}
 			}
 		}
