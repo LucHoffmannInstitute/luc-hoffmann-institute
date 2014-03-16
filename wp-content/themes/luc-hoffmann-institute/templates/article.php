@@ -21,4 +21,8 @@
     	<?php the_content() ?>
     </div>
 
+    <footer class="Article-footer">
+    	<?php if( function_exists('ADDTOANY_SHARE_SAVE_KIT') ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
+    </footer>
+
 </article>

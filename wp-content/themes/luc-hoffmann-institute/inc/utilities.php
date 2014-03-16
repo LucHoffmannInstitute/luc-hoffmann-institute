@@ -157,3 +157,58 @@ function hoffmann_paginate() {
 
 	echo '</ul></nav>' . "\n";
 }
+
+/**
+ * Get tabbed content
+ */
+function hoffmann_get_tabs()
+{
+	if ( ! have_rows('tabs'))
+	{
+		return false;
+	}
+
+	$tabs = array();
+
+	while (have_rows('tabs'))
+	{
+		the_row();
+
+		$tabs[] = array(
+			'title' => get_sub_field('title'),
+			'anchor' => sanitize_title( get_sub_field('title') ),
+			'content' => get_sub_field('tab')
+		);
+	}
+
+	return $tabs;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

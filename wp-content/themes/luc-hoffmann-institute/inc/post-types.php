@@ -29,7 +29,7 @@ function hoffmann_register_projects() {
 		'supports' => array('title','editor','page-attributes', 'excerpt'),
 		'public' => true,
 		'has_archive' => true,
-		'hierarchical' => true,
+		'hierarchical' => false,
 		'capability_type' => 'page',
 		'rewrite' => $rewrite,
 		'exclude_from_search' => false
