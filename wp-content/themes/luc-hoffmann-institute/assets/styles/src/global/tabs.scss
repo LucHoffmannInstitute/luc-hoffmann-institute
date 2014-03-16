@@ -8,16 +8,9 @@
 
 .Tabs-menu-item {
 
-	a {
-		display: block;
-		@include rem('padding', 0.25, 1);
-	}
-
 }
 
 .Tabs-menu-item--active a {
-	background: #fff;
-	color: $text !important;
 }
 
 .Tabs {

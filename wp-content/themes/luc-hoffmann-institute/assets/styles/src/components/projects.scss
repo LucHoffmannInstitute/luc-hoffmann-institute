@@ -85,34 +85,32 @@
 }
 
 .Project-header {
-	@extend .clearfix;
-	@extend .antialiased;
 	margin: 0;
-	@include rem('padding', 0.5, 1);
+	@include rem('padding', 0.5, 1, 0);
 	background: $gray-dark;
 	color: #fff;
 	border-bottom: 5px solid $gold-light;
 
 	.Project--single & {
-		@include rem('padding', 1, 2);
+		@include rem('padding', 1, 2, 0);
 	}
 }
 
 .Project-title {
+	@extend .antialiased;
 	margin: 0;
 	@include sans;
 	@include font-size(24);
 	line-height: 1.2;
 
 	.Project--single & {
-		@include rem('margin', 0, 0, 1);
 		@include font-size(36);
 	}
 }
 
 .Project-author {
-	float: left;
-	@include rem('margin', 0, 2, 0, 0);
+	@extend .antialiased;
+	margin: 0;
 	@include sans;
 	@include font-size(14);
 
@@ -122,7 +120,9 @@
 }
 
 .Project-menu {
-	float: right;
+	position: relative;
+	@include rem('margin', 1, 0);
+	margin-bottom: -5px;
 
 	ul {
 		margin: 0;
@@ -132,17 +132,25 @@
 
 	li {
 		display: inline-block;
-		@include rem('margin-right', 1);
 	}
 
 	a {
+		display: block;
+		@include rem('padding', 0.5, 1, 0.75);
 		@include caps;
 		text-decoration: none;
 		color: #fff;
+		border-radius: 2px 2px 0 0;
+		//background: $gray-dark;
+	}
 
-		&:hover {
-			color: $blue-light !important;
-		}
+	li.Tabs-menu-item--active a,
+	li a:hover {
+		//color: #fff !important;
+		//color: $gold-dark !important;
+		color: $text !important;
+		background: #fff;
+		//background: $gold-light;
 	}
 
 }
@@ -200,6 +208,16 @@
 
 .Project-tab {
 	
+}
+
+.Project-footer {
+	text-align: right;
+
+	.caption {
+		@include sans;
+		@include font-size(11);
+	}
+
 }
 
 .Project-footer-nav {

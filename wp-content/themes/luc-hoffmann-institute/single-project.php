@@ -31,9 +31,9 @@ $tabs = hoffmann_get_tabs();
 							<div class="Project-image" style="background-image: url(<?php echo $banner->url() ?>)"></div>
 
 							<div class="Project-header">
-
+										
 								<h1 class="Project-title"><?php echo get_the_title($parent_id) ?></h1>
-
+								
 								<?php if ( get_field('author') ) : ?>
 
 									<p class="Project-author"><?php echo get_field('author') ?></p>
@@ -80,11 +80,21 @@ $tabs = hoffmann_get_tabs();
 	
 								<?php endif ?>
 
-							</div>
+								<footer class="Project-footer">
 
-						</div>
+									<?php if ($banner->caption()) : ?>
 
-					</article>
+										<p class="caption">Banner image: <?php echo $banner->caption() ?></p>
+
+									<?php endif ?>
+									
+								</footer>
+
+							</div><!-- .Project-content -->
+
+						</div><!-- .Project-inner -->
+
+					</article><!-- .Project -->
 
 				<?php endwhile; ?>
 
