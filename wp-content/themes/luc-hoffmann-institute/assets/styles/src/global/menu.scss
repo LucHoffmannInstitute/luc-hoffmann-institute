@@ -5,6 +5,14 @@
 .Menu {
 	background: $blue-darker;
 
+	.u-container {
+		padding: 0;
+
+		@include min-width ( $bp-2 ) {
+			@include rem('padding', 0, 2);
+		}
+	}
+
 	@include min-width ( $bp-2 ) {
 		position: relative;
 		z-index: 100;
