@@ -1,20 +1,25 @@
 <?php
 
+/**
+ * Fix nav menu active classes for custom post types
+ */
+function hoffmann_cpt_active_menu($classes, $item) {
+	global $post;
 
-function hoffmann_fix_nav_highlighting( $classes, $item )
-{
-	 $ancestor_id =	 hoffmann_ancestor( 'ID' );
+	$ancestor_id = hoffmann_ancestor('ID');
 
-	 if ( $item->object_id == $ancestor_id ) {
-	 	array_push( $classes, 'current-menu-item' );
-	 } else {
-		 unset( $classes[4] );
-	 }
+	if ( in_array( $item->object_id, array( $ancestor_id, $post->ID ) ) )
+	{
+		array_push( $classes, 'current-menu-item' );
+	}
+	else if ( $item->object_id == get_option('page_for_posts') )
+	{
+		unset( $classes[4] );
+	}
 
-	 return $classes;
+	return $classes;
 }
-add_filter('nav_menu_css_class', 'hoffmann_fix_nav_highlighting', 10, 2);
-
+add_filter('nav_menu_css_class', 'hoffmann_cpt_active_menu', 10, 2);
 
 /**
  * Main menu walker to add descriptions as data-description
@@ -102,6 +107,7 @@ class Hoffmann_Secondary_Menu_Walker extends Walker_Nav_Menu {
 	}
 
 	function check_current_element ( $element, $depth ) {
+		global $post;
 
 		// Check if element has a 'current element' class
 		$current_element_markers = array( 'current-menu-item', 'current-menu-parent', 'current-menu-ancestor' );
