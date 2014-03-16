@@ -28,3 +28,40 @@
 		margin-bottom: 0;
 	}
 }
+
+.Widget.widget_categories,
+.Widget.widget_archive {
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	a {
+		position: relative;
+		display: block;
+		@include rem('margin', 0.5, 0);
+		@include rem('padding', 0.5, 0);
+		@include sans;
+		@include font-size(18);
+		line-height: 1.25;
+		font-weight: 400;
+		text-decoration: none;
+		color: $blue-light;
+
+		@include min-width ( $bp-2 ) {
+			@include font-size(20);
+		}
+
+		&:hover {
+			color: $blue-dark !important;
+		}
+	}
+
+	li.current-cat a {
+		@include rem('padding-left', 1);
+		border-left: 4px solid $blue-light;
+	}
+
+}

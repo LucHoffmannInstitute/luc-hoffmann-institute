@@ -44,6 +44,9 @@ $projects = new WP_Query( $query );
 			<header class="Projects-header">
 
 				<nav class="Filter-menu Filter-menu--dark">
+					
+
+
 					<ul>
 						<li class="Filter-menu-select">
 							<a href="#"><span>Current Projects</span> <i class="icon-menu"></i></a>

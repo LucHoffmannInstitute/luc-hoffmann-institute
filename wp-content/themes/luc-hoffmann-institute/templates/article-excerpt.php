@@ -10,7 +10,9 @@
 
 		<div class="Article-meta">
 			<time class="Article-date" datetime="<?php get_the_date( 'c' ) ?>"><?php echo get_the_date( 'd.m.Y' ) ?></time>
-			<?php the_category() ?>
+			<div class="Article-categories">
+				<?php the_category(', ') ?>
+			</div>
 		</div>
 		
 		<h2 class="Article-title"><a href="<?php echo the_permalink() ?>"><?php the_title() ?></a></h2>
