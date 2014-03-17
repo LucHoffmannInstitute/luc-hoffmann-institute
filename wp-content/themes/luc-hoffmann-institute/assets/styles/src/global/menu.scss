@@ -43,6 +43,11 @@
 			display: table;
 			table-layout: fixed;
 			width: 100%;
+
+			.flexbox & {
+				display: flex;
+				align-items: stretch;
+			}
 		}
 	}
 
@@ -56,8 +61,14 @@
 		@include min-width ( $bp-2 ) {
 			float: none;
 			display: table-cell;
+			width: auto;
 			vertical-align: middle;
 			border-right: $menu-item-border;
+
+			.flexbox & {
+				display: block;
+				flex-grow: 1;
+			}
 
 			&:first-child {
 				border-left: $menu-item-border;
