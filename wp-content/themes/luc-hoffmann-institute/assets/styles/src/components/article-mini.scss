@@ -6,31 +6,38 @@
 	display: table;
 	@include rem('margin-bottom', 1);
 	width: 100%;
+	height: 100%;
 
 	&:last-child {
 		margin-bottom: 0;
 	}
 
-	.Article-thumbnail {
+	.Article-thumbnail,
+	.Article-header {
 		display: table-cell;
-		width: 100px;
-		height: 100px;
-		background: {
-			repeat: no-repeat;
-			position: center;
-			size: cover;
+		vertical-align: middle;
+	}
+
+	.Article-thumbnail {
+		padding-right: 10px;
+
+		img {
+			display: block;
+			max-width: 100px;
 		}
+
 	}
 
 	.Article-header {
-		display: table-cell;
-		@include rem('padding', 0, 1);
+		width: 100%;
 	}
 
 	.Article-meta {
+		margin: 0;
 	}
 
 	.Article-title {
+		margin: 0;
 		@include font-size(18);
 	}
 
