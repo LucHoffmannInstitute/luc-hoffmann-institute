@@ -2,30 +2,28 @@
 
 var Handshake = function () {};
 
-/**
- * Settings
- */
-Handshake.prototype.settings = {
-	elSelector: '.Handshake',
-	animateElSelector: '.Handshake-inner',
+Handshake.prototype = {
+	$el: $('.Handshake'),
+	$items: $('.Handshake-item'),
+	itemSelector: '.Handshake-item',
+	$menuItems: $('.Menu a'),
 	msgSelector: '.Handshake-message',
-	menuItemsSelector: '.Menu a',
+	$currentItem: $(),
+	currentIndex: null,
 	menuDataAttribute: 'description',
-	animateInClass: 'Handshake-inner--animate-in',
-	animateOutClass: 'Handshake-inner--animate-out'
+	animateInClass: 'Handshake-item--animate-in',
+	animateOutClass: 'Handshake-item--animate-out'
 };
 
 /**
  * Intialization
  */
-Handshake.prototype.init = function ( options ) {
-	this.options = $.extend( true, {}, this.settings, options );
+Handshake.prototype.init = function () {
 
-	this.$el = $( this.options.elSelector );
-	this.$animateEl = $( this.options.animateElSelector );
-	this.$menuItems = $( this.options.menuItemsSelector );
-	this.$currentMsg = $();
-	this.currentIndex = null;
+	// exit if csstransitions are not supported
+	if ( ! $('html').hasClass('csstransitions') ) {
+		return false;
+	}
 
 	// add all messages to handshake container
 	this.addMessages();
@@ -39,11 +37,12 @@ Handshake.prototype.init = function ( options ) {
  */
 Handshake.prototype.addMessages = function () {
 	var _this = this,
-		firstIndex;
+		firstIndex,
+		items = [];
 
 	$.each( this.$menuItems, function ( index ) {
-		var msg = $(this).data( _this.options.menuDataAttribute ),
-			$msg;
+		var msg = $(this).data( _this.menuDataAttribute ),
+			$item;
 
 		if ( msg === undefined ) {
 			return;
@@ -55,17 +54,21 @@ Handshake.prototype.addMessages = function () {
 		}
 
 		// clone first message and add message text
-		$msg = _this.$animateEl.clone();
-		$msg.find( _this.options.msgSelector ).text( msg );
+		$item = _this.$items.clone();
+		$item.find( _this.msgSelector ).text( msg );
 
 		// keep track of menu item association
-		$msg.data('menu-item', index);
+		$item.data('menu-item', index);
 		$(this).data('menu-item', index);
 
-		// append message to message container
-		_this.$el.append( $msg );
-
+		// add to items array
+		items.push( $item );
 	} );
+
+	this.$el.empty();
+
+	// append items
+	this.$el.append(items);
 
 	// activate first item
 	this.activate( firstIndex );
@@ -88,48 +91,31 @@ Handshake.prototype.interactions = function () {
  */
 Handshake.prototype.activate = function ( index ) {
 	var _this = this,
-		$currentMsg,
-		$newMsg;
+		$currentItem,
+		$newItem;
+
+	if ( index === undefined ) {
+		return;
+	}
 
 	if ( index === this.currentIndex ) {
 		return;
 	}
 
-	$newMsg = this.$el.find( this.options.animateElSelector ).filter( function () {
+	$newItem = this.$el.find( this.itemSelector ).filter( function () {
 		if ( $(this).data( 'menu-item' ) === index ) { return true; }
 	} );
 
 	// animate out current message
-	this.$currentMsg.removeClass( this.options.animateInClass );
-	this.$currentMsg.addClass( this.options.animateOutClass );
+	this.$currentItem.removeClass( this.animateInClass );
+	this.$currentItem.addClass( this.animateOutClass );
 
 	// animate in new item
-	$newMsg.removeClass( this.options.animateOutClass );
-	$newMsg.addClass( this.options.animateInClass );
+	$newItem.removeClass( this.animateOutClass );
+	$newItem.addClass( this.animateInClass );
 
-	this.$currentMsg = $newMsg;
+	this.$currentItem = $newItem;
 	this.currentIndex = index;
-};
-
-/**
- * Update handshake message
- */
-Handshake.prototype.updateMsg = function ( msg ) {
-	var _this = this;
-
-	// clone first message into $msg object
-	var	$msg = this.$animateEl.clone();
-
-	// insert new msg into $msg object
-	$msg.find( this.options.msgSelector ).text( msg );
-
-	// deactivate current message
-	this.$el.find( this.options.animateElSelector ).removeClass( this.options.animateOutClass );
-
-	// 
-
-	$msg.prependTo( this.$el );
-	$msg.addClass( this.options.animateInClass );
 };
 
 module.exports = new Handshake();

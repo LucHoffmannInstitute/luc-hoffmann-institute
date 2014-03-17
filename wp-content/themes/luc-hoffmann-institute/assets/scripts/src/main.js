@@ -13,5 +13,3 @@ tabs.init();
  * FitVids: responsive video embeds
  */
 $('.Entry').fitVids();
-
-$();

@@ -5,45 +5,57 @@
 .Handshake {
 	@extend .antialiased;
 	display: none;
-
+	
 	@include min-width ( $bp-2 ) {
-		position: relative;
-		display: table-cell;
-		width: 100%;
+		position: absolute;
+		top: 0;
+		right: 10%;
+		bottom: 0;
+		width: 50%;
+		display: block;
 
 		&:after {
 			position: absolute;
 			top: 30%;
 			bottom: 30%;
-			left: 0%;
+			@include rem('left', 0.5);
 			display: block;
 			content: "";
 			@include rem('width', 1);
 			border-left: 1px solid $gray-light;
 		}
-
 	}
 }
 
-// this is the item we'll animate in and out
-// since it's absolutely positioned
-.Handshake-inner {
+.Handshake-item {
 	position: absolute;
 	top: 0;
-	right: 10%;
+	right: 0;
 	bottom: 0;
-	@include rem('left', 1);
+	left: 0;
+	display: table;
+	width: 100%;
+	height: 100%;
 
-	@include min-width ( $bp-3 ) {
-		right: 30%;
-	}
-	
 	.js.csstransitions & {
 		opacity: 0;
 	}
 }
 
-.Handshake-inner.Handshake-inner--animate-in {
+.Handshake-content {
+	display: table-cell;
+	vertical-align: middle;
+	@include rem('padding-left', 1.5);
+}
+
+.Handshake-message {
+	display: block;
+	@include sans;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.Handshake-item.Handshake-item--animate-in {
 
 	.csstransitions & {
 		opacity: 1;
@@ -60,7 +72,7 @@
 
 }
 
-.Handshake-inner.Handshake-inner--animate-out {
+.Handshake-item.Handshake-item--animate-out {
 
 	.csstransitions & {
 		opacity: 0;
@@ -75,24 +87,6 @@
 		}
 	}
 
-}
-
-.Handshake-content {
-	display: table;
-	width: 100%;
-	height: 100%;
-}
-
-.Handshake-content-inner {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.Handshake-message {
-	display: block;
-	@include sans;
-	text-transform: uppercase;
-	color: #fff;
 }
 
 @keyframes animateIn {
