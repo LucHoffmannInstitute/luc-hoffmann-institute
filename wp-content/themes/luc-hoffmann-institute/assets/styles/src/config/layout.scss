@@ -47,3 +47,7 @@ body {
 		width: auto !important;
 	}
 }
+
+.bg-polyfill {
+	-ms-behavior: url(/backgroundsize.min.htc);
+}

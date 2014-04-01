@@ -1,79 +1,142 @@
 'use strict';
 
+/**
+ * Load gulp and plugins
+ * 
+ * http://gulpjs.com/
+ * https://github.com/jackfranklin/gulp-load-plugins
+ */
 var gulp = require('gulp');
-var sass = require('gulp-ruby-sass');
+var $ = require('gulp-load-plugins')();
+var gutil = require('gulp-util');
 
-// load plugins
-var plugins = require('gulp-load-plugins')({ 
-	camelize: true 
+/**
+ * JSHint
+ *
+ * Detect errors and potential problems in your javascript
+ * https://github.com/wearefractal/gulp-jshint
+ */
+gulp.task('jshint', function (cb) {
+	gulp.src('./assets/scripts/src/**/*.js')
+		.pipe($.jshint('.jshintrc'))
+		.pipe($.jshint.reporter('default'));
+	cb();
 });
 
-gulp.task('setup', function ( cb ) {
-	// make sass version of normalize.css
+/**
+ * Scripts
+ *
+ * Combine and minify your javascript
+ * https://github.com/deepak1556/gulp-browserify
+ */
+gulp.task('scripts', ['jshint'], function (cb) {
+	gulp.src('./assets/scripts/src/main.js')
+		.pipe($.browserify())
+		.pipe($.uglify())
+		.pipe(gulp.dest('./assets/scripts/build'));
+	cb();
+});
+
+/**
+ * Dependencies
+ *
+ * Copy SASS and javascript dependencies from /bower_components/
+ */
+gulp.task('dependencies', function (cb) {
+
+	// Place SASS compatible version of normalize.css into vendor folder
 	gulp.src('./bower_components/normalize-css/normalize.css')
-		.pipe(plugins.rename('normalize.scss'))
+		.pipe($.rename('normalize.scss'))
+		.pipe(gulp.dest('./assets/vendor'));
+
+	// Copy production-ready jQuery to production vendor folder
+	gulp.src('./bower_components/jquery/dist/jquery.min.js')
 		.pipe(gulp.dest('./assets/vendor'));
 
 	// make sass version of icomoon styles
 	gulp.src('./assets/vendor/icomoon/style.css')
-		.pipe(plugins.rename('style.scss'))
+		.pipe($.rename('style.scss'))
 		.pipe(gulp.dest('./assets/vendor/icomoon'));
 
 	// copy fonts to styles/build/
 	gulp.src('./assets/vendor/icomoon/fonts/*')
 		.pipe(gulp.dest('./assets/styles/build/fonts'));
 
-	// copy over jquery.min.js
-	gulp.src('./bower_components/jquery/dist/jquery.min.js')
-		.pipe(gulp.dest('./assets/vendor'));
-
 	cb();
 });
 
-gulp.task('jshint', function () {
-	return gulp.src(['./assets/scripts/src/**/*.js'])
-		.pipe(plugins.jshint('.jshintrc'))
-		.pipe(plugins.jshint.reporter('default'));
-});
-
-gulp.task('scripts', function () {
-	return gulp.src('./assets/scripts/src/main.js')
-		.pipe(plugins.browserify())
-		.pipe(plugins.uglify())
-		.pipe(gulp.dest('./assets/scripts/build'));
-});
-
-gulp.task('styles', ['setup'], function () {
-	return gulp.src('./assets/styles/src/*.scss')
-		.pipe(sass({sourcemap: true}))
-		.pipe(plugins.autoprefixer('last 2 versions', 'ie 8', 'ie 7'))
-		.pipe(plugins.minifyCss())
+/**
+ * Process SASS and autoprefix
+ *
+ * https://github.com/sindresorhus/gulp-ruby-sass
+ * https://github.com/Metrime/gulp-autoprefixer
+ */
+gulp.task('styles', function (cb) {
+	gulp.src('./assets/styles/src/*.scss')
+		.pipe($.rubySass({
+			style: 'expanded',
+			loadPath: ['app/bower_components']
+		}))
+		.pipe($.autoprefixer('last 1 version'))
 		.pipe(gulp.dest('./assets/styles/build'));
+	cb();
 });
 
-gulp.task('modernizr', function () {
-	return gulp.src(['./assets/scripts/build/**/*.js','./assets/styles/build/**/*.css'])
-		.pipe(plugins.modernizr())
-		.pipe(plugins.uglify())
+/**
+ * ImageMin
+ *
+ * Minify and copy images to /dist/assets/img/
+ */
+gulp.task('imagemin', function (cb) {
+	gulp.src('./assets/img/src/**/*')
+		.pipe($.cache($.imagemin({
+			optimizationLevel: 3,
+			progressive: true,
+			interlaced: true
+		})))
+		.pipe(gulp.dest('./assets/img/build'));
+	cb();
+});
+
+/**
+ * Modernizr
+ *
+ * Create a custom modernizr build
+ * https://github.com/doctyper/gulp-modernizr
+ */
+gulp.task('modernizr', ['scripts', 'styles'], function (cb) {
+	gulp.src(['./assets/scripts/build/**/*.js','./assets/styles/build/**/*.css'])
+		.pipe($.modernizr())
+		.pipe($.uglify())
 		.pipe(gulp.dest('./assets/vendor'));
+	cb();
 });
 
-gulp.task('watch', function () {
+/**
+ * Watch
+ *
+ * Watch files for changes
+ */
+gulp.task('watch', ['serve'], function () {
 
-	var server = plugins.livereload();
+	var server = $.livereload();
+
+	gulp.watch([
+		'./assets/scripts/build/**/*.js', 
+		'./assets/styles/build/**/*.css',
+		'./**/*.php'
+	], function (file) {
+		server.changed(file.path);
+	});
 
 	gulp.watch('./assets/scripts/src/**/*.js', ['jshint', 'scripts']);
 	gulp.watch('./assets/styles/src/**/*.scss', ['styles']);
-
-	gulp.watch([
-			'./assets/scripts/build/**/*.js', 
-			'./assets/styles/build/**/*.css',
-			'./**/*.php'
-		]).on('change', function (file) {
-			server.changed(file.path);
-		});
+	gulp.watch('./assets/img/src/**/*', ['imagemin']);
 });
 
-gulp.task('default', ['setup', 'jshint', 'scripts', 'styles', 'modernizr']);
+gulp.task('default', ['dependencies'], function (cb) {
+	gulp.start('jshint', 'scripts', 'styles', 'imagemin', 'modernizr');
+	cb();
+});
 
 gulp.task('dev', ['default', 'watch']);

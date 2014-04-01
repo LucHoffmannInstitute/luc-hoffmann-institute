@@ -65,7 +65,7 @@ $banner = new Banner();
                     
                     <header class="Card-header">
                         
-                        <h2 class="Card-title">Sustainable Production and Consumption</h2>
+                        <h2 class="Card-title">Sustainable Consumption and Production</h2>
 
                     </header>
 

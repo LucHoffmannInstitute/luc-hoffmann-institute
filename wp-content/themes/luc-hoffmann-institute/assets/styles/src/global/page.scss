@@ -18,6 +18,10 @@
 		size: cover;
 		color: $gray-base;
 	}
+
+	.lt-ie9 & {
+		//-ms-behavior: url(/backgroundsize.min.htc);
+	}
 }
 
 .Page-header--banner {
