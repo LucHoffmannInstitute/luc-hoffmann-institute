@@ -2,7 +2,7 @@
 
 /**
  * Load gulp and plugins
- * 
+ *
  * http://gulpjs.com/
  * https://github.com/jackfranklin/gulp-load-plugins
  */
@@ -117,12 +117,12 @@ gulp.task('modernizr', ['scripts', 'styles'], function (cb) {
  *
  * Watch files for changes
  */
-gulp.task('watch', ['serve'], function () {
+gulp.task('watch', function () {
 
 	var server = $.livereload();
 
 	gulp.watch([
-		'./assets/scripts/build/**/*.js', 
+		'./assets/scripts/build/**/*.js',
 		'./assets/styles/build/**/*.css',
 		'./**/*.php'
 	], function (file) {
