@@ -1,6 +1,60 @@
 <?php
 
 /**
+ * Register Project taxonomies
+ *
+ * Must be registered before Project post type
+ */
+add_action('init', 'hoffmann_register_project_taxonomies');
+function hoffmann_register_project_taxonomies() {
+
+	// Project themes
+	register_taxonomy('project_themes', array('project', 'post'), array(
+		'hierarchical' => true,
+		'labels' => array(
+			'name' => _x( 'Project Themes', 'taxonomy general name' ),
+			'singular_name' => _x( 'Theme', 'taxonomy singular name' ),
+			'search_items' =>  __( 'Search Themes' ),
+			'popular_items' => __( 'Popular Themes' ),
+			'all_items' => __( 'All Themes' ),
+			'edit_item' => __( 'Edit Theme' ),
+			'update_item' => __( 'Update Theme' ),
+			'add_new_item' => __( 'Add New Theme' ),
+			'new_item_name' => __( 'New Theme Name' ),
+		),
+		'show_ui' => true,
+		'query_var' => true,
+		'sort' => true,
+		'rewrite' => array(
+			'slug' => 'projects/themes',
+			'with_front' => false
+		)
+	));
+
+	// Work streams
+	register_taxonomy('work_streams', array('project', 'post'), array(
+		'hierarchical' => true,
+		'labels' => array(
+			'name' => _x( 'Work Streams', 'taxonomy general name' ),
+			'singular_name' => _x( 'Work Stream', 'taxonomy singular name' ),
+			'search_items' =>  __( 'Search Work Streams' ),
+			'popular_items' => __( 'Popular Work Streams' ),
+			'all_items' => __( 'All Work Streams' ),
+			'edit_item' => __( 'Edit Work Stream' ),
+			'update_item' => __( 'Update Work Stream' ),
+			'add_new_item' => __( 'Add New Work Stream' ),
+			'new_item_name' => __( 'New Work Stream Name' ),
+		),
+		'show_ui' => true,
+		'query_var' => true,
+		'rewrite' => array(
+			'slug' => 'work-streams',
+			'with_front' => false
+		)
+	));
+}
+
+/**
  * Register Project content type
  */
 add_action( 'init', 'hoffmann_register_projects' );

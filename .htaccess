@@ -1,3 +1,6 @@
+# Background size polyfill
+# https://github.com/louisremi/background-size-polyfill
+AddType text/x-component .htc
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>

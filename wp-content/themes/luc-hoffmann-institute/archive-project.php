@@ -43,22 +43,36 @@ $projects = new WP_Query( $query );
 
 			<header class="Projects-header">
 
-				<nav class="Filter-menu Filter-menu--dark">
-					
+				<form class="Filter-menu" action="">
 
+					<div class="Filter-menu-content">
 
-					<ul>
-						<li class="Filter-menu-select">
-							<a href="#"><span>Current Projects</span> <i class="icon-menu"></i></a>
-						</li>
-						<li class="Filter-menu-select">
-							<a href="#"><span>All Themes</span> <i class="icon-menu"></i></a>
-						</li>
-						<li class="Filter-menu-search">
-							<a href="#"><i class="icon-search"></i> <span>Search</span></a>
-						</li>
-					</ul>
-				</nav>
+						<span class="Select Filter-menu-item">	
+							<select name="darin" id="">
+								<option value="current">Current Projects</option>
+								<option value="pending">Pending Projects</option>
+								<option value="past">Past Projects</option>
+							</select>
+						</span>
+
+						<span class="Select Filter-menu-item">	
+							<select name="darin" id="">
+								<option value="">All Work Streams</option>
+								<option value="place-based-conservation-effectiveness">Place Based Conservation Effectiveness</option>
+								<option value="natural-capital-and-ecosystem-services">Natural Capital and Ecosystem Services</option>
+								<option value="sustainable-consumption-and-production">Sustainable Consumption and Production</option>
+							</select>
+						</span>
+
+						<span class="Select Filter-menu-item">	
+							<select name="darin" id="">
+								<option value="current">All Themes</option>
+							</select>
+						</span>
+
+					</div>
+
+				</form>
 
 			</header>
 

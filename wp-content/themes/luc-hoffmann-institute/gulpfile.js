@@ -30,7 +30,7 @@ gulp.task('jshint', function (cb) {
  * https://github.com/deepak1556/gulp-browserify
  */
 gulp.task('scripts', ['jshint'], function (cb) {
-	gulp.src('./assets/scripts/src/main.js')
+	gulp.src(['./assets/scripts/src/main.js'])
 		.pipe($.browserify())
 		.pipe($.uglify())
 		.pipe(gulp.dest('./assets/scripts/build'));

@@ -1,4 +1,4 @@
-<?php  
+<?php
 /**
  * The default page template
  */
@@ -7,11 +7,11 @@ get_header();
 ?>
 
 <section class="Page">
-	
+
 	<div class="u-container">
-		
+
 		<div class="u-cols">
-			
+
 			<div class="u-col u-col-4of12">
 
 				<?php get_template_part('templates/menu-secondary') ?>
@@ -23,11 +23,11 @@ get_header();
 			<div class="u-col u-col-8of12">
 
 				<div class="Page-content">
-					
+
 					<?php if ( have_posts() ) : ?>
 
 						<?php while ( have_posts() ) : the_post() ?>
-	
+
 							<?php get_template_part('templates/article-excerpt') ?>
 
 						<?php endwhile ?>

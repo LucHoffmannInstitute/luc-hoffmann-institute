@@ -591,7 +591,7 @@ img .lt-ie9 {
 
 /*  Antialiased type
     ======================================================================== */
-.antialiased, .Widget-content, .Page-title, .Page-header-caption, .Entry, .comment-respond .form-submit input, .Handshake, .Cards-caption, .Card-content, .Widget--stay-connected .Widget-content, .Widget--latest-news .Widget-content, .Project-title, .Project-author, .Project-subheader, .Filter-menu li {
+.antialiased, .Widget-content, .Page-title, .Page-header-caption, .Entry, .comment-respond .form-submit input, .Select select, .Handshake, .Cards-caption, .Card-content, .Widget--stay-connected .Widget-content, .Widget--latest-news .Widget-content, .Project-title, .Project-author, .Project-subheader {
   -webkit-font-smoothing: antialiased;
 }
 
@@ -628,7 +628,7 @@ img .lt-ie9 {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-.visuallyhidden, .Header-logo span, .Form-input-wrap .Form-input--submit span, .Widget--stay-connected .Form-label, .Projects-home-link span, .Filter-menu-search span, .Profile-content.inactive {
+.visuallyhidden, .Header-logo span, .Form-input-wrap .Form-input--submit span, .Widget--stay-connected .Form-label, .Projects-home-link span, .Profile-content.inactive {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -643,13 +643,12 @@ img .lt-ie9 {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-.visuallyhidden.focusable:active, .Header-logo span.focusable:active, .Form-input-wrap .Form-input--submit span.focusable:active, .Widget--stay-connected .focusable.Form-label:active, .Projects-home-link span.focusable:active, .Filter-menu-search span.focusable:active, .focusable.Profile-content.inactive:active,
+.visuallyhidden.focusable:active, .Header-logo span.focusable:active, .Form-input-wrap .Form-input--submit span.focusable:active, .Widget--stay-connected .focusable.Form-label:active, .Projects-home-link span.focusable:active, .focusable.Profile-content.inactive:active,
 .visuallyhidden.focusable:focus,
 .Header-logo span.focusable:focus,
 .Form-input-wrap .Form-input--submit span.focusable:focus,
 .Widget--stay-connected .focusable.Form-label:focus,
 .Projects-home-link span.focusable:focus,
-.Filter-menu-search span.focusable:focus,
 .focusable.Profile-content.inactive:focus {
   clip: auto;
   height: auto;
@@ -669,14 +668,14 @@ img .lt-ie9 {
 /*  Old clearfix
     The micro method
     ======================================================================== */
-.clearfix, .u-container, .Menu ul, .Article-meta, .next-prev, .next-prev ul, .Footer-logos ul, .Projects, .Project-footer-nav ul, .Filter-menu ul {
+.clearfix, .u-container, .Menu ul, .Article-meta, .next-prev, .next-prev ul, .Footer-logos ul, .Projects, .Project-footer-nav ul {
   zoom: 1;
 }
-.clearfix:before, .u-container:before, .Menu ul:before, .Article-meta:before, .next-prev:before, .next-prev ul:before, .Footer-logos ul:before, .Projects:before, .Project-footer-nav ul:before, .Filter-menu ul:before, .clearfix:after, .u-container:after, .Menu ul:after, .Article-meta:after, .next-prev:after, .next-prev ul:after, .Footer-logos ul:after, .Projects:after, .Project-footer-nav ul:after, .Filter-menu ul:after {
+.clearfix:before, .u-container:before, .Menu ul:before, .Article-meta:before, .next-prev:before, .next-prev ul:before, .Footer-logos ul:before, .Projects:before, .Project-footer-nav ul:before, .clearfix:after, .u-container:after, .Menu ul:after, .Article-meta:after, .next-prev:after, .next-prev ul:after, .Footer-logos ul:after, .Projects:after, .Project-footer-nav ul:after {
   content: " ";
   display: table;
 }
-.clearfix:after, .u-container:after, .Menu ul:after, .Article-meta:after, .next-prev:after, .next-prev ul:after, .Footer-logos ul:after, .Projects:after, .Project-footer-nav ul:after, .Filter-menu ul:after {
+.clearfix:after, .u-container:after, .Menu ul:after, .Article-meta:after, .next-prev:after, .next-prev ul:after, .Footer-logos ul:after, .Projects:after, .Project-footer-nav ul:after {
   clear: both;
 }
 
@@ -2002,6 +2001,72 @@ img[class*="align"],
 }
 
 /*	==========================================================================
+	Select
+
+	Based on: http://red-team-design.com/making-html-dropdowns-not-suck/
+	========================================================================== */
+.Select {
+  font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+}
+.Select select {
+  margin: 0;
+  padding: 0.5em;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+@supports (pointer-events: none) and ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
+  .Select {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    background: #006191;
+    border-radius: 2px;
+  }
+  .Select::before, .Select::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+  .Select::after {
+    content: "\25BC";
+    top: 50%;
+    right: 1.25em;
+    margin-top: -0.5em;
+    height: 1em;
+    font-size: 0.625em;
+    line-height: 1;
+  }
+  .Select::before {
+    width: 2em;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 0 2px 2px 0;
+    background: inherit;
+  }
+
+  .Select select {
+    padding-left: 0.75em;
+    padding-right: 2.5em;
+    border: 0;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: inherit;
+  }
+
+  @-moz-document url-prefix() {
+    .Select select {
+      padding-right: 0.9em;
+    }
+  }
+}
+/*	==========================================================================
 	Components
 	========================================================================== */
 /*	==========================================================================
@@ -2714,90 +2779,24 @@ img[class*="align"],
 .Filter-menu {
   text-align: center;
 }
-.Filter-menu ul {
+
+.Filter-menu-content {
   display: inline-block;
-  margin: 0;
   padding: 16px;
   padding: 1rem;
-  list-style: none;
+  padding-bottom: 0;
+  background: #003450;
   border-radius: 2px;
-  background: #bcc1c2;
 }
-.Filter-menu li {
-  float: left;
+
+.Filter-menu-item {
   margin-right: 16px;
   margin-right: 1rem;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
-.Filter-menu li:last-child {
+.Filter-menu-item:last-child {
   margin-right: 0;
-}
-.Filter-menu li a {
-  display: block;
-  font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  font-size: 1.125rem;
-  text-decoration: none;
-  color: #fff;
-  background: #006191;
-  border-radius: 2px;
-}
-.Filter-menu li a:hover {
-  background: #007ebf;
-  color: #fff !important;
-}
-
-.Filter-menu--dark ul {
-  background: #003450;
-}
-
-.Filter-menu-select a {
-  display: table;
-  margin: 0;
-  padding: 0;
-  font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  font-size: 1.125rem;
-  text-decoration: none;
-  color: #fff;
-  background: #006191;
-  border-radius: 2px;
-}
-.Filter-menu-select span {
-  display: table-cell;
-  width: 80%;
-  text-align: left;
-  padding: 8px 16px;
-  padding: 0.5rem 1rem;
-}
-.Filter-menu-select i {
-  display: table-cell;
-  padding: 8px 16px;
-  padding: 0.5rem 1rem;
-  font-size: 14px;
-  font-size: 0.875rem;
-}
-
-.Filter-menu-search a {
-  display: block;
-  padding: 8px 16px;
-  padding: 0.5rem 1rem;
-  font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  font-size: 1.125rem;
-  text-decoration: none;
-  color: #fff;
-  background: #006191;
-  border-radius: 2px;
-}
-.Filter-menu-search i {
-  padding: 8px 16px;
-  padding: 0.5rem 1rem;
 }
 
 /*	==========================================================================

@@ -10,6 +10,10 @@ if (
 	get_post_type() == 'pitch'
 ) {
 	$sidebar = 'Pitches';
+} else if (
+	is_search()
+) {
+	$sidebar = 'Search';
 } else {
 	$sidebar = $post->post_title;
 }

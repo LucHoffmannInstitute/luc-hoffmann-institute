@@ -30,7 +30,7 @@ class Menu_With_Description extends Walker_Nav_Menu {
 		global $wp_query;
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-		
+
 		$class_names = $value = '';
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -112,7 +112,7 @@ class Hoffmann_Secondary_Menu_Walker extends Walker_Nav_Menu {
 		// Check if element has a 'current element' class
 		$current_element_markers = array( 'current-menu-item', 'current-menu-parent', 'current-menu-ancestor' );
 		$current_class = array_intersect( $current_element_markers ,  $element->classes );
-		
+
 		// If element has a 'current' class, it is an ancestor of the current element
 		$ancestor_of_current = !empty( $current_class );
 

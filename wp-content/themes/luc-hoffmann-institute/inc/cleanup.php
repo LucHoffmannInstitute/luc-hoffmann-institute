@@ -359,3 +359,11 @@ function hoffmann_lock_admin_head() {
 	$output = '<style type="text/css">#adminmenuback, #adminmenuwrap {display: none;}.wrap {margin-top: 1.5%;}#wpcontent {margin-left: 2%;}';
 	echo $output;
 }
+
+/**
+ * Remove tags from posts
+ */
+add_action('init', 'hoffmann_remove_tags');
+function hoffmann_remove_tags() {
+	register_taxonomy('post_tag', array());
+}

@@ -13,89 +13,97 @@ $posts = new WP_Query( array(
 ) );
 
 $banner = new Banner();
+
+/**
+ * Get work streams assigned to the home page
+ */
+//$work_streams = get_categories(array(
+//    'taxonomy' => 'work_streams',
+//    'hide_empty' => 0,
+//    'number' => 3 // return max 3
+//));
 ?>
 
-<section class="Cards">
+<?php if ( have_rows('work_streams') ) : ?>
 
-    <div class="Cards-content u-cols" style="background-image: url(<?php echo $banner->url() ?>);">
+    <section class="Cards">
 
-        <div class="u-container">
-    
-            <article class="Card u-col u-col-4of12" id="card-1">
-                
-                <div class="Card-inner">
-                    
-                    <header class="Card-header">
-                        
-                        <h2 class="Card-title">Place Based Conservation Effectiveness</h2>
-
-                    </header>
-
-                    <div class="Card-content Card-excerpt">
-                        <p>Evaluating the present and future effectiveness of placed-based conservation systems.</p>
-                        <p><small>Current projects: <a href="#">MPA</a> <a href="#">DYCE</a></small></p>
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="Card u-col u-col-4of12" id="card-2">
-                
-                <div class="Card-inner">
-                    
-                    <header class="Card-header">
-                        
-                        <h2 class="Card-title">Natural Capital and Ecosystem Services</h2>
-
-                    </header>
-
-                    <div class="Card-content Card-excerpt">
-                        <p>Focused on the value of natural capital, and the quantification and linkage of ecosystem services.</p>
-                        <p><small>Current projects: <a href="#">LIVES</a></small></p>
-                    </div>
-
-                </div>
-
-            </article>
-
-            <article class="Card u-col u-col-4of12" id="card-3">
-                
-                <div class="Card-inner">
-                    
-                    <header class="Card-header">
-                        
-                        <h2 class="Card-title">Sustainable Consumption and Production</h2>
-
-                    </header>
-
-                    <div class="Card-content">
-                        <p>Evaluating the feasibility and impact of methods to reduce the human footprint on the planet.</p>
-
-                        <p><small>Projects: <a href="#">Certification</a> <a href="#">China Review</a></small></p>
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div><!-- .u-container -->
-
-        <?php if ($banner) : ?>
+        <div class="Cards-content u-cols" style="background-image: url(<?php echo $banner->url() ?>);">
 
             <div class="u-container">
-                    
-                <div class="Cards-caption">
-                    <p><?php echo $banner->caption() ?></p>
+
+                <?php while( have_rows('work_streams') ) : the_row() ?>
+
+                    <?php  
+                    $term = get_term( get_sub_field('work_stream'), 'work_streams' );
+                    $projects = new WP_Query(array(
+                        'post_type' => 'project',
+                        'post_count' => 1,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'work_streams',
+                                'field' => 'id',
+                                'terms' => array($term->term_id)
+                            )
+                        )
+                    ));
+                    ?>
+        
+                    <article class="Card u-col u-col-4of12">
+                        
+                        <div class="Card-inner" style="border-top-color: <? echo get_field('color', $term->taxonomy . "_" . $term->term_id); ?>;">
+                            
+                            <header class="Card-header">
+                                
+                                <h2 class="Card-title"><?php echo $term->name ?></h2>
+
+                            </header>
+
+                            <div class="Card-content Card-excerpt">
+                                <?php echo apply_filters('the_content', $term->description) ?>
+
+                                <small>Current projects
+
+                                    <?php if ( $projects->have_posts() ) : ?>
+
+                                        <?php while ( $projects->have_posts() ) : $projects->the_post() ?> 
+
+                                            <a href="<?php the_permalink() ?>"><?php the_title() ?></a> 
+
+                                        <?php endwhile ?>
+
+                                    <?php endif ?>
+
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <?php wp_reset_postdata() ?>
+
+                <?php endwhile ?>
+
+            </div><!-- .u-container -->
+
+            <?php if ($banner) : ?>
+
+                <div class="u-container">
+                        
+                    <div class="Cards-caption">
+                        <p><?php echo $banner->caption() ?></p>
+                    </div>
+
                 </div>
 
-            </div>
+            <?php endif ?>
 
-        <?php endif ?>
+        </div><!-- .Cards-content -->
 
-    </div><!-- .Cards-content -->
+    </section><!-- .Cards -->
 
-</section><!-- .Cards -->
+<?php endif ?>
 
 <section class="Home-footer">
 

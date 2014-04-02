@@ -183,32 +183,3 @@ function hoffmann_get_tabs()
 
 	return $tabs;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

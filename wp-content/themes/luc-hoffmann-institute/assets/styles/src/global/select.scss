@@ -1,0 +1,76 @@
+/*	==========================================================================
+	Select
+
+	Based on: http://red-team-design.com/making-html-dropdowns-not-suck/
+	========================================================================== */
+
+.Select {
+	@include sans;
+	color: #fff;
+
+	select {
+		@extend .antialiased;
+		margin: 0;
+		padding: 0.5em;
+		font-size: inherit;
+		cursor: pointer;
+	}
+}
+
+@supports 	(pointer-events: none) and (
+	(-webkit-appearance: none) or
+	(-moz-appearance: none) or
+	(appearance: none) ) {
+	
+	.Select {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		background: $blue-base;
+		border-radius: 2px;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			pointer-events: none;
+		}
+
+		&::after {
+			content: "\25BC";
+			top: 50%;
+			right: 1.25em;
+			margin-top: -0.5em;
+			height: 1em;
+			font-size: 0.625em;
+			line-height: 1;
+		}
+
+		&::before {
+			width: 2em;
+			top: 2px;
+			right: 2px;
+			bottom: 2px;
+			border-radius: 0 2px 2px 0;
+			background: inherit;
+		}
+	}
+
+	.Select select {
+		padding-left: 0.75em;
+		padding-right: 2.5em;
+		border: 0;
+		border-radius: 2px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background: inherit;
+	}
+
+	@-moz-document url-prefix() {
+		.Select select {
+			padding-right: 0.9em;
+		}
+	}
+
+}
