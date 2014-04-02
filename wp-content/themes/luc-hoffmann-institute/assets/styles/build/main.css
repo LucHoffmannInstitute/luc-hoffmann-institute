@@ -2572,7 +2572,7 @@ img[class*="align"],
   padding: 0.5rem 1rem;
   background: #20221d;
   color: #fff;
-  border-bottom: 5px solid #f6c10b;
+  border-bottom: 5px solid red;
 }
 .Project--single .Project-header {
   padding: 16px 32px;

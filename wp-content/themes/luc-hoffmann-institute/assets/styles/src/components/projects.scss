@@ -89,7 +89,7 @@
 	@include rem('padding', 0.5, 1);
 	background: $gray-dark;
 	color: #fff;
-	border-bottom: 5px solid $gold-light;
+	border-bottom: 5px solid $gold;
 
 	.Project--single & {
 		@include rem('padding', 1, 2);

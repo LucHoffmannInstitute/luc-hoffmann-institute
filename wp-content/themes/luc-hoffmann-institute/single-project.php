@@ -14,6 +14,11 @@ $banner = new Banner();
  * Get tabbed content
  */
 $tabs = hoffmann_get_tabs();
+
+
+$work_streams = get_the_terms($post->ID, 'work_streams');
+$work_stream = array_pop($work_streams);
+$color = get_field('color', $work_stream->taxonomy . '_' . $work_stream->term_id);
 ?>
 
 	<section class="Projects Projects--single">
@@ -30,7 +35,7 @@ $tabs = hoffmann_get_tabs();
 
 							<div class="Project-image" style="background-image: url(<?php echo $banner->url() ?>)"></div>
 
-							<div class="Project-header">
+							<div class="Project-header"<?php if (isset($color)) echo ' style="border-bottom-color: ' . $color . ';"' ?>>
 										
 								<h1 class="Project-title"><?php echo get_the_title($parent_id) ?></h1>
 								

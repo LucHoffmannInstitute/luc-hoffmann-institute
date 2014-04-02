@@ -25,6 +25,13 @@ $subpages = new WP_Query( array(
     'orderby' => 'menu_order',
     'order' => 'DESC'
 ) );
+
+$work_streams = get_the_terms($post->ID, 'work_streams');
+print '<pre>';
+print_r($work_streams);
+print '</pre>';
+$work_stream = array_pop($work_streams);
+$color = get_field('color', $work_stream->taxonomy . '_' . $work_stream->term_id);
 ?>
 
 <article class="Project Project--single" <?php the_ID() ?>>
@@ -33,7 +40,7 @@ $subpages = new WP_Query( array(
 
 		<div class="Project-image" style="background-image: url(<?php echo $banner->url() ?>)"></div>
 
-		<div class="Project-header">
+		<div class="Project-header"<?php if (isset($color)) echo ' style="border-bottom-color: ' . $color . ';"' ?>>
 
 			<h1 class="Project-title"><?php the_title() ?></h1>
 
