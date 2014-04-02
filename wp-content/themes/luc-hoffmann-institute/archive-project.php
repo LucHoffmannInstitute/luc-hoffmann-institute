@@ -180,6 +180,10 @@ $projects = new WP_Query( $query );
 
 					<?php endwhile ?>
 
+				<?php else : ?>
+
+					<p style="text-align: center; color: #fff;">No projects were found matching your selection.</p>
+
 				<?php endif ?>
 
 			</div>

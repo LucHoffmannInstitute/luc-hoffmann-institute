@@ -18,44 +18,21 @@ Select.prototype = {
  */
 Select.prototype.init = function ($el) {
 	this.$el = $el;
+	this.$form = this.$el.parents('form');
 
-	// get options
-	this.opts = this.getOpts();
-
-	// build DOM template
-	this.tmpl = this.buildTmpl();
-
-	console.log(this.tmpl);
+	// interactions
+	this.interactions();
 };
 
 /**
- * Get options
+ * Interactions
  */
-Select.prototype.getOpts = function () {
-	var opts = [];
+Select.prototype.interactions = function () {
+	var _this = this;
 
-	$.each(this.$el.find('option'), function () {
-		opts.push($(this).val());
+	this.$el.on('change', function () {
+		_this.$form.submit();
 	});
-
-	return opts;
-};
-
-/**
- * Build DOM template
- */
-Select.prototype.buildTmpl = function () {
-	var tmpl = $('<ul>');
-
-	// add classes
-	tmpl.addClass(this.selectClass);
-
-	// add options
-	$.each(this.opts, function () {
-		tmpl.append('<li>''</li>');
-	});
-
-	return tmpl;
 };
 
 module.exports = new Select();
