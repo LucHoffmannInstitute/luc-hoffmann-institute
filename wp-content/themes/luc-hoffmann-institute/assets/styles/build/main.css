@@ -628,7 +628,7 @@ img .lt-ie9 {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-.visuallyhidden, .Header-logo span, .Form-input-wrap .Form-input--submit span, .Widget--stay-connected .Form-label, .Projects-home-link span, .Profile-content.inactive {
+.visuallyhidden, .js .u-no-js, .Header-logo span, .Form-input-wrap .Form-input--submit span, .Widget--stay-connected .Form-label, .Projects-home-link span, .Profile-content.inactive {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -643,8 +643,9 @@ img .lt-ie9 {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-.visuallyhidden.focusable:active, .Header-logo span.focusable:active, .Form-input-wrap .Form-input--submit span.focusable:active, .Widget--stay-connected .focusable.Form-label:active, .Projects-home-link span.focusable:active, .focusable.Profile-content.inactive:active,
+.visuallyhidden.focusable:active, .js .focusable.u-no-js:active, .Header-logo span.focusable:active, .Form-input-wrap .Form-input--submit span.focusable:active, .Widget--stay-connected .focusable.Form-label:active, .Projects-home-link span.focusable:active, .focusable.Profile-content.inactive:active,
 .visuallyhidden.focusable:focus,
+.js .focusable.u-no-js:focus,
 .Header-logo span.focusable:focus,
 .Form-input-wrap .Form-input--submit span.focusable:focus,
 .Widget--stay-connected .focusable.Form-label:focus,
@@ -949,6 +950,9 @@ body {
   -ms-behavior: url(/backgroundsize.min.htc);
 }
 
+/**
+ * Hide for no-js
+ */
 /*	==========================================================================
 	Global components
 	========================================================================== */

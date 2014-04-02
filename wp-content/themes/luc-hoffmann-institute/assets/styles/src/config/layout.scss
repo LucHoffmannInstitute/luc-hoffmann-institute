@@ -51,3 +51,12 @@ body {
 .bg-polyfill {
 	-ms-behavior: url(/backgroundsize.min.htc);
 }
+
+/**
+ * Hide for no-js
+ */
+.u-no-js {
+	.js & {
+		@extend .visuallyhidden;
+	}
+}

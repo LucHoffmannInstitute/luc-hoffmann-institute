@@ -13,15 +13,6 @@ $posts = new WP_Query( array(
 ) );
 
 $banner = new Banner();
-
-/**
- * Get work streams assigned to the home page
- */
-//$work_streams = get_categories(array(
-//    'taxonomy' => 'work_streams',
-//    'hide_empty' => 0,
-//    'number' => 3 // return max 3
-//));
 ?>
 
 <?php if ( have_rows('work_streams') ) : ?>
