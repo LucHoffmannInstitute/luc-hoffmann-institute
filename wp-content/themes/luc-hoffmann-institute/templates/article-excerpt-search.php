@@ -1,6 +1,6 @@
 <?php
 /**
- * The basic article template
+ * Search results article template
  */
 $breadcrumbs = hoffmann_breadcrumbs();
 ?>

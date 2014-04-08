@@ -32,6 +32,26 @@ get_header();
 
 						<?php endwhile ?>
 
+					<?php else : ?>
+
+							<article class="Article Article--excerpt">
+										
+								<header class="Article-header">
+									
+									<h2 class="Article-title">No results found</h2>
+
+								</header>
+
+								<div class="Article-content Entry">
+									No results were found for those search terms.
+
+									<br /><br />
+
+									<?php get_search_form(); ?>
+							    </div>
+
+							</article>
+
 					<?php endif ?>
 
 				</div><!-- .Page-content -->
