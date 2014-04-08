@@ -183,3 +183,35 @@ function hoffmann_get_tabs()
 
 	return $tabs;
 }
+
+/**
+ * Breadcrumbs
+ */
+function hoffmann_breadcrumbs() 
+{
+	global $post;
+
+	$output = '';
+
+	switch ( $post->post_type ) 
+	{
+		case 'page':
+
+			$ancestors = array_reverse( get_post_ancestors($post->ID) );
+
+			foreach ( $ancestors as $ancestor ) 
+			{
+				$output .= '<a href="' . get_permalink($ancestor) . '">' . get_the_title($ancestor) . '</a> / ';
+			}
+
+			break;
+
+		case 'project':
+			$output .= '<a href="' . home_url('projects') . '">Projects</a> /';
+			break;
+		default:
+			$output .= '<a href="' . home_url('blog') . '">News</a> /';
+	}
+
+	return $output;
+}

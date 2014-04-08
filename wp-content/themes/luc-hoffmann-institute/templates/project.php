@@ -18,8 +18,6 @@ $color = get_field('color', $work_stream->taxonomy . '_' . $work_stream->term_id
 		<div class="Project-header"<?php if (isset($color)) echo ' style="border-bottom-color: ' . $color . ';"' ?>>
 
 			<h2 class="Project-title"><?php the_title() ?></h2>
-
-			<p class="Project-author"><?php echo get_field('author') ?></p>
 		</div>
 
 		<div class="Project-content">

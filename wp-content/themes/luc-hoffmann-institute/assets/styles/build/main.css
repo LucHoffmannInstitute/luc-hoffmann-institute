@@ -1332,6 +1332,12 @@ body {
   text-decoration: none;
   color: #6d7373;
 }
+.Article-meta .Article-breadcrumbs {
+  color: #bcc1c2;
+}
+.Article-meta .Article-breadcrumbs a {
+  text-decoration: none;
+}
 .Article-meta .post-categories {
   float: right;
   margin: 0;
@@ -2572,7 +2578,7 @@ img[class*="align"],
   padding: 0.5rem 1rem;
   background: #20221d;
   color: #fff;
-  border-bottom: 5px solid red;
+  border-bottom: 5px solid #f6c10b;
 }
 .Project--single .Project-header {
   padding: 16px 32px;
