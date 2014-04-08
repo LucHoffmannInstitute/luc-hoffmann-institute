@@ -9,7 +9,7 @@
 .Filter-menu-content {
 	display: inline-block;
 	@include rem('padding', 1);
-	padding-bottom: 0;
+	//padding-bottom: 0;
 	background: $blue-darker;
 	border-radius: 2px;
 }
@@ -20,6 +20,16 @@
 
 	&:last-child {
 		margin-right: 0;
+	}
+}
+
+@supports 	(pointer-events: none) and (
+(-webkit-appearance: none) or
+(-moz-appearance: none) or
+(appearance: none) ) {
+
+	.Filter-menu-content {
+		padding-bottom: 0;
 	}
 }
 

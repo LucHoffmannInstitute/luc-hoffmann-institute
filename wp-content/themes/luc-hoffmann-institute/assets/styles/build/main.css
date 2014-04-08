@@ -2019,11 +2019,9 @@ img[class*="align"],
   font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #fff;
 }
 .Select select {
   margin: 0;
-  padding: 0.5em;
   font-size: inherit;
   cursor: pointer;
 }
@@ -2035,6 +2033,7 @@ img[class*="align"],
     vertical-align: middle;
     background: #006191;
     border-radius: 2px;
+    color: #fff;
   }
   .Select::before, .Select::after {
     content: "";
@@ -2060,8 +2059,7 @@ img[class*="align"],
   }
 
   .Select select {
-    padding-left: 0.75em;
-    padding-right: 2.5em;
+    padding: 0.5em 2.5em 0.5em 0.75em;
     border: 0;
     border-radius: 2px;
     -webkit-appearance: none;
@@ -2794,7 +2792,6 @@ img[class*="align"],
   display: inline-block;
   padding: 16px;
   padding: 1rem;
-  padding-bottom: 0;
   background: #003450;
   border-radius: 2px;
 }
@@ -2809,6 +2806,11 @@ img[class*="align"],
   margin-right: 0;
 }
 
+@supports (pointer-events: none) and ((-webkit-appearance: none) or (-moz-appearance: none) or (appearance: none)) {
+  .Filter-menu-content {
+    padding-bottom: 0;
+  }
+}
 /*	==========================================================================
 	Profile-list
 	========================================================================== */
