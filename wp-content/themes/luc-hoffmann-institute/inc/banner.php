@@ -50,6 +50,14 @@ class Banner {
 	}
 
 	/**
+	 * Return banner background-position
+	 */
+	public function position()
+	{
+		return $this->current['position'];
+	}
+
+	/**
 	 * Get appropriate image object for banner
 	 */
 	protected function getCurrent()
@@ -96,9 +104,12 @@ class Banner {
 
 		$image_src = wp_get_attachment_image_src($id, 'banner');
 
+		$position = get_sub_field('position', $id);
+
 		$image = array(
 			'url' => $image_src[0],
-			'caption' => $post_obj->post_excerpt
+			'caption' => $post_obj->post_excerpt,
+			'position' => $position
 		);
 
 		return $image;
