@@ -2603,8 +2603,7 @@ img[class*="align"],
 }
 
 .Project-author {
-  margin: 0 0 16px;
-  margin: 0 0 1rem;
+  margin: 0;
   font-family: 'ff-din-web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -2619,8 +2618,7 @@ img[class*="align"],
 .Project-menu {
   display: none;
   position: relative;
-  margin: 16px 0;
-  margin: 1rem 0;
+  margin: 0;
 }
 @media (min-width: 768px) {
   .Project-menu {
@@ -2711,8 +2709,6 @@ img[class*="align"],
 }
 
 .Project-tab {
-  margin-top: 16px;
-  margin-top: 1rem;
   padding-bottom: 16px;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ddd;

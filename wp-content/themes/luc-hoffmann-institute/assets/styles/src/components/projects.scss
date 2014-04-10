@@ -114,7 +114,7 @@
 
 .Project-author {
 	@extend .antialiased;
-	@include rem('margin', 0, 0, 1);
+	margin: 0;
 	@include sans;
 	@include font-size(14);
 
@@ -126,7 +126,7 @@
 .Project-menu {
 	display: none;
 	position: relative;
-	@include rem('margin', 1, 0);
+	margin: 0;
 
 	@include min-width ( $bp-2 ) {
 		display: block;
@@ -212,7 +212,6 @@
 }
 
 .Project-tab {
-	@include rem('margin-top', 1);
 	@include rem('padding-bottom', 1);
 	border-bottom: 1px solid #ddd;
 

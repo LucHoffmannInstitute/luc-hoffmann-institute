@@ -45,6 +45,8 @@ $color = get_field('color', $work_stream->taxonomy . '_' . $work_stream->term_id
 
 								<?php endif ?>
 
+								<br />
+
 								<?php if ( is_array($tabs) ) : ?>
 
 									<nav class="Project-menu Tabs-menu">
