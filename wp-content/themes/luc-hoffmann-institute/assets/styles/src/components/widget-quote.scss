@@ -8,8 +8,9 @@
 	blockquote {
 		margin: 0;
 		@include rem('padding-right', 2);
-		@include sans;
+		@include serif;
 		@include font-size(20);
+		font-style: italic;
 		color: $text-light;
 
 		@include min-width ( $bp-2 ) {
@@ -18,9 +19,13 @@
 		cite {
 			display: block;
 			@include rem('margin', 1, 0, 0);
+			@include sans;
 			@include font-size(16);
 			font-style: normal;
 			font-weight: 600;
+		}
+
+		strong {
 		}
 
 		small {
