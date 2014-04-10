@@ -23,7 +23,7 @@ $color = get_field('color', $work_stream->taxonomy . '_' . $work_stream->term_id
 		<div class="Project-content">
 
 			<div class="Project-excerpt">
-				<?php the_excerpt() ?>
+				<?php the_field('abstract') ?>
 			</div>
 
 		</div>

@@ -80,7 +80,7 @@ function hoffmann_register_projects() {
 	$args = array(
 		'labels' => $labels,
 		'menu_position' => null,
-		'supports' => array('title','editor','page-attributes', 'excerpt'),
+		'supports' => array('title','editor','page-attributes'),
 		'public' => true,
 		'has_archive' => true,
 		'hierarchical' => false,
