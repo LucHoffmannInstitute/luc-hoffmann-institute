@@ -27,9 +27,7 @@ $subpages = new WP_Query( array(
 ) );
 
 $work_streams = get_the_terms($post->ID, 'work_streams');
-print '<pre>';
-print_r($work_streams);
-print '</pre>';
+
 $work_stream = array_pop($work_streams);
 $color = get_field('color', $work_stream->taxonomy . '_' . $work_stream->term_id);
 ?>

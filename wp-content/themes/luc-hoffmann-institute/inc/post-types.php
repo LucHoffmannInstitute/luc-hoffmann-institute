@@ -26,7 +26,7 @@ function hoffmann_register_project_taxonomies() {
 		'query_var' => true,
 		'sort' => true,
 		'rewrite' => array(
-			'slug' => 'projects/themes',
+			'slug' => 'category/project-themes',
 			'with_front' => false
 		)
 	));
@@ -48,7 +48,7 @@ function hoffmann_register_project_taxonomies() {
 		'show_ui' => true,
 		'query_var' => true,
 		'rewrite' => array(
-			'slug' => 'work-streams',
+			'slug' => 'category/work-streams',
 			'with_front' => false
 		)
 	));
