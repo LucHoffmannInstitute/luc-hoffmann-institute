@@ -17,13 +17,6 @@ if ( ! $banner->hasImages())
 $style .= ' background-image: url(' . $banner->url() . ');';
 $style .= ' background-position: ' . $banner->position() . ';';
 
-// is this page associated with a workstream?
-$work_stream = get_term(get_field('work_stream'), 'work_streams');
-
-if ( isset($work_stream) && !empty($work_stream) ) {
-	$style .= ' border-bottom-color: ' . get_field('color', 'work_streams_' . $work_stream->term_id) . ';';
-}
-
 ?>
 <header class="Page-header Page-header--banner" style="<?php echo $style ?>">
 
