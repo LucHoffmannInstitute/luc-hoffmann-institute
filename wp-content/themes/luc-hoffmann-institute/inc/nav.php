@@ -86,6 +86,16 @@ class Hoffmann_Secondary_Menu_Walker extends Walker_Nav_Menu {
 		if ( $depth == 0 ) {
 			return;
 		}
+
+		// check if this item
+		$color = $this->has_work_stream( $item );
+
+		if ( $color) {
+			$args->link_before = '<span class="Secondary-menu-item-border" style="background-color: ' . $color . ';"></span>';
+		} else {
+			$args->link_before = '<span class="Secondary-menu-item-border"></span>';
+		}
+
 		parent::start_el( $output, $item, $depth, $args );
 	}
 
@@ -122,6 +132,22 @@ class Hoffmann_Secondary_Menu_Walker extends Walker_Nav_Menu {
 		}
 
 		return true;
+	}
+
+
+	function has_work_stream( $element ) {
+
+
+		$page = get_post(get_post_meta($element->ID, '_menu_item_object_id', true));
+
+		// Check if page is associated with a work_stream
+		$work_stream = get_term(get_field('work_stream', $page->ID), 'work_streams');
+
+		if ( ! is_wp_error( $work_stream ) ) {
+			return get_field('color', 'work_streams_' . $work_stream->term_id);
+		}
+
+		return false;
 	}
 }
 

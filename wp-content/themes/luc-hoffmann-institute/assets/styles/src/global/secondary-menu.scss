@@ -14,9 +14,13 @@
 		list-style: none;
 	}
 
+	li {
+		@extend .clearfix;
+	}
+
 	a {
 		position: relative;
-		display: block;
+		display: inline-block;
 		@include rem('margin', 0.5, 0);
 		@include rem('padding', 0.5, 0);
 		@include sans;
@@ -35,13 +39,25 @@
 		}
 	}
 
+	li.active .Secondary-menu-item-border,
+	li.current-menu-item .Secondary-menu-item-border,
+	li.current-menu-parent .Secondary-menu-item-border,
+	li.current-menu-ancestor .Secondary-menu-item-border,
+	li.current-page-ancestor .Secondary-menu-item-border {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 4px;
+		background-color: $blue-light;
+	}
+
 	li.active a,
 	li.current-menu-item a,
 	li.current-menu-parent a,
 	li.current-menu-ancestor a,
 	li.current-page-ancestor > a {
 		@include rem('padding-left', 1);
-		border-left: 4px solid $blue-light;
 	}
 
 }
