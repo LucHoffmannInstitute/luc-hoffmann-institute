@@ -25,20 +25,7 @@ $banner = new Banner();
 
                 <?php while( have_rows('work_streams') ) : the_row() ?>
 
-                    <?php  
-                    $term = get_term( get_sub_field('work_stream'), 'work_streams' );
-                    $projects = new WP_Query(array(
-                        'post_type' => 'project',
-                        'post_count' => 1,
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'work_streams',
-                                'field' => 'id',
-                                'terms' => array($term->term_id)
-                            )
-                        )
-                    ));
-                    ?>
+                    <?php $term = get_term( get_sub_field('work_stream'), 'work_streams' ); ?>
         
                     <article class="Card u-col u-col-4of12">
                         
@@ -52,20 +39,6 @@ $banner = new Banner();
 
                             <div class="Card-content Card-excerpt">
                                 <?php echo apply_filters('the_content', $term->description) ?>
-
-                                <small>Current projects
-
-                                    <?php if ( $projects->have_posts() ) : ?>
-
-                                        <?php while ( $projects->have_posts() ) : $projects->the_post() ?> 
-
-                                            <a href="<?php the_permalink() ?>"><?php the_title() ?></a> 
-
-                                        <?php endwhile ?>
-
-                                    <?php endif ?>
-
-                                </small>
                             </div>
 
                         </div>

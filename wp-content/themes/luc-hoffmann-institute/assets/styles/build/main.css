@@ -1149,7 +1149,7 @@ body {
 .Menu li.current_page_parent a:after,
 .Menu li.active a:after,
 .Menu li a:hover:after {
-  background: #98c137;
+  background: #007ebf;
 }
 
 /*	==========================================================================
@@ -2294,7 +2294,7 @@ img[class*="align"],
 }
 
 .Card-inner {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   border-top: 5px solid #f6c10b;
 }
 #card-1 .Card-inner {
