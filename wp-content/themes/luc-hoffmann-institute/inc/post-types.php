@@ -31,27 +31,76 @@ function hoffmann_register_project_taxonomies() {
 		)
 	));
 
-	// Work streams
+	// Workstreams
 	register_taxonomy('work_streams', array('project', 'post'), array(
 		'hierarchical' => true,
 		'labels' => array(
-			'name' => _x( 'Work Streams', 'taxonomy general name' ),
-			'singular_name' => _x( 'Work Stream', 'taxonomy singular name' ),
-			'search_items' =>  __( 'Search Work Streams' ),
-			'popular_items' => __( 'Popular Work Streams' ),
-			'all_items' => __( 'All Work Streams' ),
-			'edit_item' => __( 'Edit Work Stream' ),
-			'update_item' => __( 'Update Work Stream' ),
-			'add_new_item' => __( 'Add New Work Stream' ),
-			'new_item_name' => __( 'New Work Stream Name' ),
+			'name' => _x( 'Workstreams', 'taxonomy general name' ),
+			'singular_name' => _x( 'Workstream', 'taxonomy singular name' ),
+			'search_items' =>  __( 'Search Workstreams' ),
+			'popular_items' => __( 'Popular Workstreams' ),
+			'all_items' => __( 'All Workstreams' ),
+			'edit_item' => __( 'Edit Workstream' ),
+			'update_item' => __( 'Update Workstream' ),
+			'add_new_item' => __( 'Add New Workstream' ),
+			'new_item_name' => __( 'New Workstream Name' ),
 		),
 		'show_ui' => true,
 		'query_var' => true,
 		'rewrite' => array(
-			'slug' => 'category/work-streams',
+			'slug' => 'category/workstreams',
 			'with_front' => false
 		)
 	));
+}
+
+/**
+ * Use a select for workstreams instead of checkboxes
+ * (should only belong to one workstream)
+ */
+add_action('add_meta_boxes', 'hoffmann_workstream_select');
+function hoffmann_workstream_select() {
+	remove_meta_box('work_streamsdiv', 'project');
+	add_meta_box('work_streamsdiv', 'Workstream', 'hoffmann_workstream_meta_box', 'project', 'side');
+}
+
+function hoffmann_workstream_meta_box($post) {
+
+	$tax_name = 'work_streams';
+	$taxonomy = get_taxonomy($tax_name);
+	$workstream_ids = wp_get_object_terms($post->ID, 'work_streams', array('fields' => 'ids'));
+
+	wp_nonce_field( basename(__FILE__), 'hoffmann_workstream_nonce' );
+	?>
+
+			<?php wp_dropdown_categories(array(
+				'taxonomy' => $tax_name,
+				'name' => $tax_name,
+				'selected' => $workstream_ids[0]
+			)) ?>
+
+	<?php
+}
+
+add_action('save_post', 'hoffmann_save_workstream_meta_box', 10, 2);
+function hoffmann_save_workstream_meta_box($post_id, $post) {
+
+	if (!isset($_POST['hoffmann_workstream_nonce']) || !wp_verify_nonce($_POST['hoffmann_workstream_nonce'], basename(__FILE__))) {
+		return $post_id;
+	}
+
+	$post_type = get_post_type_object($post->post_type);
+
+	if (!current_user_can($post_type->cap->edit_post, $post_id)) {
+		return $post_id;
+	}
+
+	$workstream_id = $_POST['work_streams'];
+
+	$workstream = ($workstream_id > 0) ? get_term($workstream_id, 'work_streams')->slug : NULL;
+
+	wp_set_object_terms($post_id, $workstream, 'work_streams');
+
 }
 
 /**
