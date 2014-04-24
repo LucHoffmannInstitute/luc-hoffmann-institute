@@ -60,7 +60,7 @@ function hoffmann_register_project_taxonomies() {
  */
 add_action('add_meta_boxes', 'hoffmann_workstream_select');
 function hoffmann_workstream_select() {
-	remove_meta_box('work_streamsdiv', 'project');
+	remove_meta_box('work_streamsdiv', 'project', 'side');
 	add_meta_box('work_streamsdiv', 'Workstream', 'hoffmann_workstream_meta_box', 'project', 'side');
 }
 
