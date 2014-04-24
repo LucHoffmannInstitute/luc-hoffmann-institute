@@ -29,7 +29,7 @@ $banner = new Banner();
         
                     <article class="Card u-col u-col-4of12">
                         
-                        <div class="Card-inner" style="border-top-color: <? echo get_field('color', $term->taxonomy . "_" . $term->term_id); ?>;">
+                        <a class="Card-inner" href="<?php echo get_sub_field('link') ?>" style="border-top-color: <? echo get_field('color', $term->taxonomy . "_" . $term->term_id); ?>;">
                             
                             <header class="Card-header">
                                 
@@ -41,7 +41,7 @@ $banner = new Banner();
                                 <?php echo apply_filters('the_content', $term->description) ?>
                             </div>
 
-                        </div>
+                        </a>
 
                     </article>
 

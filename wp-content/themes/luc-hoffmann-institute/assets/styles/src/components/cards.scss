@@ -50,8 +50,10 @@
 }
 
 .Card-inner {
+	display: block;
 	background: rgba(0,0,0,0.6);
 	border-top: 5px solid $gold-light;
+	text-decoration: none;
 
 	#card-1 & {
 		border-color: $green-light;

@@ -2294,8 +2294,10 @@ img[class*="align"],
 }
 
 .Card-inner {
+  display: block;
   background: rgba(0, 0, 0, 0.6);
   border-top: 5px solid #f6c10b;
+  text-decoration: none;
 }
 #card-1 .Card-inner {
   border-color: #98c137;
