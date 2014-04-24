@@ -90,7 +90,7 @@ class Hoffmann_Secondary_Menu_Walker extends Walker_Nav_Menu {
 		// check if this item
 		$color = $this->has_work_stream( $item );
 
-		if ( $color) {
+		if ( $color ) {
 			$args->link_before = '<span class="Secondary-menu-item-border" style="background-color: ' . $color . ';"></span>';
 		} else {
 			$args->link_before = '<span class="Secondary-menu-item-border"></span>';
@@ -136,7 +136,6 @@ class Hoffmann_Secondary_Menu_Walker extends Walker_Nav_Menu {
 
 
 	function has_work_stream( $element ) {
-
 
 		$page = get_post(get_post_meta($element->ID, '_menu_item_object_id', true));
 

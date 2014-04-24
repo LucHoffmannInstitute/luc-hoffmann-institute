@@ -39,11 +39,12 @@
 		}
 	}
 
-	li.active .Secondary-menu-item-border,
-	li.current-menu-item .Secondary-menu-item-border,
-	li.current-menu-parent .Secondary-menu-item-border,
-	li.current-menu-ancestor .Secondary-menu-item-border,
-	li.current-page-ancestor .Secondary-menu-item-border {
+//	li.active .Secondary-menu-item-border,
+//	li.current-menu-item .Secondary-menu-item-border,
+//	li.current-menu-parent .Secondary-menu-item-border,
+//	li.current-menu-ancestor .Secondary-menu-item-border,
+//	li.current-page-ancestor .Secondary-menu-item-border {
+	li.current_page_item .Secondary-menu-item-border {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -52,12 +53,16 @@
 		background-color: $blue-light;
 	}
 
+	li.current_page_item a {
+		@include rem('padding-left', 1);
+	}
+
 	li.active a,
 	li.current-menu-item a,
 	li.current-menu-parent a,
 	li.current-menu-ancestor a,
 	li.current-page-ancestor > a {
-		@include rem('padding-left', 1);
+		//@include rem('padding-left', 1);
 	}
 
 }
