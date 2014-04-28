@@ -76,7 +76,8 @@ function hoffmann_workstream_meta_box($post) {
 			<?php wp_dropdown_categories(array(
 				'taxonomy' => $tax_name,
 				'name' => $tax_name,
-				'selected' => $workstream_ids[0]
+				'selected' => $workstream_ids[0],
+				'hide_empty' => 0
 			)) ?>
 
 	<?php
