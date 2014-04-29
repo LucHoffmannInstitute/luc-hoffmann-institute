@@ -14,6 +14,10 @@
 .Projects-header {
 }
 
+.Projects-content {
+
+}
+
 .Projects-home-link {
 	display: block;
 	@include font-size(24);
@@ -43,10 +47,10 @@
 	@include min-width ( $bp-2 ) {
 		float: left;
 		@include rem('padding', 1);
-		width: 50%;
+		//width: 50%;
 
 		.Projects--list-3 & {
-			width: 33.3333%;
+			//width: 33.3333%;
 		}
 	}
 }

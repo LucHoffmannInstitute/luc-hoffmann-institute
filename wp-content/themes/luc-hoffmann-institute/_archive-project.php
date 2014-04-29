@@ -1,7 +1,8 @@
-<?php get_header();
+<?php 
 /**
  * The project archive
  */
+get_header();
 
 // set up query
 $query = array(
@@ -169,45 +170,19 @@ $projects = new WP_Query( $query );
 
 			</header>
 
-			<div class="Projects-content u-cols">
-
+			<div class="Projects-content">
+			
 				<?php if ( $projects->have_posts() ) : ?>
 
-					<?php $count = 0 ?>
+					<?php while ( $projects->have_posts() ) : $projects->the_post() ?>
 
-					<div class="u-col u-col-6of12">
+	       				<?php get_template_part( 'templates/project' ); ?>
 
-						<?php while ( $projects->have_posts() ) : $projects->the_post() ?>
+					<?php endwhile ?>
 
-							<?php if ( $count % 2 == 0 ) : ?>
+				<?php else : ?>
 
-								<?php get_template_part( 'templates/project' ) ?>
-
-							<?php endif ?>
-
-							<?php $count++ ?>
-
-						<?php endwhile ?>
-
-						<?php $projects->rewind_posts(); $count = 0 ?>
-
-					</div>
-
-					<div class="u-col u-col-6of12">
-
-						<?php while ( $projects->have_posts() ) : $projects->the_post() ?>
-
-							<?php if ( $count % 2 != 0 ) : ?>
-
-								<?php get_template_part( 'templates/project' ) ?>
-
-							<?php endif ?>
-
-							<?php $count++ ?>
-
-						<?php endwhile ?>
-
-					</div>
+					<p style="text-align: center; color: #fff;">No projects were found matching your selection.</p>
 
 				<?php endif ?>
 

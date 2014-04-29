@@ -2,6 +2,7 @@
 /**
  * Single project
  */
+
 $banner = new Banner();
 
 $work_streams = get_the_terms(get_the_ID(), 'work_streams');

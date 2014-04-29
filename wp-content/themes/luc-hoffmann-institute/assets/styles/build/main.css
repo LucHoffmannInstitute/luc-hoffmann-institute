@@ -2538,10 +2538,6 @@ img[class*="align"],
     float: left;
     padding: 16px;
     padding: 1rem;
-    width: 50%;
-  }
-  .Projects--list-3 .Project--list {
-    width: 33.3333%;
   }
 }
 
