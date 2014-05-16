@@ -2556,12 +2556,14 @@ img[class*="align"],
   border-radius: 2px;
   overflow: hidden;
 }
+.Project-inner:hover {
+  color: #444444 !important;
+}
 
 .Project-image {
   display: table;
   width: 100%;
   min-height: 200px;
-  text-decoration: none;
   color: #fff;
   background-repeat: no-repeat;
   background-position: center;

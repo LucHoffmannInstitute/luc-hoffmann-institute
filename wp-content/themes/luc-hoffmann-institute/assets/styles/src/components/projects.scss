@@ -69,13 +69,16 @@
 	box-shadow: 0 0 10px rgba(0,0,0,0.2);
 	border-radius: 2px;
 	overflow: hidden;
+
+    &:hover {
+        color: $text !important;
+    }
 }
 
 .Project-image {
 	display: table;
 	width: 100%;
 	min-height: 200px;
-	text-decoration: none;
 	color: #fff;
 	background: {
 		repeat: no-repeat;

@@ -13,9 +13,9 @@ $color = get_field('color', $work_stream->taxonomy . '_' . $work_stream->term_id
 
 <article class="Project Project--list">
 	
-	<div class="Project-inner">
+	<a class="Project-inner" href="<?php the_permalink() ?>">
 
-		<a class="Project-image" href="<?php the_permalink() ?>" style="background-image: url(<?php echo $banner->url() ?>)"></a>
+		<div class="Project-image" style="background-image: url(<?php echo $banner->url() ?>)"></div>
 
 		<div class="Project-header"<?php if (isset($color)) echo ' style="border-bottom-color: ' . $color . ';"' ?>>
 
@@ -30,6 +30,6 @@ $color = get_field('color', $work_stream->taxonomy . '_' . $work_stream->term_id
 
 		</div>
 
-	</div>
+	</a>
 
 </article>
