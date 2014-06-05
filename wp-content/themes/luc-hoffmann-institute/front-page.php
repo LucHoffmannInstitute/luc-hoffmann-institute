@@ -99,7 +99,7 @@ $banner = new Banner();
 
                         <footer class="Widget-footer">
                             
-                            <a class="Button Button--action" href="<?php echo get_bloginfo('url') ?>/blog/">More news</a>
+                            <a class="Button Button--action" href="<?php echo get_bloginfo('url') ?>/news/">More news</a>
 
                         </footer>
 
