@@ -67,6 +67,8 @@ Handshake.prototype.addMessages = function () {
 
 	this.$el.empty();
 
+    console.log(items);
+
 	// append items
 	this.$el.append(items);
 

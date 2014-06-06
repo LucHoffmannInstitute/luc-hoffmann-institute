@@ -197,6 +197,10 @@
 	.Project--single & {
 		display: block;
 		@include rem('padding', 1, 2);
+
+        @include min-width ( $bp-3 ) {
+            @include rem('padding-right', 16);
+        }
 	}
 }
 
