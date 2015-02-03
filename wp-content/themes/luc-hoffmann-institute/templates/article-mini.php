@@ -8,7 +8,7 @@ if ( $image_id )
 	$image_src = wp_get_attachment_image_src($image_id, array(100,100));
 	$image_url = $image_src[0];
 } else {
-	$image_url = get_template_directory_uri() . '/assets/img/build/apple-touch-icon-144x144-precomposed.png';
+	$image_url = get_template_directory_uri() . '/assets/dist/img/apple-touch-icon-144x144-precomposed.png';
 }
 ?>
 

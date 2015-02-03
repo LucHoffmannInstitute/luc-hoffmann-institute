@@ -1,142 +1,213 @@
-'use strict';
+
+var autoprefixer    = require('gulp-autoprefixer');
+var browserify      = require('browserify');
+var browserSync     = require('browser-sync');
+var buffer          = require('vinyl-buffer');
+var cache           = require('gulp-cache');
+var gulp            = require('gulp');
+var imagemin        = require('gulp-imagemin');
+var minify          = require('gulp-minify-css');
+var modernizr       = require('gulp-modernizr');
+var notify          = require('gulp-notify');
+var rename          = require('gulp-rename');
+var sass            = require('gulp-sass');
+var sequence        = require('run-sequence');
+var source          = require('vinyl-source-stream');
+var uglify          = require('gulp-uglify');
 
 /**
- * Load gulp and plugins
- *
- * http://gulpjs.com/
- * https://github.com/jackfranklin/gulp-load-plugins
+ * Project-specific configuration
  */
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')();
-var gutil = require('gulp-util');
+var config = {
+
+    hostname: 'luchoffmanninstitute.dev',
+
+    vendor: './bower_components/',
+
+    assets: {
+        src: './assets/src/',
+        dist: './assets/dist/'
+    },
+
+    styles: {
+        src: './assets/src/styles/',
+        dist: './assets/dist/styles/'
+    },
+
+    scripts: {
+        src: './assets/src/scripts/',
+        dist: './assets/dist/scripts/'
+    },
+
+    images: {
+        src: './assets/src/img/',
+        dist: './assets/dist/img/'
+    }
+
+};
 
 /**
- * JSHint
- *
- * Detect errors and potential problems in your javascript
- * https://github.com/wearefractal/gulp-jshint
+ * Default task
  */
-gulp.task('jshint', function (cb) {
-	gulp.src('./assets/scripts/src/**/*.js')
-		.pipe($.jshint('.jshintrc'))
-		.pipe($.jshint.reporter('default'));
-	cb();
+gulp.task('default', ['build'], function() {
+
+    // Run modernizr task last
+    gulp.run('modernizr');
 });
 
 /**
- * Scripts
+ * Build task
  *
- * Combine and minify your javascript
- * https://github.com/deepak1556/gulp-browserify
+ * Run tasks in sequence.
  */
-gulp.task('scripts', ['jshint'], function (cb) {
-	gulp.src(['./assets/scripts/src/main.js'])
-		.pipe($.browserify())
-		.pipe($.uglify())
-		.pipe(gulp.dest('./assets/scripts/build'));
-	cb();
+gulp.task('build', function(callback) {
+    
+    sequence(
+
+        // Copy dependencies
+        'dependencies',
+
+        // Compile styles, scripts, and minify images
+        ['styles', 'scripts', 'images'],
+
+        // Browser sync
+        'browserSync',
+
+        // Watch
+        'watch',
+
+        // Finish sequence
+        callback
+    );
+
 });
 
 /**
- * Dependencies
+ * Copy dependencies
  *
- * Copy SASS and javascript dependencies from /bower_components/
+ * Copy over dependencies from /bower_components
  */
-gulp.task('dependencies', function (cb) {
+gulp.task('dependencies', function(callback) {
 
-	// Place SASS compatible version of normalize.css into vendor folder
-	gulp.src('./bower_components/normalize-css/normalize.css')
-		.pipe($.rename('normalize.scss'))
-		.pipe(gulp.dest('./assets/vendor'));
+    // Create a local version of jQuery
+    gulp.src(config.vendor + 'jquery/dist/jquery.min.js')
+        .pipe(gulp.dest(config.scripts.dist));
 
-	// Copy production-ready jQuery to production vendor folder
-	gulp.src('./bower_components/jquery/dist/jquery.min.js')
-		.pipe(gulp.dest('./assets/vendor'));
+    // Create a SASS compatible version of normalize.css
+    gulp.src(config.vendor + 'normalize-css/normalize.css')
+        .pipe(rename('normalize.scss'))
+        .pipe(gulp.dest(config.vendor + 'normalize-css'));
 
-	// make sass version of icomoon styles
-	gulp.src('./assets/vendor/icomoon/style.css')
-		.pipe($.rename('style.scss'))
-		.pipe(gulp.dest('./assets/vendor/icomoon'));
+    // Create a SASS compatible version of icomoon styles
+    gulp.src(config.assets.src + 'vendor/icomoon/styles.css')
+        .pipe(rename('style.scss'))
+        .pipe(gulp.dest(config.assets.src + 'vendor/icomoon'));
 
-	// copy fonts to styles/build/
-	gulp.src('./assets/vendor/icomoon/fonts/*')
-		.pipe(gulp.dest('./assets/styles/build/fonts'));
+    // Copy icomoon font files to dist/styles/fonts
+    gulp.src(config.assets.src + 'vendor/icomoon/fonts/*')
+        .pipe(gulp.dest(config.styles.dist + 'fonts'));
 
-	cb();
+    callback();
 });
 
 /**
- * Process SASS and autoprefix
- *
- * https://github.com/sindresorhus/gulp-ruby-sass
- * https://github.com/Metrime/gulp-autoprefixer
+ * Compile styles
  */
-gulp.task('styles', function (cb) {
-	gulp.src('./assets/styles/src/*.scss')
-		.pipe($.rubySass({
-			style: 'expanded',
-			loadPath: ['app/bower_components']
-		}))
-		.pipe($.autoprefixer('last 1 version'))
-		.pipe(gulp.dest('./assets/styles/build'));
-	cb();
+gulp.task('styles', function() {
+    return gulp.src(config.styles.src + '*.scss')
+        .pipe(sass({
+            errLogToConsole: true,
+            includePaths: [config.vendor]
+        }))
+        .pipe(autoprefixer({
+            map: true
+        }))
+        //.pipe(minify())
+        .pipe(gulp.dest(config.styles.dist))
+        .pipe(browserSync.reload({stream: true}));;
 });
 
 /**
- * ImageMin
- *
- * Minify and copy images to /dist/assets/img/
+ * Compile scripts
  */
-gulp.task('imagemin', function (cb) {
-	gulp.src('./assets/img/src/**/*')
-		.pipe($.cache($.imagemin({
-			optimizationLevel: 3,
-			progressive: true,
-			interlaced: true
-		})))
-		.pipe(gulp.dest('./assets/img/build'));
-	cb();
+gulp.task('scripts', function() {
+    return browserify({
+        paths: [
+            './bower_components'
+        ],
+        entries: [config.scripts.src + 'main.js']
+    })
+    .bundle()
+    .on('error', handleErrors)
+    .pipe(source('main.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest(config.scripts.dist))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+/**
+ * Minify images
+ */
+gulp.task('images', function() {
+    return gulp.src(config.images.src + '**/*.{jpg,jpeg,gif,png}')
+        .pipe(imagemin({
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true
+        }))
+        .pipe(gulp.dest(config.images.dist))
+        .pipe(browserSync.reload({stream: true}));
+});
+
+/**
+ * Browser sync
+ */
+gulp.task('browserSync', function() {
+    return browserSync({
+        notify: false,
+        open: false,
+        proxy: 'ddcsp.dev'
+    });
+});
+
+/**
+ * Watch files for changes
+ */
+gulp.task('watch', function() {
+    gulp.watch(config.scripts.src + '**/*.js', ['scripts']);
+    gulp.watch(config.styles.src + '**/*.scss', ['styles']);
+    gulp.watch(config.images.src + '**/*', ['images']);
+    gulp.watch('**/*.php', function() {
+        browserSync.reload();
+    });
 });
 
 /**
  * Modernizr
  *
- * Create a custom modernizr build
- * https://github.com/doctyper/gulp-modernizr
+ * This is an in-progress and somewhat unstable task,
+ * and must run after other tasks.
  */
-gulp.task('modernizr', ['scripts', 'styles'], function (cb) {
-	gulp.src(['./assets/scripts/build/**/*.js','./assets/styles/build/**/*.css'])
-		.pipe($.modernizr())
-		.pipe($.uglify())
-		.pipe(gulp.dest('./assets/vendor'));
-	cb();
+gulp.task('modernizr', function() {
+    gulp.src([
+            config.scripts.src + '**/*.js',
+            config.styles.src + '**/*.scss'
+        ])
+        .pipe(modernizr())
+        .pipe(uglify())
+        .pipe(gulp.dest(config.scripts.dist))
+        .pipe(browserSync.reload({stream: true}));
 });
 
 /**
- * Watch
- *
- * Watch files for changes
+ * Error handler
  */
-gulp.task('watch', function () {
+var handleErrors = function() {
+    notify.onError({
+        title: 'Compile Error',
+        message: '<%= error.message %>'
+    }).apply(this, arguments);
 
-	var server = $.livereload();
-
-	gulp.watch([
-		'./assets/scripts/build/**/*.js',
-		'./assets/styles/build/**/*.css',
-		'./**/*.php'
-	], function (file) {
-		server.changed(file.path);
-	});
-
-	gulp.watch('./assets/scripts/src/**/*.js', ['jshint', 'scripts']);
-	gulp.watch('./assets/styles/src/**/*.scss', ['styles']);
-	gulp.watch('./assets/img/src/**/*', ['imagemin']);
-});
-
-gulp.task('default', ['dependencies'], function (cb) {
-	gulp.start('jshint', 'scripts', 'styles', 'imagemin', 'modernizr');
-	cb();
-});
-
-gulp.task('dev', ['default', 'watch']);
+    this.emit('end');
+};

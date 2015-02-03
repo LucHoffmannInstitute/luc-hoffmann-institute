@@ -13,7 +13,7 @@ You'll need the following set up locally to work on this project:
 - Node and NPM
 - Bower
 
-#### 1. Clone this repo locally and set up WordPress to work locally
+#### 1. Clone this repo and set up WordPress to work locally
 
 ```
 git clone git@github.com:elcontraption/luc-hoffmann-institute.git

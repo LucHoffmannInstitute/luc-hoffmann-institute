@@ -12,18 +12,18 @@
     <meta name="title" content="<?php bloginfo('name'); ?>">
     <meta name="description" content="<?php echo get_option('meta_description'); ?>">
 
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/assets/img/build/favicon.ico">  
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/assets/dist/img/favicon.ico">  
 
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-144x144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/assets/img/build/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri() ?>/assets/dist/img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri() ?>/assets/dist/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri() ?>/assets/dist/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_template_directory_uri() ?>/assets/dist/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/assets/dist/img/apple-touch-icon.png">
 
     <script type="text/javascript" src="//use.typekit.net/qhv6jcb.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-    <script src="<?php echo get_template_directory_uri() ?>/assets/vendor/modernizr.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/assets/dist/scripts/modernizr.js"></script>
 
     <?php wp_head() ?>
 

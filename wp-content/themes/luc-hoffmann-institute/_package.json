@@ -1,0 +1,26 @@
+{
+  "name": "luc-hoffmann-institute",
+  "version": "0.1.5",
+  "author": "Darin Reid / elegant contraption",
+  "devDependencies": {
+    "gulp": "~3.5.2",
+    "gulp-jshint": "~1.5.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-modernizr": "https://github.com/doctyper/gulp-modernizr/tarball/develop",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-minify-css": "~0.3.0",
+    "gulp-livereload": "~1.2.0",
+    "gulp-util": "~2.2.14",
+    "gulp-load-plugins": "~0.3.0",
+    "gulp-browserify": "~0.5.0",
+    "gulp-rename": "~1.2.0",
+    "grunt": "~0.4.3",
+    "grunt-rsync": "~0.4.0",
+    "load-grunt-tasks": "~0.4.0",
+    "gulp-ruby-sass": "~0.4.0",
+    "gulp-imagemin": "~0.1.5",
+    "gulp-cache": "~0.1.3",
+    "gulp-handlebars": "~2.0.0",
+    "gulp-define-module": "~0.1.0"
+  }
+}
