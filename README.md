@@ -47,5 +47,7 @@ Add/update ```gulp``` tasks as you see fit.
 
 
 ## Plugins
+The [Advanced Custom Fields](http://www.advancedcustomfields.com/) plugin is required.
 
 ## Deployment
+This website is hosted at WPEngine. See [WPEngine's deployment instructions](http://wpengine.com/git/) for details.
