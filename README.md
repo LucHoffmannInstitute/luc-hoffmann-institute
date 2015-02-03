@@ -41,7 +41,7 @@ gulp
 This will run the build scripts found in ```gulpfile.js```. 
 
 #### 4. Edit theme files
-You'll find style and script modules organized within the assets directory. Edit the versions in ```assets/styles/src```, and ```assets/scripts/src```, and ```gulp``` will process your changes into their respective ```build``` directories. The ```build``` files are called from WordPress.
+You'll find style and script modules organized within the assets directory. Edit the versions in ```assets/src/styles```, and ```assets/src/scripts```, and ```gulp``` will process your changes into their respective ```build``` directories. The ```build``` files are called from WordPress.
 
 Add/update ```gulp``` tasks as you see fit.
 
